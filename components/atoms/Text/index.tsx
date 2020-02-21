@@ -8,14 +8,14 @@ const CustomInput = (props: TextProps) => styled(props.type.as)`
     color: ${props => props.color};
 `;
 
-interface TextProps {
+export interface TextProps {
     type: TextType;
     color?: string;
 }
 
-const Text: FC<TextProps & React.HTMLAttributes<any>> = (props: TextProps & React.HTMLAttributes<any>) => {
+export const Text: FC<TextProps & React.HTMLAttributes<any>> = (props: TextProps & React.HTMLAttributes<any>) => {
+    const color = props.color || "#1b1b1b";
+    props = { ...props, color };
     const E = CustomInput(props);
     return <E {...props} />;
 };
-
-export { Text };
