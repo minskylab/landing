@@ -35,7 +35,7 @@ export const ButtonTypes: ButtonType = {
     secondary: { backgroundColor: "#FDE1A7", fontColor: "black", onHover: "white", onHoverText: "black" },
 }
 
-export const ButtonSize: ButtonSize = {
+export const ButtonSizes: ButtonSize = {
     normal: { width: "100px", height: "35px" },
     big: { width: "115px", height: "40px" },
     compact: { width: "110px", height: "25px" },
