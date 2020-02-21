@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 
 import { styled } from "linaria/react";
-import { ButtonTypes, ButtonTyping, ButtonSizing,ButtonSizes } from "./constants";
+import { ButtonTypes, ButtonTyping, ButtonSizing, ButtonSizes } from "./constants";
 
-// height: ${props=> props.lastsize.height };
+// height: ${props=> props.size.height };
 // background: ${ props=>props.kind.backgroundColor};
 // color: ${props=>props.kind.fontColor};
 // border-radius: 5px;
@@ -13,9 +13,14 @@ import { ButtonTypes, ButtonTyping, ButtonSizing,ButtonSizes } from "./constants
 //     color: ${props=>props.kind.onHoverText };
 // }
 // cursor: ${props=>props.isDisable ? "not-allowed": "pointer"};
-const CustomButtom = (props: ButtonProps) => styled.button`
-
-    color: ${props => props.kind};
+const CustomButtom = styled.button<ButtonProps>`
+    width: ${props => props.size.width};
+    height: ${props => props.size.height};
+    background: ${ props => props.kind.backgroundColor};
+    color: ${props => props.kind.fontColor};
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: ${props => props.isDisable ? "not-allowed": "pointer"};
 
 `;
 
@@ -28,7 +33,7 @@ interface ButtonProps {
     big?: boolean;
     compact?: boolean;
     kind?: ButtonTyping;
-    lastsize?: ButtonSizing;
+    size?: ButtonSizing;
     isSelect?: boolean;
     isDisable?: boolean;
     onClick(): void;
@@ -38,30 +43,30 @@ interface ButtonProps {
 const Button: FC<ButtonProps> = (props: ButtonProps) => {
     let kind: ButtonTyping;
 
-    if(props.primary){
+    if (props.primary) {
         kind = ButtonTypes.primary;
-    }else if(props.secondary){
+    } else if (props.secondary) {
         kind = ButtonTypes.secondary;
-    }else if(props.inverse){
+    } else if (props.inverse) {
         kind = ButtonTypes.inverse;
-    }else if(props.minsky){
+    } else if (props.minsky) {
         kind = ButtonTypes.minsky;
-    }else{
+    } else {
         kind = ButtonTypes.primary
     }
 
-    let lastsize: ButtonSizing;
-    if(props.normal){
-        lastsize = ButtonSizes.normal
-    }else if(props.big){
-        lastsize = ButtonSizes.big
-    }else if(props.compact){
-        lastsize = ButtonSizes.compact
-    }else{
-        lastsize = ButtonSizes.normal
+    let size: ButtonSizing;
+    if (props.normal) {
+        size = ButtonSizes.normal
+    } else if (props.big) {
+        size = ButtonSizes.big
+    } else if (props.compact) {
+        size = ButtonSizes.compact
+    } else {
+        size = ButtonSizes.normal
     }
 
-    let newProps = {...props, lastsize,kind}
+    let newProps = { ...props, size, kind }
 
     const B = CustomButtom(newProps);
     return <B {...props} />;
