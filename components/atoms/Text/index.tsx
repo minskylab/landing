@@ -6,11 +6,13 @@ const CustomInput = (props: TextProps) => styled(props.type.as)`
     font-family: ${props => props.type.fontFamily}, sans-serif;
     font-size: ${props => props.type.size};
     color: ${props => props.color};
+    text-align: ${props => props.alignText};
 `;
 
 export interface TextProps {
     type: TextType;
     color?: string;
+    alignText?: "start" | "end" | "center" | "stretch; (default)" | "default";
 }
 
 export const Text: FC<TextProps & React.HTMLAttributes<any>> = (props: TextProps & React.HTMLAttributes<any>) => {

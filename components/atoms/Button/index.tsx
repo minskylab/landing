@@ -1,26 +1,26 @@
 import React, { FC } from "react";
 
 import { styled } from "linaria/react";
-import { ButtonTypes, ButtonTyping, ButtonSizing,ButtonSizes } from "./constants";
+import { ButtonTypes, ButtonTyping, ButtonSizing, ButtonSizes } from "./constants";
 
-
-const CustomButtom = (props: ButtonProps) => styled.button`
-    width: ${props => props.lastsize.width ? props.lastsize.width : props.other.style.width};
-    height: ${props => props.lastsize.height ? props.lastsize.height : props.other.style.height};
-    background: ${props => props.isDisable ? "#D7D7D7" : props.isSelect ? props.kind.onHover : props.kind.backgroundColor ? props.kind.backgroundColor : props.other.style.background};
-    color: ${props=>props.kind.fontColor ? props.kind.fontColor : props.other.style.color};
+const CustomButtom = styled.button<ButtonProps & React.StyleHTMLAttributes<any>>`
+    width: ${props => props.size.width ? props.size.width : props.style.width};
+    height: ${props => props.size.height ? props.size.height : props.style.height};
+    font-size: 15px;
+    background: ${ props => props.isDisable ? "#D7D7D7" : props.isSelect ?  props.kind.onHover :props.kind.backgroundColor};
+    color: ${props => props.isSelect ? props.kind.onHoverText : props.kind.fontColor};
     border-radius: 5px;
-    border: 1px solid black;
-    :hover{
-        background: ${props=>props.kind.onHover ? props.kind.onHover : props.other.style.background};
-        color: ${props=>props.kind.onHoverText ? props.kind.onHoverText : props.other.style.color};
-    }
-    cursor: ${props=>props.isDisable ? "not-allowed": "pointer"};
+    border: 2.3px solid black;
+    cursor: ${props => props.isDisable ? "not-allowed": "pointer"};
+    transition: 0.5s;
+    &:hover{
+        background: ${props=> props.isDisable ? "#D7D7D7" : props.kind.onHover};
+        color: ${props=>props.kind.onHoverText}
+    }   
 
 `;
 
 interface ButtonProps {
-    other?: React.StyleHTMLAttributes<any>;
     primary?: boolean;
     secondary?: boolean;
     minsky?: boolean;
@@ -28,44 +28,49 @@ interface ButtonProps {
     normal?: boolean;
     big?: boolean;
     compact?: boolean;
+    type?: 'submit' | 'reset' | 'button';
     kind?: ButtonTyping;
-    lastsize?: ButtonSizing;
+    size?: ButtonSizing;
     isSelect?: boolean;
     isDisable?: boolean;
-    onClick(): void;
+    onClick?(): void;
 }
 
 
-const Button: FC<ButtonProps & React.ButtonHTMLAttributes<any>> = (props: ButtonProps & React.ButtonHTMLAttributes<any>) => {
-    let kind: ButtonTyping;
+const Button: FC<ButtonProps & React.StyleHTMLAttributes<any>> = (props: ButtonProps & React.StyleHTMLAttributes<any>) => {
+    let newKind: ButtonTyping;
 
-    if(props.primary){
-        kind = ButtonTypes.primary;
-    }else if(props.secondary){
-        kind = ButtonTypes.secondary;
-    }else if(props.inverse){
-        kind = ButtonTypes.inverse;
-    }else if(props.minsky){
-        kind = ButtonTypes.minsky;
-    }else{
-        kind = ButtonTypes.primary
+    if (props.primary) {
+        newKind = ButtonTypes.primary;
+    } else if (props.secondary) {
+        newKind = ButtonTypes.secondary;
+    } else if (props.inverse) {
+        newKind = ButtonTypes.inverse;
+    } else if (props.minsky) {
+        newKind = ButtonTypes.minsky;
+    } else {
+        newKind = ButtonTypes.primary
     }
 
-    let lastsize: ButtonSizing;
-    if(props.normal){
-        lastsize = ButtonSizes.normal
-    }else if(props.big){
-        lastsize = ButtonSizes.big
-    }else if(props.compact){
-        lastsize = ButtonSizes.compact
-    }else{
-        lastsize = ButtonSizes.normal
+    let newSize: ButtonSizing;
+    if (props.normal) {
+        newSize = ButtonSizes.normal
+    } else if (props.big) {
+        newSize = ButtonSizes.big
+    } else if (props.compact) {
+        newSize = ButtonSizes.compact
+    } else {
+        newSize = ButtonSizes.normal
     }
 
-    let newProps = {...props, lastsize,kind}
+    let newProps = { ...props, newSize, newKind }
 
-    const B = CustomButtom(newProps);
-    return <B {...props} />;
+
+    return <CustomButtom  
+    {...newProps} 
+    size ={newSize ? newSize:{width:props.style.width.toString(),height:props.style.height.toString()}} 
+    kind = {newKind ? newKind:{backgroundColor:props.style.background.toString(), fontColor:props.style.color.toString(),onHover:"black",onHoverText:"white"}}
+    />; 
 };
 
 
