@@ -10,7 +10,7 @@ const IndexPage: FunctionComponent = () => {
                 <title>Minsky | Lab</title>
             </Head>
             <div>
-                <Text type={TextTypes.title}></Text>
+                <Text type={TextTypes.title}>Hello World</Text>
             </div>
         </div>
     );
