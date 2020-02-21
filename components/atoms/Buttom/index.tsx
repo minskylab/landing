@@ -13,6 +13,7 @@ const CustomButtom = styled.button<ButtonProps & React.StyleHTMLAttributes<any>>
     border: 2.3px solid black;
     cursor: ${props => props.isDisable ? "not-allowed": "pointer"};
     transition: 0.5s;
+    font-family: "Karla";
     &:hover{
         background: ${props=> props.isDisable ? "#D7D7D7" : props.kind.onHover};
         color: ${props=>props.kind.onHoverText}

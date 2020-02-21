@@ -1,44 +1,56 @@
 import React from "react";
-import {Button} from "../../components/atoms/Buttom/index"
-import {Input }from "../../components/atoms/Form/input"
-
+import { Button } from "../../components/atoms/Buttom/index"
+import { Input } from "../../components/atoms/Form/input"
+import {CheckBox}from "../../components/atoms/Form/checkbox"
 const Playground = () => {
 
-    const qwqweqwe = (event: React.FormEvent<any>) => {console.log(event)}
     return (
         <div>
-        <div>
             <div>
-                <Button onClick={()=>console.log("Button")}>Button</Button>
-                <Button onClick={()=>console.log("Button")} primary>Button</Button>
-                <Button onClick={()=>console.log("Button")} secondary>Button</Button>
-                <Button onClick={()=>console.log("Button")} minsky>Button</Button>
-                <Button onClick={()=>console.log("Button")} inverse>Button</Button>
+                <div>
+                    <Button onClick={() => console.log("Button")}>Button</Button>
+                    <Button onClick={() => console.log("Button")} primary>Button</Button>
+                    <Button onClick={() => console.log("Button")} secondary>Button</Button>
+                    <Button onClick={() => console.log("Button")} minsky>Button</Button>
+                    <Button onClick={() => console.log("Button")} inverse>Button</Button>
+                </div>
+                <div>
+                    <Button onClick={() => console.log("Button")} big> Button </Button>
+                    <Button onClick={() => console.log("Button")} normal> Button </Button>
+                    <Button onClick={() => console.log("Button")} compact> Button </Button>
+                </div>
+                <div>
+                    <Button onClick={() => console.log("Button")} isDisable> Button </Button>
+                    <Button onClick={() => console.log("Button")} isSelect> Button </Button>
+                </div>
+
+                <div>
+                    <Button onClick={() => console.log("Button")} primary big isDisable>Button</Button>
+                    <Button onClick={() => console.log("Button")} secondary big isSelect>Button</Button>
+                    <Button onClick={() => console.log("Button")} minsky big>Button</Button>
+                    <Button onClick={() => console.log("Button")} inverse big>Button</Button>
+                </div>
             </div>
+
+
             <div>
-                <Button onClick={() => console.log("Button")} big> Button </Button>
-                <Button onClick={() => console.log("Button")} normal> Button </Button>
-                <Button onClick={() => console.log("Button")} compact> Button </Button>
-            </div>
-            <div>
-                <Button onClick={() => console.log("Button")} isDisable> Button </Button>
-                <Button onClick={() => console.log("Button")} isSelect> Button </Button>
+                <Input placeholder="Normal" ></Input>
+                <Input placeholder="Big " big ></Input>
+                <Input placeholder="Compact" compact ></Input>
+                <Input placeholder="Disabled" disabled ></Input>
+                <Input placeholder="Positive" positive ></Input>
+                <Input placeholder="Error" error ></Input>
+                <Input text="hello world" ></Input>
+                <Input min={10} ></Input>
+                <Input max={10} ></Input>
             </div>
 
             <div>
-                <Button onClick={()=>console.log("Button")} primary big isDisable>Button</Button>
-                <Button onClick={()=>console.log("Button")} secondary big isSelect>Button</Button>
-                <Button onClick={()=>console.log("Button")} minsky big>Button</Button>
-                <Button onClick={()=>console.log("Button")} inverse big>Button</Button>
+                <CheckBox big value="ASdasdladsandoanosd" >  </CheckBox>
+                <CheckBox medium value="ASdasdladsandoanosd"></CheckBox>
+                <CheckBox small value="ASdasdladsandoanosd"></CheckBox>
+                <CheckBox small disabled value="ASdasdladsandoanosd"></CheckBox>
             </div>
-        </div>
-
-
-        <div>
-            <Input onChange={(e)=>qwqweqwe(e)}>
-        </Input>
-
-        </div>
         </div>
     );
 };
