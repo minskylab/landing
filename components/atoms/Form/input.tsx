@@ -21,8 +21,18 @@ const CustomInput = styled.input<InputProps & React.StyleHTMLAttributes<any>>`
     box-shadow: ${props => props.error || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color : ""};
 `
 
-
-
+const Wrapper = styled.div`
+    display:flex;
+    flex-direction: column;
+    margin: 0.8em;
+`
+const Caption = styled.caption<InputProps>`
+    font-size:9px;
+    font-family: "Karla";
+    color: ${props => props.newStatus.color};
+    display: flex;
+    margin:0.5em;
+`
 
 interface InputProps {
     normal?: boolean;
@@ -33,24 +43,19 @@ interface InputProps {
     positive?: boolean;
     neutral?: boolean;
     id?: string;
-    onChange?(event: React.FormEvent<any>): any;
     text?: string;
     placeholder?: string;
     newStatus?: InputStates;
     newSize?: InputSizing;
-    type?: string;
+    caption?: string;
     min?: number;
     as?: any;
     max?: number;
-    onKeyPress?(): Event;
     required?: boolean;
 }
 
 
 const Input: FC<InputProps & React.StyleHTMLAttributes<any>> = (props: InputProps & React.StyleHTMLAttributes<any>) => {
-
-
-
     let newSize: InputSizing;
     if (props.big) {
         newSize = InputSizes.big
@@ -92,17 +97,16 @@ const Input: FC<InputProps & React.StyleHTMLAttributes<any>> = (props: InputProp
     }
 
 
-
     props = { ...props, newSize, newStatus }
-    return <CustomInput
+    return <Wrapper> <CustomInput
         {...props}
         value={props?.text}
         newSize={newSize ? { width: props.newSize?.width.toString(), height: props.newSize?.height.toString() } : { width: props.style?.width.toString(), height: props.style?.height.toString() }}
         newStatus={props.newStatus ? { cursor: props.newStatus?.cursor.toString(), color: newStatus.color?.toString() } : { cursor: "text", color: "black" }}
     >
-
-
     </CustomInput>
+        <Caption newStatus={props.newStatus}>{props?.caption || ""}</Caption>
+    </Wrapper>
 
 }
 

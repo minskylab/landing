@@ -11,27 +11,32 @@ const CustomCheckBox = styled.div<CheckBoxProps & React.AllHTMLAttributes<any>>`
     border-color: ${props => props.disabled ? props.state.color : props.color ? props.color : "black"};
     border-radius: 5px;
     cursor: ${props => props.disabled ? props.state.cursor : "pointer"};
-    
+    margin: 0.3em;
 `
 
 const Checked = styled.div<CheckBoxProps>`
-    width: ${props => props.newSize.chwidth };
+    width: ${props => props.newSize.chwidth};
     height: ${props => props.newSize.chheight};
     background: ${props => props.color ? props.color : "black"};
     border-radius: ${props => props.small ? "4px" : "5px"};
-    margin-left: ${props => props.big ? "17%" : props.small ? "13.5%" : "16.3%"};
-    margin-top: ${props => props.big ? "16%" : props.small ? "10%" : "13%"};
-
+    margin-left: ${props => props.big ? "17%" : props.small ? "13%" : "16.3%"};
+    margin-top: ${props => props.big ? "16%" : props.small ? "13%" : "13%"};
     cursor: ${props => props.disabled ? props.state.cursor : "pointer"};
 `
 
-const Text  = styled.p`
+const Text = styled.p<CheckBoxProps>`
     font-size:15px;
     font-family: "Karla";
-`
-const Wrapper = styled.div`
     display:flex;
     flex-direction: row;
+    color: ${props => props.state ? props.state.color : "black"};
+    margin-left: 0.3em;
+    margin-top: ${props => props.big ? "0.75em" : props.medium ? "0.45em" : "0.4em"};
+
+    cursor: ${props => props.state ? props.state.cursor : "pointer"}
+
+`
+const Wrapper = styled.div<React.AllHTMLAttributes<any>>`
 `
 export interface CheckBoxProps {
     big?: boolean;
@@ -40,6 +45,7 @@ export interface CheckBoxProps {
     color?: string;
     value?: string
     disabled?: boolean;
+    caption?: string;
     neutral?: boolean;
     newSize?: CheckBoxSizing;
     state?: CheckboxStates;
@@ -52,7 +58,7 @@ const CheckBox: FC<CheckBoxProps & React.AllHTMLAttributes<any>> = (props: Check
     const [checked, setChecked] = useState<boolean>(false);
 
     const click = () => {
-        if(!props.disabled){
+        if (!props.disabled) {
             if (!checked) {
                 setChecked(true)
             } else {
@@ -81,10 +87,11 @@ const CheckBox: FC<CheckBoxProps & React.AllHTMLAttributes<any>> = (props: Check
     }
 
 
-    let newProps = { ...props, newSize,state}
+    let newProps = { ...props, newSize, state }
     return (<Wrapper><CustomCheckBox {...newProps} onClick={() => click()}>
         {checked ? <Checked {...newProps} /> : ""}
-        </CustomCheckBox>
+    </CustomCheckBox>
+        <Text onClick={() => click()} big={props.big} small={props.small} medium={props.medium} state={state}>{props?.caption || ""}</Text>
     </Wrapper>);
 
 }

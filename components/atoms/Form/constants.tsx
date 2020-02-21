@@ -65,12 +65,12 @@ export interface CheckboxSize {
 
 
 export const CheckBoxType: CheckboxSize = {
-    small: { width: "20px", height: "20px" ,chwidth: "15px", chheight: "15px"},
-    medium: { width: "25px", height: "25px",  chwidth: "17px", chheight: "17px" },
-    big: { width: "30px", height: "30px" , chwidth: "20px", chheight: "20px" },
+    small: { width: "20px", height: "20px", chwidth: "15px", chheight: "15px" },
+    medium: { width: "25px", height: "25px", chwidth: "17px", chheight: "17px" },
+    big: { width: "30px", height: "30px", chwidth: "20px", chheight: "20px" },
 }
 
-export const CheckboxStateTypes: CheckboxState ={
+export const CheckboxStateTypes: CheckboxState = {
     disabled: { color: "#D7D7D7", cursor: "not-allowed" },
-    neutral: { color: "black", cursor: "text" }
+    neutral: { color: "black", cursor: "pointer" }
 }

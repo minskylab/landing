@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../../components/atoms/Buttom/index"
 import { Input } from "../../components/atoms/Form/input"
-import {CheckBox}from "../../components/atoms/Form/checkbox"
+import { CheckBox } from "../../components/atoms/Form/checkbox"
 const Playground = () => {
 
     return (
@@ -34,7 +34,7 @@ const Playground = () => {
 
 
             <div>
-                <Input placeholder="Normal" ></Input>
+                <Input placeholder="Normal" type="email" caption="wrong email" error ></Input>
                 <Input placeholder="Big " big ></Input>
                 <Input placeholder="Compact" compact ></Input>
                 <Input placeholder="Disabled" disabled ></Input>
@@ -46,10 +46,10 @@ const Playground = () => {
             </div>
 
             <div>
-                <CheckBox big value="ASdasdladsandoanosd" >  </CheckBox>
-                <CheckBox medium value="ASdasdladsandoanosd"></CheckBox>
-                <CheckBox small value="ASdasdladsandoanosd"></CheckBox>
-                <CheckBox small disabled value="ASdasdladsandoanosd"></CheckBox>
+                <CheckBox big value="ASdasdladsandoanosd" caption="value">  </CheckBox>
+                <CheckBox medium value="ASdasdladsandoanosd" caption="value"></CheckBox>
+                <CheckBox small value="ASdasdladsandoanosd" caption="value"></CheckBox>
+                <CheckBox small disabled value="ASdasdladsandoanosd" caption="value"></CheckBox>
             </div>
         </div>
     );
