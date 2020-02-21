@@ -66,8 +66,8 @@ const Button: FC<ButtonProps & React.StyleHTMLAttributes<any>> = (props: ButtonP
 
     return <CustomButtom  
     {...newProps} 
-    size ={newSize ? newSize:{width:"100px",height:"35px"}} 
-    kind = {newKind ? newKind:{backgroundColor:"white", fontColor:"black",onHover:"black",onHoverText:"white"}}
+    size ={newSize ? newSize:{width:props.style.width.toString(),height:props.style.height.toString()}} 
+    kind = {newKind ? newKind:{backgroundColor:props.style.background.toString(), fontColor:props.style.color.toString(),onHover:"black",onHoverText:"white"}}
     />; 
 };
 
