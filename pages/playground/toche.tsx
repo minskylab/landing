@@ -1,9 +1,12 @@
 import React from "react";
 import {Button} from "../../components/atoms/Buttom/index"
-
+import {Input }from "../../components/atoms/Form/input"
 
 const Playground = () => {
+
+    const qwqweqwe = (event: React.FormEvent<any>) => {console.log(event)}
     return (
+        <div>
         <div>
             <div>
                 <Button onClick={()=>console.log("Button")}>Button</Button>
@@ -28,6 +31,14 @@ const Playground = () => {
                 <Button onClick={()=>console.log("Button")} minsky big>Button</Button>
                 <Button onClick={()=>console.log("Button")} inverse big>Button</Button>
             </div>
+        </div>
+
+
+        <div>
+            <Input onChange={(e)=>qwqweqwe(e)}>
+        </Input>
+
+        </div>
         </div>
     );
 };

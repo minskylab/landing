@@ -5,12 +5,14 @@ import { ButtonTypes, ButtonTyping, ButtonSizing, ButtonSizes } from "./constant
 
 const CustomButtom = styled.button<ButtonProps & React.StyleHTMLAttributes<any>>`
     width: ${props => props.size.width ? props.size.width : props.style.width};
-    height: ${props => props.size.height};
+    height: ${props => props.size.height ? props.size.height : props.style.height};
+    font-size: 15px;
     background: ${ props => props.isDisable ? "#D7D7D7" : props.isSelect ?  props.kind.onHover :props.kind.backgroundColor};
     color: ${props => props.isSelect ? props.kind.onHoverText : props.kind.fontColor};
     border-radius: 5px;
-    border: 2px solid black;
+    border: 2.3px solid black;
     cursor: ${props => props.isDisable ? "not-allowed": "pointer"};
+    transition: 0.5s;
     &:hover{
         background: ${props=> props.isDisable ? "#D7D7D7" : props.kind.onHover};
         color: ${props=>props.kind.onHoverText}
@@ -31,7 +33,7 @@ interface ButtonProps {
     size?: ButtonSizing;
     isSelect?: boolean;
     isDisable?: boolean;
-    onClick(): void;
+    onClick?(): void;
 }
 
 
