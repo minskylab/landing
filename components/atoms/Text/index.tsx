@@ -9,13 +9,13 @@ const CustomInput = (props: TextProps) => styled(props.type.as)`
 `;
 
 interface TextProps {
-    type?: TextType;
+    type: TextType;
     color?: string;
 }
 
 const Text: FC<TextProps & React.HTMLAttributes<any>> = (props: TextProps & React.HTMLAttributes<any>) => {
     const E = CustomInput(props);
-    return <E />;
+    return <E {...props} />;
 };
 
 export { Text };
