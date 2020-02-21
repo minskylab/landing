@@ -5,17 +5,17 @@ import { ButtonTypes, ButtonTyping, ButtonSizing,ButtonSizes } from "./constants
 
 
 const CustomButtom = (props: ButtonProps) => styled.button`
-    width: ${props.lastsize.width ? props.lastsize.width : props.other.style.width};
-    height: ${props.lastsize.height ? props.lastsize.height : props.other.style.height};
-    background: ${props.isDisable ? "#D7D7D7" : props.isSelect ? props.kind.onHover : props.kind.backgroundColor ? props.kind.backgroundColor : props.other.style.background};
-    color: ${props.kind.fontColor ? props.kind.fontColor : props.other.style.color};
+    width: ${props => props.lastsize.width ? props.lastsize.width : props.other.style.width};
+    height: ${props => props.lastsize.height ? props.lastsize.height : props.other.style.height};
+    background: ${props => props.isDisable ? "#D7D7D7" : props.isSelect ? props.kind.onHover : props.kind.backgroundColor ? props.kind.backgroundColor : props.other.style.background};
+    color: ${props=>props.kind.fontColor ? props.kind.fontColor : props.other.style.color};
     border-radius: 5px;
     border: 1px solid black;
     :hover{
-        background: ${props.kind.onHover ? props.kind.onHover : props.other.style.background};
-        color: ${props.kind.onHoverText ? props.kind.onHoverText : props.other.style.color};
+        background: ${props=>props.kind.onHover ? props.kind.onHover : props.other.style.background};
+        color: ${props=>props.kind.onHoverText ? props.kind.onHoverText : props.other.style.color};
     }
-    cursor: ${props.isDisable ? "not-allowed": "pointer"};
+    cursor: ${props=>props.isDisable ? "not-allowed": "pointer"};
 
 `;
 
