@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../../components/atoms/Buttom/index";
+import { Button } from "../../components/atoms/Button/index";
 import { Input } from "../../components/atoms/Form/input";
 import { CheckBox } from "../../components/atoms/Form/checkbox";
 const Playground = () => {
@@ -23,26 +23,21 @@ const Playground = () => {
                 </div>
                 <div>
                     <Button onClick={() => console.log("Button")} big>
-                        {" "}
-                        Button{" "}
+                        Button
                     </Button>
                     <Button onClick={() => console.log("Button")} normal>
-                        {" "}
-                        Button{" "}
+                        Button
                     </Button>
                     <Button onClick={() => console.log("Button")} compact>
-                        {" "}
-                        Button{" "}
+                        Button
                     </Button>
                 </div>
                 <div>
                     <Button onClick={() => console.log("Button")} isDisable>
-                        {" "}
-                        Button{" "}
+                        Button
                     </Button>
                     <Button onClick={() => console.log("Button")} isSelect>
-                        {" "}
-                        Button{" "}
+                        Button
                     </Button>
                 </div>
 
