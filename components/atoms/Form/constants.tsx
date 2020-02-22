@@ -39,9 +39,6 @@ export const InputStatus: InputState = {
     neutral: { color: "black", cursor: "text" }
 }
 
-
-
-
 export interface CheckBoxSizing {
     width: string;
     height: string;
@@ -73,4 +70,38 @@ export const CheckBoxType: CheckboxSize = {
 export const CheckboxStateTypes: CheckboxState = {
     disabled: { color: "#D7D7D7", cursor: "not-allowed" },
     neutral: { color: "black", cursor: "pointer" }
+}
+
+
+
+export interface SwitchSizing {
+    width: string;
+    height: string;
+    chwidth: string;
+    chheight: string;
+}
+
+export interface SwitchStates {
+    color: string;
+    cursor: string;
+    border?: string;
+}
+export interface SwitchState {
+    neutral: SwitchStates;
+    disabled: SwitchStates;
+}
+
+export interface SwitchSize {
+    medium: SwitchSizing;
+    small: SwitchSizing;
+}
+
+export const SwitchStatatus: SwitchState = {
+    neutral:{color:"#FDE1A7", cursor: "pointer", border: "#F4C45F"},
+    disabled: { color: "#D7D7D7", cursor: "not-allowed" , border:"#C4C4C4"}
+}
+
+export const SwitchSizes: SwitchSize = {
+    medium:{width:"50px",height:"25px",chwidth:"22px",chheight:"22px"},
+    small:{width:"40px",height:"20px",chwidth:"15px",chheight:"15px"},
 }
