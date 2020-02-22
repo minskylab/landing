@@ -7,4 +7,4 @@ const Simple: FC<React.HTMLAttributes<any>> = (props: TextProps & React.HTMLAttr
     return <Text {...props}>Hello World</Text>;
 };
 
-export default Simple;
+export {Simple};

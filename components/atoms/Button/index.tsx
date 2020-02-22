@@ -7,15 +7,16 @@ const CustomButtom = styled.button<ButtonProps & React.StyleHTMLAttributes<any>>
     width: ${props => props.size.width ? props.size.width : props.style.width};
     height: ${props => props.size.height ? props.size.height : props.style.height};
     font-size: 15px;
-    background: ${ props => props.isDisable ? "#D7D7D7" : props.isSelect ?  props.kind.onHover :props.kind.backgroundColor};
+    background: ${ props => props.isDisable ? "#D7D7D7" : props.isSelect ? props.kind.onHover : props.kind.backgroundColor};
     color: ${props => props.isSelect ? props.kind.onHoverText : props.kind.fontColor};
     border-radius: 5px;
     border: 2.3px solid black;
-    cursor: ${props => props.isDisable ? "not-allowed": "pointer"};
+    cursor: ${props => props.isDisable ? "not-allowed" : "pointer"};
     transition: 0.5s;
+    font-family: "Karla";
     &:hover{
-        background: ${props=> props.isDisable ? "#D7D7D7" : props.kind.onHover};
-        color: ${props=>props.kind.onHoverText}
+        background: ${props => props.isDisable ? "#D7D7D7" : props.kind.onHover};
+        color: ${props => props.kind.onHoverText}
     }   
 
 `;
@@ -66,11 +67,11 @@ const Button: FC<ButtonProps & React.StyleHTMLAttributes<any>> = (props: ButtonP
     let newProps = { ...props, newSize, newKind }
 
 
-    return <CustomButtom  
-    {...newProps} 
-    size ={newSize ? newSize:{width:props.style.width.toString(),height:props.style.height.toString()}} 
-    kind = {newKind ? newKind:{backgroundColor:props.style.background.toString(), fontColor:props.style.color.toString(),onHover:"black",onHoverText:"white"}}
-    />; 
+    return <CustomButtom
+        {...newProps}
+        size={newSize ? newSize : { width: props.style.width.toString(), height: props.style.height.toString() }}
+        kind={newKind ? newKind : { backgroundColor: props.style.background.toString(), fontColor: props.style.color.toString(), onHover: "black", onHoverText: "white" }}
+    />;
 };
 
 

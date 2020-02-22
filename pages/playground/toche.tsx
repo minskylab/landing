@@ -1,11 +1,8 @@
 import React from "react";
-import { Button } from "../../components/atoms/Button";
+import { Button } from "../../components/atoms/Buttom/index";
 import { Input } from "../../components/atoms/Form/input";
-
+import { CheckBox } from "../../components/atoms/Form/checkbox";
 const Playground = () => {
-    const qwqweqwe = (event: React.FormEvent<any>) => {
-        console.log(event);
-    };
     return (
         <div>
             <div>
@@ -66,7 +63,24 @@ const Playground = () => {
             </div>
 
             <div>
-                <Input onChange={e => qwqweqwe(e)}></Input>
+                <Input placeholder="Normal" type="email" caption="wrong email" error></Input>
+                <Input placeholder="Big " big></Input>
+                <Input placeholder="Compact" compact></Input>
+                <Input placeholder="Disabled" disabled></Input>
+                <Input placeholder="Positive" positive></Input>
+                <Input placeholder="Error" error></Input>
+                <Input text="hello world"></Input>
+                <Input min={10}></Input>
+                <Input max={10}></Input>
+            </div>
+
+            <div>
+                <CheckBox big value="ASdasdladsandoanosd" caption="value">
+                    {" "}
+                </CheckBox>
+                <CheckBox medium value="ASdasdladsandoanosd" caption="value"></CheckBox>
+                <CheckBox small value="ASdasdladsandoanosd" caption="value"></CheckBox>
+                <CheckBox small disabled value="ASdasdladsandoanosd" caption="value"></CheckBox>
             </div>
         </div>
     );
