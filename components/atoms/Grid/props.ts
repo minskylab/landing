@@ -1,5 +1,5 @@
 export interface GridProps {
-    container?: boolean;
+    container?: boolean | boolean[];
     columnsTemplate?: string;
     rowsTemplate?: string;
     gap?: string;
