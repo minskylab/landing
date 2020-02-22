@@ -24,7 +24,7 @@ const IndexPage: FunctionComponent = () => {
             </Head>
             <Grid container columnsTemplate={"repeat(3, 1fr)"} alignItems={"start"} mx={"1.4em"} my={"2.4em"}>
                 <Grid gridColumn={"1 / span 1"}>
-                    <VerticalMenu compact items={items} selectedItem={currentPage}></VerticalMenu>
+                    <VerticalMenu items={items} selectedItem={currentPage}></VerticalMenu>
                 </Grid>
                 <Grid gridColumn={"2 / span 1"} justifyContent={"center"} flex>
                     <MinskyLogo />

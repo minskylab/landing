@@ -8,3 +8,5 @@ const Icon: FC<IconProps> = (props: IconProps) => {
     // return props.svg
     return <div>{props.svg}</div>;
 };
+
+export { Icon };

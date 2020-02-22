@@ -65,10 +65,10 @@ const VerticalMenu: FC<VerticalMenuProps> = (props: VerticalMenuProps) => {
     }
     return (
         <Wrapper>
-            {props.items.map(item => {
+            {props.items.map((item, i) => {
                 const sel: boolean = item.key === props.selectedItem;
                 return (
-                    <Item selected={sel} onClick={() => props.onSelected(item)}>
+                    <Item key={i} selected={sel} onClick={() => props.onSelected && props.onSelected(item)}>
                         {item.name}
                         {sel && <Line />}
                     </Item>
