@@ -8,7 +8,7 @@ import { Button } from "../components/atoms/Button";
 import VerticalMenu from "../components/atoms/VerticalMenu";
 import { Simple } from "../components/atoms/Text/Simple";
 import Body from "../components/atoms/Text/Body";
-
+import { BulbLights } from "../components/atoms/Scene/BulbLigths";
 const items = [
     { key: "home", name: "Home" },
     { key: "services", name: "Our Services" },
@@ -24,6 +24,9 @@ const IndexPage: FunctionComponent = () => {
             <Head>
                 <title>Minsky | Home</title>
             </Head>
+            <div style={{ zIndex: -1, position: "absolute", top: 0, left: 0 }}>
+                <BulbLights></BulbLights>
+            </div>
             <Grid
                 container
                 columnsTemplate={"repeat(3, 1fr)"}
