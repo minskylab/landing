@@ -19,6 +19,10 @@ export interface TextTypes {
     simple: TextType;
 }
 
+export interface TextGeneralProps {
+    alignText?: "start" | "end" | "center" | "justify" | "stretch" | "default" | "inherit" | "left" | "right";
+}
+
 export const TextTypes: TextTypes = {
     title: { as: "h1", size: "2em", fontFamily: "Rubik" },
     subtitle: { as: "h2", size: "1.2em", fontFamily: "Rubik" },
