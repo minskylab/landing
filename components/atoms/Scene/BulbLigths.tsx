@@ -73,7 +73,7 @@ const BulbLights = () => {
                 rope,
                 Bodies.circle(posX, posY * 1.8, 15, {
                     restitution: 0.8,
-                    density: 0.0008,
+                    density: 0.0006,
                     angle: -89.48,
                     render: {
                         // fillStyle: "#ffdf53",
@@ -111,6 +111,9 @@ const BulbLights = () => {
 
         Engine.run(engine);
 
+        setTimeout(() => {
+            Render.stop(render);
+        }, 18000);
         Render.run(render);
     }, []);
 

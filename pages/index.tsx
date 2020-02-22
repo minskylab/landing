@@ -9,6 +9,14 @@ import VerticalMenu from "../components/atoms/VerticalMenu";
 import { Simple } from "../components/atoms/Text/Simple";
 import Body from "../components/atoms/Text/Body";
 import { BulbLights } from "../components/atoms/Scene/BulbLigths";
+
+const Background = styled.div`
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+`;
+
 const items = [
     { key: "home", name: "Home" },
     { key: "services", name: "Our Services" },
@@ -24,9 +32,9 @@ const IndexPage: FunctionComponent = () => {
             <Head>
                 <title>Minsky | Home</title>
             </Head>
-            <div style={{ zIndex: -1, position: "absolute", top: 0, left: 0 }}>
+            <Background>
                 <BulbLights></BulbLights>
-            </div>
+            </Background>
             <Grid
                 container
                 columnsTemplate={"repeat(3, 1fr)"}
@@ -69,6 +77,22 @@ const IndexPage: FunctionComponent = () => {
                                     <Simple alignText={"center"}>{socialNet}</Simple>
                                 </div>
                             ))}
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid gridRow={"3 / span 1"} gridColumn={"2 / span 1"} m={"10em 0 0 0"}>
+                    <Grid flex justifyContent={"center"}>
+                        <Grid>
+                            <Simple>Learn more</Simple>
+                            <div
+                                style={{
+                                    height: "8em",
+                                    width: "0.1em",
+                                    maxWidth: "0.1em",
+                                    backgroundColor: "#1a1d25",
+                                    marginLeft: "2.44em"
+                                }}
+                            ></div>
                         </Grid>
                     </Grid>
                 </Grid>
