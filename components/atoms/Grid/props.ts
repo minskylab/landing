@@ -1,44 +1,37 @@
+import {
+    JustifyContent,
+    JustifyItems,
+    SMMinimal,
+    AlignItems,
+    AlignContent,
+    GridAutoFlow,
+    JustifySelf,
+    AlignSelf
+} from "./base";
+
 export interface GridProps {
     container?: boolean | boolean[];
-    columnsTemplate?: string;
-    rowsTemplate?: string;
-    gap?: string;
-    rowGap?: string;
-    columnGap?: string;
+    columnsTemplate?: string | string[];
+    rowsTemplate?: string | string[];
+    gap?: string | string[];
+    rowGap?: string | string[];
+    columnGap?: string | string[];
 
-    justifyItems?: "start" | "end" | "center" | "stretch; (default)" | "default";
-    alignItems?: "start" | "end" | "center" | "stretch; (default)" | "default";
-    justifyContent?:
-        | "start"
-        | "end"
-        | "center"
-        | "stretch"
-        | "space-around"
-        | "space-between"
-        | "space-evenly"
-        | "default"
-        | "flex-end"
-        | "flex-start";
-    alignContent?:
-        | "start"
-        | "end"
-        | "center"
-        | "stretch"
-        | "space-around"
-        | "space-between"
-        | "space-evenly"
-        | "default";
-    gridAutoFlow?: "row" | "column" | "dense" | "default";
-    justifySelf?: "start" | "end" | "center" | "stretch; (default)" | "default";
-    alignSelf?: "start" | "end" | "center" | "stretch; (default)" | "default";
+    justifyItems?: JustifyItems | SMMinimal<JustifyItems>;
+    alignItems?: AlignItems | SMMinimal<AlignItems>;
+    justifyContent?: JustifyContent | SMMinimal<JustifyContent>;
+    alignContent?: AlignContent | SMMinimal<AlignContent>;
+    gridAutoFlow?: GridAutoFlow | SMMinimal<GridAutoFlow>;
+    justifySelf?: JustifySelf | SMMinimal<JustifySelf>;
+    alignSelf?: AlignSelf | SMMinimal<AlignSelf>;
 
-    gridRow?: string;
-    gridColumn?: string;
-    flex?: boolean;
-    p?: string;
-    px?: string;
-    py?: string;
-    m?: string;
-    mx?: string;
-    my?: string;
+    gridRow?: string | string[];
+    gridColumn?: string | string[];
+    flex?: boolean | string[];
+    p?: string | string[];
+    px?: string | string[];
+    py?: string | string[];
+    m?: string | string[];
+    mx?: string | string[];
+    my?: string | string[];
 }

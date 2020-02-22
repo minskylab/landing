@@ -64,8 +64,8 @@ const IndexPage: FunctionComponent = () => {
                             mx={"1.8em"}
                             my={"4em"}
                         >
-                            {["Linkedin", "Github", "Twitter"].map(socialNet => (
-                                <div>
+                            {["Linkedin", "Github", "Twitter"].map((socialNet, i) => (
+                                <div key={i}>
                                     <div
                                         style={{
                                             width: "32px",
