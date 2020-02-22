@@ -22,7 +22,14 @@ const IndexPage: FunctionComponent = () => {
             <Head>
                 <title>Minsky | Home</title>
             </Head>
-            <Grid container columnsTemplate={"repeat(3, 1fr)"} alignItems={"start"} mx={"1.4em"} my={"2.4em"}>
+            <Grid
+                container
+                columnsTemplate={"repeat(3, 1fr)"}
+                rowsTemplate={"repeat(6, auto)"}
+                alignItems={"start"}
+                mx={"1.4em"}
+                my={"2.4em"}
+            >
                 <Grid gridColumn={"1 / span 1"}>
                     <VerticalMenu items={items} selectedItem={currentPage}></VerticalMenu>
                 </Grid>
