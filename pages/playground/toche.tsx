@@ -1,7 +1,8 @@
 import React from "react";
-import { Button } from "../../components/atoms/Button/index";
-import { Input } from "../../components/atoms/Form/input";
-import { CheckBox } from "../../components/atoms/Form/checkbox";
+import { Button } from "../../components/atoms/Button/index"
+import { Input } from "../../components/atoms/Form/input"
+import { CheckBox } from "../../components/atoms/Form/checkbox"
+import {Switch}from "../../components/atoms/Form/switch"
 const Playground = () => {
     return (
         <div>
@@ -58,15 +59,15 @@ const Playground = () => {
             </div>
 
             <div>
-                <Input placeholder="Normal" type="email" caption="wrong email" error></Input>
-                <Input placeholder="Big " big></Input>
-                <Input placeholder="Compact" compact></Input>
-                <Input placeholder="Disabled" disabled></Input>
-                <Input placeholder="Positive" positive></Input>
-                <Input placeholder="Error" error></Input>
-                <Input text="hello world"></Input>
-                <Input min={10}></Input>
-                <Input max={10}></Input>
+                <Input placeholder="Normal" type="email" caption="wrong email" error ></Input>
+                <Input placeholder="Big " big ></Input>
+                <Input placeholder="Compact" compact ></Input>
+                <Input placeholder="Disabled" disabled ></Input>
+                <Input placeholder="Positive" positive ></Input>
+                <Input placeholder="Error" error ></Input>
+                <Input defaultValue="Asdasd"></Input>
+                <Input  ></Input>
+                <Input  ></Input>
             </div>
 
             <div>
@@ -76,6 +77,12 @@ const Playground = () => {
                 <CheckBox medium value="ASdasdladsandoanosd" caption="value"></CheckBox>
                 <CheckBox small value="ASdasdladsandoanosd" caption="value"></CheckBox>
                 <CheckBox small disabled value="ASdasdladsandoanosd" caption="value"></CheckBox>
+            </div>
+
+            <div>
+                <Switch small></Switch>
+                <Switch medium></Switch>
+                <Switch disable></Switch>
             </div>
         </div>
     );

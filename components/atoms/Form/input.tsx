@@ -5,12 +5,12 @@ import { styled } from "linaria/react";
 
 
 const CustomInput = styled.input<InputProps & React.StyleHTMLAttributes<any>>`
-    width: ${props => props.newSize.width ? props.newSize.width : props.style.width};
-    height: ${props => props.newSize.height ? props.newSize.height : props.style.height};
-    cursor: ${props => props.newStatus.cursor};
+    width: ${props => props.newSize.width || props.style.width};
+    height: ${props => props.newSize.height || props.style.width};
+    cursor: ${props => props.newStatus.cursor ? props.newStatus.cursor : "pointer"};
     padding:0.5em;
     font-size: 15px;
-    background-color: "white";
+    background-color: white;
     border-radius: 5px;
     font-family: "Karla";
     border: 2.3px solid;
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     margin: 0.8em;
 `
-const Caption = styled.caption<InputProps>`
+const Caption = styled.div<InputProps>`
     font-size:9px;
     font-family: "Karla";
     color: ${props => props.newStatus.color};
@@ -43,14 +43,12 @@ interface InputProps {
     positive?: boolean;
     neutral?: boolean;
     id?: string;
-    text?: string;
     placeholder?: string;
     newStatus?: InputStates;
     newSize?: InputSizing;
     caption?: string;
-    min?: number;
-    as?: any;
-    max?: number;
+    defaultValue?:string;
+    as?: "div";
     required?: boolean;
 }
 
@@ -77,35 +75,16 @@ const Input: FC<InputProps & React.StyleHTMLAttributes<any>> = (props: InputProp
     }
 
 
-    if (props.min) {
-        if (props.text?.length < props.min) {
-            newStatus = InputStatus.error
-        } else if (props.text?.length >= props.min) {
-            newStatus = InputStatus.positive
-        } else {
-            newStatus = InputStatus.neutral
-        }
-    }
-    if (props.max) {
-        if (props.text?.length > props.max) {
-            newStatus = InputStatus.error
-        } else if (props.text?.length <= props.max) {
-            newStatus = InputStatus.positive
-        } else {
-            newStatus = InputStatus.neutral
-        }
-    }
-
-
+    
     props = { ...props, newSize, newStatus }
+
     return <Wrapper> <CustomInput
         {...props}
-        value={props?.text}
-        newSize={newSize ? { width: props.newSize?.width.toString(), height: props.newSize?.height.toString() } : { width: props.style?.width.toString(), height: props.style?.height.toString() }}
-        newStatus={props.newStatus ? { cursor: props.newStatus?.cursor.toString(), color: newStatus.color?.toString() } : { cursor: "text", color: "black" }}
+        newSize={newSize ? newSize : { width: props.style.width.toString(), height: props.style.height.toString() }}
+        newStatus={newStatus ? newStatus : { cursor: props.style.cursor.toString(), color: props.style.color.toString() }}
     >
     </CustomInput>
-        <Caption newStatus={props.newStatus}>{props?.caption || ""}</Caption>
+        <Caption newStatus={props.newStatus}>{props.caption || ""}</Caption>
     </Wrapper>
 
 }

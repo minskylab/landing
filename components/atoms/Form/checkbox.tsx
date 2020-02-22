@@ -4,7 +4,7 @@ import { CheckboxStates, CheckBoxSizing, CheckBoxType, CheckboxStateTypes } from
 import { styled } from "linaria/react";
 
 const CustomCheckBox = styled.div<CheckBoxProps & React.AllHTMLAttributes<any>>`
-     width: ${props => props.newSize.width ? props.newSize.width : props.style.width};
+    width: ${props => props.newSize.width ? props.newSize.width : props.style.width};
     height: ${props => props.newSize.height ? props.newSize.height : props.style.height};
     background: white;
     border: 1.5px solid;
@@ -12,6 +12,7 @@ const CustomCheckBox = styled.div<CheckBoxProps & React.AllHTMLAttributes<any>>`
     border-radius: 5px;
     cursor: ${props => props.disabled ? props.state.cursor : "pointer"};
     margin: 0.3em;
+    
 `
 
 const Checked = styled.div<CheckBoxProps>`
@@ -32,11 +33,12 @@ const Text = styled.p<CheckBoxProps>`
     color: ${props => props.state ? props.state.color : "black"};
     margin-left: 0.3em;
     margin-top: ${props => props.big ? "0.75em" : props.medium ? "0.45em" : "0.4em"};
-
     cursor: ${props => props.state ? props.state.cursor : "pointer"}
 
 `
 const Wrapper = styled.div<React.AllHTMLAttributes<any>>`
+    display: ${props => props?.style?.display ? props?.style?.display : "flex"};
+    flex-direction: ${props => props?.style?.flexDirection ? props?.style?.direction : "row"}
 `
 export interface CheckBoxProps {
     big?: boolean;
