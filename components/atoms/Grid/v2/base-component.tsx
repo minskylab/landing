@@ -1,5 +1,5 @@
 import { styled } from "linaria/react";
-import { GridBreakpoints, defaultBreakpoints } from "./breakpoints";
+import { defaultBreakpoints } from "./breakpoints";
 
 interface GridBaseProps {
     display: string[];
@@ -18,7 +18,6 @@ interface GridBaseProps {
     padding: string[];
     margin: string[];
     gridAutoFlow: string[];
-    // breakpoints: GridBreakpoints;
 }
 
 const GridBase = styled.div<GridBaseProps>`

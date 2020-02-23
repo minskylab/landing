@@ -11,7 +11,6 @@ export const getDisplayFromGridProps = (type: GridType | GridType[]): Array<stri
     }
 
     if (type instanceof Array) {
-        console.log(type);
         const suffix = Array<string>(4 - type.length).fill(type[type.length - 1]);
         return [...type, ...suffix];
     }
