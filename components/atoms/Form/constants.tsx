@@ -102,6 +102,27 @@ export const SwitchStatatus: SwitchState = {
 }
 
 export const SwitchSizes: SwitchSize = {
-    medium:{width:"50px",height:"25px",chwidth:"22px",chheight:"22px"},
+    medium:{width:"50px",height:"25px",chwidth:"20px",chheight:"20px"},
     small:{width:"40px",height:"20px",chwidth:"15px",chheight:"15px"},
+}
+
+
+export interface RadioState{
+    cursor: string;
+    color: string;
+    pointColor: string;
+}
+
+export interface RadioStates{
+    disable: RadioState;
+    error: RadioState;
+    primary: RadioState;
+    secondary: RadioState;
+}
+
+export const RadioStatus: RadioStates = {
+    disable:{color: "#D7D7D7", cursor:"not-allowed",pointColor:"white"},
+    error: {color: "red", cursor: "pointer", pointColor: "white"},
+    primary: {color:"#FDE1A7",cursor: "pointer", pointColor: "white" },
+    secondary: {color: "black", cursor: "pointer", pointColor: "white"},
 }

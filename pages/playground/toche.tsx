@@ -3,13 +3,17 @@ import { Button } from "../../components/atoms/Button/index"
 import { Input } from "../../components/atoms/Form/input"
 import { CheckBox } from "../../components/atoms/Form/checkbox"
 import {Switch}from "../../components/atoms/Form/switch"
+import {RadioButtonGroup}from"../../components/atoms/Form/radiobuttongroup";
+
+
+const RadioButtons = [{value: "asda", name:"SADas", text:"Asas"},{value: "asd", name:"SADas", text:"Asas"},{value: "asd", name:"SADas", text:"Asas"},{value: "sds", name:"SADas", text:"Asas"}]
 const Playground = () => {
     return (
         <div>
             <div>
                 <div>
                     <Button onClick={() => console.log("Button")}>Button</Button>
-                    <Button onClick={() => console.log("Button")} primary>
+                    <Button onClick={() => console.log("Button")} primary secondary minsky inverse>
                         Button
                     </Button>
                     <Button onClick={() => console.log("Button")} secondary>
@@ -83,6 +87,11 @@ const Playground = () => {
                 <Switch small></Switch>
                 <Switch medium></Switch>
                 <Switch disable></Switch>
+            </div>
+
+
+            <div>
+                <RadioButtonGroup RadioButtons={RadioButtons} vertical></RadioButtonGroup>
             </div>
         </div>
     );
