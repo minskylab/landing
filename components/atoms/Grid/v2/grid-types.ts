@@ -65,5 +65,5 @@ export interface GridProps {
 
     // breakboints
     breakpoints?: GridBreakpoints;
-    children: any;
+    children?: any;
 }

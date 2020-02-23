@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect } from "react";
+import React, { FunctionComponent, useState, useEffect, useRef, useLayoutEffect } from "react";
 import { styled } from "linaria/react";
 import Head from "next/head";
 import Title from "../components/atoms/Text/Title";
@@ -9,6 +9,7 @@ import VerticalMenu from "../components/atoms/VerticalMenu";
 import { Simple } from "../components/atoms/Text/Simple";
 import Body from "../components/atoms/Text/Body";
 import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
+import TopBar from "../components/organisms/MInskyTopBar";
 
 const Background = styled.div`
     z-index: -1;
@@ -27,10 +28,29 @@ const items = [
 const IndexPage: FunctionComponent = () => {
     const [currentPage, setCurrentPage] = useState<string>("home");
     const [renderPhysics, setRenderPhysics] = useState<boolean>(false);
+    const [topBarShow, setTopBarShow] = useState<boolean>(false);
+
     useEffect(() => {
         if (window.innerWidth > 970) {
             setRenderPhysics(true);
         }
+    }, []);
+
+    const trigger = useRef(null);
+
+    useLayoutEffect(() => {
+        const offset = 28;
+        const topPosition = trigger.current.getBoundingClientRect().top + offset;
+        const onScroll = () => {
+            const scrollPosition = window.scrollY; //+ window.innerHeight;
+            if (topPosition < scrollPosition) {
+                return setTopBarShow(true);
+            }
+            return setTopBarShow(false);
+        };
+
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
     return (
@@ -47,15 +67,14 @@ const IndexPage: FunctionComponent = () => {
                 type={["block", "block", "grid"]}
                 columnsTemplate={{ raw: "repeat(3, 1fr)" }}
                 rowsTemplate={{ raw: "repeat(6, auto)" }}
-                // alignItems={"center"}
-                // justifyItems={"center"}
-                m={{ x: "1.4em", y: "2.4em" }}
+                m={{ x: "2.4em", y: "2.4em" }}
             >
                 <Grid type={["none", "none", "block"]} cols={{ from: 1, how: 1 }}>
                     <VerticalMenu items={items} selectedItem={currentPage}></VerticalMenu>
                 </Grid>
                 <Grid type={"flex"} cols={{ from: 2, how: 1 }} justifyContent={"center"}>
                     <MinskyLogo />
+                    <div ref={trigger}></div>
                 </Grid>
                 <Grid type={["none", "none", "flex"]} cols={{ raw: "3 / span 1" }} justifyContent={"flex-end"}>
                     <Grid m={{ right: "1.2rem" }}>
@@ -65,6 +84,31 @@ const IndexPage: FunctionComponent = () => {
                         <Button primary>Contact Us</Button>
                     </Grid>
                 </Grid>
+                <TopBar active={topBarShow}>
+                    <Grid type={"grid"} columnsTemplate={{ parts: 3, size: "1fr" }} m={{ x: "1.4em", y: "2.86em" }}>
+                        <Grid>
+                            <div
+                                style={{
+                                    width: "32px",
+                                    height: "32px",
+                                    margin: "auto",
+                                    backgroundColor: "#1a1d25"
+                                }}
+                            />
+                        </Grid>
+                        <Grid type={"flex"} justifyContent={"center"} m={{ top: "0.9em" }}>
+                            <MinskyLogo />
+                        </Grid>
+                        <Grid type={["none", "none", "flex"]} justifyContent={"flex-end"}>
+                            <Grid m={{ right: "1.2rem" }}>
+                                <Button minsky>Are you a developer?</Button>
+                            </Grid>
+                            <Grid>
+                                <Button primary>Contact Us</Button>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </TopBar>
                 <Grid rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
                     <Grid m={[{ all: "16em 0.5em 0 0.5em" }, { all: "16em 4.2em 0 4.2em" }, { all: "10em 2em 0 2em" }]}>
                         <Title alignText={"center"}> MINSKY </Title>
@@ -101,7 +145,7 @@ const IndexPage: FunctionComponent = () => {
                             <Simple>Learn more</Simple>
                             <div
                                 style={{
-                                    height: "8em",
+                                    height: "12em",
                                     width: "0.1em",
                                     maxWidth: "0.1em",
                                     backgroundColor: "#1a1d25",
