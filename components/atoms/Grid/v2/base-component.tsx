@@ -18,6 +18,7 @@ interface GridBaseProps {
     padding: string[];
     margin: string[];
     gridAutoFlow: string[];
+    debug?: boolean;
 }
 
 const GridBase = styled.div<GridBaseProps>`
@@ -118,6 +119,8 @@ const GridBase = styled.div<GridBaseProps>`
         padding: ${props => props.padding[3] || props.padding[0]};
         margin: ${props => props.margin[3] || props.margin[0]};
     }
+
+    border: ${props => (props.debug ? "solid red 0.5px" : "none")};
 
     transition: 0.3s;
 `;
