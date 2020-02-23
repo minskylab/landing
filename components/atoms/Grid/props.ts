@@ -13,6 +13,7 @@ export interface GridProps {
     container?: boolean | boolean[];
     columnsTemplate?: string | string[];
     rowsTemplate?: string | string[];
+
     gap?: string | string[];
     rowGap?: string | string[];
     columnGap?: string | string[];

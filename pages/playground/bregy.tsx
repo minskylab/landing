@@ -5,7 +5,8 @@ import { TextTypes } from "../../components/atoms/Text/constants";
 import Head from "next/head";
 import Subtitle from "../../components/atoms/Text/Subtitle";
 import Body from "../../components/atoms/Text/Body";
-import {Simple} from "../../components/atoms/Text/Simple";
+import { Simple } from "../../components/atoms/Text/Simple";
+import { Grid } from "../../components/atoms/Grid/v2";
 
 const Playground = () => {
     return (
@@ -24,6 +25,11 @@ const Playground = () => {
                 <Subtitle>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Subtitle>
                 <Body>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Body>
                 <Simple>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Simple>
+            </div>
+            <div>
+                <Grid type={["grid", "flex"]} columnsTemplate={{ parts: 3, size: "1fr" }}>
+                    Hello
+                </Grid>
             </div>
         </div>
     );
