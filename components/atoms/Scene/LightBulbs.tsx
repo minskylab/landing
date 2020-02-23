@@ -3,26 +3,7 @@ import { useEffect, useRef } from "react";
 
 // TODO (bregydoc) make a automatic resize performing a good algorithm
 
-function setPathData(pathData) {
-    let parts = pathData && pathData.match(/[mlhvcsqtaz][^mlhvcsqtaz]*/gi),
-        coords;
-    let array = [];
-
-    for (let i = 0, l = parts && parts.length; i < l; i++) {
-        coords = parts[i].match(/[+-]?(?:\d*\.\d+|\d+\.?)(?:[eE][+-]?\d+)?/g);
-
-        for (let j = 0; j < coords.length; j += 2) {
-            array.push({
-                x: +coords[j],
-                y: +coords[j + 1]
-            });
-        }
-    }
-
-    return array;
-}
-
-const BulbLights = () => {
+const LightBulbs = () => {
     const ref = useRef();
     useEffect(() => {
         const w = window.innerWidth;
@@ -80,7 +61,9 @@ const BulbLights = () => {
                         // strokeStyle: "black",
                         // lineWidth: 2
                         sprite: {
-                            yOffset: -0.2,
+                            yOffset: -0.16,
+                            xScale: 0.33,
+                            yScale: 0.33,
                             texture: `/images/bulb${i + 2}.png`
                         }
                     }
@@ -120,4 +103,4 @@ const BulbLights = () => {
     return <div ref={ref} />;
 };
 
-export { BulbLights };
+export { LightBulbs };

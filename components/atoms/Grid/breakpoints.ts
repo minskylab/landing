@@ -1,1 +1,6 @@
-export interface GridBreakpoints {}
+export interface GridBreakpoints {
+    sm?: string;
+    md?: string;
+    lg?: string;
+    xl?: string;
+}

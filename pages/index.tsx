@@ -1,14 +1,14 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState, useEffect } from "react";
 import { styled } from "linaria/react";
 import Head from "next/head";
 import Title from "../components/atoms/Text/Title";
-import Grid from "../components/atoms/Grid";
+import { Grid } from "../components/atoms/Grid/v2";
 import { MinskyLogo } from "../components/atoms/Icon/icons";
 import { Button } from "../components/atoms/Button";
 import VerticalMenu from "../components/atoms/VerticalMenu";
 import { Simple } from "../components/atoms/Text/Simple";
 import Body from "../components/atoms/Text/Body";
-import { BulbLights } from "../components/atoms/Scene/BulbLigths";
+import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
 
 const Background = styled.div`
     z-index: -1;
@@ -26,46 +26,61 @@ const items = [
 
 const IndexPage: FunctionComponent = () => {
     const [currentPage, setCurrentPage] = useState<string>("home");
+    const [renderPhysics, setRenderPhysics] = useState<boolean>(false);
+    useEffect(() => {
+        if (window.innerWidth > 970) {
+            setRenderPhysics(true);
+        }
+    }, []);
 
     return (
         <div>
             <Head>
                 <title>Minsky | Home</title>
             </Head>
-            <Background>
-                <BulbLights></BulbLights>
-            </Background>
+            {renderPhysics && (
+                <Background>
+                    <LightBulbs></LightBulbs>
+                </Background>
+            )}
             <Grid
-                container
-                columnsTemplate={"repeat(3, 1fr)"}
-                rowsTemplate={"repeat(6, auto)"}
-                alignItems={"start"}
-                mx={"1.4em"}
-                my={"2.4em"}
+                type={["block", "block", "grid"]}
+                columnsTemplate={{ raw: "repeat(3, 1fr)" }}
+                rowsTemplate={{ raw: "repeat(6, auto)" }}
+                // alignItems={"center"}
+                // justifyItems={"center"}
+                m={{ x: "1.4em", y: "2.4em" }}
             >
-                <Grid gridColumn={"1 / span 1"}>
+                <Grid type={["none", "none", "block"]} cols={{ from: 1, how: 1 }}>
                     <VerticalMenu items={items} selectedItem={currentPage}></VerticalMenu>
                 </Grid>
-                <Grid gridColumn={"2 / span 1"} justifyContent={"center"} flex>
+                <Grid type={"flex"} cols={{ from: 2, how: 1 }} justifyContent={"center"}>
                     <MinskyLogo />
                 </Grid>
-                <Grid gridColumn={"3 / span 1"} justifyContent={"flex-end"} flex>
-                    <Button primary>Contact Us</Button>
+                <Grid type={["none", "none", "flex"]} cols={{ raw: "3 / span 1" }} justifyContent={"flex-end"}>
+                    <Grid m={{ right: "1.2rem" }}>
+                        <Button minsky>Are you a developer?</Button>
+                    </Grid>
+                    <Grid>
+                        <Button primary>Contact Us</Button>
+                    </Grid>
                 </Grid>
-                <Grid gridRow={"2 / span 1"} gridColumn={"2 / span 1"}>
-                    <Grid m={"10em 2em 0 2em"}>
+                <Grid rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
+                    <Grid m={[{ all: "16em 0.5em 0 0.5em" }, { all: "16em 4.2em 0 4.2em" }, { all: "10em 2em 0 2em" }]}>
                         <Title alignText={"center"}> MINSKY </Title>
-                        <Body alignText={"right"}>A new technological perspective for your ideas</Body>
+                        <Body alignText={"center"}>A new technological perspective for your ideas</Body>
                         <Grid
-                            container
+                            type={"grid"}
                             justifyItems={"center"}
-                            columnsTemplate={"repeat(3, 1fr)"}
+                            columnsTemplate={{ raw: "repeat(3, 1fr)" }}
                             gridAutoFlow={"row"}
-                            mx={"1.8em"}
-                            my={"4em"}
+                            m={[
+                                { x: "1.8em", y: "0.1em" },
+                                { x: "1.8em", y: "1.8em" }
+                            ]}
                         >
-                            {["Linkedin", "Github", "Twitter"].map(socialNet => (
-                                <div>
+                            {["Linkedin", "Github", "Twitter"].map((socialNet, i) => (
+                                <div key={i}>
                                     <div
                                         style={{
                                             width: "32px",
@@ -80,8 +95,8 @@ const IndexPage: FunctionComponent = () => {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid gridRow={"3 / span 1"} gridColumn={"2 / span 1"} m={"10em 0 0 0"}>
-                    <Grid flex justifyContent={"center"}>
+                <Grid rows={{ from: 3, how: 1 }} cols={{ from: 2, how: 1 }} m={{ top: "10em" }}>
+                    <Grid type={"flex"} justifyContent={"center"}>
                         <Grid>
                             <Simple>Learn more</Simple>
                             <div

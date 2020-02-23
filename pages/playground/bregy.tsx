@@ -5,7 +5,8 @@ import { TextTypes } from "../../components/atoms/Text/constants";
 import Head from "next/head";
 import Subtitle from "../../components/atoms/Text/Subtitle";
 import Body from "../../components/atoms/Text/Body";
-import {Simple} from "../../components/atoms/Text/Simple";
+import { Simple } from "../../components/atoms/Text/Simple";
+import { Grid } from "../../components/atoms/Grid/v2";
 
 const Playground = () => {
     return (
@@ -24,6 +25,28 @@ const Playground = () => {
                 <Subtitle>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Subtitle>
                 <Body>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Body>
                 <Simple>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Simple>
+            </div>
+            <div>
+                <Grid
+                    type={"grid"}
+                    columnsTemplate={[
+                        { parts: 2, size: "1fr" }, // sm
+                        { parts: 3, size: "1fr" }, // md
+                        { parts: 4, size: "1fr" } //  lg
+                    ]}
+                    gridAutoFlow={"row"}
+                    rowsTemplate={{ parts: 5, size: "1fr" }}
+                >
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5311" }}>1</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5321" }}>2</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5331" }}>3</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5341" }}>4</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5351" }}>5</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5361" }}>6</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5371" }}>7</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5381" }}>8</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5391" }}>9</div>
+                </Grid>
             </div>
         </div>
     );

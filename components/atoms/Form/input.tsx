@@ -15,7 +15,7 @@ const CustomInput = styled.input<InputProps & React.StyleHTMLAttributes<any>>`
     font-family: "Karla";
     border: 2.3px solid;
     border-color: ${props => props.newStatus.color};
-    color: ${props => props.color};
+    color: ${props => props.newStatus.color};
     -webkit-box-shadow: ${props => props.error || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color : ""};
     -moz-box-shadow: ${props => props.error || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color : ""};
     box-shadow: ${props => props.error || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color : ""};
@@ -84,7 +84,7 @@ const Input: FC<InputProps & React.StyleHTMLAttributes<any>> = (props: InputProp
         newStatus={newStatus ? newStatus : { cursor: props.style.cursor.toString(), color: props.style.color.toString() }}
     >
     </CustomInput>
-        <Caption newStatus={props.newStatus}>{props.caption || ""}</Caption>
+        <Caption newStatus={props.newStatus}>{props?.caption || ""}</Caption>
     </Wrapper>
 
 }

@@ -26,7 +26,7 @@ export interface TextGeneralProps {
 export const TextTypes: TextTypes = {
     title: { as: "h1", size: "2em", fontFamily: "Rubik" },
     subtitle: { as: "h2", size: "1.2em", fontFamily: "Rubik" },
-    body: { as: "span", size: "1em", fontFamily: "Karla" },
+    body: { as: "p", size: "1em", fontFamily: "Karla" },
     h1: { as: "h1", size: "1em", fontFamily: "Karla" },
     h2: { as: "h2", size: "1em", fontFamily: "Karla" },
     h3: { as: "h3", size: "1em", fontFamily: "Karla" },
