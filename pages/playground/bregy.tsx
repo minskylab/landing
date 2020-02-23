@@ -38,15 +38,15 @@ const Playground = () => {
                         gridAutoFlow={"row"}
                         rowsTemplate={{ parts: 10, size: "1fr" }}
                     >
-                        <div style={{ height: "200px", width: "200px", backgroundColor: "#0001" }}>1</div>
-                        <div style={{ height: "200px", width: "200px", backgroundColor: "#0002" }}>2</div>
-                        <div style={{ height: "200px", width: "200px", backgroundColor: "#0003" }}>3</div>
-                        <div style={{ height: "200px", width: "200px", backgroundColor: "#0004" }}>4</div>
-                        <div style={{ height: "200px", width: "200px", backgroundColor: "#0005" }}>5</div>
-                        <div style={{ height: "200px", width: "200px", backgroundColor: "#0006" }}>6</div>
-                        <div style={{ height: "200px", width: "200px", backgroundColor: "#0007" }}>7</div>
-                        <div style={{ height: "200px", width: "200px", backgroundColor: "#0008" }}>8</div>
-                        <div style={{ height: "200px", width: "200px", backgroundColor: "#0009" }}>9</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0001" }}>1</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0002" }}>2</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0003" }}>3</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0004" }}>4</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0005" }}>5</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0006" }}>6</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0007" }}>7</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0008" }}>8</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0009" }}>9</div>
                     </Grid>
                 }
             </div>
