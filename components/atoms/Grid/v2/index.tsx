@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { defaultBreakpoints } from "./breakpoints";
 import {
     getDisplayFromGridProps,
@@ -17,51 +17,33 @@ import { GridProps } from "./grid-types";
 import { GridBase } from "./base-component";
 
 const Grid = (props: GridProps) => {
-    var breakpoints = defaultBreakpoints;
-    if (props.breakpoints) {
-        breakpoints = props.breakpoints;
-    }
+    const display: string[] = useMemo(() => getDisplayFromGridProps(props.type), [props.type]);
 
-    var display: string[] = getDisplayFromGridProps(props.type);
+    const colsTemplate: string[] = useMemo(() => getTemplateFromGridProps(props.columnsTemplate), [
+        props.columnsTemplate
+    ]);
+    const rowsTemplate: string[] = useMemo(() => getTemplateFromGridProps(props.rowsTemplate), [props.rowsTemplate]);
 
-    var colsTemplate: string[] = getTemplateFromGridProps(props.columnsTemplate);
-    var rowsTemplate: string[] = getTemplateFromGridProps(props.rowsTemplate);
+    const gridCols: string[] = useMemo(() => getPositionFromGridProps(props.cols), [props.cols]);
+    const gridRows: string[] = useMemo(() => getPositionFromGridProps(props.rows), [props.rows]);
 
-    var gridCols: string[] = getPositionFromGridProps(props.cols);
-    var gridRows: string[] = getPositionFromGridProps(props.rows);
+    const columnsGap: string[] = useMemo(() => getGapFromProps(props.columnGap), [props.columnGap]);
+    const rowsGap: string[] = useMemo(() => getGapFromProps(props.rowGap), [props.rowGap]);
 
-    var columnsGap: string[] = getGapFromProps(props.columnGap);
-    var rowsGap: string[] = getGapFromProps(props.rowGap);
+    const justifyItems: string[] = useMemo(() => getJustifyItemsFromProps(props.justifyItems), [props.justifyItems]);
+    const alignItems: string[] = useMemo(() => getAlignItemsFromProps(props.alignItems), [props.alignItems]);
+    const justifyContent: string[] = useMemo(() => getJustifyContentFromProps(props.justifyContent), [
+        props.justifyContent
+    ]);
+    const alignContent: string[] = useMemo(() => getAlignContentFromProps(props.alignContent), [props.alignContent]);
+    const justifySelf: string[] = useMemo(() => getJustifySelfFromProps(props.justifySelf), [props.justifySelf]);
+    const alignSelf: string[] = useMemo(() => getAlignSelfFromProps(props.alignSelf), [props.alignSelf]);
 
-    var justifyItems: string[] = getJustifyItemsFromProps(props.justifyItems);
-    var alignItems: string[] = getAlignItemsFromProps(props.alignItems);
-    var justifyContent: string[] = getJustifyContentFromProps(props.justifyContent);
-    var alignContent: string[] = getAlignContentFromProps(props.alignContent);
-    var justifySelf: string[] = getJustifySelfFromProps(props.justifySelf);
-    var alignSelf: string[] = getAlignSelfFromProps(props.alignSelf);
+    const padding: string[] = useMemo(() => getPlainEnvelopeFromProps(props.p), [props.p]);
+    const margin: string[] = useMemo(() => getPlainEnvelopeFromProps(props.m), [props.m]);
 
-    var padding: string[] = getPlainEnvelopeFromProps(props.p);
-    var margin: string[] = getPlainEnvelopeFromProps(props.m);
+    const gridAutoFlow: string[] = ["", "", "", ""];
 
-    var gridAutoFlow: string[] = ["", "", "", ""];
-
-    console.log(
-        display,
-        colsTemplate,
-        rowsTemplate,
-        gridCols,
-        gridRows,
-        columnsGap,
-        rowsGap,
-        justifyItems,
-        alignItems,
-        justifyContent,
-        alignContent,
-        justifySelf,
-        alignSelf,
-        padding,
-        margin
-    );
     return (
         <GridBase
             display={display}
@@ -80,7 +62,6 @@ const Grid = (props: GridProps) => {
             padding={padding}
             margin={margin}
             gridAutoFlow={gridAutoFlow}
-            breakpoints={breakpoints}
         >
             {props.children}
         </GridBase>

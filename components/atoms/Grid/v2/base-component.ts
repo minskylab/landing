@@ -1,6 +1,5 @@
-import React from "react";
 import { styled } from "linaria/react";
-import { GridBreakpoints } from "./breakpoints";
+import { GridBreakpoints, defaultBreakpoints } from "./breakpoints";
 
 interface GridBaseProps {
     display: string[];
@@ -19,7 +18,7 @@ interface GridBaseProps {
     padding: string[];
     margin: string[];
     gridAutoFlow: string[];
-    breakpoints: GridBreakpoints;
+    // breakpoints: GridBreakpoints;
 }
 
 const GridBase = styled.div<GridBaseProps>`
@@ -46,7 +45,7 @@ const GridBase = styled.div<GridBaseProps>`
     padding: ${props => props.padding[0]};
     margin: ${props => props.margin[0]};
 
-    @media screen and (min-width: ${props => props.breakpoints.md}) {
+    @media screen and (min-width: ${defaultBreakpoints.md}) {
         display: ${props => props.display[1] || props.display[0]};
         grid-template-columns: ${props => props.colsTemplate[1] || props.colsTemplate[0]};
         grid-template-rows: ${props => props.rowsTemplate[1] || props.rowsTemplate[0]};
@@ -71,7 +70,7 @@ const GridBase = styled.div<GridBaseProps>`
         margin: ${props => props.margin[1] || props.margin[0]};
     }
 
-    @media screen and (min-width: ${props => props.breakpoints.lg}) {
+    @media screen and (min-width: ${defaultBreakpoints.lg}) {
         display: ${props => props.display[2] || props.display[0]};
         grid-template-columns: ${props => props.colsTemplate[2] || props.colsTemplate[0]};
         grid-template-rows: ${props => props.rowsTemplate[2] || props.rowsTemplate[0]};
@@ -96,7 +95,7 @@ const GridBase = styled.div<GridBaseProps>`
         margin: ${props => props.margin[2] || props.margin[0]};
     }
 
-    @media screen and (min-width: ${props => props.breakpoints.xl}) {
+    @media screen and (min-width: ${defaultBreakpoints.xl}) {
         display: ${props => props.display[3] || props.display[0]};
         grid-template-columns: ${props => props.colsTemplate[3] || props.colsTemplate[0]};
         grid-template-rows: ${props => props.rowsTemplate[3] || props.rowsTemplate[0]};
