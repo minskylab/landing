@@ -1,16 +1,16 @@
-import React, {FC,useState} from 'react';
+import React, { FC, useState } from 'react';
 
 
 import { styled } from "linaria/react";
-import {RadioStatus ,RadioStates, RadioState} from "./constants"
+import { RadioStatus, RadioStates, RadioState } from "./constants"
 
 const CustomButtonGroup = styled.div<RadioButtonGroupProps & React.AllHTMLAttributes<any>>`
     display: flex;
-    flex-direction: ${props=> props.horizontal ? "row":"column"};
+    flex-direction: ${props => props.horizontal ? "row" : "column"};
 `
 const CustomRadioButton = styled.div<RadioButtonGroupProps & React.AllHTMLAttributes<any>>`
     background: white;
-    margin-top: ${props => props.horizontal ? "": "0.9em"};
+    margin-top: ${props => props.horizontal ? "" : "0.9em"};
     border: 1px solid ${props => props.newStatus.color ? props.newStatus.color : "black"};
     width: 18px;
     height: 18px;
@@ -34,8 +34,18 @@ const Checked = styled.div<RadioButtonGroupProps>`
 
 const Wrapper = styled.div<RadioButtonGroupProps>`
     display: flex;
-    flex-direction: ${props => props.horizontal ? "column":"row"};
+    flex-direction: ${props => props.horizontal ? "column" : "row"};
 `
+
+
+type Radio ={
+     value: string; 
+     name: string;
+      text?: string;
+       disable?: boolean;
+        selected?: boolean; 
+    }
+
 interface RadioButtonGroupProps {
     value?: string;
     disable?: boolean;
@@ -46,60 +56,59 @@ interface RadioButtonGroupProps {
     vertical?: boolean;
     name?: string;
     newStatus?: RadioState;
+
     maxSelected?: number;
     minSelected?: number;
     as?: "div";
-    RadioButtons: {value:string,name:string,text?:string, disable?:boolean}[];
+    RadioButtons: Radio[];
 }
 
 
 const RadioButtonGroup: FC<RadioButtonGroupProps & React.AllHTMLAttributes<any>> = (props: RadioButtonGroupProps & React.AllHTMLAttributes<any>) => {
-    const [checked, setChecked] = useState<boolean>(false);
-    const [counter, setCounter] = useState<number>(0);
-    const click = () => {
+    type Check = {
+        value: string,
+        active: boolean
+    }
+    const [checked, setChecked] = useState<Check>({value:"",active: false});
+
+    let newRadioButton: Radio[] = props.RadioButtons;
+
+    const click = (value: string) => {
+        console.log(value)
         if (!props.disabled) {
-            if(props?.maxSelected && props.maxSelected <= counter){
-                if (!checked) {
-                    setChecked(true)
-                    setCounter(counter + 1)
-                } else {
-                    setChecked(false)
+            newRadioButton.map(val => {
+                if(val.value === value){
+                    val.selected = true;
                 }
-            }else{
-                if (!checked) {
-                    setChecked(true)
-                    setCounter(counter + 1)
-                } else {
-                    setChecked(false)
-                }
-            }
-              
+            })
         }
     }
 
     let newStatus: RadioState;
 
-        if(props.disable){
-            newStatus = RadioStatus.disable
-        }else if (props.error){
-            newStatus = RadioStatus.error
-        }else if(props.secondary){
-            newStatus = RadioStatus.secondary
-        }else{
-            newStatus = RadioStatus.primary
+    if (props.disable) {
+        newStatus = RadioStatus.disable
+    } else if (props.error) {
+        newStatus = RadioStatus.error
+    } else if (props.secondary) {
+        newStatus = RadioStatus.secondary
+    } else {
+        newStatus = RadioStatus.primary
+    }
+
+
+    props = { ...props, newStatus }
+
+    return (
+        <CustomButtonGroup {...props} > {
+            newRadioButton.map((value, index, arr) => {
+                return <Wrapper {...props}>
+                    <CustomRadioButton {...props} onClick={() => click(value.value)}>  {value.selected ? <Checked {...props} /> : ""} </CustomRadioButton>
+                    <Text onClick={() => click(value.value)} {...props}>{value.text || ""}</Text> </Wrapper>
+            })
         }
-
-
-    props = {...props, newStatus}
-
-return (<CustomButtonGroup {...props} > {
-    props.RadioButtons.map((value,index,arr)=>{
-    return <Wrapper {...props}>
-        <CustomRadioButton {...props}  onClick={click}>  {checked ? <Checked {...props} /> : ""} </CustomRadioButton> 
-        <Text onClick={click} {...props}>{value.text||""}</Text> </Wrapper>
-    })
-}
- </CustomButtonGroup>)
+        </CustomButtonGroup>
+    )
 }
 
-export {RadioButtonGroup}
+export { RadioButtonGroup }

@@ -6,7 +6,7 @@ import {Switch}from "../../components/atoms/Form/switch"
 import {RadioButtonGroup}from"../../components/atoms/Form/radiobuttongroup";
 
 
-const RadioButtons = [{value: "asda", name:"SADas", text:"Asas"},{value: "asd", name:"SADas", text:"Asas"},{value: "asd", name:"SADas", text:"Asas"},{value: "sds", name:"SADas", text:"Asas"}]
+const RadioButtons = [{value: "asda", name:"SADas", text:"Asas",selected:true},{value: "asdppo", name:"SADas", text:"Asas"},{value: "asdo", name:"SADas", text:"Asas"},{value: "sds", name:"SADas", text:"Asas"}]
 const Playground = () => {
     return (
         <div>

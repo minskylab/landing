@@ -90,11 +90,13 @@ const CheckBox: FC<CheckBoxProps & React.AllHTMLAttributes<any>> = (props: Check
 
 
     let newProps = { ...props, newSize, state }
-    return (<Wrapper><CustomCheckBox {...newProps} onClick={() => click()}>
-        {checked ? <Checked {...newProps} /> : ""}
-    </CustomCheckBox>
-        <Text onClick={() => click()} big={props.big} small={props.small} medium={props.medium} state={state}>{props?.caption || ""}</Text>
-    </Wrapper>);
+    return (
+        <Wrapper>
+            <CustomCheckBox {...newProps} onClick={() => click()}>
+                {checked ? <Checked {...newProps} /> : ""}
+            </CustomCheckBox>
+            <Text onClick={() => click()} big={props.big} small={props.small} medium={props.medium} state={state}>{props?.caption || ""}</Text>
+        </Wrapper>);
 
 }
 
