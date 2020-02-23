@@ -43,7 +43,6 @@ const Grid: FC<GridProps> = (props: GridProps) => {
 
     const gridAutoFlow: string[] = ["", "", "", ""]; // TODO
 
-    console.log("justifyContent ", justifyContent);
     return (
         <GridBase
             display={display}

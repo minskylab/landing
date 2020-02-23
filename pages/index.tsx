@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState, useEffect } from "react";
 import { styled } from "linaria/react";
 import Head from "next/head";
 import Title from "../components/atoms/Text/Title";
@@ -26,30 +26,38 @@ const items = [
 
 const IndexPage: FunctionComponent = () => {
     const [currentPage, setCurrentPage] = useState<string>("home");
+    const [renderPhysics, setRenderPhysics] = useState<boolean>(false);
+    useEffect(() => {
+        if (window.innerWidth > 970) {
+            setRenderPhysics(true);
+        }
+    }, []);
 
     return (
         <div>
             <Head>
                 <title>Minsky | Home</title>
             </Head>
-            <Background>
-                <LightBulbs></LightBulbs>
-            </Background>
+            {renderPhysics && (
+                <Background>
+                    <LightBulbs></LightBulbs>
+                </Background>
+            )}
             <Grid
-                type={"grid"}
+                type={["block", "block", "grid"]}
                 columnsTemplate={{ raw: "repeat(3, 1fr)" }}
                 rowsTemplate={{ raw: "repeat(6, auto)" }}
                 // alignItems={"center"}
                 // justifyItems={"center"}
                 m={{ x: "1.4em", y: "2.4em" }}
             >
-                <Grid cols={{ from: 1, how: 1 }}>
+                <Grid type={["none", "none", "block"]} cols={{ from: 1, how: 1 }}>
                     <VerticalMenu items={items} selectedItem={currentPage}></VerticalMenu>
                 </Grid>
                 <Grid type={"flex"} cols={{ from: 2, how: 1 }} justifyContent={"center"}>
                     <MinskyLogo />
                 </Grid>
-                <Grid type={"flex"} cols={{ raw: "3 / span 1" }} justifyContent={"flex-end"}>
+                <Grid type={["none", "none", "flex"]} cols={{ raw: "3 / span 1" }} justifyContent={"flex-end"}>
                     <Grid m={{ right: "1.2rem" }}>
                         <Button minsky>Are you a developer?</Button>
                     </Grid>
@@ -58,15 +66,18 @@ const IndexPage: FunctionComponent = () => {
                     </Grid>
                 </Grid>
                 <Grid rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
-                    <Grid m={{ all: "10em 2em 0 2em" }}>
+                    <Grid m={[{ all: "16em 0.5em 0 0.5em" }, { all: "16em 4.2em 0 4.2em" }, { all: "10em 2em 0 2em" }]}>
                         <Title alignText={"center"}> MINSKY </Title>
-                        <Body alignText={"right"}>A new technological perspective for your ideas</Body>
+                        <Body alignText={"center"}>A new technological perspective for your ideas</Body>
                         <Grid
                             type={"grid"}
                             justifyItems={"center"}
-                            cols={{ raw: "repeat(3, 1fr)" }}
+                            columnsTemplate={{ raw: "repeat(3, 1fr)" }}
                             gridAutoFlow={"row"}
-                            m={{ x: "1.8em", y: "4em" }}
+                            m={[
+                                { x: "1.8em", y: "0.1em" },
+                                { x: "1.8em", y: "1.8em" }
+                            ]}
                         >
                             {["Linkedin", "Github", "Twitter"].map((socialNet, i) => (
                                 <div key={i}>

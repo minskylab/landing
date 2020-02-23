@@ -1,7 +1,7 @@
 import { JustifyItems, AlignItems, JustifyContent, GridAutoFlow, JustifySelf, AlignSelf, AlignContent } from "./types";
 import { GridBreakpoints } from "./breakpoints";
 
-export type GridType = "block" | "flex" | "grid";
+export type GridType = "block" | "flex" | "grid" | "none";
 
 export type Size = string;
 export type Unit = number;
