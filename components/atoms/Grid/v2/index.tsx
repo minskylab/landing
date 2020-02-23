@@ -41,9 +41,9 @@ const Grid: FC<GridProps> = (props: GridProps) => {
     const padding: string[] = useMemo(() => getPlainEnvelopeFromProps(props.p), [props.p]); // getPlainEnvelopeFromProps(props.p);
     const margin: string[] = useMemo(() => getPlainEnvelopeFromProps(props.m), [props.m]); // getPlainEnvelopeFromProps(props.m);
 
-    const gridAutoFlow: string[] = ["", "", "", ""];
+    const gridAutoFlow: string[] = ["", "", "", ""]; // TODO
 
-    console.log(display);
+    console.log("rowsTemplate ", rowsTemplate);
     return (
         <GridBase
             display={display}

@@ -61,7 +61,9 @@ const BulbLights = () => {
                         // strokeStyle: "black",
                         // lineWidth: 2
                         sprite: {
-                            yOffset: -0.2,
+                            yOffset: -0.16,
+                            xScale: 0.33,
+                            yScale: 0.33,
                             texture: `/images/bulb${i + 2}.png`
                         }
                     }

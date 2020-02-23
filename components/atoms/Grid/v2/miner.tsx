@@ -15,13 +15,13 @@ export const getDisplayFromGridProps = (type: GridType | GridType[]): Array<stri
         return [...type, ...suffix];
     }
 
-    return Array<string>(4).fill(type);
+    return Array<string>(4).fill(type || "block");
 };
 
 // // templates
 const gridTemplateToString = (template: GridTemplate): string => {
     if (template.raw) {
-        return template.raw;
+        return template.raw || "";
     }
 
     return `repeat(${template.parts || 1}, ${template.size || "1fr"})`;
@@ -80,7 +80,7 @@ export const getGapFromProps = (gap: Size | Size[]): Array<string> => {
         return [...gap, ...suffix];
     }
 
-    return Array<string>(4).fill(gap);
+    return Array<string>(4).fill(gap || "");
 };
 
 // // alignment
@@ -105,7 +105,7 @@ export const getJustifyItemsFromProps = (prop: JustifyItems | JustifyItems[]): A
         return [...prop, ...suffix];
     }
 
-    return Array<string>(4).fill(prop);
+    return Array<string>(4).fill(prop || "default");
 };
 
 export const getAlignItemsFromProps = (prop: AlignItems | AlignItems[]): Array<string> => {
@@ -118,7 +118,7 @@ export const getAlignItemsFromProps = (prop: AlignItems | AlignItems[]): Array<s
         return [...prop, ...suffix];
     }
 
-    return Array<string>(4).fill(prop);
+    return Array<string>(4).fill(prop || "default");
 };
 
 export const getJustifyContentFromProps = (prop: JustifyContent | JustifyContent[]): Array<string> => {
@@ -131,7 +131,7 @@ export const getJustifyContentFromProps = (prop: JustifyContent | JustifyContent
         return [...prop, ...suffix];
     }
 
-    return Array<string>(4).fill(prop);
+    return Array<string>(4).fill(prop || "default");
 };
 
 export const getAlignContentFromProps = (prop: AlignContent | AlignContent[]): Array<string> => {
@@ -144,7 +144,7 @@ export const getAlignContentFromProps = (prop: AlignContent | AlignContent[]): A
         return [...prop, ...suffix];
     }
 
-    return Array<string>(4).fill(prop);
+    return Array<string>(4).fill(prop || "default");
 };
 
 export const getJustifySelfFromProps = (prop: JustifySelf | JustifySelf[]): Array<string> => {
@@ -157,7 +157,7 @@ export const getJustifySelfFromProps = (prop: JustifySelf | JustifySelf[]): Arra
         return [...prop, ...suffix];
     }
 
-    return Array<string>(4).fill(prop);
+    return Array<string>(4).fill(prop || "default");
 };
 
 export const getAlignSelfFromProps = (prop: AlignSelf | AlignSelf[]): Array<string> => {
@@ -170,7 +170,7 @@ export const getAlignSelfFromProps = (prop: AlignSelf | AlignSelf[]): Array<stri
         return [...prop, ...suffix];
     }
 
-    return Array<string>(4).fill(prop);
+    return Array<string>(4).fill(prop || "default");
 };
 
 // // paddings and margins
@@ -186,7 +186,7 @@ const envelopeToPlain = (envelope: Envelope): string => {
         return `${envelope.x || 0} ${envelope.y || 0} ${envelope.x || 0} ${envelope.y || 0}`;
     }
 
-    return `${envelope.up} ${envelope.right} ${envelope.bottom} ${envelope.left}`;
+    return `${envelope.top} ${envelope.right} ${envelope.bottom} ${envelope.left}`;
 };
 
 export const getPlainEnvelopeFromProps = (p: Envelope | Envelope[]): Array<string> => {

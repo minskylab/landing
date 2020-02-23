@@ -27,28 +27,26 @@ const Playground = () => {
                 <Simple>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Simple>
             </div>
             <div>
-                {
-                    <Grid
-                        type={["grid", "grid", "grid"]}
-                        columnsTemplate={[
-                            { parts: 2, size: "1fr" },
-                            { parts: 3, size: "1fr" },
-                            { parts: 4, size: "1fr" }
-                        ]}
-                        gridAutoFlow={"row"}
-                        rowsTemplate={{ parts: 10, size: "1fr" }}
-                    >
-                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0001" }}>1</div>
-                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0002" }}>2</div>
-                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0003" }}>3</div>
-                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0004" }}>4</div>
-                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0005" }}>5</div>
-                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0006" }}>6</div>
-                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0007" }}>7</div>
-                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0008" }}>8</div>
-                        <div style={{ height: "200px", width: "100%", backgroundColor: "#0009" }}>9</div>
-                    </Grid>
-                }
+                <Grid
+                    type={"grid"}
+                    columnsTemplate={[
+                        { parts: 2, size: "1fr" }, // sm
+                        { parts: 3, size: "1fr" }, // md
+                        { parts: 4, size: "1fr" } //  lg
+                    ]}
+                    gridAutoFlow={"row"}
+                    rowsTemplate={{ parts: 5, size: "1fr" }}
+                >
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5311" }}>1</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5321" }}>2</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5331" }}>3</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5341" }}>4</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5351" }}>5</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5361" }}>6</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5371" }}>7</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5381" }}>8</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5391" }}>9</div>
+                </Grid>
             </div>
         </div>
     );

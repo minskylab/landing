@@ -7,7 +7,7 @@ export type Size = string;
 export type Unit = number;
 
 export interface GridPosition {
-    from: Unit;
+    from?: Unit;
     to?: Unit;
     how?: Unit;
     raw?: string;
@@ -22,7 +22,7 @@ export interface GridTemplate {
 }
 
 export interface Envelope {
-    up?: Size;
+    top?: Size;
     right?: Size;
     bottom?: Size;
     left?: Size;
