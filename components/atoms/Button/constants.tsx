@@ -32,7 +32,10 @@ export const ButtonTypes: ButtonType = {
 };
 
 export const ButtonSizes: ButtonSize = {
-    normal: { width: "100px", height: "35px" },
-    big: { width: "115px", height: "40px" },
-    compact: { width: "110px", height: "25px" }
+    // normal: { width: "100px", height: "35px" },
+    normal: { width: "fit-content", height: "35px" },
+    // big: { width: "115px", height: "40px" },
+    big: { width: "fit-content", height: "40px" },
+    // compact: { width: "110px", height: "25px" }
+    compact: { width: "fit-content", height: "25px" }
 };

@@ -1,5 +1,5 @@
 // import * as Matter from "matter-js";
 // import { useEffect, useRef } from "react";
-import { BulbLights } from "./BulbLigths";
+import { LightBulbs } from "./LightBulbs";
 
-export { BulbLights };
+export { LightBulbs };

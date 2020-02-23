@@ -43,7 +43,7 @@ const Grid: FC<GridProps> = (props: GridProps) => {
 
     const gridAutoFlow: string[] = ["", "", "", ""]; // TODO
 
-    console.log("rowsTemplate ", rowsTemplate);
+    console.log("justifyContent ", justifyContent);
     return (
         <GridBase
             display={display}
@@ -62,8 +62,10 @@ const Grid: FC<GridProps> = (props: GridProps) => {
             padding={padding}
             margin={margin}
             gridAutoFlow={gridAutoFlow}
-            {...(props as React.Props<HTMLDivElement>)}
-        />
+            // {...(props as React.Props<HTMLDivElement>)}
+        >
+            {props.children}
+        </GridBase>
     );
 };
 

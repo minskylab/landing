@@ -8,7 +8,7 @@ import { Button } from "../components/atoms/Button";
 import VerticalMenu from "../components/atoms/VerticalMenu";
 import { Simple } from "../components/atoms/Text/Simple";
 import Body from "../components/atoms/Text/Body";
-import { BulbLights } from "../components/atoms/Scene/BulbLigths";
+import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
 
 const Background = styled.div`
     z-index: -1;
@@ -33,26 +33,31 @@ const IndexPage: FunctionComponent = () => {
                 <title>Minsky | Home</title>
             </Head>
             <Background>
-                <BulbLights></BulbLights>
+                <LightBulbs></LightBulbs>
             </Background>
             <Grid
                 type={"grid"}
                 columnsTemplate={{ raw: "repeat(3, 1fr)" }}
                 rowsTemplate={{ raw: "repeat(6, auto)" }}
                 // alignItems={"center"}
-                justifyContent={"center"}
+                // justifyItems={"center"}
                 m={{ x: "1.4em", y: "2.4em" }}
             >
-                <Grid cols={{ raw: "1 / span 1" }}>
+                <Grid cols={{ from: 1, how: 1 }}>
                     <VerticalMenu items={items} selectedItem={currentPage}></VerticalMenu>
                 </Grid>
-                <Grid type={"flex"} cols={{ raw: "2 / span 1" }} justifyContent={"center"}>
+                <Grid type={"flex"} cols={{ from: 2, how: 1 }} justifyContent={"center"}>
                     <MinskyLogo />
                 </Grid>
                 <Grid type={"flex"} cols={{ raw: "3 / span 1" }} justifyContent={"flex-end"}>
-                    <Button primary>Contact Us</Button>
+                    <Grid m={{ right: "1.2rem" }}>
+                        <Button minsky>Are you a developer?</Button>
+                    </Grid>
+                    <Grid>
+                        <Button primary>Contact Us</Button>
+                    </Grid>
                 </Grid>
-                <Grid rows={{ raw: "2 / span 1" }} cols={{ raw: "2 / span 1" }}>
+                <Grid rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
                     <Grid m={{ all: "10em 2em 0 2em" }}>
                         <Title alignText={"center"}> MINSKY </Title>
                         <Body alignText={"right"}>A new technological perspective for your ideas</Body>
@@ -79,7 +84,7 @@ const IndexPage: FunctionComponent = () => {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid rows={{ raw: "3 / span 1" }} cols={{ raw: "2 / span 1" }} m={{ top: "10em" }}>
+                <Grid rows={{ from: 3, how: 1 }} cols={{ from: 2, how: 1 }} m={{ top: "10em" }}>
                     <Grid type={"flex"} justifyContent={"center"}>
                         <Grid>
                             <Simple>Learn more</Simple>

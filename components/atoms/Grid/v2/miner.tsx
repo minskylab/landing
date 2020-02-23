@@ -186,7 +186,7 @@ const envelopeToPlain = (envelope: Envelope): string => {
         return `${envelope.x || 0} ${envelope.y || 0} ${envelope.x || 0} ${envelope.y || 0}`;
     }
 
-    return `${envelope.top} ${envelope.right} ${envelope.bottom} ${envelope.left}`;
+    return `${envelope.top || "0"} ${envelope.right || "0"} ${envelope.bottom || "0"} ${envelope.left || "0"}`;
 };
 
 export const getPlainEnvelopeFromProps = (p: Envelope | Envelope[]): Array<string> => {

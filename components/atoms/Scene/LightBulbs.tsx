@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 
 // TODO (bregydoc) make a automatic resize performing a good algorithm
 
-const BulbLights = () => {
+const LightBulbs = () => {
     const ref = useRef();
     useEffect(() => {
         const w = window.innerWidth;
@@ -103,4 +103,4 @@ const BulbLights = () => {
     return <div ref={ref} />;
 };
 
-export { BulbLights };
+export { LightBulbs };

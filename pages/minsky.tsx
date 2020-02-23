@@ -3,7 +3,7 @@ import Head from "next/head";
 // import { styled } from "linaria/react";
 import Grid from "../components/atoms/Grid";
 // import { Scene } from "../components/atoms/Scene";
-import { BulbLights } from "../components/atoms/Scene/BulbLigths";
+import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
 
 const IndexPage: FC = () => {
     return (
@@ -13,7 +13,7 @@ const IndexPage: FC = () => {
             </Head>
 
             <Grid flex>
-                <BulbLights></BulbLights>
+                <LightBulbs></LightBulbs>
             </Grid>
         </div>
     );
