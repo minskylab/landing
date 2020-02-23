@@ -65,7 +65,6 @@ const IndexPage: FunctionComponent = () => {
                     <LightBulbs></LightBulbs>
                 </Background>
             )}
-            {/* <div>b</div> */}
             <Grid
                 debug={DEBUG_MODE}
                 type={["block", "block", "grid"]}
@@ -76,8 +75,26 @@ const IndexPage: FunctionComponent = () => {
                 <Grid debug={DEBUG_MODE} type={["none", "none", "block"]} cols={{ from: 1, how: 1 }}>
                     <VerticalMenu items={items} selectedItem={currentPage} compact={topBarShow}></VerticalMenu>
                 </Grid>
-                <Grid debug={DEBUG_MODE} type={"flex"} cols={{ from: 2, how: 1 }} justifyContent={"center"}>
-                    <MinskyLogo />
+                <Grid debug={DEBUG_MODE} type={"block"} cols={{ from: 2, how: 1 }}>
+                    <Grid
+                        debug={DEBUG_MODE}
+                        type={["grid", "none", "none"]}
+                        columnsTemplate={{ parts: 3, size: "1fr" }}
+                        alignItems={"start"}
+                    >
+                        <Grid cols={{ from: 1, how: 1 }}>
+                            <MenuIcon />
+                        </Grid>
+                        <Grid
+                            debug={DEBUG_MODE}
+                            type={"flex"}
+                            cols={{ from: 2, how: 1 }}
+                            alignItems={"start"}
+                            justifyContent={"center"}
+                        >
+                            <MinskyLogo />
+                        </Grid>
+                    </Grid>
                     <div ref={trigger}></div>
                 </Grid>
                 <Grid
@@ -103,13 +120,7 @@ const IndexPage: FunctionComponent = () => {
                         <Grid debug={DEBUG_MODE} alignItems={"start"}>
                             <MenuIcon />
                         </Grid>
-                        <Grid
-                            debug={DEBUG_MODE}
-                            alignItems={"start"}
-                            type={"flex"}
-                            justifyContent={"center"}
-                            // m={{ top: "0.9em" }}
-                        >
+                        <Grid debug={DEBUG_MODE} alignItems={"start"} type={"flex"} justifyContent={"center"}>
                             <MinskyLogo />
                         </Grid>
                         <Grid debug={DEBUG_MODE} type={["none", "none", "flex"]} justifyContent={"flex-end"}>
