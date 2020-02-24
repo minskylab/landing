@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from "../../../components/molecules/cards";
+import { VerticalCard } from "../../../components/molecules/cards/serviceCard";
 import { Grid } from "../../../components/atoms/Grid/v2";
 import { styled } from 'linaria/react';
 
@@ -49,7 +49,7 @@ const Playground = (props: React.AllHTMLAttributes<any>) => {
                     <Grid columnsTemplate={[{parts:4}]} type={"flex"} p={{x:"2em"}} debug={DEBUG}>
                         {
                             items.map(value=>{
-                                return <Card body={value.body} icon={value.icon} title={value.title} ></Card>
+                                return <VerticalCard body={value.body} icon={value.icon} title={value.title} ></VerticalCard>
                             })
                         }
                     </Grid>
