@@ -44,6 +44,8 @@ export const CardServices = () => {
                         ]}
                         gridAutoFlow={"row"}
                         rowsTemplate={{ parts: 4, size: "1fr" }}
+
+                        columnGap="1em"
                         p={{ x: "2em",y:"2em" }} 
                         debug={DEBUG} >
                         {items.map(value => {
