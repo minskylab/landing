@@ -9,30 +9,19 @@ import { TextTypes } from "../../atoms/Text/constants";
 import { Values, Wrapper, MiniWrapper } from "./constants";
 
 const HorizontalCard: FC<Values> = (props: Values) => {
-    const DEBUG_MODE = false;
+    const DEBUG_MODE = true;
     return (
         <Wrapper {...props} as="div" height={"auto"}>
-            <Grid debug={DEBUG_MODE} type={"grid"} colsTemplate={{ parts: 2 }} p={{x:"2em"}} gridAutoFlow={"row"}>
-                <MiniWrapper height={"6em"}>
-                    <Grid gridAutoFlow={"row"} rowsTemplate={{ parts: 2 }} debug={DEBUG_MODE}>
-                        <MiniWrapper height="2.5em" style={{ display: "flex", alignItems: "start" }}>
-                            <Text type={TextTypes.h2}> {props.title}</Text>
-                        </MiniWrapper>
-                        <MiniWrapper height="2.5em" style={{ display: "flex", alignItems: "center" }}>
-                            <Body> {props.body} </Body>
-                        </MiniWrapper>
-                    </Grid>
-                </MiniWrapper>
-                <MiniWrapper height={"6em"}>
-                    <MiniWrapper height="2em"></MiniWrapper>
-                    <MiniWrapper
-                        height="2em"
-                        style={{ justifyContent: "flex-end", display: "flex", alignItems: "center" }}
-                    >
-                        {props.icon}
-                    </MiniWrapper>
-                    <MiniWrapper height="2em"></MiniWrapper>
-                </MiniWrapper>
+            <Grid debug={DEBUG_MODE} type={"grid"} colsTemplate={{ parts: 2 }} rowsTemplate={{parts:3}}>
+                <Grid rows={{from:1,to:2}} cols={{from:1, to:2}}>
+
+                </Grid>
+                <Grid rows={{from:2,to:3}} cols={{from:1, to:2}}>
+
+                </Grid>         
+                <Grid rows={{from:3,to:4}} cols={{from:2, to:3}}>
+
+                </Grid>
             </Grid>
         </Wrapper>
     );

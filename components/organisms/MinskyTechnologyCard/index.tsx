@@ -22,9 +22,9 @@ export const CardTechnologys = () => {
                     <Text type={TextTypes.h4}> Our Technology </Text>
                 </MiniWrapper>
             </Grid>
-            <Grid type={"flex"} debug={DEBUG} colsTemplate={{ parts: 2 }}>
-                <MiniWrapper height={"23em"} style={{ width: "70%" }}>
-                    <Grid m={{ top: "2em" }} type={"block"}>
+            <Grid type={"flex"} debug={DEBUG} colsTemplate={{ parts: 2 }} >
+                <MiniWrapper height={"auto"} style={{ width: "70%" }}>
+                    <Grid m={{ top: "2em" }} type={"grid"} rowGap="0.1em" columnGap="0.5em" rowsTemplate={{ parts: 3, size: "1fr" }} colsTemplate={{parts:1}}>
                         {items.map(value => {
                             return (
                                 <HorizontalCard
