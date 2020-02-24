@@ -7,6 +7,7 @@ const CustomInput = (props: TextProps) => styled(props.type.as)`
     font-size: ${props => props.type.size};
     color: ${props => props.color};
     text-align: ${props => props.alignText};
+    line-height: 1.2em;
 `;
 
 export interface TextProps {

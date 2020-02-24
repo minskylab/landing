@@ -13,7 +13,7 @@ const TitleWrapper = styled.div`
 `;
 const BodyWrapper = styled.div`
     width: 100%;
-    height: 25em;
+    height: 23em;
 `;
 
 const DEBUG = false;
@@ -35,7 +35,17 @@ export const CardServices = () => {
                     </Text>
                 </TitleWrapper>
                 <BodyWrapper>
-                    <Grid colsTemplate={[{ parts: 4 }]} type={"flex"} p={{ x: "2em" }} debug={DEBUG}>
+                    <Grid   
+                        type={"grid"}
+                        colsTemplate={[
+                            { parts: 1, size: "1fr" }, // sm
+                            { parts: 2, size: "1fr" }, // md
+                            { parts: 4, size: "1fr" } //  lg
+                        ]}
+                        gridAutoFlow={"row"}
+                        rowsTemplate={{ parts: 4, size: "1fr" }}
+                        p={{ x: "2em",y:"2em" }} 
+                        debug={DEBUG} >
                         {items.map(value => {
                             return (
                                 <VerticalCard body={value.body} icon={value.icon} title={value.title}></VerticalCard>

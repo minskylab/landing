@@ -11,8 +11,8 @@ import { Values, Wrapper, MiniWrapper } from "./constants";
 const HorizontalCard: FC<Values> = (props: Values) => {
     const DEBUG_MODE = false;
     return (
-        <Wrapper {...props} as="div" height={"6em"}>
-            <Grid debug={DEBUG_MODE} type={"grid"} colsTemplate={{ parts: 2 }} p={{ y: "2em" }} gridAutoFlow={"row"}>
+        <Wrapper {...props} as="div" height={"auto"}>
+            <Grid debug={DEBUG_MODE} type={"grid"} colsTemplate={{ parts: 2 }} p={{x:"2em"}} gridAutoFlow={"row"}>
                 <MiniWrapper height={"6em"}>
                     <Grid gridAutoFlow={"row"} rowsTemplate={{ parts: 2 }} debug={DEBUG_MODE}>
                         <MiniWrapper height="2.5em" style={{ display: "flex", alignItems: "start" }}>
