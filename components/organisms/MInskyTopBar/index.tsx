@@ -10,6 +10,7 @@ interface MinskyTopBarContainerProps {
 }
 
 const MinskyTopBarContainer = styled.div<MinskyTopBarContainerProps>`
+    z-index: 10;
     position: ${props => (props.showing ? "fixed" : "fixed")};
     top: ${props => (props.showing ? "0em" : "-4em")};
     opacity: ${props => (props.showing ? "100%" : "0")};
