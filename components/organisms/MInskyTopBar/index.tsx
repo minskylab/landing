@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { styled } from "linaria/react";
 
-interface TopBarContainerProps {
+interface MinskyTopBarContainerProps {
     showing?: boolean;
 }
 
-const TopBarContainer = styled.div<TopBarContainerProps>`
+const MinskyTopBarContainer = styled.div<MinskyTopBarContainerProps>`
     position: ${props => (props.showing ? "fixed" : "fixed")};
     top: ${props => (props.showing ? "0em" : "-4em")};
     opacity: ${props => (props.showing ? "100%" : "0")};
@@ -16,12 +16,12 @@ const TopBarContainer = styled.div<TopBarContainerProps>`
     transition: 0.1s;
 `;
 
-interface TopBarProps {
+interface MinskyTopBarProps {
     active: boolean;
     children?: any;
 }
-const TopBar: FC<TopBarProps> = (props: TopBarProps) => {
-    return <TopBarContainer showing={props.active}>{props.children}</TopBarContainer>;
+const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
+    return <MinskyTopBarContainer showing={props.active}>{props.children}</MinskyTopBarContainer>;
 };
 
-export default TopBar;
+export default MinskyTopBar;

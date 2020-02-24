@@ -120,7 +120,7 @@ const GridBase = styled.div<GridBaseProps>`
         margin: ${props => props.margin[3] || props.margin[0]};
     }
 
-    border: ${props => (props.debug ? "solid red 0.5px" : "none")};
+    border: ${props => (props.debug ? "solid #ff6445 0.5px" : "none")};
 
     transition: 0.3s;
 `;

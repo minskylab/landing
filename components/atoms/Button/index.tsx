@@ -7,7 +7,7 @@ const CustomButtom = styled.button<ButtonProps & React.StyleHTMLAttributes<any>>
     width: ${props => (props.size.width ? props.size.width : props.style.width)};
     height: ${props => (props.size.height ? props.size.height : props.style.height)};
     font-size: 16px;
-    padding: 0 1.2rem;
+    padding: 0 0.8rem;
     background: ${props =>
         props.isDisable ? "#D7D7D7" : props.isSelect ? props.kind.onHover : props.kind.backgroundColor};
     color: ${props => (props.isSelect ? props.kind.onHoverText : props.kind.fontColor)};
@@ -20,7 +20,7 @@ const CustomButtom = styled.button<ButtonProps & React.StyleHTMLAttributes<any>>
         background: ${props => (props.isDisable ? "#D7D7D7" : props.kind.onHover)};
         color: ${props => props.kind.onHoverText};
     }
-
+    text-overflow: ellipsis;
     outline: none;
 `;
 

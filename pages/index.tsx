@@ -3,13 +3,13 @@ import { styled } from "linaria/react";
 import Head from "next/head";
 import Title from "../components/atoms/Text/Title";
 import { Grid } from "../components/atoms/Grid/v2";
-import { MinskyLogo, MenuIcon } from "../components/atoms/Icon/icons";
+import { MinskyLogoIcon, MenuIcon } from "../components/atoms/Icon/icons";
 import { Button } from "../components/atoms/Button";
 import VerticalMenu from "../components/atoms/VerticalMenu";
 import { Simple } from "../components/atoms/Text/Simple";
 import Body from "../components/atoms/Text/Body";
 import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
-import TopBar from "../components/organisms/MInskyTopBar";
+import MinskyTopBar from "../components/organisms/MInskyTopBar";
 
 const Background = styled.div`
     z-index: -1;
@@ -65,7 +65,6 @@ const IndexPage: FunctionComponent = () => {
                     <LightBulbs></LightBulbs>
                 </Background>
             )}
-            {/* <div>b</div> */}
             <Grid
                 debug={DEBUG_MODE}
                 type={["block", "block", "grid"]}
@@ -76,8 +75,26 @@ const IndexPage: FunctionComponent = () => {
                 <Grid debug={DEBUG_MODE} type={["none", "none", "block"]} cols={{ from: 1, how: 1 }}>
                     <VerticalMenu items={items} selectedItem={currentPage} compact={topBarShow}></VerticalMenu>
                 </Grid>
-                <Grid debug={DEBUG_MODE} type={"flex"} cols={{ from: 2, how: 1 }} justifyContent={"center"}>
-                    <MinskyLogo />
+                <Grid debug={DEBUG_MODE} type={"block"} cols={{ from: 2, how: 1 }}>
+                    <Grid
+                        debug={DEBUG_MODE}
+                        type={["grid", "none", "none"]}
+                        columnsTemplate={{ parts: 3, size: "1fr" }}
+                        alignItems={"start"}
+                    >
+                        <Grid cols={{ from: 1, how: 1 }}>
+                            <MenuIcon />
+                        </Grid>
+                        <Grid
+                            debug={DEBUG_MODE}
+                            type={"flex"}
+                            cols={{ from: 2, how: 1 }}
+                            alignItems={"start"}
+                            justifyContent={"center"}
+                        >
+                            <MinskyLogoIcon />
+                        </Grid>
+                    </Grid>
                     <div ref={trigger}></div>
                 </Grid>
                 <Grid
@@ -93,7 +110,7 @@ const IndexPage: FunctionComponent = () => {
                         <Button primary>Contact Us</Button>
                     </Grid>
                 </Grid>
-                <TopBar active={topBarShow}>
+                <MinskyTopBar active={topBarShow}>
                     <Grid
                         debug={DEBUG_MODE}
                         type={"grid"}
@@ -103,14 +120,8 @@ const IndexPage: FunctionComponent = () => {
                         <Grid debug={DEBUG_MODE} alignItems={"start"}>
                             <MenuIcon />
                         </Grid>
-                        <Grid
-                            debug={DEBUG_MODE}
-                            alignItems={"start"}
-                            type={"flex"}
-                            justifyContent={"center"}
-                            // m={{ top: "0.9em" }}
-                        >
-                            <MinskyLogo />
+                        <Grid debug={DEBUG_MODE} alignItems={"start"} type={"flex"} justifyContent={"center"}>
+                            <MinskyLogoIcon />
                         </Grid>
                         <Grid debug={DEBUG_MODE} type={["none", "none", "flex"]} justifyContent={"flex-end"}>
                             <Grid debug={DEBUG_MODE} m={{ right: "1.2rem" }}>
@@ -121,7 +132,7 @@ const IndexPage: FunctionComponent = () => {
                             </Grid>
                         </Grid>
                     </Grid>
-                </TopBar>
+                </MinskyTopBar>
                 <Grid debug={DEBUG_MODE} rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
                     <Grid
                         debug={DEBUG_MODE}

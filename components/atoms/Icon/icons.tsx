@@ -6,7 +6,7 @@ export interface SVGIconProps {
     color?: string;
 }
 
-export const MinskyLogo: FC<SVGIconProps> = (props: SVGIconProps) => {
+export const MinskyLogoIcon: FC<SVGIconProps> = (props: SVGIconProps) => {
     return (
         <svg
             width={`${props.width || 41}`}
