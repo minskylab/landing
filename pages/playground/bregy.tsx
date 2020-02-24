@@ -7,6 +7,7 @@ import Subtitle from "../../components/atoms/Text/Subtitle";
 import Body from "../../components/atoms/Text/Body";
 import { Simple } from "../../components/atoms/Text/Simple";
 import { Grid } from "../../components/atoms/Grid/v2";
+import MinskyTopBar from "../../components/organisms/MInskyTopBar";
 
 const Playground = () => {
     return (
@@ -14,6 +15,7 @@ const Playground = () => {
             <Head>
                 <title>Minsky | Lab</title>
             </Head>
+            <MinskyTopBar active={true} />
             <div>
                 <Text type={TextTypes.title}>Hello World</Text>
                 <Text type={TextTypes.subtitle}>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Text>
@@ -29,7 +31,7 @@ const Playground = () => {
             <div>
                 <Grid
                     type={"grid"}
-                    columnsTemplate={[
+                    colsTemplate={[
                         { parts: 2, size: "1fr" }, // sm
                         { parts: 3, size: "1fr" }, // md
                         { parts: 4, size: "1fr" } //  lg

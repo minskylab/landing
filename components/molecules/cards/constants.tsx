@@ -14,13 +14,12 @@ export const Wrapper = styled.div<Values>`
         -moz-box-shadow: 0px 0px 16px -6px rgba(0,0,0,0.51);
         box-shadow: 0px 0px 16px -6px rgba(0,0,0,0.51);
     }
-
 `
 
 
 export const GlobalWrapper = styled.div`
     width:100%;
-    height: 30rem;
+
 `
 
 export const MiniWrapper = styled.div<Values & React.AllHTMLAttributes<any>>`

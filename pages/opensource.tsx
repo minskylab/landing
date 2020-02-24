@@ -7,6 +7,7 @@ const IndexPage: FunctionComponent = () => {
         <div>
             <Head>
                 <title>Minsky | Open Source</title>
+                <meta name="theme-color" content="#ffdf53" />
             </Head>
             <div>
                 <MinskyMenu></MinskyMenu>

@@ -9,9 +9,12 @@ import VerticalMenu from "../components/atoms/VerticalMenu";
 import { Simple } from "../components/atoms/Text/Simple";
 import Body from "../components/atoms/Text/Body";
 import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
+import TopBar from "../components/organisms/MInskyTopBar";
+import LinkedIn from "../components/atoms/Icon/LinkedIn";
+import ColorTypes from "../components/atoms/Colors";
 import MinskyTopBar from "../components/organisms/MInskyTopBar";
-import {CardServices} from "../components/organisms/MinskyServiceCard/index"
-import {CardTechnologys} from "../components/organisms/MinskyTechnologyCard/index"
+import { CardServices } from "../components/organisms/MinskyServiceCard/index";
+import { CardTechnologys } from "../components/organisms/MinskyTechnologyCard/index";
 
 const Background = styled.div`
     z-index: -1;
@@ -62,6 +65,7 @@ const IndexPage: FunctionComponent = () => {
         <div>
             <Head>
                 <title>Minsky | Home</title>
+                <meta name="theme-color" content="#ffdf53" />
             </Head>
             {renderPhysics && (
                 <Background>
@@ -71,7 +75,7 @@ const IndexPage: FunctionComponent = () => {
             <Grid
                 debug={DEBUG_MODE}
                 type={["block", "block", "grid"]}
-                columnsTemplate={{ raw: "repeat(3, 1fr)" }}
+                colsTemplate={{ raw: "repeat(3, 1fr)" }}
                 rowsTemplate={{ raw: "repeat(6, auto)" }}
                 m={{ x: "2.4em", y: "2.4em" }}
             >
@@ -82,7 +86,7 @@ const IndexPage: FunctionComponent = () => {
                     <Grid
                         debug={DEBUG_MODE}
                         type={["grid", "none", "none"]}
-                        columnsTemplate={{ parts: 3, size: "1fr" }}
+                        colsTemplate={{ parts: 3, size: "1fr" }}
                         alignItems={"start"}
                     >
                         <Grid cols={{ from: 1, how: 1 }}>
@@ -117,7 +121,7 @@ const IndexPage: FunctionComponent = () => {
                     <Grid
                         debug={DEBUG_MODE}
                         type={"grid"}
-                        columnsTemplate={{ parts: 3, size: "1fr" }}
+                        colsTemplate={{ parts: 3, size: "1fr" }}
                         m={{ x: "1.4em", y: "2.86em" }}
                     >
                         <Grid debug={DEBUG_MODE} alignItems={"start"}>
@@ -147,7 +151,7 @@ const IndexPage: FunctionComponent = () => {
                             debug={DEBUG_MODE}
                             type={"grid"}
                             justifyItems={"center"}
-                            columnsTemplate={{ raw: "repeat(3, 1fr)" }}
+                            colsTemplate={{ raw: "repeat(3, 1fr)" }}
                             gridAutoFlow={"row"}
                             m={[
                                 { x: "1.8em", y: "0.1em" },
@@ -195,13 +199,12 @@ const IndexPage: FunctionComponent = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{x:"2rem",y:"4rem"}]}>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "2rem", y: "4rem" }]}>
                 <CardServices></CardServices>
             </Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{x:"2rem",y:"4rem"}]}>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "2rem", y: "4rem" }]}>
                 <CardTechnologys></CardTechnologys>
             </Grid>
-            
         </div>
     );
 };

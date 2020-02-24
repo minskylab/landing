@@ -8,7 +8,15 @@ import { Button } from "../../atoms/Button";
 const Wrapper = styled.div`
     width: 100%;
     background-color: #ffdf53;
-    /* max-width: 28em; */
+
+    border-radius: 0 0 1.4em 1.4em;
+    /* border: solid #1b1b1b 0.1em; */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 `;
 
 const items = [
@@ -23,13 +31,17 @@ const MinskyMenu = () => {
         <Wrapper>
             <Grid
                 type={"grid"}
-                columnsTemplate={{ parts: 3, size: "auto" }}
+                colsTemplate={{ parts: 3, size: "auto" }}
                 rowsTemplate={{ parts: 3, size: "auto" }}
-                p={{ all: "0.8em" }}
+                p={[
+                    { x: "1em", y: "1em" },
+                    { x: "1.4em", y: "1.4em" },
+                    { x: "1.6em", y: "1.6em" }
+                ]}
             >
                 <Grid
                     type={"grid"}
-                    columnsTemplate={{ parts: 3, size: "1fr" }}
+                    colsTemplate={{ parts: 3, size: "1fr" }}
                     cols={{ from: 1, how: 3 }}
                     rows={{ from: 1, how: 1 }}
                     alignItems={"start"}
@@ -42,7 +54,7 @@ const MinskyMenu = () => {
                         <MinskyLogoIcon />
                     </Grid>
                 </Grid>
-                <Grid cols={{ from: 1, to: 2 }} rows={{ from: 2, how: 1 }}>
+                <Grid type={"flex"} cols={{ from: 1, to: 2 }} rows={{ from: 2, how: 1 }} alignItems={"end"}>
                     <VerticalMenu items={items} selectedItem={"home"} />
                 </Grid>
                 <Grid
@@ -51,7 +63,8 @@ const MinskyMenu = () => {
                     rows={{ from: 2, how: 1 }}
                     alignItems={"end"}
                     rowsTemplate={{ parts: 2, size: "1fr" }}
-                    p={{ bottom: "1em", top: "2.6em" }}
+                    p={{ bottom: "0em", top: "2.4em" }}
+                    m={{ bottom: "0.5em" }}
                 >
                     <Grid type={"flex"} rows={{ from: 2, how: 1 }} justifyContent={"flex-end"}>
                         <Button primary>Contact Us</Button>

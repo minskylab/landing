@@ -9,9 +9,9 @@ const Fonts = () => {
 
     document.head.appendChild(link);
 
-    const roboto = new FontFaceObserver("Karla");
+    const karla = new FontFaceObserver("Karla");
 
-    roboto.load().then(() => {
+    karla.load().then(() => {
         document.documentElement.classList.add("karla");
     });
 };

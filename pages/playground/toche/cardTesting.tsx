@@ -1,14 +1,13 @@
 import React from "react";
-import { HorizontalCard } from "../../../components/molecules/cards/technologyCard";
-
-
+import { VerticalCard } from "../../../components/molecules/cards/serviceCard";
 
 const Playground = () => {
-
-
-    
     return (
-            <HorizontalCard icon="ASdasdas" title="ASdasdadas" body="sdasdasdasd asdasd asdasdasd asdasd asdasdas asdasd sadasdad asdasda asdasd"></HorizontalCard>
+        <VerticalCard
+            icon="ASdasdas"
+            title="ASdasdadas"
+            body="sdasdasdasd asdasd asdasdasd asdasd asdasdas asdasd sadasdad asdasda asdasd"
+        ></VerticalCard>
     );
 };
 
