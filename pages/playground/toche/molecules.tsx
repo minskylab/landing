@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "../../../components/molecules/cards/card";
+import { Card } from "../../../components/molecules/cards/serviceCard";
 
 import { Grid } from "../../../components/atoms/Grid/v2";
 
