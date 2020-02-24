@@ -25,7 +25,7 @@ interface Values {
 
 const Card: FC<Values & React.AllHTMLAttributes<any>> = (props: Values & React.AllHTMLAttributes<any>) => {
 
-    const DEBUG_MODE = false;
+    const DEBUG_MODE = true;
     return (
         <Wrapper {...props} as="div">
             <Grid debug={DEBUG_MODE} rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
