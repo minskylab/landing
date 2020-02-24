@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { SVGIcon, SVGIconProps } from "./SVGIcon";
 
-const LinkedIn: FC<React.HTMLAttributes<any>> = (props: SVGIconProps & React.HTMLAttributes<any>) => {
+const LinkedIn: FC<SVGIconProps & React.HTMLAttributes<any>> = (props: SVGIconProps & React.HTMLAttributes<any>) => {
 	return (
 		<SVGIcon {...props}>
 			<path

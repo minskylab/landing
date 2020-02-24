@@ -150,7 +150,7 @@ const IndexPage: FunctionComponent = () => {
 											backgroundColor: "#1a1d25"
 										}}
 									/> */}
-									<LinkedIn sizeWidth={23} />
+									<LinkedIn sizeWidth={23} sizeHeight={23} color={"yellow"} />
 									<Simple alignText={"center"}>{socialNet}</Simple>
 								</div>
 							))}
@@ -197,7 +197,7 @@ const IndexPage: FunctionComponent = () => {
 			<Grid
 				debug={DEBUG_MODE}
 				type={[ "block", "block", "grid" ]}
-				colsTemplate={{ raw: "repeat(3, 1fr)" }}
+				columnsTemplate={{ raw: "repeat(3, 1fr)" }}
 				rowsTemplate={{ raw: "repeat(6, auto)" }}
 				m={{ x: "2.4em", y: "2.4em" }}
 			>
@@ -208,7 +208,7 @@ const IndexPage: FunctionComponent = () => {
 					<Grid
 						debug={DEBUG_MODE}
 						type={[ "grid", "none", "none" ]}
-						colsTemplate={{ parts: 3, size: "1fr" }}
+						columnsTemplate={{ parts: 3, size: "1fr" }}
 						alignItems={"start"}
 					>
 						<Grid cols={{ from: 1, how: 1 }}>
@@ -243,7 +243,7 @@ const IndexPage: FunctionComponent = () => {
 					<Grid
 						debug={DEBUG_MODE}
 						type={"grid"}
-						colsTemplate={{ parts: 3, size: "1fr" }}
+						columnsTemplate={{ parts: 3, size: "1fr" }}
 						m={{ x: "1.4em", y: "2.86em" }}
 					>
 						<Grid debug={DEBUG_MODE} alignItems={"start"}>
@@ -273,7 +273,7 @@ const IndexPage: FunctionComponent = () => {
 							debug={DEBUG_MODE}
 							type={"grid"}
 							justifyItems={"center"}
-							colsTemplate={{ raw: "repeat(3, 1fr)" }}
+							columnsTemplate={{ raw: "repeat(3, 1fr)" }}
 							gridAutoFlow={"row"}
 							m={[ { x: "1.8em", y: "0.1em" }, { x: "1.8em", y: "1.8em" } ]}
 						>
