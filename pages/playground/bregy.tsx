@@ -37,7 +37,7 @@ const Playground = () => {
                         { parts: 4, size: "1fr" } //  lg
                     ]}
                     gridAutoFlow={"row"}
-                    rowsTemplate={{ parts: 5, size: "1fr" }}
+                    rowsTemplate={{ parts: 4, size: "1fr" }}
                 >
                     <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5311" }}>1</div>
                     <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5321" }}>2</div>
@@ -47,7 +47,8 @@ const Playground = () => {
                     <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5361" }}>6</div>
                     <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5371" }}>7</div>
                     <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5381" }}>8</div>
-                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5391" }}>9</div>
+                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5381" }}>8</div>
+
                 </Grid>
             </div>
         </div>
