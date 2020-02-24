@@ -28,6 +28,7 @@ export const CardServices = () => {
         {icon: "as", title:"Web and Mobile Development", body:"We specialise in delivering end-to-end services." },
         {icon: "as", title:"DevOps and Cloud", body:"We use modern microservices approach for your software."}
     ]
+  
     //USE MOBILE === true ? "BLOCK" : "FLEX" LINE 49 ON "TYPE"
     return(
         <GlobalWrapper>

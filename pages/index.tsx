@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect, useRef, useLayoutEffect } from "react";
+import React, { FunctionComponent, useState, useEffect, useRef, useLayoutEffect, useContext } from "react";
 import { styled } from "linaria/react";
 import Head from "next/head";
 import Title from "../components/atoms/Text/Title";
@@ -56,6 +56,7 @@ const IndexPage: FunctionComponent = () => {
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
+
 
     return (
         <div>

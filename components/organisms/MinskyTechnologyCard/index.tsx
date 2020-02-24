@@ -4,7 +4,7 @@ import { Grid } from "../../../components/atoms/Grid/v2";
 
 import { Text } from "../../../components/atoms/Text/index";
 import { TextTypes } from "../../../components/atoms/Text/constants"
-import { ContentServiceCards , GlobalWrapper, MiniWrapper} from "../../molecules/cards/constants"
+import { ContentServiceCards , GlobalWrapper, MiniWrapper} from "../../../components/molecules/cards/constants"
 
 
 
@@ -17,6 +17,8 @@ export const CardTechnologys = () => {
         {icon: "as", title:"Just for fun", body:"Developing everything." }
     ]
     //USE MOBILE === true ? "BLOCK" : "FLEX" LINE 49 ON "TYPE"
+
+    
     return(
         <GlobalWrapper>
             <Grid type={"flex"} rows={{raw:"1"}} debug={DEBUG}>
