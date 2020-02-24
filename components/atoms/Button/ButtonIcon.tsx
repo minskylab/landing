@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { SVGIconProps } from "../Icon/icons";
+import { SVGIconProps } from "../Icon/SVGIcon";
 import { styled } from "linaria/react";
 
 const ButtonWrap = styled.div`

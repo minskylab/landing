@@ -13,52 +13,52 @@ import TopBar from "../components/organisms/MInskyTopBar";
 import LinkedIn from "../components/atoms/Icon/LinkedIn";
 import ColorTypes from "../components/atoms/Colors";
 import MinskyTopBar from "../components/organisms/MInskyTopBar";
-import {CardServices} from "../components/organisms/MinskyServiceCard/index"
-import {CardTechnologys} from "../components/organisms/MinskyTechnologyCard/index"
+import { CardServices } from "../components/organisms/MinskyServiceCard/index";
+import { CardTechnologys } from "../components/organisms/MinskyTechnologyCard/index";
 
 const Background = styled.div`
-	z-index: -1;
-	position: absolute;
-	top: 0;
-	left: 0;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
 `;
 
 const items = [
-	{ key: "home", name: "Home" },
-	{ key: "services", name: "Our Services" },
-	{ key: "team", name: "Our Team" },
-	{ key: "technologies", name: "Our Technologies" }
+    { key: "home", name: "Home" },
+    { key: "services", name: "Our Services" },
+    { key: "team", name: "Our Team" },
+    { key: "technologies", name: "Our Technologies" }
 ];
 
 const DEBUG_MODE = true;
 
 const IndexPage: FunctionComponent = () => {
-	const [ currentPage, setCurrentPage ] = useState<string>("home");
-	const [ renderPhysics, setRenderPhysics ] = useState<boolean>(false);
-	const [ topBarShow, setTopBarShow ] = useState<boolean>(false);
+    const [currentPage, setCurrentPage] = useState<string>("home");
+    const [renderPhysics, setRenderPhysics] = useState<boolean>(false);
+    const [topBarShow, setTopBarShow] = useState<boolean>(false);
 
-	useEffect(() => {
-		if (window.innerWidth > 970) {
-			setRenderPhysics(true);
-		}
-	}, []);
+    useEffect(() => {
+        if (window.innerWidth > 970) {
+            setRenderPhysics(true);
+        }
+    }, []);
 
-	const trigger = useRef(null);
+    const trigger = useRef(null);
 
-	useLayoutEffect(() => {
-		const offset = 28;
-		const topPosition = trigger.current.getBoundingClientRect().top + offset;
-		const onScroll = () => {
-			const scrollPosition = window.scrollY; //+ window.innerHeight;
-			if (topPosition < scrollPosition) {
-				return setTopBarShow(true);
-			}
-			return setTopBarShow(false);
-		};
+    useLayoutEffect(() => {
+        const offset = 28;
+        const topPosition = trigger.current.getBoundingClientRect().top + offset;
+        const onScroll = () => {
+            const scrollPosition = window.scrollY; //+ window.innerHeight;
+            if (topPosition < scrollPosition) {
+                return setTopBarShow(true);
+            }
+            return setTopBarShow(false);
+        };
 
-		window.addEventListener("scroll", onScroll);
-		return () => window.removeEventListener("scroll", onScroll);
-	}, []);
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     return (
         <div>
@@ -74,7 +74,7 @@ const IndexPage: FunctionComponent = () => {
             <Grid
                 debug={DEBUG_MODE}
                 type={["block", "block", "grid"]}
-                columnsTemplate={{ raw: "repeat(3, 1fr)" }}
+                colsTemplate={{ raw: "repeat(3, 1fr)" }}
                 rowsTemplate={{ raw: "repeat(6, auto)" }}
                 m={{ x: "2.4em", y: "2.4em" }}
             >
@@ -85,7 +85,7 @@ const IndexPage: FunctionComponent = () => {
                     <Grid
                         debug={DEBUG_MODE}
                         type={["grid", "none", "none"]}
-                        columnsTemplate={{ parts: 3, size: "1fr" }}
+                        colsTemplate={{ parts: 3, size: "1fr" }}
                         alignItems={"start"}
                     >
                         <Grid cols={{ from: 1, how: 1 }}>
@@ -120,7 +120,7 @@ const IndexPage: FunctionComponent = () => {
                     <Grid
                         debug={DEBUG_MODE}
                         type={"grid"}
-                        columnsTemplate={{ parts: 3, size: "1fr" }}
+                        colsTemplate={{ parts: 3, size: "1fr" }}
                         m={{ x: "1.4em", y: "2.86em" }}
                     >
                         <Grid debug={DEBUG_MODE} alignItems={"start"}>
@@ -150,7 +150,7 @@ const IndexPage: FunctionComponent = () => {
                             debug={DEBUG_MODE}
                             type={"grid"}
                             justifyItems={"center"}
-                            columnsTemplate={{ raw: "repeat(3, 1fr)" }}
+                            colsTemplate={{ raw: "repeat(3, 1fr)" }}
                             gridAutoFlow={"row"}
                             m={[
                                 { x: "1.8em", y: "0.1em" },
@@ -198,13 +198,12 @@ const IndexPage: FunctionComponent = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{x:"2rem",y:"4rem"}]}>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "2rem", y: "4rem" }]}>
                 <CardServices></CardServices>
             </Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{x:"2rem",y:"4rem"}]}>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "2rem", y: "4rem" }]}>
                 <CardTechnologys></CardTechnologys>
             </Grid>
-            
         </div>
     );
 };
