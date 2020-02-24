@@ -35,7 +35,7 @@ export const CardServices = () => {
                     </Text>
                 </TitleWrapper>
                 <BodyWrapper>
-                    <Grid   
+                    <Grid
                         type={"grid"}
                         colsTemplate={[
                             { parts: 1, size: "1fr" }, // sm
@@ -44,10 +44,10 @@ export const CardServices = () => {
                         ]}
                         gridAutoFlow={"row"}
                         rowsTemplate={{ parts: 4, size: "1fr" }}
-
-                        columnGap="1em"
-                        p={{ x: "2em",y:"2em" }} 
-                        debug={DEBUG} >
+                        columnGap="2.8em"
+                        p={{ x: "2em", y: "2em" }}
+                        debug={DEBUG}
+                    >
                         {items.map(value => {
                             return (
                                 <VerticalCard body={value.body} icon={value.icon} title={value.title}></VerticalCard>
