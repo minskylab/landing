@@ -25,7 +25,7 @@ const items = [
     { key: "technologies", name: "Our Technologies" }
 ];
 
-const DEBUG_MODE = false;
+const DEBUG_MODE = true;
 
 const IndexPage: FunctionComponent = () => {
     const [currentPage, setCurrentPage] = useState<string>("home");
@@ -59,6 +59,7 @@ const IndexPage: FunctionComponent = () => {
         <div>
             <Head>
                 <title>Minsky | Home</title>
+                <meta name="theme-color" content="#ffdf53" />
             </Head>
             {renderPhysics && (
                 <Background>
