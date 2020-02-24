@@ -29,7 +29,7 @@ const Playground = () => {
             <div>
                 <Grid
                     type={"grid"}
-                    columnsTemplate={[
+                    colsTemplate={[
                         { parts: 2, size: "1fr" }, // sm
                         { parts: 3, size: "1fr" }, // md
                         { parts: 4, size: "1fr" } //  lg
