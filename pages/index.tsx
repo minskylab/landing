@@ -3,7 +3,7 @@ import { styled } from "linaria/react";
 import Head from "next/head";
 import Title from "../components/atoms/Text/Title";
 import { Grid } from "../components/atoms/Grid/v2";
-// import { MinskyLogo, MenuIcon } from "../components/atoms/Icon/icons";
+import { MinskyLogoIcon, MenuIcon } from "../components/atoms/Icon/icons";
 import { Button } from "../components/atoms/Button";
 import VerticalMenu from "../components/atoms/VerticalMenu";
 import { Simple } from "../components/atoms/Text/Simple";
@@ -13,6 +13,7 @@ import TopBar from "../components/organisms/MInskyTopBar";
 import LinkedIn from "../components/atoms/Icon/LinkedIn";
 import ColorTypes from "../components/atoms/Colors";
 import MinskyTopBar from "../components/organisms/MInskyTopBar";
+import {CardServices} from "../components/organisms/MinskyServiceCard/index"
 
 const Background = styled.div`
 	z-index: -1;
@@ -58,268 +59,149 @@ const IndexPage: FunctionComponent = () => {
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
 
-	return (
-		<div>
-			<Head>
-				<title>Minsky | Home</title>
-			</Head>
-			{renderPhysics && (
-				<Background>
-					<LightBulbs />
-				</Background>
-			)}
-			{/* <div>b</div> */}
-			<Grid
-				debug={DEBUG_MODE}
-				type={[ "block", "block", "grid" ]}
-				columnsTemplate={{ raw: "repeat(3, 1fr)" }}
-				rowsTemplate={{ raw: "repeat(6, auto)" }}
-				m={{ x: "2.4em", y: "2.4em" }}
-			>
-				<Grid debug={DEBUG_MODE} type={[ "none", "none", "block" ]} cols={{ from: 1, how: 1 }}>
-					<VerticalMenu items={items} selectedItem={currentPage} compact={topBarShow} />
-				</Grid>
-				<Grid debug={DEBUG_MODE} type={"flex"} cols={{ from: 2, how: 1 }} justifyContent={"center"}>
-					{/* <MinskyLogo /> */}
-					<div ref={trigger} />
-				</Grid>
-				<Grid
-					debug={DEBUG_MODE}
-					type={[ "none", "none", "flex" ]}
-					cols={{ raw: "3 / span 1" }}
-					justifyContent={"flex-end"}
-				>
-					<Grid debug={DEBUG_MODE} m={{ right: "1.2rem" }}>
-						<Button minsky>Are you a developer?</Button>
-					</Grid>
-					<Grid debug={DEBUG_MODE}>
-						<Button primary>Contact Us</Button>
-					</Grid>
-				</Grid>
-				<TopBar active={topBarShow}>
-					<Grid
-						debug={DEBUG_MODE}
-						type={"grid"}
-						columnsTemplate={{ parts: 3, size: "1fr" }}
-						m={{ x: "1.4em", y: "2.86em" }}
-					>
-						<Grid debug={DEBUG_MODE} alignItems={"start"}>
-							{/* <MenuIcon /> */}
-						</Grid>
-						<Grid
-							debug={DEBUG_MODE}
-							alignItems={"start"}
-							type={"flex"}
-							justifyContent={"center"}
-							// m={{ top: "0.9em" }}
-						>
-							{/* <MinskyLogo /> */}
-						</Grid>
-						<Grid debug={DEBUG_MODE} type={[ "none", "none", "flex" ]} justifyContent={"flex-end"}>
-							<Grid debug={DEBUG_MODE} m={{ right: "1.2rem" }}>
-								<Button minsky>Are you a developer?</Button>
-							</Grid>
-							<Grid debug={DEBUG_MODE}>
-								<Button primary>Contact Us</Button>
-							</Grid>
-						</Grid>
-					</Grid>
-				</TopBar>
-				<Grid debug={DEBUG_MODE} rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
-					<Grid
-						debug={DEBUG_MODE}
-						m={[ { all: "25vh 0.5em 0 0.5em" }, { all: "16em 4.2em 0 4.2em" }, { all: "10em 2em 0 2em" } ]}
-					>
-						<Title alignText={"center"}> MINSKY </Title>
-						<Body alignText={"center"}>A new technological perspective for your ideas</Body>
-						<Grid
-							debug={DEBUG_MODE}
-							type={"grid"}
-							justifyItems={"center"}
-							columnsTemplate={{ raw: "repeat(3, 1fr)" }}
-							gridAutoFlow={"row"}
-							m={[ { x: "1.8em", y: "0.1em" }, { x: "1.8em", y: "1.8em" } ]}
-						>
-							{[ "Linkedin", "Github", "Twitter" ].map((socialNet, i) => (
-								<div key={i}>
-									{/* <div
-										style={{
-											width: "32px",
-											height: "32px",
-											margin: "auto",
-											backgroundColor: "#1a1d25"
-										}}
-									/> */}
-									<LinkedIn sizeWidth={23} sizeHeight={23} color={"yellow"} />
-									<Simple alignText={"center"}>{socialNet}</Simple>
-								</div>
-							))}
-						</Grid>
-						<Grid debug={DEBUG_MODE} type={[ "flex", "none" ]} justifyContent={"center"}>
-							<Button primary>Contact Us</Button>
-						</Grid>
-					</Grid>
-				</Grid>
-				<Grid
-					debug={DEBUG_MODE}
-					rows={{ from: 3, how: 1 }}
-					cols={{ from: 2, how: 1 }}
-					m={[ { top: "14vh" }, { top: "20vh" } ]}
-				>
-					<Grid debug={DEBUG_MODE} type={"flex"} justifyContent={"center"}>
-						<Grid debug={DEBUG_MODE}>
-							<Simple>Learn more</Simple>
-							<div
-								style={{
-									height: "12em",
-									width: "0.1em",
-									maxWidth: "0.1em",
-									backgroundColor: "#1a1d25",
-									margin: "auto"
-								}}
-							/>
-						</Grid>
-					</Grid>
-				</Grid>
-			</Grid>
-		</div>
-	);
-	return (
-		<div>
-			<Head>
-				<title>Minsky | Home</title>
-			</Head>
-			{renderPhysics && (
-				<Background>
-					<LightBulbs />
-				</Background>
-			)}
-			<Grid
-				debug={DEBUG_MODE}
-				type={[ "block", "block", "grid" ]}
-				columnsTemplate={{ raw: "repeat(3, 1fr)" }}
-				rowsTemplate={{ raw: "repeat(6, auto)" }}
-				m={{ x: "2.4em", y: "2.4em" }}
-			>
-				<Grid debug={DEBUG_MODE} type={[ "none", "none", "block" ]} cols={{ from: 1, how: 1 }}>
-					<VerticalMenu items={items} selectedItem={currentPage} compact={topBarShow} />
-				</Grid>
-				<Grid debug={DEBUG_MODE} type={"block"} cols={{ from: 2, how: 1 }}>
-					<Grid
-						debug={DEBUG_MODE}
-						type={[ "grid", "none", "none" ]}
-						columnsTemplate={{ parts: 3, size: "1fr" }}
-						alignItems={"start"}
-					>
-						<Grid cols={{ from: 1, how: 1 }}>
-							<MenuIcon />
-						</Grid>
-						<Grid
-							debug={DEBUG_MODE}
-							type={"flex"}
-							cols={{ from: 2, how: 1 }}
-							alignItems={"start"}
-							justifyContent={"center"}
-						>
-							<MinskyLogoIcon />
-						</Grid>
-					</Grid>
-					<div ref={trigger} />
-				</Grid>
-				<Grid
-					debug={DEBUG_MODE}
-					type={[ "none", "none", "flex" ]}
-					cols={{ raw: "3 / span 1" }}
-					justifyContent={"flex-end"}
-				>
-					<Grid debug={DEBUG_MODE} m={{ right: "1.2rem" }}>
-						<Button minsky>Are you a developer?</Button>
-					</Grid>
-					<Grid debug={DEBUG_MODE}>
-						<Button primary>Contact Us</Button>
-					</Grid>
-				</Grid>
-				<MinskyTopBar active={topBarShow}>
-					<Grid
-						debug={DEBUG_MODE}
-						type={"grid"}
-						columnsTemplate={{ parts: 3, size: "1fr" }}
-						m={{ x: "1.4em", y: "2.86em" }}
-					>
-						<Grid debug={DEBUG_MODE} alignItems={"start"}>
-							<MenuIcon />
-						</Grid>
-						<Grid debug={DEBUG_MODE} alignItems={"start"} type={"flex"} justifyContent={"center"}>
-							<MinskyLogoIcon />
-						</Grid>
-						<Grid debug={DEBUG_MODE} type={[ "none", "none", "flex" ]} justifyContent={"flex-end"}>
-							<Grid debug={DEBUG_MODE} m={{ right: "1.2rem" }}>
-								<Button minsky>Are you a developer?</Button>
-							</Grid>
-							<Grid debug={DEBUG_MODE}>
-								<Button primary>Contact Us</Button>
-							</Grid>
-						</Grid>
-					</Grid>
-				</MinskyTopBar>
-				<Grid debug={DEBUG_MODE} rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
-					<Grid
-						debug={DEBUG_MODE}
-						m={[ { all: "25vh 0.5em 0 0.5em" }, { all: "16em 4.2em 0 4.2em" }, { all: "10em 2em 0 2em" } ]}
-					>
-						<Title alignText={"center"}> MINSKY </Title>
-						<Body alignText={"center"}>A new technological perspective for your ideas</Body>
-						<Grid
-							debug={DEBUG_MODE}
-							type={"grid"}
-							justifyItems={"center"}
-							columnsTemplate={{ raw: "repeat(3, 1fr)" }}
-							gridAutoFlow={"row"}
-							m={[ { x: "1.8em", y: "0.1em" }, { x: "1.8em", y: "1.8em" } ]}
-						>
-							{[ "Linkedin", "Github", "Twitter" ].map((socialNet, i) => (
-								<div key={i}>
-									<div
-										style={{
-											width: "32px",
-											height: "32px",
-											margin: "auto",
-											backgroundColor: "#1a1d25"
-										}}
-									/>
-									<Simple alignText={"center"}>{socialNet}</Simple>
-								</div>
-							))}
-						</Grid>
-						<Grid debug={DEBUG_MODE} type={[ "flex", "none" ]} justifyContent={"center"}>
-							<Button primary>Contact Us</Button>
-						</Grid>
-					</Grid>
-				</Grid>
-				<Grid
-					debug={DEBUG_MODE}
-					rows={{ from: 3, how: 1 }}
-					cols={{ from: 2, how: 1 }}
-					m={[ { top: "14vh" }, { top: "20vh" } ]}
-				>
-					<Grid debug={DEBUG_MODE} type={"flex"} justifyContent={"center"}>
-						<Grid debug={DEBUG_MODE}>
-							<Simple>Learn more</Simple>
-							<div
-								style={{
-									height: "12em",
-									width: "0.1em",
-									maxWidth: "0.1em",
-									backgroundColor: "#1a1d25",
-									margin: "auto"
-								}}
-							/>
-						</Grid>
-					</Grid>
-				</Grid>
-			</Grid>
-		</div>
-	);
+    return (
+        <div>
+            <Head>
+                <title>Minsky | Home</title>
+            </Head>
+            {renderPhysics && (
+                <Background>
+                    <LightBulbs></LightBulbs>
+                </Background>
+            )}
+            <Grid
+                debug={DEBUG_MODE}
+                type={["block", "block", "grid"]}
+                columnsTemplate={{ raw: "repeat(3, 1fr)" }}
+                rowsTemplate={{ raw: "repeat(6, auto)" }}
+                m={{ x: "2.4em", y: "2.4em" }}
+            >
+                <Grid debug={DEBUG_MODE} type={["none", "none", "block"]} cols={{ from: 1, how: 1 }}>
+                    <VerticalMenu items={items} selectedItem={currentPage} compact={topBarShow}></VerticalMenu>
+                </Grid>
+                <Grid debug={DEBUG_MODE} type={"block"} cols={{ from: 2, how: 1 }}>
+                    <Grid
+                        debug={DEBUG_MODE}
+                        type={["grid", "none", "none"]}
+                        columnsTemplate={{ parts: 3, size: "1fr" }}
+                        alignItems={"start"}
+                    >
+                        <Grid cols={{ from: 1, how: 1 }}>
+                            <MenuIcon />
+                        </Grid>
+                        <Grid
+                            debug={DEBUG_MODE}
+                            type={"flex"}
+                            cols={{ from: 2, how: 1 }}
+                            alignItems={"start"}
+                            justifyContent={"center"}
+                        >
+                            <MinskyLogoIcon />
+                        </Grid>
+                    </Grid>
+                    <div ref={trigger}></div>
+                </Grid>
+                <Grid
+                    debug={DEBUG_MODE}
+                    type={["none", "none", "flex"]}
+                    cols={{ raw: "3 / span 1" }}
+                    justifyContent={"flex-end"}
+                >
+                    <Grid debug={DEBUG_MODE} m={{ right: "1.2rem" }}>
+                        <Button minsky>Are you a developer?</Button>
+                    </Grid>
+                    <Grid debug={DEBUG_MODE}>
+                        <Button primary>Contact Us</Button>
+                    </Grid>
+                </Grid>
+                <MinskyTopBar active={topBarShow}>
+                    <Grid
+                        debug={DEBUG_MODE}
+                        type={"grid"}
+                        columnsTemplate={{ parts: 3, size: "1fr" }}
+                        m={{ x: "1.4em", y: "2.86em" }}
+                    >
+                        <Grid debug={DEBUG_MODE} alignItems={"start"}>
+                            <MenuIcon />
+                        </Grid>
+                        <Grid debug={DEBUG_MODE} alignItems={"start"} type={"flex"} justifyContent={"center"}>
+                            <MinskyLogoIcon />
+                        </Grid>
+                        <Grid debug={DEBUG_MODE} type={["none", "none", "flex"]} justifyContent={"flex-end"}>
+                            <Grid debug={DEBUG_MODE} m={{ right: "1.2rem" }}>
+                                <Button minsky>Are you a developer?</Button>
+                            </Grid>
+                            <Grid debug={DEBUG_MODE}>
+                                <Button primary>Contact Us</Button>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </MinskyTopBar>
+                <Grid debug={DEBUG_MODE} rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
+                    <Grid
+                        debug={DEBUG_MODE}
+                        m={[{ all: "25vh 0.5em 0 0.5em" }, { all: "16em 4.2em 0 4.2em" }, { all: "10em 2em 0 2em" }]}
+                    >
+                        <Title alignText={"center"}> MINSKY </Title>
+                        <Body alignText={"center"}>A new technological perspective for your ideas</Body>
+                        <Grid
+                            debug={DEBUG_MODE}
+                            type={"grid"}
+                            justifyItems={"center"}
+                            columnsTemplate={{ raw: "repeat(3, 1fr)" }}
+                            gridAutoFlow={"row"}
+                            m={[
+                                { x: "1.8em", y: "0.1em" },
+                                { x: "1.8em", y: "1.8em" }
+                            ]}
+                        >
+                            {["Linkedin", "Github", "Twitter"].map((socialNet, i) => (
+                                <div key={i}>
+                                    <div
+                                        style={{
+                                            width: "32px",
+                                            height: "32px",
+                                            margin: "auto",
+                                            backgroundColor: "#1a1d25"
+                                        }}
+                                    />
+                                    <Simple alignText={"center"}>{socialNet}</Simple>
+                                </div>
+                            ))}
+                        </Grid>
+                        <Grid debug={DEBUG_MODE} type={["flex", "none"]} justifyContent={"center"}>
+                            <Button primary>Contact Us</Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid
+                    debug={DEBUG_MODE}
+                    rows={{ from: 3, how: 1 }}
+                    cols={{ from: 2, how: 1 }}
+                    m={[{ top: "14vh" }, { top: "20vh" }]}
+                >
+                    <Grid debug={DEBUG_MODE} type={"flex"} justifyContent={"center"}>
+                        <Grid debug={DEBUG_MODE}>
+                            <Simple>Learn more</Simple>
+                            <div
+                                style={{
+                                    height: "12em",
+                                    width: "0.1em",
+                                    maxWidth: "0.1em",
+                                    backgroundColor: "#1a1d25",
+                                    margin: "auto"
+                                }}
+                            ></div>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid type="block" debug={DEBUG_MODE} p={[{x:"2rem",y:"2rem"}]}>
+                <CardServices></CardServices>
+            </Grid>
+            
+        </div>
+    );
 };
 
 export default IndexPage;

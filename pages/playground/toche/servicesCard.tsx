@@ -1,10 +1,10 @@
 import React from 'react';
-import { Card } from "../../molecules/cards";
-import { Grid } from "../../atoms/Grid/v2";
+import { Card } from "../../../components/molecules/cards";
+import { Grid } from "../../../components/atoms/Grid/v2";
 import { styled } from 'linaria/react';
 
-import { Text } from "../../atoms/Text/index";
-import { TextTypes } from "../../atoms/Text/constants"
+import { Text } from "../../../components/atoms/Text/index";
+import { TextTypes } from "../../../components/atoms/Text/constants"
 
 
 const Wrapper = styled.div`
@@ -29,14 +29,16 @@ export type ContentServiceCards = {
 }
 
 
-export const CardServices = () => {
+
+const Playground = (props: React.AllHTMLAttributes<any>) => {
+
     const items: ContentServiceCards[] = [
         {icon: "as", title:"Ideation and Strategy", body: "We offer experience  in building a new product"},
         {icon: "as", title:"Product Design", body:"We will create a beufiful and working design for your idea."},
         {icon: "as", title:"Web and Mobile Development", body:"We specialise in delivering end-to-end services." },
         {icon: "as", title:"DevOps and Cloud", body:"We use modern microservices approach for your software."}
     ]
-    //USE MOBILE === true ? "BLOCK" : "FLEX" LINE 49 ON "TYPE"
+    //USE MOBILE ? "BLOCK" : "FLEX" LINE 49 ON "TYPE"
     return(
         <Wrapper>
             <Grid debug={DEBUG} rowsTemplate={[{parts:3}]} type={"block"} >
@@ -56,3 +58,5 @@ export const CardServices = () => {
         </Wrapper>
     )
 }
+
+export default Playground;
