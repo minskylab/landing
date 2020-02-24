@@ -18,9 +18,7 @@ import { GridBase } from "./base-component";
 const Grid: FC<GridProps> = (props: GridProps) => {
     const display: string[] = useMemo(() => getDisplayFromGridProps(props.type), [props.type]); // getDisplayFromGridProps(props.type);
 
-    const colsTemplate: string[] = useMemo(() => getTemplateFromGridProps(props.columnsTemplate), [
-        props.columnsTemplate
-    ]); // getTemplateFromGridProps(props.columnsTemplate);
+    const colsTemplate: string[] = useMemo(() => getTemplateFromGridProps(props.colsTemplate), [props.colsTemplate]); // getTemplateFromGridProps(props.columnsTemplate);
     const rowsTemplate: string[] = useMemo(() => getTemplateFromGridProps(props.rowsTemplate), [props.rowsTemplate]); // getTemplateFromGridProps(props.rowsTemplate);
 
     const gridCols: string[] = useMemo(() => getPositionFromGridProps(props.cols), [props.cols]); // getPositionFromGridProps(props.cols);

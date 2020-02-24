@@ -36,7 +36,7 @@ export interface GridProps {
     type?: GridType | GridType[];
 
     // templates
-    columnsTemplate?: GridTemplate | GridTemplate[];
+    colsTemplate?: GridTemplate | GridTemplate[];
     rowsTemplate?: GridTemplate | GridTemplate[];
 
     // posititon

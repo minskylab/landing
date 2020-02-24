@@ -23,13 +23,13 @@ const MinskyMenu = () => {
         <Wrapper>
             <Grid
                 type={"grid"}
-                columnsTemplate={{ parts: 3, size: "auto" }}
+                colsTemplate={{ parts: 3, size: "auto" }}
                 rowsTemplate={{ parts: 3, size: "auto" }}
                 p={{ all: "0.8em" }}
             >
                 <Grid
                     type={"grid"}
-                    columnsTemplate={{ parts: 3, size: "1fr" }}
+                    colsTemplate={{ parts: 3, size: "1fr" }}
                     cols={{ from: 1, how: 3 }}
                     rows={{ from: 1, how: 1 }}
                     alignItems={"start"}

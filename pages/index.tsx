@@ -68,7 +68,7 @@ const IndexPage: FunctionComponent = () => {
             <Grid
                 debug={DEBUG_MODE}
                 type={["block", "block", "grid"]}
-                columnsTemplate={{ raw: "repeat(3, 1fr)" }}
+                colsTemplate={{ raw: "repeat(3, 1fr)" }}
                 rowsTemplate={{ raw: "repeat(6, auto)" }}
                 m={{ x: "2.4em", y: "2.4em" }}
             >
@@ -79,7 +79,7 @@ const IndexPage: FunctionComponent = () => {
                     <Grid
                         debug={DEBUG_MODE}
                         type={["grid", "none", "none"]}
-                        columnsTemplate={{ parts: 3, size: "1fr" }}
+                        colsTemplate={{ parts: 3, size: "1fr" }}
                         alignItems={"start"}
                     >
                         <Grid cols={{ from: 1, how: 1 }}>
@@ -114,7 +114,7 @@ const IndexPage: FunctionComponent = () => {
                     <Grid
                         debug={DEBUG_MODE}
                         type={"grid"}
-                        columnsTemplate={{ parts: 3, size: "1fr" }}
+                        colsTemplate={{ parts: 3, size: "1fr" }}
                         m={{ x: "1.4em", y: "2.86em" }}
                     >
                         <Grid debug={DEBUG_MODE} alignItems={"start"}>
@@ -144,7 +144,7 @@ const IndexPage: FunctionComponent = () => {
                             debug={DEBUG_MODE}
                             type={"grid"}
                             justifyItems={"center"}
-                            columnsTemplate={{ raw: "repeat(3, 1fr)" }}
+                            colsTemplate={{ raw: "repeat(3, 1fr)" }}
                             gridAutoFlow={"row"}
                             m={[
                                 { x: "1.8em", y: "0.1em" },
