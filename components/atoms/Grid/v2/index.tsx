@@ -61,6 +61,7 @@ const Grid: FC<GridProps> = (props: GridProps) => {
             padding={padding}
             margin={margin}
             gridAutoFlow={gridAutoFlow}
+            debug={props.debug}
             // {...(props as React.Props<HTMLDivElement>)}
         >
             {props.children}
