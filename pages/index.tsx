@@ -11,6 +11,7 @@ import Body from "../components/atoms/Text/Body";
 import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
 import MinskyTopBar from "../components/organisms/MInskyTopBar";
 import {CardServices} from "../components/organisms/MinskyServiceCard/index"
+import {CardTechnologys} from "../components/organisms/MinskyTechnologyCard/index"
 
 const Background = styled.div`
     z-index: -1;
@@ -193,8 +194,11 @@ const IndexPage: FunctionComponent = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{x:"2rem",y:"2rem"}]}>
+            <Grid type="block" debug={DEBUG_MODE} p={[{x:"2rem",y:"4rem"}]}>
                 <CardServices></CardServices>
+            </Grid>
+            <Grid type="block" debug={DEBUG_MODE} p={[{x:"2rem",y:"4rem"}]}>
+                <CardTechnologys></CardTechnologys>
             </Grid>
             
         </div>

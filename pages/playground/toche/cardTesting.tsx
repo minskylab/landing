@@ -1,5 +1,5 @@
 import React from "react";
-import { CardTechnology } from "../../../components/molecules/cards/technologyCard";
+import { HorizontalCard } from "../../../components/molecules/cards/technologyCard";
 
 
 
@@ -8,7 +8,7 @@ const Playground = () => {
 
     
     return (
-            <CardTechnology icon="ASdasdas" title="ASdasdadas" body="sdasdasdasd asdasd asdasdasd asdasd asdasdas asdasd sadasdad asdasda asdasd"></CardTechnology>
+            <HorizontalCard icon="ASdasdas" title="ASdasdadas" body="sdasdasdasd asdasd asdasdasd asdasd asdasdas asdasd sadasdad asdasda asdasd"></HorizontalCard>
     );
 };
 

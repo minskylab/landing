@@ -48,7 +48,6 @@ interface InputProps {
     newSize?: InputSizing;
     caption?: string;
     defaultValue?:string;
-    as?: "div";
     required?: boolean;
 }
 
@@ -78,13 +77,13 @@ const Input: FC<InputProps & React.StyleHTMLAttributes<any>> = (props: InputProp
     
     props = { ...props, newSize, newStatus }
 
-    return <Wrapper> <CustomInput
+    return <Wrapper as="div"> <CustomInput
         {...props}
         newSize={newSize ? newSize : { width: props.style.width.toString(), height: props.style.height.toString() }}
         newStatus={newStatus ? newStatus : { cursor: props.style.cursor.toString(), color: props.style.color.toString() }}
     >
     </CustomInput>
-        <Caption newStatus={props.newStatus}>{props?.caption || ""}</Caption>
+        <Caption as="div" newStatus={props.newStatus}>{props?.caption || ""}</Caption>
     </Wrapper>
 
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card } from "../../molecules/cards";
+import { VerticalCard } from "../../molecules/cards/serviceCard";
+import { ContentServiceCards , GlobalWrapper} from "../../molecules/cards/constants"
 import { Grid } from "../../atoms/Grid/v2";
 import { styled } from 'linaria/react';
 
@@ -7,10 +8,6 @@ import { Text } from "../../atoms/Text/index";
 import { TextTypes } from "../../atoms/Text/constants"
 
 
-const Wrapper = styled.div`
-    width:100%;
-    height: 30rem;
-`
 const TitleWrapper = styled.div`
     width: 100%; 
     height: 2.6em;
@@ -22,11 +19,6 @@ const BodyWrapper = styled.div`
 
 const DEBUG = false;
 
-export type ContentServiceCards = {
-    icon:any; 
-    title: string;
-    body:string;
-}
 
 
 export const CardServices = () => {
@@ -38,7 +30,7 @@ export const CardServices = () => {
     ]
     //USE MOBILE === true ? "BLOCK" : "FLEX" LINE 49 ON "TYPE"
     return(
-        <Wrapper>
+        <GlobalWrapper>
             <Grid debug={DEBUG} rowsTemplate={[{parts:3}]} type={"block"} >
                 <TitleWrapper>
                     <Text alignText="start" type={TextTypes.h4}> Our services </Text>
@@ -47,12 +39,12 @@ export const CardServices = () => {
                     <Grid columnsTemplate={[{parts:4}]} type={"flex"} p={{x:"2em"}} debug={DEBUG}>
                         {
                             items.map(value=>{
-                                return <Card body={value.body} icon={value.icon} title={value.title} ></Card>
+                                return <VerticalCard body={value.body} icon={value.icon} title={value.title} ></VerticalCard>
                             })
                         }
                     </Grid>
                 </BodyWrapper>
             </Grid>
-        </Wrapper>
+        </GlobalWrapper>
     )
 }
