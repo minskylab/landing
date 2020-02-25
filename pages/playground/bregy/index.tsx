@@ -1,13 +1,13 @@
 import React from "react";
-import { Text } from "../../components/atoms/Text";
-import Title from "../../components/atoms/Text/Title";
-import { TextTypes } from "../../components/atoms/Text/constants";
+import { Text } from "../../../components/atoms/Text";
+import Title from "../../../components/atoms/Text/Title";
+import { TextTypes } from "../../../components/atoms/Text/constants";
 import Head from "next/head";
-import Subtitle from "../../components/atoms/Text/Subtitle";
-import Body from "../../components/atoms/Text/Body";
-import { Simple } from "../../components/atoms/Text/Simple";
-import { Grid } from "../../components/atoms/Grid/v2";
-import MinskyTopBar from "../../components/organisms/MInskyTopBar";
+import Subtitle from "../../../components/atoms/Text/Subtitle";
+import Body from "../../../components/atoms/Text/Body";
+import { Simple } from "../../../components/atoms/Text/Simple";
+import { Grid } from "../../../components/atoms/Grid/v2";
+import MinskyTopBar from "../../../components/organisms/MInskyTopBar";
 
 const Playground = () => {
     return (

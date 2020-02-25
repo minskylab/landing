@@ -8,7 +8,6 @@ import { TextTypes } from "../../atoms/Text/constants";
 import { Values } from "./constants";
 import { useSpring, animated, OpaqueInterpolation, InterpolationConfig } from "react-spring";
 
-
 import { css } from "linaria";
 
 const wrapperServiceCard = css`
@@ -63,7 +62,7 @@ const ServicesCard: FC<Values> = (props: Values) => {
                 <Grid
                     debug={DEBUG_MODE}
                     type={"flex"}
-                    alignItems="flex-end"
+                    alignItems={"end"}
                     cols={[
                         { from: 1, how: 1 },
                         { from: 1, how: 1 }
