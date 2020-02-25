@@ -40,24 +40,6 @@ const IndexPage: FunctionComponent = () => {
         }
     }, []);
 
-    const trigger = useRef(null);
-
-    useLayoutEffect(() => {
-        const offset = 28;
-        const topPosition = trigger.current.getBoundingClientRect().top + offset;
-        const onScroll = () => {
-            const scrollPosition = window.scrollY; //+ window.innerHeight;
-            if (topPosition < scrollPosition) {
-                return setTopBarShow(true);
-            }
-            return setTopBarShow(false);
-        };
-
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
-    }, []);
-
-
     return (
         <div>
             <Head>
@@ -69,6 +51,7 @@ const IndexPage: FunctionComponent = () => {
                     <LightBulbs></LightBulbs>
                 </Background>
             )}
+            <MinskyTopBar active={true} />
             <Grid
                 debug={DEBUG_MODE}
                 type={["block", "block", "grid"]}
@@ -76,71 +59,10 @@ const IndexPage: FunctionComponent = () => {
                 rowsTemplate={{ raw: "repeat(6, auto)" }}
                 m={{ x: "2.4em", y: "2.4em" }}
             >
-                <Grid debug={DEBUG_MODE} type={["none", "none", "block"]} cols={{ from: 1, how: 1 }}>
-                    <VerticalMenu items={items} selectedItem={currentPage} compact={topBarShow}></VerticalMenu>
-                </Grid>
-                <Grid debug={DEBUG_MODE} type={"block"} cols={{ from: 2, how: 1 }}>
-                    <Grid
-                        debug={DEBUG_MODE}
-                        type={["grid", "none", "none"]}
-                        colsTemplate={{ parts: 3, size: "1fr" }}
-                        alignItems={"start"}
-                    >
-                        <Grid cols={{ from: 1, how: 1 }}>
-                            <MenuIcon />
-                        </Grid>
-                        <Grid
-                            debug={DEBUG_MODE}
-                            type={"flex"}
-                            cols={{ from: 2, how: 1 }}
-                            alignItems={"start"}
-                            justifyContent={"center"}
-                        >
-                            <MinskyLogoIcon />
-                        </Grid>
-                    </Grid>
-                    <div ref={trigger}></div>
-                </Grid>
-                <Grid
-                    debug={DEBUG_MODE}
-                    type={["none", "none", "flex"]}
-                    cols={{ raw: "3 / span 1" }}
-                    justifyContent={"flex-end"}
-                >
-                    <Grid debug={DEBUG_MODE} m={{ right: "1.2rem" }}>
-                        <Button minsky>Are you a developer?</Button>
-                    </Grid>
-                    <Grid debug={DEBUG_MODE}>
-                        <Button primary>Contact Us</Button>
-                    </Grid>
-                </Grid>
-                <MinskyTopBar active={topBarShow}>
-                    <Grid
-                        debug={DEBUG_MODE}
-                        type={"grid"}
-                        colsTemplate={{ parts: 3, size: "1fr" }}
-                        m={{ x: "1.4em", y: "2.86em" }}
-                    >
-                        <Grid debug={DEBUG_MODE} alignItems={"start"}>
-                            <MenuIcon />
-                        </Grid>
-                        <Grid debug={DEBUG_MODE} alignItems={"start"} type={"flex"} justifyContent={"center"}>
-                            <MinskyLogoIcon />
-                        </Grid>
-                        <Grid debug={DEBUG_MODE} type={["none", "none", "flex"]} justifyContent={"flex-end"}>
-                            <Grid debug={DEBUG_MODE} m={{ right: "1.2rem" }}>
-                                <Button minsky>Are you a developer?</Button>
-                            </Grid>
-                            <Grid debug={DEBUG_MODE}>
-                                <Button primary>Contact Us</Button>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </MinskyTopBar>
                 <Grid debug={DEBUG_MODE} rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
                     <Grid
                         debug={DEBUG_MODE}
-                        m={[{ all: "25vh 0.5em 0 0.5em" }, { all: "16em 4.2em 0 4.2em" }, { all: "10em 2em 0 2em" }]}
+                        m={[{ all: "25vh 0.5em 0 0.5em" }, { all: "34vh 4.2em 0 4.2em" }, { all: "34vh 2em 0 2em" }]}
                     >
                         <Title alignText={"center"}> MINSKY </Title>
                         <Body alignText={"center"}>A new technological perspective for your ideas</Body>
@@ -151,7 +73,7 @@ const IndexPage: FunctionComponent = () => {
                             colsTemplate={{ raw: "repeat(3, 1fr)" }}
                             gridAutoFlow={"row"}
                             m={[
-                                { x: "1.8em", y: "0.1em" },
+                                { x: "0.4em", y: "1.8em" },
                                 { x: "1.8em", y: "1.8em" }
                             ]}
                         >

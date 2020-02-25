@@ -16,41 +16,42 @@ const Playground = () => {
                 <title>Minsky | Lab</title>
             </Head>
             <MinskyTopBar active={true} />
-            <div>
-                <Text type={TextTypes.title}>Hello World</Text>
-                <Text type={TextTypes.subtitle}>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Text>
-                <Text type={TextTypes.body}>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Text>
-                <Text type={TextTypes.simple}>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Text>
-            </div>
-            <div>
-                <Title>Hello World</Title>
-                <Subtitle>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Subtitle>
-                <Body>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Body>
-                <Simple>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Simple>
-            </div>
-            <div>
-                <Grid
-                    type={"grid"}
-                    colsTemplate={[
-                        { parts: 2, size: "1fr" }, // sm
-                        { parts: 3, size: "1fr" }, // md
-                        { parts: 4, size: "1fr" } //  lg
-                    ]}
-                    gridAutoFlow={"row"}
-                    rowsTemplate={{ parts: 4, size: "1fr" }}
-                >
-                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5311" }}>1</div>
-                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5321" }}>2</div>
-                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5331" }}>3</div>
-                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5341" }}>4</div>
-                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5351" }}>5</div>
-                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5361" }}>6</div>
-                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5371" }}>7</div>
-                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5381" }}>8</div>
-                    <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5381" }}>8</div>
-
-                </Grid>
-            </div>
+            <Grid m={{ top: "8rem" }} p={{ x: "1rem" }}>
+                <div>
+                    <Text type={TextTypes.title}>Hello World</Text>
+                    <Text type={TextTypes.subtitle}>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Text>
+                    <Text type={TextTypes.body}>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Text>
+                    <Text type={TextTypes.simple}>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Text>
+                </div>
+                <div>
+                    <Title>Hello World</Title>
+                    <Subtitle>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Subtitle>
+                    <Body>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Body>
+                    <Simple>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</Simple>
+                </div>
+                <div>
+                    <Grid
+                        type={"grid"}
+                        colsTemplate={[
+                            { parts: 2, size: "1fr" }, // sm
+                            { parts: 3, size: "1fr" }, // md
+                            { parts: 4, size: "1fr" } //  lg
+                        ]}
+                        gridAutoFlow={"row"}
+                        rowsTemplate={{ parts: 4, size: "1fr" }}
+                    >
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5311" }}>1</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5321" }}>2</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5331" }}>3</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5341" }}>4</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5351" }}>5</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5361" }}>6</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5371" }}>7</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5381" }}>8</div>
+                        <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5381" }}>8</div>
+                    </Grid>
+                </div>
+            </Grid>
         </div>
     );
 };
