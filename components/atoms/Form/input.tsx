@@ -5,8 +5,8 @@ import { styled } from "linaria/react";
 
 
 const CustomInput = styled.input<InputProps & React.StyleHTMLAttributes<any>>`
-    width: ${props => props.newSize.width || props.style.width};
-    height: ${props => props.newSize.height || props.style.height};
+    width: ${props => props.newSize.width ? props.newSize.width : "auto"};
+    height: ${props => props.newSize.height ?  props.newSize.height : "auto"};
     cursor: ${props => props.newStatus.cursor ? props.newStatus.cursor : "pointer"};
     padding:0.5em;
     font-size: 15px;
@@ -14,24 +14,24 @@ const CustomInput = styled.input<InputProps & React.StyleHTMLAttributes<any>>`
     border-radius: 5px;
     font-family: "Karla";
     border: 2.3px solid;
-    border-color: ${props => props.newStatus.color};
-    color: ${props => props.newStatus.color};
-    -webkit-box-shadow: ${props => props.error || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color : ""};
-    -moz-box-shadow: ${props => props.error || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color : ""};
+    border-color: ${props => props.newStatus.color ? props.newStatus.color : "black"};
+    color: ${props => props.newStatus.color ? props.newStatus.color : "black"};
+    -webkit-box-shadow: ${props => props.error || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color: ""};
+    -moz-box-shadow: ${props => props.error  || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color : ""};
     box-shadow: ${props => props.error || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color : ""};
 `
 
 const Wrapper = styled.div`
-    display:flex;
+    display: flex;
     flex-direction: column;
     margin: 0.8em;
 `
 const Caption = styled.div<InputProps>`
-    font-size:9px;
+    font-size: 9px;
     font-family: "Karla";
-    color: ${props => props.newStatus.color};
+    color: ${props => props.newStatus.color ? props.newStatus.color : "black"};
     display: flex;
-    margin:0.5em;
+    margin: 0.5em;
 `
 
 interface InputProps {
@@ -73,17 +73,19 @@ const Input: FC<InputProps & React.StyleHTMLAttributes<any>> = (props: InputProp
         newStatus = InputStatus.neutral;
     }
 
-
+    let newCaption: string;
+    if (props?.caption){
+        newCaption = props.caption;
+    }else{
+        newCaption = "";
+    }
     
     props = { ...props, newSize, newStatus }
 
     return <Wrapper as="div"> <CustomInput
-        {...props}
-        newSize={newSize ? newSize : { width: props.style.width.toString(), height: props.style.height.toString() }}
-        newStatus={newStatus ? newStatus : { cursor: props.style.cursor.toString(), color: props.style.color.toString() }}
-    >
+        {...props}>
     </CustomInput>
-        <Caption as="div" newStatus={props.newStatus}>{props?.caption || ""}</Caption>
+        <Caption as="div" newStatus={newStatus}>{newCaption}</Caption>
     </Wrapper>
 
 }

@@ -7,6 +7,8 @@ import { Text } from "../../../components/atoms/Text/index";
 import { TextTypes } from "../../../components/atoms/Text/constants";
 import { MiniWrapper } from "../../../components/molecules/cards/constants";
 
+import {Image } from "../../../components/atoms/Images/img";
+
 const Wrapper = styled.div`
     width: 100%;
     height: 30rem;
@@ -22,7 +24,7 @@ export type ContentServiceCards = {
 
 const Playground = (props: React.AllHTMLAttributes<any>) => {
     const items: ContentServiceCards[] = [
-        { icon: "as", title: "Chatbots", body: "Multichannel technology." },
+        { icon: <Image path="/images/design.png"/>, title: "Chatbots", body: "Multichannel technology." },
         { icon: "as", title: "Payment", body: "Multi payment gateway." },
         { icon: "as", title: "Just for fun", body: "Developing everything." }
     ];

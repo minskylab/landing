@@ -2,8 +2,8 @@ import React from "react";
 import { Button } from "../../../components/atoms/Button/index"
 import { Input } from "../../../components/atoms/Form/input"
 import { CheckBox } from "../../../components/atoms/Form/checkbox"
-import {Switch}from "../../../components/atoms/Form/switch"
-import {RadioButtonGroup}from"../../../components/atoms/Form/radiobuttongroup";
+import { Switch } from "../../../components/atoms/Form/switch"
+import { RadioButtonGroup } from"../../../components/atoms/Form/radiobuttongroup";
 
 
 const RadioButtons = [{value: "asda", name:"SADas", text:"Asas",selected:true},{value: "asdppo", name:"SADas", text:"Asas"},{value: "asdo", name:"SADas", text:"Asas"},{value: "sds", name:"SADas", text:"Asas"}]

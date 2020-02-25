@@ -8,9 +8,9 @@ import { TextTypes } from "../../atoms/Text/constants";
 
 import { Values, CardWrapper } from "./constants";
 
+const DEBUG_MODE = false;
 
 const HorizontalCard: FC<Values> = (props: Values) => {
-    const DEBUG_MODE = false;
     return (
         <CardWrapper {...props} as="div">
             <Grid debug={DEBUG_MODE} type={"grid"} colsTemplate={{ parts: 2,size:"auto" }} rowsTemplate={{parts:2, size:"auto"}} p={{all:"2em"}}>
@@ -21,7 +21,7 @@ const HorizontalCard: FC<Values> = (props: Values) => {
                     <Body> {props.body} </Body>
                 </Grid>
                 <Grid debug={DEBUG_MODE} type="flex" cols={{from:2, how:1}} rows={{from:1, how:1}} justifyContent="flex-end"  alignSelf="end" > 
-                    <div>{props.icon} </div>
+                    {props.icon} 
                 </Grid>     
             </Grid>
         </CardWrapper>

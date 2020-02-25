@@ -4,7 +4,7 @@ import { Grid } from "../../../components/atoms/Grid/v2";
 
 import { Text } from "../../../components/atoms/Text/index";
 import { TextTypes } from "../../../components/atoms/Text/constants";
-import { ContentServiceCards, GlobalWrapper, MiniWrapper } from "../../molecules/cards/constants";
+import { ContentServiceCards } from "../../molecules/cards/constants";
 
 const DEBUG = false;
 

@@ -11,10 +11,10 @@ const DEBUG = false;
 
 export const CardServices = () => {
     const items: ContentServiceCards[] = [
-        { icon: "as", title: "Ideation and Strategy", body: "We offer experience  in building a new product" },
-        { icon: "as", title: "Product Design", body: "We will create a beufiful and working design for your idea." },
-        { icon: "as", title: "Web and Mobile Development", body: "We specialise in delivering end-to-end services." },
-        { icon: "as", title: "DevOps and Cloud", body: "We use modern microservices approach for your software." }
+        { icon: <img src="/images/ideation.png" alt="Ideation" />, title: "Ideation and Strategy", body: "We offer experience  in building a new product" },
+        { icon: <img src="/images/ideation.png" alt="Ideation" />, title: "Product Design", body: "We will create a beufiful and working design for your idea." },
+        { icon: <img src="/images/ideation.png" alt="Ideation" />, title: "Web and Mobile Development", body: "We specialise in delivering end-to-end services." },
+        { icon: <img src="/images/ideation.png" alt="Ideation" />, title: "DevOps and Cloud", body: "We use modern microservices approach for your software." }
     ];
     return (
 
