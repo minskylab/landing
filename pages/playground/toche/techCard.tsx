@@ -1,5 +1,5 @@
 import React from "react";
-import { HorizontalCard } from "../../../components/molecules/Cards/technologyCard";
+import { TechCards } from "../../../components/molecules/Cards/technologyCard";
 import { Grid } from "../../../components/atoms/Grid/v2";
 import { styled } from "linaria/react";
 
@@ -41,11 +41,11 @@ const Playground = (props: React.AllHTMLAttributes<any>) => {
                     <Grid m={{ top: "2em" }} type={"block"}>
                         {items.map(value => {
                             return (
-                                <HorizontalCard
+                                <TechCards
                                     title={value.title}
                                     body={value.body}
                                     icon={value.icon}
-                                ></HorizontalCard>
+                                ></TechCards>
                             );
                         })}
                     </Grid>

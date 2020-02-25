@@ -1,5 +1,5 @@
 import React from "react";
-import { HorizontalCard } from "../../molecules/Cards/technologyCard";
+import { TechCards } from "../../molecules/Cards/technologyCard";
 import { Grid } from "../../../components/atoms/Grid/v2";
 
 import { Text } from "../../../components/atoms/Text/index";
@@ -24,7 +24,7 @@ const Technologys = () => {
             <Grid rows={{from:2,how:1}} cols={{from:1,how:1}} type={"block"}>
                 {
                     items.map((value,index)=>{
-                        return <HorizontalCard key={index} body={value.body} icon={value.icon} title={value.title}></HorizontalCard>
+                        return <TechCards key={index} body={value.body} icon={value.icon} title={value.title}></TechCards>
                     })
                 }
 

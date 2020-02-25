@@ -25,7 +25,7 @@ const wrapperServiceCard = css`
 
 const DEBUG_MODE = false;
 
-const VerticalCard: FC<Values> = (props: Values) => {
+const ServicesCard: FC<Values> = (props: Values) => {
     const calc = (x: number, y: number): Array<number> => [
         -(y - window.innerHeight / 2) / 20,
         (x - window.innerWidth / 2) / 20,
@@ -52,11 +52,11 @@ const VerticalCard: FC<Values> = (props: Values) => {
                 type={"grid"}
                 colsTemplate={[
                     { parts: 2, size: "auto" },
-                    { parts: 1, size: "1fr" }
+                    { parts: 1, size: "auto" }
                 ]}
                 rowsTemplate={[
                     { parts: 2, size: "auto" },
-                    { parts: 3, size: "1fr" }
+                    { parts: 3, size: "auto" }
                 ]}
                 p={[{ all: "1em" }, { all: "2em" }]}
             >
@@ -109,4 +109,4 @@ const VerticalCard: FC<Values> = (props: Values) => {
     );
 };
 
-export { VerticalCard };
+export { ServicesCard };

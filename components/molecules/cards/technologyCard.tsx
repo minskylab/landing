@@ -10,7 +10,7 @@ import { Values, CardWrapper } from "./constants";
 
 const DEBUG_MODE = false;
 
-const HorizontalCard: FC<Values> = (props: Values) => {
+const TechCards: FC<Values> = (props: Values) => {
     return (
         <CardWrapper {...props} as="div">
             <Grid debug={DEBUG_MODE} type={"grid"} colsTemplate={{ parts: 2,size:"auto" }} rowsTemplate={{parts:2, size:"auto"}} p={{all:"2em"}}>
@@ -27,4 +27,4 @@ const HorizontalCard: FC<Values> = (props: Values) => {
         </CardWrapper>
     );
 };
-export { HorizontalCard };
+export { TechCards };

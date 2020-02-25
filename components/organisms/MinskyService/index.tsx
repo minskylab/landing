@@ -1,5 +1,5 @@
 import React from "react";
-import { VerticalCard } from "../../molecules/Cards/serviceCard";
+import { ServicesCard } from "../../molecules/Cards/serviceCard";
 import { ContentServiceCards } from "../../molecules/Cards/constants";
 import { Grid } from "../../atoms/Grid/v2";
 
@@ -40,7 +40,7 @@ const Services = () => {
                     >
                         {items.map(value => {
                             return (
-                                <VerticalCard body={value.body} icon={value.icon} title={value.title}></VerticalCard>
+                                <ServicesCard body={value.body} icon={value.icon} title={value.title}></ServicesCard>
                             );
                         })}
                     </Grid>
