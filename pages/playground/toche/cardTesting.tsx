@@ -1,15 +1,13 @@
 import React from "react";
-import { TeamCards } from "../../../components/molecules/Cards/teamCard";
+import { ServicesCard } from "../../../components/molecules/Cards/serviceCard";
 
 const Playground = () => {
     return (
-        <TeamCards
+        <ServicesCard
             body="asdsdas"
-            name=" asdasdasda asdads"
-            img="asdas"
-            other="sldkadas"
-            socialNet={["sadasd", "asdasdasd", "asdasda"]}
-        ></TeamCards>
+            icon="asdas"
+            title="asdadsas"
+        ></ServicesCard>
     );
 };
 

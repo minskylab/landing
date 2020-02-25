@@ -119,13 +119,13 @@ const IndexPage: FunctionComponent = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "5rem", y: "4rem" }]}>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1.5rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "5rem", y: "4rem" }]}>
                 <Services></Services>
             </Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "5rem", y: "4rem" }]}>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1.5rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "5rem", y: "4rem" }]}>
                 <Technologys></Technologys>
             </Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "5rem", y: "4rem" }]}>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1.5rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "5rem", y: "4rem" }]}>
                 <Team></Team>
             </Grid>
                     

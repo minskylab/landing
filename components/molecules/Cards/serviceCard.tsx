@@ -92,6 +92,7 @@ const ServicesCard: FC<Values> = (props: Values) => {
                 <Grid
                     debug={DEBUG_MODE}
                     type={"flex"}
+                    alignItems="flex-end"
                     cols={[
                         { from: 2, how: 1 },
                         { from: 1, how: 1 }

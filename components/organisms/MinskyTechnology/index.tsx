@@ -15,7 +15,7 @@ const Technologys = () => {
         { icon: "as", title: "Just for fun", body: "Developing everything." }
     ];
     return (
-        <Grid debug={DEBUG} rowsTemplate={{ parts: 2, size:"auto" }}  colsTemplate={{parts:3, size:"auto"}} type={"grid"}>
+        <Grid debug={DEBUG} rowsTemplate={{ parts: 2, size:"auto" }}  colsTemplate={[{parts:1, size:"auto"},{parts:2, size:"auto"},{parts:3, size:"auto"}]} type={"grid"}>
             <Grid rows={{from:1,how:1}} cols={{from:1,how:1}} type={"block"}>
                 <Text alignText="start" type={TextTypes.h4}>
                     Our Technology
