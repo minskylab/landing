@@ -32,7 +32,7 @@ const TeamCards: FC<TeamProps> = (props: TeamProps) =>{
                     <Text type={TextTypes.simple}>  {props.other}</Text> 
                 </Grid>
                 <Grid rows={{from:5,how:1}} type="flex" cols={{from:1,how:1}} justifyContent="center" alignItems="center">
-                    <Grid rowsTemplate={{parts:1,size:"1fr"}} colsTemplate={{parts:props?.socialNet?.length||0,size:"1fr"}}      
+                    <Grid rowsTemplate={{parts:1,size:"auto"}} colsTemplate={{parts:props?.socialNet?.length||0,size:"1fr"}}      
                         type={"grid"}
                     >
                     </Grid>
