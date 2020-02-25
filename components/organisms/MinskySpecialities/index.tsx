@@ -2,7 +2,7 @@ import React from 'react';
 import {Grid} from '../../atoms/Grid/v2/index';
 
 
-const SpecialitiesCards = () => {
+const Specialties = () => {
 
 
     return(

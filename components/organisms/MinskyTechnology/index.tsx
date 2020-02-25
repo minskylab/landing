@@ -8,7 +8,7 @@ import { ContentServiceCards } from "../../molecules/Cards/constants";
 
 const DEBUG = false;
 
-const CardTechnologys = () => {
+const Technologys = () => {
     const items: ContentServiceCards[] = [
         { icon: "as", title: "Chatbots", body: "Multichannel technology." },
         { icon: "as", title: "Payment", body: "Multi payment gateway." },
@@ -34,4 +34,4 @@ const CardTechnologys = () => {
 };
 
 
-export {CardTechnologys};
+export {Technologys};

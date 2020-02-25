@@ -42,7 +42,6 @@ const VerticalCard: FC<Values> = (props: Values) => {
 
     return (
         <animated.div
-            key={props.title}
             className={wrapperServiceCard}
             onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
             onMouseLeave={() => set({ xys: [0, 0, 1] })}

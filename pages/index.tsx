@@ -10,8 +10,9 @@ import { Simple } from "../components/atoms/Text/Simple";
 import Body from "../components/atoms/Text/Body";
 import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
 import MinskyTopBar from "../components/organisms/MInskyTopBar";
-import { CardServices } from "../components/organisms/MinskyService/index";
-import { CardTechnologys } from "../components/organisms/MinskyTechnology/index";
+import { Services } from "../components/organisms/MinskyService/index";
+import { Technologys } from "../components/organisms/MinskyTechnology/index";
+import { Team } from "../components/organisms/MinskyTeam/index";
 
 const Background = styled.div`
     z-index: -1;
@@ -118,12 +119,16 @@ const IndexPage: FunctionComponent = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "2rem", y: "4rem" }]}>
-                <CardServices></CardServices>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "5rem", y: "4rem" }]}>
+                <Services></Services>
             </Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "2rem"}]}>
-                <CardTechnologys></CardTechnologys>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "5rem", y: "4rem" }]}>
+                <Technologys></Technologys>
             </Grid>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "5rem", y: "4rem" }]}>
+                <Team></Team>
+            </Grid>
+                    
         </div>
     );
 };

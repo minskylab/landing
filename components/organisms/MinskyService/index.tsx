@@ -9,7 +9,7 @@ import { TextTypes } from "../../atoms/Text/constants";
 
 const DEBUG = false;
 
-export const CardServices = () => {
+const Services = () => {
     const items: ContentServiceCards[] = [
         { icon: <img src="/images/ideation.png" alt="Ideation" height="48px" width="48px"/>, title: "Ideation and Strategy", body: "We offer experience  in building a new product" },
         { icon: <img src="/images/design.png" alt="Design" height="48px" width="48px" />, title: "Product Design", body: "We will create a beufiful and working design for your idea." },
@@ -31,8 +31,8 @@ export const CardServices = () => {
                             { parts: 2, size: "1fr" }, // md
                             { parts: 4, size: "1fr" } //  lg
                         ]}
-                        gridAutoFlow={"row"}
                         rowsTemplate={{ parts: 1, size: "auto" }}
+                        gridAutoFlow={"row"}
                         columnGap="2.8em"
                         rowGap = "1em"
                         p={{ x: "2em", y: "2em" }}
@@ -48,3 +48,6 @@ export const CardServices = () => {
 
     );
 };
+
+
+export {Services};

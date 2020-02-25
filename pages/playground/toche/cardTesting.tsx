@@ -1,13 +1,17 @@
 import React from "react";
-import { HorizontalCard } from "../../../components/molecules/cards/technologyCard";
+import { TeamCards } from "../../../components/molecules/Cards/teamCard";
 
 const Playground = () => {
     return (
-        <HorizontalCard
-            icon="ASdasdas"
-            title="ASdasdadas"
-            body="sdasdasdasd asdasd asdasdasd asdasd asdasdas asdasd sadasdad asdasda asdasd"
-        ></HorizontalCard>
+        <TeamCards
+        body="asdsdas"
+        name =" asdasdasda asdads"
+        img="asdas"
+        other= "sldkadas"
+        socialNet= {["sadasd","asdasdasd","asdasda"
+    ]}
+        
+        ></TeamCards>
     );
 };
 

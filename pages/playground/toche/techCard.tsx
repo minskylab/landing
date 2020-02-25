@@ -1,11 +1,11 @@
 import React from "react";
-import { HorizontalCard } from "../../../components/molecules/cards/technologyCard";
+import { HorizontalCard } from "../../../components/molecules/Cards/technologyCard";
 import { Grid } from "../../../components/atoms/Grid/v2";
 import { styled } from "linaria/react";
 
 import { Text } from "../../../components/atoms/Text/index";
 import { TextTypes } from "../../../components/atoms/Text/constants";
-import { MiniWrapper } from "../../../components/molecules/cards/constants";
+import { MiniWrapper } from "../../../components/molecules/Cards/constants";
 
 import {Image } from "../../../components/atoms/Images/img";
 
