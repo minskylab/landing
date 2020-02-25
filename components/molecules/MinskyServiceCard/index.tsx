@@ -1,6 +1,6 @@
 import React from "react";
-import { VerticalCard } from "../../molecules/cards/serviceCard";
-import { ContentServiceCards, GlobalWrapper } from "../../molecules/cards/constants";
+import { VerticalCard } from "../cards/serviceCard";
+import { ContentServiceCards, GlobalWrapper } from "../cards/constants";
 import { Grid } from "../../atoms/Grid/v2";
 import { styled } from "linaria/react";
 

@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "@zeit/next-css": "^1.0.1",
+        "flubber": "^0.4.2",
         "fontfaceobserver": "^2.1.0",
         "linaria": "^1.3.3",
         "matter-js": "^0.14.2",

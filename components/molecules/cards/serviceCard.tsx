@@ -6,7 +6,7 @@ import { Text } from "../../atoms/Text/index";
 import { TextTypes } from "../../atoms/Text/constants";
 
 import { Values, CardWrapper } from "./constants";
-import { useSpring, animated, OpaqueInterpolation, InterpolationConfig } from "react-spring";
+import { useSpring, animated, InterpolationConfig } from "react-spring";
 import { css } from "linaria";
 
 const wrapperServiceCard = css`
@@ -33,6 +33,7 @@ const VerticalCard: FC<Values> = (props: Values) => {
     // @ts-ignore
     const trans: InterpolationConfig<number[], string> = (x: number, y: number, s: number): string =>
         `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
+
     const [transAnimation, set] = useSpring(() => ({
         xys: [0, 0, 1],
         config: { mass: 5, tension: 350, friction: 40 }

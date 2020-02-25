@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import Head from "next/head";
-import MinskyMenu from "../components/organisms/MinskyMenu";
+import MinskyMenu from "../components/molecules/MinskyMenu";
 
 const IndexPage: FunctionComponent = () => {
     return (

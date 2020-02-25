@@ -45,8 +45,6 @@ const Grid: FC<GridProps> = (props: GridProps & HTMLElement) => {
         xl: "64em"
     };
 
-    console.log(props);
-
     var displayType: SMMinimal<string> = ["block"];
     if (props.container) {
         if (typeof props.container === "boolean") {
@@ -55,7 +53,6 @@ const Grid: FC<GridProps> = (props: GridProps & HTMLElement) => {
             props.container.map((i, index) => (displayType[index] = i ? "grid" : "flex"));
         }
     }
-    console.log("displayType: ", displayType);
 
     var columnsTemplate: SMMinimal<string> = [""];
     if (props.columnsTemplate && typeof props.columnsTemplate === "string") {
