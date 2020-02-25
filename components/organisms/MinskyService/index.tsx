@@ -2,19 +2,10 @@ import React from "react";
 import { VerticalCard } from "../../molecules/cards/serviceCard";
 import { ContentServiceCards, GlobalWrapper } from "../../molecules/cards/constants";
 import { Grid } from "../../atoms/Grid/v2";
-import { styled } from "linaria/react";
+
 
 import { Text } from "../../atoms/Text/index";
 import { TextTypes } from "../../atoms/Text/constants";
-
-const TitleWrapper = styled.div`
-    width: 100%;
-    height: 2.6em;
-`;
-const BodyWrapper = styled.div`
-    width: 100%;
-    height: 23em;
-`;
 
 const DEBUG = false;
 
@@ -27,14 +18,13 @@ export const CardServices = () => {
     ];
     //USE MOBILE === true ? "BLOCK" : "FLEX" LINE 49 ON "TYPE"
     return (
-        <GlobalWrapper>
-            <Grid debug={DEBUG} rowsTemplate={[{ parts: 3 }]} type={"block"}>
-                <TitleWrapper>
-                    <Text alignText="start" type={TextTypes.h4}>
-                        Our services
-                    </Text>
-                </TitleWrapper>
-                <BodyWrapper>
+
+            <Grid debug={DEBUG} rowsTemplate={[{ parts: 2 }]} type={"block"}>
+                    <Grid rows={{from:1,how:1}} cols={{from:1,how:1}} type={"block"}>
+                        <Text alignText="start" type={TextTypes.h4}>
+                            Our services
+                        </Text>
+                    </Grid>
                     <Grid
                         type={"grid"}
                         colsTemplate={[
@@ -43,8 +33,9 @@ export const CardServices = () => {
                             { parts: 4, size: "1fr" } //  lg
                         ]}
                         gridAutoFlow={"row"}
-                        rowsTemplate={{ parts: 4, size: "1fr" }}
+                        rowsTemplate={{ parts: 1, size: "auto" }}
                         columnGap="2.8em"
+                        rowGap = "1em"
                         p={{ x: "2em", y: "2em" }}
                         debug={DEBUG}
                     >
@@ -54,8 +45,7 @@ export const CardServices = () => {
                             );
                         })}
                     </Grid>
-                </BodyWrapper>
             </Grid>
-        </GlobalWrapper>
+
     );
 };

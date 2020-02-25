@@ -6,7 +6,7 @@ import { styled } from "linaria/react";
 
 const CustomInput = styled.input<InputProps & React.StyleHTMLAttributes<any>>`
     width: ${props => props.newSize.width || props.style.width};
-    height: ${props => props.newSize.height || props.style.width};
+    height: ${props => props.newSize.height || props.style.height};
     cursor: ${props => props.newStatus.cursor ? props.newStatus.cursor : "pointer"};
     padding:0.5em;
     font-size: 15px;
