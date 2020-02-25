@@ -60,6 +60,7 @@ const Grid: FC<GridProps> = (props: GridProps) => {
             margin={margin}
             gridAutoFlow={gridAutoFlow}
             debug={props.debug}
+            className={props.className}
             // {...(props as React.Props<HTMLDivElement>)}
         >
             {props.children}
@@ -68,3 +69,4 @@ const Grid: FC<GridProps> = (props: GridProps) => {
 };
 
 export { Grid };
+export default Grid;

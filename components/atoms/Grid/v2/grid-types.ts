@@ -68,4 +68,6 @@ export interface GridProps {
     children?: any;
 
     debug?: boolean;
+
+    className?: string;
 }
