@@ -1,6 +1,6 @@
 import React from "react";
 import { VerticalCard } from "../../molecules/cards/serviceCard";
-import { ContentServiceCards, GlobalWrapper } from "../../molecules/cards/constants";
+import { ContentServiceCards } from "../../molecules/cards/constants";
 import { Grid } from "../../atoms/Grid/v2";
 
 
@@ -16,7 +16,6 @@ export const CardServices = () => {
         { icon: "as", title: "Web and Mobile Development", body: "We specialise in delivering end-to-end services." },
         { icon: "as", title: "DevOps and Cloud", body: "We use modern microservices approach for your software." }
     ];
-    //USE MOBILE === true ? "BLOCK" : "FLEX" LINE 49 ON "TYPE"
     return (
 
             <Grid debug={DEBUG} rowsTemplate={[{ parts: 2 }]} type={"block"}>
