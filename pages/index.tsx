@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect, useRef, useLayoutEffect, useContext } from "react";
+import React, { FunctionComponent, useState, useEffect, useRef, useLayoutEffect } from "react";
 import { styled } from "linaria/react";
 import Head from "next/head";
 import Title from "../components/atoms/Text/Title";
@@ -10,8 +10,9 @@ import { Simple } from "../components/atoms/Text/Simple";
 import Body from "../components/atoms/Text/Body";
 import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
 import MinskyTopBar from "../components/organisms/MInskyTopBar";
-import { CardServices } from "../components/molecules/MinskyServiceCard/index";
-import { CardTechnologys } from "../components/organisms/MinskyTechnologyCard/index";
+import { Services } from "../components/organisms/MinskyService/index";
+import { Technologys } from "../components/organisms/MinskyTechnology/index";
+import { Team } from "../components/organisms/MinskyTeam/index";
 
 const Background = styled.div`
     z-index: -1;
@@ -118,12 +119,16 @@ const IndexPage: FunctionComponent = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "2rem", y: "4rem" }]}>
-                <CardServices></CardServices>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "5rem", y: "4rem" }]}>
+                <Services></Services>
             </Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "2rem", y: "4rem" }]}>
-                <CardTechnologys></CardTechnologys>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "5rem", y: "4rem" }]}>
+                <Technologys></Technologys>
             </Grid>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "5rem", y: "4rem" }]}>
+                <Team></Team>
+            </Grid>
+                    
         </div>
     );
 };

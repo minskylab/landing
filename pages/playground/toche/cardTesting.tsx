@@ -1,13 +1,17 @@
 import React from "react";
-import { VerticalCard } from "../../../components/molecules/cards/serviceCard";
+import { TeamCards } from "../../../components/molecules/Cards/teamCard";
 
 const Playground = () => {
     return (
-        <VerticalCard
-            icon="ASdasdas"
-            title="ASdasdadas"
-            body="sdasdasdasd asdasd asdasdasd asdasd asdasdas asdasd sadasdad asdasda asdasd"
-        ></VerticalCard>
+        <TeamCards
+        body="asdsdas"
+        name =" asdasdasda asdads"
+        img="asdas"
+        other= "sldkadas"
+        socialNet= {["sadasd","asdasdasd","asdasda"
+    ]}
+        
+        ></TeamCards>
     );
 };
 

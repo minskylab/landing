@@ -10,9 +10,7 @@ import ButtonIcon from "../../atoms/Button/ButtonIcon";
 const Wrapper = styled.div`
     width: 100%;
     background-color: #ffdf53;
-
     border-radius: 0 0 1.4em 1.4em;
-    /* border: solid #1b1b1b 0.1em; */
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

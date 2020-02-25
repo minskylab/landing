@@ -1,5 +1,5 @@
 export type JustifyItems = "start" | "end" | "center" | "stretch; (default)" | "default";
-export type AlignItems = "start" | "end" | "center" | "stretch; (default)" | "default";
+export type AlignItems = "start" | "end" | "center" | "stretch; (default)" | "default" | "flex-end";
 export type JustifyContent =
     | "start"
     | "end"

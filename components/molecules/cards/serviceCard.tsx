@@ -5,8 +5,10 @@ import Body from "../../atoms/Text/Body";
 import { Text } from "../../atoms/Text/index";
 import { TextTypes } from "../../atoms/Text/constants";
 
-import { Values, CardWrapper } from "./constants";
-import { useSpring, animated, InterpolationConfig } from "react-spring";
+import { Values } from "./constants";
+import { useSpring, animated, OpaqueInterpolation, InterpolationConfig } from "react-spring";
+
+
 import { css } from "linaria";
 
 const wrapperServiceCard = css`
@@ -23,7 +25,7 @@ const wrapperServiceCard = css`
 
 const DEBUG_MODE = false;
 
-const VerticalCard: FC<Values> = (props: Values) => {
+const ServicesCard: FC<Values> = (props: Values) => {
     const calc = (x: number, y: number): Array<number> => [
         -(y - window.innerHeight / 2) / 20,
         (x - window.innerWidth / 2) / 20,
@@ -33,7 +35,6 @@ const VerticalCard: FC<Values> = (props: Values) => {
     // @ts-ignore
     const trans: InterpolationConfig<number[], string> = (x: number, y: number, s: number): string =>
         `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
-
     const [transAnimation, set] = useSpring(() => ({
         xys: [0, 0, 1],
         config: { mass: 5, tension: 350, friction: 40 }
@@ -51,17 +52,18 @@ const VerticalCard: FC<Values> = (props: Values) => {
                 type={"grid"}
                 colsTemplate={[
                     { parts: 2, size: "auto" },
-                    { parts: 1, size: "1fr" }
+                    { parts: 1, size: "auto" }
                 ]}
                 rowsTemplate={[
                     { parts: 2, size: "auto" },
-                    { parts: 3, size: "1fr" }
+                    { parts: 3, size: "auto" }
                 ]}
                 p={[{ all: "1em" }, { all: "2em" }]}
             >
                 <Grid
                     debug={DEBUG_MODE}
                     type={"flex"}
+                    alignItems="flex-end"
                     cols={[
                         { from: 1, how: 1 },
                         { from: 1, how: 1 }
@@ -104,10 +106,7 @@ const VerticalCard: FC<Values> = (props: Values) => {
                 </Grid>
             </Grid>
         </animated.div>
-        /*
-        
-        */
     );
 };
 
-export { VerticalCard };
+export { ServicesCard };

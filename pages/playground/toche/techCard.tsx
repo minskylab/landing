@@ -1,11 +1,13 @@
 import React from "react";
-import { HorizontalCard } from "../../../components/molecules/cards/technologyCard";
+import { TechCards } from "../../../components/molecules/Cards/technologyCard";
 import { Grid } from "../../../components/atoms/Grid/v2";
 import { styled } from "linaria/react";
 
 import { Text } from "../../../components/atoms/Text/index";
 import { TextTypes } from "../../../components/atoms/Text/constants";
-import { MiniWrapper } from "../../../components/molecules/cards/constants";
+import { MiniWrapper } from "../../../components/molecules/Cards/constants";
+
+import {Image } from "../../../components/atoms/Images/img";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -22,7 +24,7 @@ export type ContentServiceCards = {
 
 const Playground = (props: React.AllHTMLAttributes<any>) => {
     const items: ContentServiceCards[] = [
-        { icon: "as", title: "Chatbots", body: "Multichannel technology." },
+        { icon: <Image path="/images/design.png"/>, title: "Chatbots", body: "Multichannel technology." },
         { icon: "as", title: "Payment", body: "Multi payment gateway." },
         { icon: "as", title: "Just for fun", body: "Developing everything." }
     ];
@@ -39,11 +41,11 @@ const Playground = (props: React.AllHTMLAttributes<any>) => {
                     <Grid m={{ top: "2em" }} type={"block"}>
                         {items.map(value => {
                             return (
-                                <HorizontalCard
+                                <TechCards
                                     title={value.title}
                                     body={value.body}
                                     icon={value.icon}
-                                ></HorizontalCard>
+                                ></TechCards>
                             );
                         })}
                     </Grid>
