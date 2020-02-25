@@ -5,16 +5,10 @@ import Body from "../../atoms/Text/Body";
 import { Text } from "../../atoms/Text/index";
 import { TextTypes } from "../../atoms/Text/constants";
 
-import { Values, CardWrapper } from "./constants";
-<<<<<<< HEAD
-<<<<<<< HEAD
+import { Values } from "./constants";
 import { useSpring, animated, OpaqueInterpolation, InterpolationConfig } from "react-spring";
-=======
-import { useSpring, animated, InterpolationConfig } from "react-spring";
->>>>>>> bea55b723a10396fad803f828c16e330840c250a
-=======
-import { useSpring, animated, InterpolationConfig } from "react-spring";
->>>>>>> master
+
+
 import { css } from "linaria";
 
 const wrapperServiceCard = css`
@@ -41,14 +35,6 @@ const VerticalCard: FC<Values> = (props: Values) => {
     // @ts-ignore
     const trans: InterpolationConfig<number[], string> = (x: number, y: number, s: number): string =>
         `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> bea55b723a10396fad803f828c16e330840c250a
-=======
-
->>>>>>> master
     const [transAnimation, set] = useSpring(() => ({
         xys: [0, 0, 1],
         config: { mass: 5, tension: 350, friction: 40 }
@@ -56,6 +42,7 @@ const VerticalCard: FC<Values> = (props: Values) => {
 
     return (
         <animated.div
+            key={props.title}
             className={wrapperServiceCard}
             onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
             onMouseLeave={() => set({ xys: [0, 0, 1] })}
@@ -77,6 +64,7 @@ const VerticalCard: FC<Values> = (props: Values) => {
                 <Grid
                     debug={DEBUG_MODE}
                     type={"flex"}
+                    alignItems="flex-end"
                     cols={[
                         { from: 1, how: 1 },
                         { from: 1, how: 1 }

@@ -2,8 +2,9 @@ import React, { FC } from 'react';
 import { styled } from 'linaria/react';
 
 
-const CustomImage = styled.div<Image>`
-    background-image: url("/images/bulb1.png");
+const CustomImage = styled.img<Image>`
+    src: ${props => props.path};
+    alt: ${props => props.alt};
     border-radius: ${props=>props.radius ? props.radius : "0px"};
     width: ${props => props.width ? props.width : "auto"};
     height: ${props => props?.height ? props.height : "auto"}
@@ -12,6 +13,7 @@ const CustomImage = styled.div<Image>`
  interface Image  {
     path: string,
     radius?: string,
+    alt?: string,
     width?: string,
     height?: string,
 }

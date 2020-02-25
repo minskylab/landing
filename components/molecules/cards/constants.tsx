@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { styled } from "linaria/react";
 
 export const CardWrapper = styled.div`

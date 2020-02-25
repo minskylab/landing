@@ -1,5 +1,5 @@
 import React from "react";
-import { VerticalCard } from "../../../components/molecules/cards/serviceCard";
+import { VerticalCard } from "../../../components/molecules/Cards/serviceCard
 import { Grid } from "../../../components/atoms/Grid/v2";
 import { styled } from "linaria/react";
 
