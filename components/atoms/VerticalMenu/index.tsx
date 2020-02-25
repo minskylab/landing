@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { styled } from "linaria/react";
+// import {useTransition, animated} from 'react-spring';
 
 const Wrapper = styled.div`
     /* margin: 1em 1em; */
@@ -55,14 +56,10 @@ const Spacer = styled.div`
 const VerticalMenu: FC<VerticalMenuProps> = (props: VerticalMenuProps) => {
     if (props.compact) {
         const items = props.items.filter(item => item.key === props.selectedItem);
-        if (items.length < 1) {
-            throw "invalid selected item";
-        }
-
         return (
             <Wrapper>
                 <Item selected>
-                    {items[0].name}
+                    {items.length < 1 ? props.items[0].name : items[0].name}
                     <Line />
                 </Item>
             </Wrapper>
@@ -72,7 +69,6 @@ const VerticalMenu: FC<VerticalMenuProps> = (props: VerticalMenuProps) => {
         <Wrapper>
             {props.items.map((item, i) => {
                 const sel: boolean = item.key === props.selectedItem;
-                console.log("i", i);
                 return (
                     <>
                         <Item key={i} selected={sel} onClick={() => props.onSelected && props.onSelected(item)}>

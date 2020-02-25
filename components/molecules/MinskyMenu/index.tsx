@@ -1,9 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import { styled } from "linaria/react";
 import { Grid } from "../../atoms/Grid/v2";
-import { MinskyLogoIcon, MenuIcon } from "../../atoms/Icon/icons";
+import { MinskyLogoIcon, MenuIcon, UpArrowIcon } from "../../atoms/Icon/icons";
 import VerticalMenu from "../../atoms/VerticalMenu";
 import { Button } from "../../atoms/Button";
+import ButtonIcon from "../../atoms/Button/ButtonIcon";
+// import { useSpring } from "react-spring";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -24,18 +26,24 @@ const items = [
     { key: "technologies", name: "Our Technologies" }
 ];
 
-const MinskyMenu = () => {
+interface MinskyMenuProps {
+    cleanMode?: boolean;
+    onClose?: () => void;
+}
+
+const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
     return (
         <Wrapper>
             <Grid
                 type={"grid"}
                 colsTemplate={{ parts: 3, size: "auto" }}
                 rowsTemplate={{ parts: 3, size: "auto" }}
-                p={[
-                    { x: "1em", y: "1em" },
-                    { x: "1.4em", y: "1.4em" },
-                    { x: "1.6em", y: "1.6em" }
-                ]}
+                // p={[
+                //     { x: "1.0rem", y: "0.8rem" },
+                //     { x: "1.4rem", y: "1.4rem" },
+                //     { x: "1.6rem", y: "1.6rem" }
+                // ]}
+                p={{ x: "0.8em", y: "0.8em" }}
             >
                 <Grid
                     type={"grid"}
@@ -45,11 +53,11 @@ const MinskyMenu = () => {
                     alignItems={"start"}
                     m={{ bottom: "1em", top: "0.4em" }}
                 >
-                    <Grid type={"flex"} cols={{ from: 1, how: 1 }} justifyContent={"flex-start"} p={{ left: "1em" }}>
-                        <MenuIcon />
+                    <Grid type={"flex"} cols={{ from: 1, how: 1 }} justifyContent={"flex-start"}>
+                        <ButtonIcon icon={UpArrowIcon} onClick={props.onClose} />
                     </Grid>
-                    <Grid type={"flex"} cols={{ from: 2, how: 1 }} justifyContent={"center"}>
-                        <MinskyLogoIcon />
+                    <Grid type={"flex"} cols={{ from: 2, how: 1 }} alignItems={"center"} justifyContent={"center"}>
+                        {!props.cleanMode && <MinskyLogoIcon />}
                     </Grid>
                 </Grid>
                 <Grid type={"flex"} cols={{ from: 1, to: 2 }} rows={{ from: 2, how: 1 }} alignItems={"end"}>
@@ -64,12 +72,16 @@ const MinskyMenu = () => {
                     p={{ bottom: "0em", top: "2.4em" }}
                     m={{ bottom: "0.5em" }}
                 >
-                    <Grid type={"flex"} rows={{ from: 2, how: 1 }} justifyContent={"flex-end"}>
-                        <Button primary>Contact Us</Button>
-                    </Grid>
-                    <Grid type={"flex"} rows={{ from: 1, how: 1 }} justifyContent={"flex-end"}>
-                        <Button minsky>Developers Here</Button>
-                    </Grid>
+                    {!props.cleanMode && (
+                        <>
+                            <Grid type={"flex"} rows={{ from: 2, how: 1 }} justifyContent={"flex-end"}>
+                                <Button primary>Contact Us</Button>
+                            </Grid>
+                            <Grid type={"flex"} rows={{ from: 1, how: 1 }} justifyContent={"flex-end"}>
+                                <Button minsky>Developers Here</Button>
+                            </Grid>
+                        </>
+                    )}
                 </Grid>
             </Grid>
         </Wrapper>

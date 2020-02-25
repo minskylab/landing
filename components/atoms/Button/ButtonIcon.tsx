@@ -1,13 +1,17 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import { SVGIconProps } from "../Icon/SVGIcon";
 import { styled } from "linaria/react";
 
 const ButtonWrap = styled.div`
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
     background-color: transparent;
-
+    align-items: center;
+    display: flex;
+    justify-content: center;
     :hover {
+        cursor: pointer;
         background-color: #f0f0f0;
     }
 
@@ -16,11 +20,11 @@ const ButtonWrap = styled.div`
 
 interface ButtonIconProps {
     icon: FC<SVGIconProps>;
-    onClick?: () => {};
+    onClick?: () => void;
 }
 
 const ButtonIcon: FC<ButtonIconProps> = (props: ButtonIconProps) => {
-    return <ButtonWrap onClick={props.onClick}>{props.icon}</ButtonWrap>;
+    return <ButtonWrap onClick={props.onClick}>{<props.icon />}</ButtonWrap>;
 };
 
 export default ButtonIcon;
