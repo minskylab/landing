@@ -14,15 +14,15 @@ export interface GiveUProps {
 const GiveYouCards: FC<GiveUProps> = (props: GiveUProps) => {
 
     return (
-        <Grid type="grid" colsTemplate={{parts:2,size:"auto"}} rowsTemplate={{parts:2,size:"auto"}}>
+        <Grid type="grid" colsTemplate={{parts:2,size:"auto"}} rowsTemplate={{parts:2,size:"auto"}} m={{all:"2em"}}>
             <Grid rows={{from:1,how:1}} cols={{from:1,how:1}} type="block" justifySelf="end" alignSelf="center" m={{right:"2em"}}>
                 {props.icon}
             </Grid>
-            <Grid rows={{from:1,how:1}} cols={{from:2,how:1}} type="flex">
-                <Text type={TextTypes.subtitle}> {props.title} </Text>
+            <Grid rows={{from:1,how:1}} cols={{from:2,how:1}} type="block">
+                <Text type={TextTypes.subtitle} > {props.title} </Text>
             </Grid>
-            <Grid rows={{from:2,how:1}} cols={{from:2,how:1}} type="flex">
-                <Text type={TextTypes.simple}> {props.body}</Text>
+            <Grid rows={{from:2,how:1}} cols={{from:2,how:1}} type="block" >
+                <Text type={TextTypes.simple} style={{marginTop:"2em"}}> {props.body}</Text>
             </Grid>
         </Grid>
     )

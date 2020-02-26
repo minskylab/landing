@@ -35,7 +35,12 @@ export const TextTypes: TextTypes = {
 	h4: { as: "h4", size: "1.3em", fontFamily: "Karla" },
 	h5: { as: "h5", size: "1.2em", fontFamily: "Karla" },
 	h6: { as: "h6", size: "1.1em", fontFamily: "Karla" },
+<<<<<<< HEAD
 	simple: { as: "p", size: "0.6em", fontFamily: "PT Mono" },
 	subtitlePT: { as: "h2", size: "1.1em", fontFamily: "PT Mono" },
 	tags: { as: "h2", size: "0.65em", fontFamily: "PT Mono" }
+=======
+	simple: { as: "p", size: "0.8em", fontFamily: "PT Mono" },
+	subtitlePT: { as: "h2", size: "1.1em", fontFamily: "PT Mono" }
+>>>>>>> e40a3031316dfa7405886a82fdd6daf2037ca63a
 };
