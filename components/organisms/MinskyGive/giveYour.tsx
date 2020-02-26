@@ -6,6 +6,7 @@ import { GiveYouCards, GiveUProps } from "../../molecules/Cards/giveYouCard";
 import BranchOutline from "../../atoms/Icon/BranchOutline";
 import LoveOutline from "../../atoms/Icon/LoveOutline";
 import Price from "../../atoms/Icon/PrizeOutline";
+import Section from "../../atoms/Text/Section";
 const DEBUG = false;
 
 // title: string,
@@ -40,10 +41,10 @@ const GiveYou = () => {
 			colsTemplate={[ { parts: 1, size: "1fr" }, { parts: 2, size: "auto" } ]}
 			type={"grid"}
 		>
-			<Grid rows={[{ from: 1, how: 1 },{ from: 1, how: 1 }]} cols={[{ from: 1, how: 1 },{ from: 1, how: 1 }]} type={"block"}>
-				<Text alignText="start" type={TextTypes.h2} fontWeight={600}>
+			<Grid rows={[{ from: 1, how: 1 },{ from: 1, how: 1 }]} cols={[{ from: 1, how: 1 },{ from: 1, how: 1 }]} p={{ y: "2em" }}  type={"block"}>
+				<Section>
 					We give you
-				</Text>
+				</Section>
 			</Grid>
 			<Grid rows={[{ from: 2, how: 1 },{ from: 2, how: 1 }]} cols={[{ from: 1, how: 1 },{ from: 1, how: 1 }]} type={"block"}>
 				{items.map(value => {
