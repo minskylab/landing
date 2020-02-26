@@ -16,7 +16,7 @@ const SpecialtiesCards:FC<SpecialtiesProps> = (props: SpecialtiesProps) => {
     return (
         <CardWrapper>
             <Grid rowsTemplate={{parts:3,size:"auto"}} type="grid" colsTemplate={{parts:1}} justifyItems="start" p={{all:"2em"}}> 
-                <Grid rows={{from:1,how:1}} cols={{from:1,how:1}} type="flex">
+                <Grid rows={{from:1,how:1}} cols={{from:1,how:1}} type="flex" justifySelf="center">
                         {props.image} 
                 </Grid>
                 <Grid rows={{from:2,how:1}} cols={{from:1,how:1}} type="flex">
@@ -24,7 +24,7 @@ const SpecialtiesCards:FC<SpecialtiesProps> = (props: SpecialtiesProps) => {
                 </Grid>
                 <Grid rows={{from:3,how:1}} cols={{from:1,how:1}} type="block">
                     {props.topics.map(values=>{
-                        return <Text type={TextTypes.h6} style={{margin:"3px"}}>{props.iconTopic + " " + values}</Text>   
+                        return <Text type={TextTypes.h6} style={{margin:"3px"}}> {props.iconTopic} { " " + values}</Text>   
                     })}
                 </Grid>
             </Grid>

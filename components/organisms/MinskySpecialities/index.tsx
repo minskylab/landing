@@ -1,43 +1,70 @@
-import React from 'react';
-import {Grid} from '../../atoms/Grid/v2/index';
+import React, { FC } from 'react';
+import { Grid } from '../../atoms/Grid/v2/index';
 
-import { SpecialtiesCards,SpecialtiesProps  } from "../../molecules/Cards/specialtiesCard"
+import { SpecialtiesCards, SpecialtiesProps } from "../../molecules/Cards/specialtiesCard"
 import { Text } from '../../atoms/Text';
 import { TextTypes } from '../../atoms/Text/constants';
+import { LinkedIn } from '../../atoms/Icon';
 
 
 const DEBUG = false;
+
+
+
 const Specialties = () => {
 
     const items: SpecialtiesProps[] = [
-        {  image: <img src="/images/ideation.png" alt="Software Development" height="48px" width="48px" />,title: "Software Development", topics: ["IT Consulting","DevOps Services","Mobile and Web Apps", "Maintenance and Support", "IA and Machine Learing Development"], iconTopic: "any"}
+        {
+            image: <img src="/images/softDev.png" alt="Software Development" height="256px" width="256px" />,
+            title: "Software Development",
+            topics: ["IT Consulting", "DevOps Services", "Mobile and Web Apps", "Maintenance and Support", "IA and Machine Learing Development"],
+            iconTopic: <img src="/images/blob.svg" width="16px" height="16px"></img>
+        },
+        {
+            image: <img src="/images/blockchain.png" alt="Blockchain Solutions" height="256px" width="256px" />,
+            title: "Blockchain Solutions",
+            topics: ["Business Consulting", "Cross-Border payments", "Blockchain for Business", "Product Development"],
+            iconTopic: <img src="/images/blob.svg" width="16px" height="16px"></img>
+        },
+        {
+            image: <img src="/images/iot.png" alt="Iot" height="256px" width="256px" />,
+            title: "Iot",
+            topics: ["Hardarware Development", "Prototyping", "System Design", "Consulting"],
+            iconTopic: <img src="/images/blob.svg" width="16px" height="16px"></img>
+        }
     ]
 
-    return(
+    return (
         <Grid debug={DEBUG} rowsTemplate={[{ parts: 2 }]} type={"block"}>
-        <Grid rows={{ from: 1, how: 1 }} cols={{ from: 1, how: 1 }} type={"block"}>
-            <Text alignText="start" type={TextTypes.title}>
-                Our specialties
+            <Grid rows={{ from: 1, how: 1 }} cols={{ from: 1, how: 1 }} type={"block"}>
+                <Text alignText="start" type={TextTypes.title}>
+                    Our specialties
             </Text>
+            </Grid>
+            <Grid
+                type={"grid"}
+                colsTemplate={[
+                    { parts: 1, size: "1fr" }, // sm
+                    { parts: 3, size: "1fr" }, // md
+                    { parts: 3, size: "1fr" } //  lg
+                ]}
+                rowsTemplate={{ parts: 1, size: "auto" }}
+                gridAutoFlow={"row"}
+                columnGap="2.8em"
+                rowGap="1em"
+                p={{ x: "2em", y: "2em" }}
+                debug={DEBUG}
+            >
+                {items.map(value => {
+                    return <SpecialtiesCards image={value.image} title={value.title}
+                        topics={value.topics}
+                        iconTopic={value.iconTopic}></SpecialtiesCards>;
+                })}
+            </Grid>
         </Grid>
-        <Grid
-            type={"grid"}
-            colsTemplate={[
-                { parts: 1, size: "1fr" }, // sm
-                { parts: 3, size: "1fr" }, // md
-                { parts: 3, size: "1fr" } //  lg
-            ]}
-            rowsTemplate={{ parts: 1, size: "auto" }}
-            gridAutoFlow={"row"}
-            columnGap="2.8em"
-            rowGap="1em"
-            p={{ x: "2em", y: "2em" }}
-            debug={DEBUG}
-        >
-            {items.map(value => {
-                return <SpecialtiesCards body={value.body} icon={value.icon} title={value.title}></SpecialtiesCards>;
-            })}
-        </Grid>
-    </Grid>
     )
 }
+
+
+
+export { Specialties };

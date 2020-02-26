@@ -13,6 +13,7 @@ import MinskyTopBar from "../components/organisms/MInskyTopBar";
 import { Services } from "../components/organisms/MinskyService/index";
 import { Technologys } from "../components/organisms/MinskyTechnology/index";
 import { Team } from "../components/organisms/MinskyTeam/index";
+import { Specialties } from "../components/organisms/MinskySpecialities/index";
 
 const Background = styled.div`
     z-index: -1;
@@ -127,6 +128,9 @@ const IndexPage: FunctionComponent = () => {
             </Grid>
             <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
                 <Team></Team>
+            </Grid>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
+                <Specialties></Specialties>
             </Grid>
                     
         </div>
