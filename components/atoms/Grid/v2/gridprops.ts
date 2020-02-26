@@ -16,7 +16,7 @@ export interface GridPosition {
 // type Position = GridPosition | string;
 
 export interface GridTemplate {
-    parts?: Unit; // how: 3, 6, 12...
+    parts?: Unit | "auto-fit"; // how: 3, 6, 12...
     size?: Size; // px, fr, em, rem, etc
     raw?: string;
 }

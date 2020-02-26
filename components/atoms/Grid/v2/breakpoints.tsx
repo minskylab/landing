@@ -1,4 +1,4 @@
-import { Size } from "./grid-types";
+import { Size } from "./gridprops";
 
 export interface GridBreakpoints {
     sm?: Size;

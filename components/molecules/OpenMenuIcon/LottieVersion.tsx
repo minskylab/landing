@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Lottie from "react-lottie";
+// import Lottie from "react-lottie";
 import * as animationData from "./menu-button.json";
 
 const OpenMenuIcon = () => {
@@ -21,7 +21,7 @@ const OpenMenuIcon = () => {
 
     return (
         <div>
-            <Lottie options={defaultOptions} height={400} width={400} isStopped={stopped} isPaused={paused} />
+            {/* <Lottie options={defaultOptions} height={400} width={400} isStopped={stopped} isPaused={paused} /> */}
             <button onClick={() => setStopped(true)}>stop</button>
             <button onClick={() => setStopped(false)}>play</button>
             <button onClick={() => setPaused(!paused)}>pause</button>

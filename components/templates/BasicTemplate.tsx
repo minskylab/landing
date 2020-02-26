@@ -3,7 +3,6 @@ import React from "react";
 const BasicTemplate = (props: any) => {
     return (
         <>
-            {props.children}
             <style jsx global>{`
                 body {
                     margin: 0;
@@ -21,6 +20,7 @@ const BasicTemplate = (props: any) => {
                     margin-bottom: 10px;
                 }
             `}</style>
+            {props.children}
         </>
     );
 };
