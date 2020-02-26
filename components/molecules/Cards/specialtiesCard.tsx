@@ -35,11 +35,11 @@ const SpecialtiesCards: FC<SpecialtiesProps> = (props: SpecialtiesProps) => {
 							<div
 								style={{
 									display: "flex",
-									alignItems: "center",
+									alignItems: "start",
 									alignContent: "center"
 								}}
 							>
-								<div style={{ paddingRight: 7, transform: "translateY(-1px)" }}>{props.iconTopic}</div>
+								<div style={{ paddingRight: 7, transform: "translateY(-2.5px)" }}>{props.iconTopic}</div>
 								<Text type={TextTypes.simple} lineHeight={"2em"} style={{ margin: "3px" }}>
 									{values}
 								</Text>

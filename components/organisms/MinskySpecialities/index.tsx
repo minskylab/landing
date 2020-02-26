@@ -32,7 +32,7 @@ const Specialties = () => {
 		{
 			image: <img src="/images/iot.png" alt="Iot" style={{ height: "25vh", width: "auto" }} />,
 			title: "Iot",
-			topics: [ "Hardarware Development", "Prototyping", "System Design", "Consulting" ],
+			topics: [ "Hardware Development", "Prototyping", "System Design", "Consulting" ],
 			iconTopic: <img src="/images/blobpoint.svg" style={{ height: "0.65em", width: "auto" }} />
 		}
 	];

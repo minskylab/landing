@@ -6,9 +6,9 @@ export const CardWrapper = styled.div`
 	transition: 0.2s ease-in-out;
 	&:hover {
 		transform: translateY(-5px);
-		-webkit-box-shadow: 0px 0px 16px -6px rgba(0, 0, 0, 0.51);
-		-moz-box-shadow: 0px 0px 16px -6px rgba(0, 0, 0, 0.51);
-		box-shadow: 0px 0px 16px -6px rgba(0, 0, 0, 0.51);
+		-webkit-box-shadow: 0.895385px 3.58154px 13.4308px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0.895385px 3.58154px 13.4308px rgba(0, 0, 0, 0.1);
+		box-shadow: 0.895385px 3.58154px 13.4308px rgba(0, 0, 0, 0.1);
 	}
 `;
 

@@ -19,6 +19,7 @@ export interface TextTypes {
 	simple: TextType;
 	subtitlePT: TextType;
 	tags: TextType;
+	text: TextType;
 }
 
 export interface TextGeneralProps {
@@ -36,6 +37,7 @@ export const TextTypes: TextTypes = {
 	h5: { as: "h5", size: "1.2em", fontFamily: "Karla" },
 	h6: { as: "h6", size: "1.1em", fontFamily: "Karla" },
 	simple: { as: "p", size: "0.6em", fontFamily: "PT Mono" },
+	text: { as: "p", size: "0.7em", fontFamily: "PT Mono" },
 	subtitlePT: { as: "h2", size: "1.1em", fontFamily: "PT Mono" },
 	tags: { as: "h2", size: "0.65em", fontFamily: "PT Mono" }
 };
