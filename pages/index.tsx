@@ -18,9 +18,11 @@ import ColorTypes from "../components/atoms/Colors";
 import Github from "../components/atoms/Icon/Github";
 import Twitter from "../components/atoms/Icon/Twitter";
 import { Specialties } from "../components/organisms/MinskySpecialities/index";
-import {GiveYou}from "../components/organisms/MinskyGive/giveYour"
-import {ContactUs} from "../components/organisms/MinskyContact/index"
-import {Footer}from "../components/organisms/MinskyFooter/index";
+import { GiveYou } from "../components/organisms/MinskyGive/giveYour";
+import { ContactUs } from "../components/organisms/MinskyContact/index";
+import { Footer } from "../components/organisms/MinskyFooter/index";
+import { Text } from "../components/atoms/Text";
+import { TextTypes } from "../components/atoms/Text/constants";
 
 const Background = styled.div`
 	z-index: -1;
@@ -66,7 +68,7 @@ const IndexPage: FunctionComponent = () => {
 				type={[ "block", "block", "grid" ]}
 				colsTemplate={{ raw: "repeat(3, 1fr)" }}
 				rowsTemplate={{ raw: "repeat(6, auto)" }}
-				m={{ x: "2.4em", y: "2.4em" }}
+				m={{ x: "2em", y: "2em" }}
 			>
 				<Grid debug={DEBUG_MODE} rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
 					<Grid
@@ -74,7 +76,10 @@ const IndexPage: FunctionComponent = () => {
 						m={[ { all: "25vh 0.5em 0 0.5em" }, { all: "34vh 4.2em 0 4.2em" }, { all: "34vh 2em 0 2em" } ]}
 					>
 						<Title alignText={"center"}> MINSKY </Title>
-						<Body alignText={"center"}>A new technological perspective for your ideas</Body>
+						<div style={{ height: "1em" }} />
+						<Text alignText={"center"} type={TextTypes.subtitlePT} fontSize={"0.8em"} lineHeight={"1.5em"}>
+							A new technological perspective for your ideas.
+						</Text>
 						<Grid
 							debug={DEBUG_MODE}
 							type={"grid"}
@@ -112,7 +117,7 @@ const IndexPage: FunctionComponent = () => {
 					debug={DEBUG_MODE}
 					rows={{ from: 3, how: 1 }}
 					cols={{ from: 2, how: 1 }}
-					m={[ { top: "14vh" }, { top: "20vh" } ]}
+					m={[ { top: "15vh" }, { top: "25vh" } ]}
 				>
 					<Grid debug={DEBUG_MODE} type={"flex"} justifyContent={"center"}>
 						<Grid debug={DEBUG_MODE}>
@@ -130,28 +135,56 @@ const IndexPage: FunctionComponent = () => {
 					</Grid>
 				</Grid>
 			</Grid>
-			<Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
+			<Grid
+				type="block"
+				debug={DEBUG_MODE}
+				p={[ { x: "1rem", y: "4rem" }, { x: "3rem", y: "4rem" }, { x: "15vh", y: "4rem" } ]}
+			>
 				<Services />
 			</Grid>
-			<Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
+			<Grid
+				type="block"
+				debug={DEBUG_MODE}
+				p={[ { x: "1rem", y: "4rem" }, { x: "3rem", y: "4rem" }, { x: "15vh", y: "4rem" } ]}
+			>
+				<Specialties />
+			</Grid>
+			<Grid
+				type="block"
+				debug={DEBUG_MODE}
+				p={[ { x: "1rem", y: "4rem" }, { x: "3rem", y: "4rem" }, { x: "15vh", y: "4rem" } ]}
+			>
 				<Technologys />
 			</Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
-                <Team></Team>
-            </Grid>
-            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
-                <Specialties></Specialties>
-            </Grid>
-			 <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
-                <GiveYou></GiveYou>
-            </Grid>
-			<Grid type="block" debug={DEBUG_MODE}  p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "50vh", y: "4rem" }]}>
-                <ContactUs></ContactUs>
-            </Grid>
-			<Grid type="block" debug={DEBUG_MODE}  p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
-				<Footer></Footer>
-            </Grid>
-			
+
+			<Grid
+				type="block"
+				debug={DEBUG_MODE}
+				p={[ { x: "1rem", y: "4rem" }, { x: "3rem", y: "4rem" }, { x: "15vh", y: "4rem" } ]}
+			>
+				<GiveYou />
+			</Grid>
+			<Grid
+				type="block"
+				debug={DEBUG_MODE}
+				p={[ { x: "1rem", y: "4rem" }, { x: "3rem", y: "4rem" }, { x: "15vh", y: "4rem" } ]}
+			>
+				<Team />
+			</Grid>
+			<Grid
+				type="block"
+				debug={DEBUG_MODE}
+				p={[ { x: "1rem", y: "4rem" }, { x: "3rem", y: "4rem" }, { x: "50vh", y: "4rem" } ]}
+			>
+				<ContactUs />
+			</Grid>
+			<Grid
+				type="block"
+				debug={DEBUG_MODE}
+				p={[ { x: "1rem", y: "4rem" }, { x: "3rem", y: "4rem" }, { x: "15vh", y: "4rem" } ]}
+			>
+				<Footer />
+			</Grid>
 		</div>
 	);
 };
