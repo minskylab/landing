@@ -13,63 +13,63 @@ import Twitter from "../../../components/atoms/Icon/Twitter";
 export const Footer = () => {
     return (
 
-        <Grid rowsTemplate={{parts:7,size:"auto"}} type="grid" colsTemplate={{parts:4,size:"auto"}} justifyContent="end" rowGap="1em" columnGap="5em">
-            <Grid rows={{from:1,how:1}} cols={{from:1,how:1}} type="flex">
+        <Grid rowsTemplate={[{parts:17,size:"auto"},{parts:7,size:"auto"}]} type="grid" colsTemplate={[{parts:2,size:"auto"},{parts:4,size:"auto"}]} justifyContent="center" rowGap="1em" columnGap="5em">
+            <Grid rows={[{from:1,how:2},{from:1,how:1}]} cols={[{from:2,how:1},{from:1,how:1}]} m={[{bottom:"2em"},{all:"0px"}]} type="flex">
                 <Title alignText={"center"}> <MinskyLogoIcon/> MINSKY </Title>
             </Grid>
-            <Grid rows={{from:1,how:1}} cols={{from:2,how:1}} type="flex">
+            <Grid rows={[{from:3,how:1},{from:1,how:1}]} cols={[{from:1,how:1},{from:2,how:1}]} type="flex">
                 <Text type={TextTypes.body} style={{fontWeight:"bold"}}> {"About us"} </Text>
             </Grid>
-            <Grid rows={{from:2,how:1}} cols={{from:2,how:1}} type="flex">
+            <Grid rows={[{from:4,how:1},{from:2,how:1}]} cols={[{from:1,how:1},{from:2,how:1}]} type="flex">
                  <Text type={TextTypes.simple} > {"Home"} </Text>
             </Grid>
-            <Grid rows={{from:3,how:1}} cols={{from:2,how:1}} type="flex">
+            <Grid rows={[{from:5,how:1},{from:3,how:1}]} cols={[{from:1,how:1},{from:2,how:1}]} type="flex">
                 <Text type={TextTypes.simple}  style={{textDecoration:"line-through"}}> {"Our History"} </Text>
             </Grid>
-            <Grid rows={{from:4,how:1}} cols={{from:2,how:1}} type="flex">
+            <Grid rows={[{from:6,how:1},{from:4,how:1}]} cols={[{from:1,how:1},{from:2,how:1}]} type="flex">
                 <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Our products"} </Text>
             </Grid>
-            <Grid rows={{from:5,how:1}} cols={{from:2,how:1}} type="flex">
+            <Grid rows={[{from:7,how:1},{from:5,how:1}]} cols={[{from:1,how:1},{from:2,how:1}]} type="flex">
                 <Text type={TextTypes.simple} > {"Jobs"} </Text>
             </Grid>
-            <Grid rows={{from:1,how:1}} cols={{from:3,how:1}} type="flex">
+            <Grid rows={[{from:3,how:1},{from:1,how:1}]} cols={[{from:2,how:1},{from:3,how:1}]} type="flex">
                 <Text type={TextTypes.body} style={{fontWeight:"bold"}}> {"Resourses"} </Text>
             </Grid>
-            <Grid rows={{from:2,how:1}} cols={{from:3,how:1}} type="flex">
+            <Grid rows={[{from:4,how:1},{from:2,how:1}]} cols={[{from:2,how:1},{from:3,how:1}]} type="flex">
                 <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Faq"} </Text>
             </Grid>
-            <Grid rows={{from:3,how:1}} cols={{from:3,how:1}} type="flex">
+            <Grid rows={[{from:5,how:1},{from:3,how:1}]} cols={[{from:2,how:1},{from:3,how:1}]} type="flex">
                 <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Blog"} </Text>
             </Grid>
-            <Grid rows={{from:4,how:1}} cols={{from:3,how:1}} type="flex">
+            <Grid rows={[{from:6,how:1},{from:4,how:1}]} cols={[{from:2,how:1},{from:3,how:1}]} type="flex">
                 <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Video tutorials"} </Text>
             </Grid>
-            <Grid rows={{from:5,how:1}} cols={{from:3,how:1}} type="flex">
+            <Grid rows={[{from:7,how:1},{from:5,how:1}]} cols={[{from:2,how:1},{from:3,how:1}]} type="flex">
                 <Text type={TextTypes.simple} > {"Developers"} </Text>
             </Grid>
-            <Grid rows={{from:1,how:1}} cols={{from:4,how:1}} type="flex">
+            <Grid rows={[{from:9,how:1},{from:1,how:1}]} cols={[{from:1,how:2},{from:4,how:1}]} type="flex">
                 <Text type={TextTypes.body} style={{fontWeight:"bold"}}> {"Usefull information"} </Text>
             </Grid>
-            <Grid rows={{from:2,how:1}} cols={{from:4,how:1}} type="flex">
+            <Grid rows={[{from:10,how:1},{from:2,how:1}]} cols={[{from:1,how:2},{from:4,how:1}]} type="flex">
                 <Text type={TextTypes.simple} style={{textDecoration:"line-through"}} > {"Terms and conditions"} </Text>
             </Grid>
-            <Grid rows={{from:3,how:1}} cols={{from:4,how:1}} type="flex">
+            <Grid rows={[{from:11,how:1},{from:3,how:1}]} cols={[{from:1,how:2},{from:4,how:1}]} type="flex">
                 <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Privacy policy"} </Text>
             </Grid>
-            <Grid rows={{from:4,how:1}} cols={{from:4,how:1}} type="flex">
+            <Grid rows={[{from:12,how:1},{from:4,how:1}]} cols={[{from:1,how:2},{from:4,how:1}]} type="flex">
                 <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Get in Touch"} </Text>
             </Grid>
-            <Grid rows={{from:5,how:1}} cols={{from:4,how:1}} type="flex">
+            <Grid rows={[{from:13,how:1},{from:5,how:1}]} cols={[{from:1,how:2},{from:4,how:1}]} type="flex">
                 <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Help"} </Text>
             </Grid>
-            <Grid rows={{from:6,how:1}} cols={{from:1,how:1}} type="flex">
+            <Grid rows={[{from:15,how:1},{from:6,how:1}]} cols={[{from:1,how:2},{from:1,how:1}]}type="flex">
                 <Body>{"Minsky 2020"} </Body>
             </Grid>
-            <Grid rows={{from:7,how:1}} cols={{from:1,how:1}} type="flex">
+            <Grid rows={[{from:16,how:1},{from:7,how:1}]} cols={[{from:1,how:2},{from:1,how:1}]}type="flex">
                 <Text type={TextTypes.simple} > {"Made in    Perú    with love"} </Text>
             </Grid>
 
-            <Grid rows={{from:7,how:1}} cols={{from:3,how:4}} type="flex" justifySelf="center" >
+            <Grid rows={[{from:17,how:1},{from:7,how:1}]} cols={[{from:1,how:2},{from:3,how:4}]} type="flex" justifySelf="center" >
   
 							{[ "Linkedin", "Github", "Twitter" ].map((socialNet, i) => (
 								<div key={i}>
