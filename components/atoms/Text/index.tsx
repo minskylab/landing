@@ -7,18 +7,19 @@ const CustomInput = (props: TextProps) => styled(props.type.as)`
     font-size: ${props => props.type.size};
     color: ${props => props.color};
     text-align: ${props => props.alignText};
-    line-height: 1.2em;
+    line-height: ${props => props.lineHeight || "1.2em"};
 `;
 
 export interface TextProps {
-    type: TextType;
-    color?: string;
-    alignText?: "start" | "end" | "center" | "stretch; (default)" | "default";
+	type: TextType;
+	color?: string;
+	alignText?: "start" | "end" | "center" | "stretch; (default)" | "default";
+	lineHeight?: string;
 }
 
 export const Text: FC<TextProps & React.HTMLAttributes<any>> = (props: TextProps & React.HTMLAttributes<any>) => {
-    const color = props.color || "#1b1b1b";
-    props = { ...props, color };
-    const E = CustomInput(props);
-    return <E {...props} />;
+	const color = props.color || "#1b1b1b";
+	props = { ...props, color };
+	const E = CustomInput(props);
+	return <E {...props} />;
 };
