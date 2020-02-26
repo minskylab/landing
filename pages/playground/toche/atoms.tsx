@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../../../components/atoms/Button/index"
-import { Input } from "../../../components/atoms/Form/input"
+//import { Input } from "../../../components/atoms/Form/input"
 import { CheckBox } from "../../../components/atoms/Form/checkbox"
 import { Switch } from "../../../components/atoms/Form/switch"
 import { RadioButtonGroup } from"../../../components/atoms/Form/radiobuttongroup";

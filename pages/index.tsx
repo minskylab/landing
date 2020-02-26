@@ -20,6 +20,7 @@ import Twitter from "../components/atoms/Icon/Twitter";
 import { Specialties } from "../components/organisms/MinskySpecialities/index";
 import {GiveYou}from "../components/organisms/MinskyGive/giveYour"
 import {ContactUs} from "../components/organisms/MinskyContact/index"
+import {Footer}from "../components/organisms/MinskyFooter/index";
 
 const Background = styled.div`
 	z-index: -1;
@@ -147,7 +148,10 @@ const IndexPage: FunctionComponent = () => {
 			<Grid type="block" debug={DEBUG_MODE}  p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "50vh", y: "4rem" }]}>
                 <ContactUs></ContactUs>
             </Grid>
-
+			<Grid type="block" debug={DEBUG_MODE}  p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
+				<Footer></Footer>
+            </Grid>
+			
 		</div>
 	);
 };

@@ -4,7 +4,7 @@ import { InputStates, InputSizing, InputSizes, InputStatus } from "./constants"
 import { styled } from "linaria/react";
 
 
-const CustomInput = styled.input<InputProps>`
+const CustomTextInput = styled.input<InputProps>`
     width: ${props => props.newSize.width ? props.newSize.width : "auto"};
     height: ${props => props.newSize.height ?  props.newSize.height  : "auto"};
     cursor: ${props => props.newStatus.cursor ? props.newStatus.cursor  : "pointer"};
@@ -82,9 +82,9 @@ const Input: FC<InputProps & React.StyleHTMLAttributes<any>> = (props: InputProp
     
     props = { ...props, newSize, newStatus }
 
-    return <Wrapper as="div"> <CustomInput
+    return <Wrapper as="div"> <CustomTextInput
         {...props}>
-    </CustomInput>
+    </CustomTextInput>
         <Caption as="div" newStatus={newStatus}>{newCaption}</Caption>
     </Wrapper>
 
