@@ -1,10 +1,6 @@
 import React from "react";
-import { Grid } from "../../../components/atoms/Grid/v2";
-import { styled } from "linaria/react";
 
-import { Text } from "../../../components/atoms/Text/index";
-import { TextTypes } from "../../../components/atoms/Text/constants";
-import { MiniWrapper } from "../../../components/molecules/Cards/constants";
+import { styled } from "linaria/react";
 
 import { Image } from "../../../components/atoms/Images/img";
 import { TechCards } from "../../../components/molecules/Cards/technologyCard";
@@ -30,23 +26,7 @@ const Playground = (props: React.AllHTMLAttributes<any>) => {
     ];
     //USE MOBILE ? "BLOCK" : "FLEX" LINE 49 ON "TYPE"
     return (
-        <Wrapper>
-            <Grid type={"flex"} rows={{ raw: "1" }} debug={DEBUG}>
-                <MiniWrapper height={"7em"}>
-                    <Text type={TextTypes.h4}> Our Technology </Text>
-                </MiniWrapper>
-            </Grid>
-            <Grid type={"flex"} debug={DEBUG} colsTemplate={{ parts: 2 }}>
-                <MiniWrapper height={"23em"} style={{ width: "70%" }}>
-                    <Grid m={{ top: "2em" }} type={"block"}>
-                        {items.map(value => {
-                            return <TechCards title={value.title} body={value.body} icon={value.icon}></TechCards>;
-                        })}
-                    </Grid>
-                </MiniWrapper>
-                <MiniWrapper height={"23em"} style={{ width: "100%" }}></MiniWrapper>
-            </Grid>
-        </Wrapper>
+        <TechCards icon= "as" title= "Payment" body="Multi payment gateway. Consequat reprehenderit incididunt incididunt officia tempor aliqua ad aliquip ipsum aute in in dolor velit."></TechCards>
     );
 };
 

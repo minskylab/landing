@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../../../components/atoms/Button/index"
-import { Input } from "../../../components/atoms/Form/input"
+//import { Input } from "../../../components/atoms/Form/input"
 import { CheckBox } from "../../../components/atoms/Form/checkbox"
 import { Switch } from "../../../components/atoms/Form/switch"
 import { RadioButtonGroup } from"../../../components/atoms/Form/radiobuttongroup";
@@ -63,7 +63,7 @@ const Playground = () => {
             </div>
 
             <div>
-                <Input placeholder="Normal" type="email" caption="wrong email" error ></Input>
+                {/* <Input placeholder="Normal" type="email" caption="wrong email" error ></Input>
                 <Input placeholder="Big " big ></Input>
                 <Input placeholder="Compact" compact ></Input>
                 <Input placeholder="Disabled" disabled ></Input>
@@ -71,7 +71,7 @@ const Playground = () => {
                 <Input placeholder="Error" error ></Input>
                 <Input defaultValue="Asdasd"></Input>
                 <Input  ></Input>
-                <Input  ></Input>
+                <Input  ></Input> */}
             </div>
 
             <div>
