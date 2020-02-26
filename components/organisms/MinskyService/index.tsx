@@ -4,6 +4,7 @@ import { Text } from "../../atoms/Text/index";
 import { TextTypes } from "../../atoms/Text/constants";
 import { ContentServiceCards } from "../../molecules/Cards/constants";
 import { ServicesCard } from "../../molecules/Cards/serviceCard";
+import Section from "../../atoms/Text/Section";
 
 const DEBUG = false;
 
@@ -33,9 +34,7 @@ const Services = () => {
 	return (
 		<Grid debug={DEBUG} rowsTemplate={[ { parts: 2 } ]} type={"block"}>
 			<Grid p={{ x: "2em", y: "1em" }} rows={{ from: 1, how: 1 }} cols={{ from: 1, how: 1 }} type={"block"}>
-				<Text alignText="start" type={TextTypes.h1}>
-					Our services
-				</Text>
+				<Section>Our services</Section>
 			</Grid>
 			<Grid
 				type={"grid"}

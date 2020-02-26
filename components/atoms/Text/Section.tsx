@@ -2,11 +2,13 @@ import { Text, TextProps } from ".";
 import { TextTypes, TextGeneralProps } from "./constants";
 import { FC } from "react";
 
-const Title: FC<TextGeneralProps & React.HTMLAttributes<any>> = (
+const Section: FC<TextGeneralProps & React.HTMLAttributes<any>> = (
 	props: TextGeneralProps & TextProps & React.HTMLAttributes<any>
 ) => {
-	props = { ...props, type: TextTypes.title, fontWeight: 900 };
+	const fontWeight = 700;
+	const alignText = "start";
+	props = { ...props, type: TextTypes.h1, fontWeight, alignText };
 	return <Text {...props} />;
 };
 
-export default Title;
+export default Section;
