@@ -6,8 +6,12 @@ import { GiveYouCards, GiveUProps } from "../../molecules/Cards/giveYouCard";
 import BranchOutline from "../../atoms/Icon/BranchOutline";
 import LoveOutline from "../../atoms/Icon/LoveOutline";
 import Price from "../../atoms/Icon/PrizeOutline";
+<<<<<<< HEAD
 import PrizeOutline from "../../atoms/Icon/PrizeOutline";
 import ColorTypes from "../../atoms/Colors";
+=======
+import Section from "../../atoms/Text/Section";
+>>>>>>> toche
 const DEBUG = false;
 
 // title: string,
@@ -38,22 +42,27 @@ const GiveYou = () => {
 	return (
 		<Grid
 			debug={DEBUG}
-			rowsTemplate={{ parts: 3, size: "auto" }}
-			colsTemplate={[ { parts: 1, size: "auto" }, { parts: 1, size: "auto" }, { parts: 2, size: "1fr" } ]}
+			rowsTemplate={[{ parts: 3, size: "auto" },{parts:2,size:"auto"}]}
+			colsTemplate={[ { parts: 1, size: "1fr" }, { parts: 2, size: "auto" } ]}
 			type={"grid"}
 		>
-			<Grid rows={{ from: 1, how: 1 }} cols={{ from: 1, how: 1 }} type={"block"}>
+<<<<<<< HEAD
+			<Grid rows={[{ from: 1, how: 1 },{ from: 1, how: 1 }]} cols={[{ from: 1, how: 1 },{ from: 1, how: 1 }]}  type={"block"}>
 				<Text alignText="start" type={TextTypes.h2} fontWeight={600}>
+=======
+			<Grid rows={[{ from: 1, how: 1 },{ from: 1, how: 1 }]} cols={[{ from: 1, how: 1 },{ from: 1, how: 1 }]} p={{ y: "2em" }}  type={"block"}>
+				<Section>
+>>>>>>> toche
 					We give you
-				</Text>
+				</Section>
 			</Grid>
-			<Grid p={{ left: "8%", top: "2em" }} rows={{ from: 2, how: 1 }} cols={{ from: 1, how: 1 }} type={"block"}>
+			<Grid rows={[{ from: 2, how: 1 },{ from: 2, how: 1 }]} cols={[{ from: 1, how: 1 },{ from: 1, how: 1 }]} type={"block"}>
 				{items.map(value => {
 					return <GiveYouCards body={value.body} icon={value.icon} title={value.title} />;
 				})}
 			</Grid>
-			<Grid rows={{ from: 2, how: 3 }} cols={{ from: 2, how: 2 }} type="flex" justifyContent="center">
-				<img src="/images/wegiveyou.png" alt={"We give you"} style={{ height: "100vh", width: "auto" }} />
+			<Grid rows={[{ from: 3, how: 1 },{ from: 1, how: 2 }]} cols={[{ from: 1, how: 1 },{ from: 2, how: 1 }]} type="flex" justifyContent="center">
+				<img src="/images/wegiveyou.png" alt={"We give you"} style={{ height: "auto", width: "45vh" }} />
 			</Grid>
 		</Grid>
 	);
