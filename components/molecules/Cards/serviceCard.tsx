@@ -11,7 +11,7 @@ import { useSpring, animated, InterpolationConfig } from "react-spring";
 import { css } from "linaria";
 
 const wrapperServiceCard = css`
-	border-radius: 0.7em;
+	border-radius: 0.6em;
 	transition: box-shadow 0.11s;
 	&:hover {
 		transform: translateY(-5px);
@@ -69,7 +69,7 @@ const ServicesCard: FC<Values> = (props: Values) => {
 					rows={[ { from: 1, how: 1 }, { from: 2, how: 1 } ]}
 					p={{ right: props.title.length < 16 ? "4rem" : "1rem" }}
 				>
-					<Text type={TextTypes.h5} margin={"0.5em 0px 1em 0px"}>
+					<Text type={TextTypes.h2} fontWeight={600} margin={"0.5em 0px 1em 0px"}>
 						{props.title}
 					</Text>
 				</Grid>
