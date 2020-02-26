@@ -18,6 +18,7 @@ import ColorTypes from "../components/atoms/Colors";
 import Github from "../components/atoms/Icon/Github";
 import Twitter from "../components/atoms/Icon/Twitter";
 import { Specialties } from "../components/organisms/MinskySpecialities/index";
+import {GiveYou}from "../components/organisms/MinskyGive/giveYour"
 
 const Background = styled.div`
 	z-index: -1;
@@ -127,10 +128,10 @@ const IndexPage: FunctionComponent = () => {
 					</Grid>
 				</Grid>
 			</Grid>
-			<Grid type="block" debug={DEBUG_MODE} p={[ { x: "5rem", y: "4rem" } ]}>
+			<Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
 				<Services />
 			</Grid>
-			<Grid type="block" debug={DEBUG_MODE} p={[ { x: "5rem", y: "4rem" } ]}>
+			<Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
 				<Technologys />
 			</Grid>
             <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
@@ -138,6 +139,9 @@ const IndexPage: FunctionComponent = () => {
             </Grid>
             <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
                 <Specialties></Specialties>
+            </Grid>
+			 <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
+                <GiveYou></GiveYou>
             </Grid>
 		</div>
 	);

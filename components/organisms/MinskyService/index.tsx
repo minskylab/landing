@@ -1,8 +1,5 @@
 import React from "react";
-// import { ServicesCard } from "../../molecules/Cards/serviceCard";
-// import { ContentServiceCards } from "../../molecules/Cards/constants";
 import { Grid } from "../../atoms/Grid/v2";
-
 import { Text } from "../../atoms/Text/index";
 import { TextTypes } from "../../atoms/Text/constants";
 import { ContentServiceCards } from "../../molecules/Cards/constants";

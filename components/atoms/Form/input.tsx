@@ -5,20 +5,20 @@ import { styled } from "linaria/react";
 
 
 const CustomInput = styled.input<InputProps>`
-    width: ${props => props.newSize.width ? props.newSize.width : "auto"};
-    height: ${props => props.newSize.height ?  props.newSize.height : "auto"};
-    cursor: ${props => props.newStatus.cursor ? props.newStatus.cursor : "pointer"};
+    width: ${props => props.newSize.width ? props.newSize.width.toString() : "auto"};
+    height: ${props => props.newSize.height ?  props.newSize.height.toString()  : "auto"};
+    cursor: ${props => props.newStatus.cursor ? props.newStatus.cursor.toString()  : "pointer"};
     padding:"0.5em";
     font-size: "15px";
     background-color: "white";
     border-radius: "5px";
     font-family: "Karla";
     border: "2.3px" solid;
-    border-color: ${props => props.newStatus.color ? props.newStatus.color : "black"};
-    color: ${props => props.newStatus.color ? props.newStatus.color : "black"};
-    -webkit-box-shadow: ${props => props.error || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color: "none"};
-    -moz-box-shadow: ${props => props.error  || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color : "none"};
-    box-shadow: ${props => props.error || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color : "none"};
+    border-color: ${props => props.newStatus.color ? props.newStatus.color.toString()  : "black"};
+    color: ${props => props.newStatus.color ? props.newStatus.color.toString()  : "black"};
+    -webkit-box-shadow: ${props => props.error || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color.toString() : "none"};
+    -moz-box-shadow: ${props => props.error  || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color.toString()  : "none"};
+    box-shadow: ${props => props.error || props.positive ? "7px 7px 17px -12px" + " " + props.newStatus.color.toString()  : "none"};
 `
 
 const Wrapper = styled.div`
@@ -29,7 +29,7 @@ const Wrapper = styled.div`
 const Caption = styled.div<InputProps>`
     font-size: "9px";
     font-family: "Karla";
-    color: ${props => props.newStatus.color ? props.newStatus.color : "black"};
+    color: ${props => props.newStatus.color ? props.newStatus.color.toString()  : "black"};
     display: "flex";
     margin: "0.5em";
 `
@@ -53,7 +53,7 @@ interface InputProps {
 
 
 const Input: FC<InputProps & React.StyleHTMLAttributes<any>> = (props: InputProps & React.StyleHTMLAttributes<any>) => {
-    let newSize: InputSizing;
+    let newSize: InputSizing = InputSizes.normal;
     if (props.big) {
         newSize = InputSizes.big
     } else if (props.compact) {
@@ -62,7 +62,7 @@ const Input: FC<InputProps & React.StyleHTMLAttributes<any>> = (props: InputProp
         newSize = InputSizes.normal
     }
 
-    let newStatus: InputStates;
+    let newStatus: InputStates = InputStatus.neutral;
     if (props.error) {
         newStatus = InputStatus.error;
     } else if (props.disabled) {
@@ -75,7 +75,7 @@ const Input: FC<InputProps & React.StyleHTMLAttributes<any>> = (props: InputProp
 
     let newCaption: string;
     if (props?.caption){
-        newCaption = props.caption;
+        newCaption = props.caption.toString();
     }else{
         newCaption = "";
     }
