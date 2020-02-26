@@ -12,7 +12,7 @@ const DEBUG = false;
 const Specialties = () => {
 	const items: SpecialtiesProps[] = [
 		{
-			image: <img src="/images/softDev.png" alt="Software Development" height="256px" width="256px" />,
+			image: <img src="/images/softDev.png" alt="Software Development" style={{ height: "25vh", width: "auto" }} />,
 			title: "Software Development",
 			topics: [
 				"IT Consulting",
@@ -21,19 +21,19 @@ const Specialties = () => {
 				"Maintenance and Support",
 				"IA and Machine Learing Development"
 			],
-			iconTopic: <img src="/images/blob.svg" width="16px" height="16px" />
+			iconTopic: <img src="/images/blobpoint.svg" style={{ height: "0.65em", width: "auto" }} />
 		},
 		{
-			image: <img src="/images/blockchain.png" alt="Blockchain Solutions" height="256px" width="256px" />,
+			image: <img src="/images/blockchain.png" alt="Blockchain Solutions" style={{ height: "25vh", width: "auto" }} />,
 			title: "Blockchain Solutions",
 			topics: [ "Business Consulting", "Cross-Border payments", "Blockchain for Business", "Product Development" ],
-			iconTopic: <img src="/images/blob.svg" width="16px" height="16px" />
+			iconTopic: <img src="/images/blobpoint.svg" style={{ height: "0.65em", width: "auto" }} />
 		},
 		{
-			image: <img src="/images/iot.png" alt="Iot" height="256px" width="256px" />,
+			image: <img src="/images/iot.png" alt="Iot" style={{ height: "25vh", width: "auto" }} />,
 			title: "Iot",
 			topics: [ "Hardarware Development", "Prototyping", "System Design", "Consulting" ],
-			iconTopic: <img src="/images/blob.svg" width="16px" height="16px" />
+			iconTopic: <img src="/images/blobpoint.svg" style={{ height: "0.65em", width: "auto" }} />
 		}
 	];
 
@@ -51,9 +51,9 @@ const Specialties = () => {
 				]}
 				rowsTemplate={{ parts: 1, size: "auto" }}
 				gridAutoFlow={"row"}
-				columnGap="2.8em"
+				columnGap="1.8em"
 				rowGap="1em"
-				p={{ x: "2em", y: "2em" }}
+				p={{ x: "8.5%", y: "2em" }}
 				debug={DEBUG}
 			>
 				{items.map(value => {
