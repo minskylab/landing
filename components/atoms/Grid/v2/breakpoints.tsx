@@ -10,6 +10,6 @@ export interface GridBreakpoints {
 export var defaultBreakpoints: GridBreakpoints = {
     sm: "0em",
     md: "40em",
-    lg: "52em",
+    lg: "58em",
     xl: "64em"
 };
