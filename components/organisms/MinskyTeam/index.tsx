@@ -63,8 +63,8 @@ const Team = () => {
 				]}
 				rowsTemplate={{ parts: 1, size: "auto" }}
 				gridAutoFlow={"row"}
-				columnGap="1em"
-				p={{ x: "1em", y: "1em" }}
+				columnGap="1.2em"
+				p={{ x: "5%", y: "2em" }}
 				debug={DEBUG}
 			>
 				{items.map(value => {

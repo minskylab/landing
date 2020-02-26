@@ -27,7 +27,7 @@ const TeamCards: FC<TeamProps> = (props: TeamProps) => {
 				rowsTemplate={{ parts: 5, size: "auto" }}
 				colsTemplate={{ parts: 1, size: "1fr" }}
 				type="grid"
-				p={{ x: "1em", y: "2em" }}
+				p={{ x: "0.5em", y: "1.5em" }}
 				rowGap="0.5em"
 			>
 				<Grid
