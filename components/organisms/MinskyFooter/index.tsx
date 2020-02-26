@@ -25,10 +25,10 @@ export const Footer = () => {
                  <Text type={TextTypes.simple} > {"Home"} </Text>
             </Grid>
             <Grid rows={{from:3,how:1}} cols={{from:2,how:1}} type="flex">
-                <Text type={TextTypes.simple} > {"Our History"} </Text>
+                <Text type={TextTypes.simple}  style={{textDecoration:"line-through"}}> {"Our History"} </Text>
             </Grid>
             <Grid rows={{from:4,how:1}} cols={{from:2,how:1}} type="flex">
-                <Text type={TextTypes.simple} > {"Our products"} </Text>
+                <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Our products"} </Text>
             </Grid>
             <Grid rows={{from:5,how:1}} cols={{from:2,how:1}} type="flex">
                 <Text type={TextTypes.simple} > {"Jobs"} </Text>
@@ -37,13 +37,13 @@ export const Footer = () => {
                 <Text type={TextTypes.body} style={{fontWeight:"bold"}}> {"Resourses"} </Text>
             </Grid>
             <Grid rows={{from:2,how:1}} cols={{from:3,how:1}} type="flex">
-                <Text type={TextTypes.simple} > {"Faq"} </Text>
+                <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Faq"} </Text>
             </Grid>
             <Grid rows={{from:3,how:1}} cols={{from:3,how:1}} type="flex">
-                <Text type={TextTypes.simple} > {"Blog"} </Text>
+                <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Blog"} </Text>
             </Grid>
             <Grid rows={{from:4,how:1}} cols={{from:3,how:1}} type="flex">
-                <Text type={TextTypes.simple} > {"Video tutorials"} </Text>
+                <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Video tutorials"} </Text>
             </Grid>
             <Grid rows={{from:5,how:1}} cols={{from:3,how:1}} type="flex">
                 <Text type={TextTypes.simple} > {"Developers"} </Text>
@@ -52,16 +52,16 @@ export const Footer = () => {
                 <Text type={TextTypes.body} style={{fontWeight:"bold"}}> {"Usefull information"} </Text>
             </Grid>
             <Grid rows={{from:2,how:1}} cols={{from:4,how:1}} type="flex">
-                <Text type={TextTypes.simple} > {"Terms and conditions"} </Text>
+                <Text type={TextTypes.simple} style={{textDecoration:"line-through"}} > {"Terms and conditions"} </Text>
             </Grid>
             <Grid rows={{from:3,how:1}} cols={{from:4,how:1}} type="flex">
-                <Text type={TextTypes.simple} > {"Privacy policy"} </Text>
+                <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Privacy policy"} </Text>
             </Grid>
             <Grid rows={{from:4,how:1}} cols={{from:4,how:1}} type="flex">
-                <Text type={TextTypes.simple} > {"Get in Touch"} </Text>
+                <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Get in Touch"} </Text>
             </Grid>
             <Grid rows={{from:5,how:1}} cols={{from:4,how:1}} type="flex">
-                <Text type={TextTypes.simple} > {"Help"} </Text>
+                <Text type={TextTypes.simple} style={{textDecoration:"line-through"}}> {"Help"} </Text>
             </Grid>
             <Grid rows={{from:6,how:1}} cols={{from:1,how:1}} type="flex">
                 <Body>{"Minsky 2020"} </Body>
