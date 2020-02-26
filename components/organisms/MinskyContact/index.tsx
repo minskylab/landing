@@ -3,7 +3,7 @@ import Grid from '../../atoms/Grid/v2';
 import { Text } from '../../atoms/Text';
 import { TextTypes } from '../../atoms/Text/constants';
 import { CardWrapper } from '../../molecules/Cards/constants';
-import { Input } from '../../atoms/Form/input';
+//import { Input } from '../../atoms/Form/input';
 
 
 
@@ -39,7 +39,7 @@ export const ContactUs = () => {
                     <Text type={TextTypes.simple}> {Caption} </Text>
                 </Grid>
                 <Grid type="flex" rows={{from:5,how:1}} cols={{from:1,how:2}}>
-                    <Input big></Input>
+                    {/* <Input big></Input> */}
                 </Grid>
                 <Grid type="block" rows={{from:1,how:5}} cols={{from:3,how:1}} justifySelf="start">
                     <img src="/images/uplightbulb.png" width="210px" height="420px" alt="Contact us!"/>
