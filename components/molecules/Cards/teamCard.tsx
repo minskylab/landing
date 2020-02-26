@@ -12,11 +12,11 @@ import LinkedInOutline from '../../atoms/Icon/LinkedInOutline';
 import GithubOutline from '../../atoms/Icon/GithubOutline';
 import TwitterOutline from '../../atoms/Icon/TwitterOutline';
 
-interface TeamProps{
+export interface TeamProps{
     name: string,
     img: any,
-    body: string,
-    other?: string,
+    email?: string,
+    tags?: string[],
     socialNet: any[],
 }
 
@@ -24,24 +24,24 @@ interface TeamProps{
 const TeamCards: FC<TeamProps> = (props: TeamProps) =>{
     return (
         <CardWrapper>
-            <Grid rowsTemplate={{parts:5,size:"1fr"}} colsTemplate={{parts:1,size:"1fr"}} type="grid">
+            <Grid rowsTemplate={{parts:5,size:"auto"}} colsTemplate={{parts:1,size:"1fr"}} type="grid" p={{x:"1em",y:"2em"}}>
                 <Grid rows={{from:1,how:1}} type="flex" cols={{from:1,how:1}} justifyContent="center" alignItems="center">
                     {props.img}
                 </Grid>
                 <Grid rows={{from:2,how:1}} type="flex" cols={{from:1,how:1}} justifyContent="center" alignItems="center">
-                    <Text type={TextTypes.h5}>{props.name}</Text>
+                    <Text type={TextTypes.h5} style={{margin:"3px"}}>{props.name}</Text>
                 </Grid>
                 <Grid rows={{from:3,how:1}} type="flex" cols={{from:1,how:1}} justifyContent="center" alignItems="center">
-                    <Text type={TextTypes.simple}> {props.body} </Text> 
+                    <Text type={TextTypes.simple} style={{margin:"3px"}}> {props.email} </Text> 
                 </Grid>
-                <Grid rows={{from:4,how:1}} type="flex" cols={{from:1,how:1}} justifyContent="center" alignItems="center">
-                    <Text type={TextTypes.simple}>  {props.other}</Text> 
+                <Grid rows={{from:4,how:1}} type="block" cols={{from:1,how:1}} justifySelf="center" alignItems="center">
+                        {
+                            props.tags.map(value=>{
+                            return <Text type={TextTypes.h6} style={{lineHeight:"1em",margin:"10px"}}> {"#" + value}</Text>
+                            })
+                        }
                 </Grid>
-                <Grid rows={{from:5,how:1}} type="flex" cols={{from:1,how:1}} justifyContent="center" alignItems="center">
-                    <Grid rowsTemplate={{parts:1,size:"auto"}} colsTemplate={{parts:props?.socialNet?.length||0,size:"1fr"}}      
-                        type={"grid"}
-                    >
-                    </Grid>
+                <Grid rows={{from:5,how:1}} cols={{from:1,how:1}} type="flex" justifySelf="center" columnGap="2em">
                     {
                         props.socialNet.map((value,index)=>{
                             return <Grid rows={{from:1,how:1}} type="flex" cols={{from:index,how:1}} m={{all:"0.5em"}}>
@@ -54,6 +54,7 @@ const TeamCards: FC<TeamProps> = (props: TeamProps) =>{
                         })
                     }
                 </Grid>
+      
             </Grid>
         </CardWrapper>
     )

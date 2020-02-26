@@ -17,6 +17,7 @@ import { LinkedIn } from "../components/atoms/Icon";
 import ColorTypes from "../components/atoms/Colors";
 import Github from "../components/atoms/Icon/Github";
 import Twitter from "../components/atoms/Icon/Twitter";
+import { Specialties } from "../components/organisms/MinskySpecialities/index";
 
 const Background = styled.div`
 	z-index: -1;
@@ -132,9 +133,12 @@ const IndexPage: FunctionComponent = () => {
 			<Grid type="block" debug={DEBUG_MODE} p={[ { x: "5rem", y: "4rem" } ]}>
 				<Technologys />
 			</Grid>
-			<Grid type="block" debug={DEBUG_MODE} p={[ { x: "5rem", y: "4rem" } ]}>
-				<Team />
-			</Grid>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
+                <Team></Team>
+            </Grid>
+            <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
+                <Specialties></Specialties>
+            </Grid>
 		</div>
 	);
 };

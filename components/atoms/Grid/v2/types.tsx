@@ -17,6 +17,7 @@ export type AlignContent =
     | "end"
     | "center"
     | "stretch"
+    | "flex-end"
     | "space-around"
     | "space-between"
     | "space-evenly"

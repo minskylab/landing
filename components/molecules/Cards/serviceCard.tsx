@@ -6,7 +6,7 @@ import { Text } from "../../atoms/Text/index";
 import { TextTypes } from "../../atoms/Text/constants";
 
 import { Values } from "./constants";
-import { useSpring, animated, OpaqueInterpolation, InterpolationConfig } from "react-spring";
+import { useSpring, animated, InterpolationConfig } from "react-spring";
 
 import { css } from "linaria";
 
@@ -85,13 +85,14 @@ const ServicesCard: FC<Values> = (props: Values) => {
                         { from: 1, how: 1 },
                         { from: 2, how: 1 }
                     ]}
-                    p={{ right: props.title.length < 16 ? "4rem" : "2.2rem" }}
+                    p={{ right: props.title.length < 16 ? "4rem" : "1rem" }}
                 >
                     <Text type={TextTypes.h3}>{props.title}</Text>
                 </Grid>
                 <Grid
                     debug={DEBUG_MODE}
                     type={"flex"}
+                    alignItems="flex-end"
                     cols={[
                         { from: 2, how: 1 },
                         { from: 1, how: 1 }
