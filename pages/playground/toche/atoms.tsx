@@ -63,7 +63,7 @@ const Playground = () => {
             </div>
 
             <div>
-                <Input placeholder="Normal" type="email" caption="wrong email" error ></Input>
+                {/* <Input placeholder="Normal" type="email" caption="wrong email" error ></Input>
                 <Input placeholder="Big " big ></Input>
                 <Input placeholder="Compact" compact ></Input>
                 <Input placeholder="Disabled" disabled ></Input>
@@ -71,7 +71,7 @@ const Playground = () => {
                 <Input placeholder="Error" error ></Input>
                 <Input defaultValue="Asdasd"></Input>
                 <Input  ></Input>
-                <Input  ></Input>
+                <Input  ></Input> */}
             </div>
 
             <div>

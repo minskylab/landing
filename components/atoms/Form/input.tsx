@@ -5,13 +5,13 @@ import { styled } from "linaria/react";
 
 
 const CustomInput = styled.input<InputProps>`
-    width: ${props => props.newSize.width ? props.newSize.width.toString() : "auto"};
-    height: ${props => props.newSize.height ?  props.newSize.height.toString()  : "auto"};
-    cursor: ${props => props.newStatus.cursor ? props.newStatus.cursor.toString()  : "pointer"};
+    width: ${props => props.newSize.width ? props.newSize.width : "auto"};
+    height: ${props => props.newSize.height ?  props.newSize.height  : "auto"};
+    cursor: ${props => props.newStatus.cursor ? props.newStatus.cursor  : "pointer"};
     padding:"0.5em";
-    font-size: "15px";
+    font-size: ${props => props.big ? "22px" : "15px"};
     background-color: "white";
-    border-radius: "5px";
+    border-radius: "10px";
     font-family: "Karla";
     border: "2.3px" solid;
     border-color: ${props => props.newStatus.color ? props.newStatus.color.toString()  : "black"};

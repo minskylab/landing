@@ -1,7 +1,7 @@
 
 
 import React from "react";
-import { GiveYouCards } from "../../../components/molecules/Cards/giveYou";
+import { GiveYouCards } from "../../../components/molecules/Cards/giveYouCard";
 
 const Playground = () => {
     return (

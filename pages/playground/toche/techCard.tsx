@@ -1,10 +1,6 @@
 import React from "react";
-import { Grid } from "../../../components/atoms/Grid/v2";
-import { styled } from "linaria/react";
 
-import { Text } from "../../../components/atoms/Text/index";
-import { TextTypes } from "../../../components/atoms/Text/constants";
-import { MiniWrapper } from "../../../components/molecules/Cards/constants";
+import { styled } from "linaria/react";
 
 import { Image } from "../../../components/atoms/Images/img";
 import { TechCards } from "../../../components/molecules/Cards/technologyCard";
