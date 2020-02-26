@@ -69,7 +69,9 @@ const ServicesCard: FC<Values> = (props: Values) => {
 					rows={[ { from: 1, how: 1 }, { from: 2, how: 1 } ]}
 					p={{ right: props.title.length < 16 ? "4rem" : "1rem" }}
 				>
-					<Text type={TextTypes.h5}>{props.title}</Text>
+					<Text type={TextTypes.h5} margin={"0.5em 0px 1em 0px"}>
+						{props.title}
+					</Text>
 				</Grid>
 				<Grid
 					debug={DEBUG_MODE}

@@ -8,6 +8,7 @@ const CustomInput = (props: TextProps) => styled(props.type.as)`
     color: ${props => props.color};
     text-align: ${props => props.alignText};
     line-height: ${props => props.lineHeight || "1.2em"};
+    margin: ${props => props.margin};
 `;
 
 export interface TextProps {
@@ -15,6 +16,7 @@ export interface TextProps {
 	color?: string;
 	alignText?: "start" | "end" | "center" | "stretch; (default)" | "default";
 	lineHeight?: string;
+	margin?: string;
 }
 
 export const Text: FC<TextProps & React.HTMLAttributes<any>> = (props: TextProps & React.HTMLAttributes<any>) => {

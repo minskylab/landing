@@ -33,5 +33,5 @@ export const TextTypes: TextTypes = {
 	h4: { as: "h4", size: "1.3em", fontFamily: "Karla" },
 	h5: { as: "h5", size: "1.2em", fontFamily: "Karla" },
 	h6: { as: "h6", size: "1.1em", fontFamily: "Karla" },
-	simple: { as: "p", size: "0.65em", fontFamily: "PT Mono" }
+	simple: { as: "p", size: "0.6em", fontFamily: "PT Mono" }
 };

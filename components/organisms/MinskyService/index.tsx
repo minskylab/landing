@@ -35,7 +35,7 @@ const Services = () => {
 	];
 	return (
 		<Grid debug={DEBUG} rowsTemplate={[ { parts: 2 } ]} type={"block"}>
-			<Grid rows={{ from: 1, how: 1 }} cols={{ from: 1, how: 1 }} type={"block"}>
+			<Grid p={{ x: "2em", y: "1em" }} rows={{ from: 1, how: 1 }} cols={{ from: 1, how: 1 }} type={"block"}>
 				<Text alignText="start" type={TextTypes.h1}>
 					Our services
 				</Text>
@@ -51,7 +51,7 @@ const Services = () => {
 				gridAutoFlow={"row"}
 				columnGap="2em"
 				rowGap="1em"
-				p={{ x: "2em", y: "2em" }}
+				p={{ x: "1.2em", y: "2em" }}
 				debug={DEBUG}
 			>
 				{items.map(value => {
