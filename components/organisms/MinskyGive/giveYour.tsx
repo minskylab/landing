@@ -42,7 +42,7 @@ const GiveYou = () => {
 			colsTemplate={[ { parts: 1, size: "1fr" }, { parts: 2, size: "auto" } ]}
 			type={"grid"}
 		>
-			<Grid rows={[{ from: 1, how: 1 },{ from: 1, how: 1 }]} cols={[{ from: 1, how: 1 },{ from: 1, how: 1 }]} type={"block"}>
+			<Grid rows={[{ from: 1, how: 1 },{ from: 1, how: 1 }]} cols={[{ from: 1, how: 1 },{ from: 1, how: 1 }]}  type={"block"}>
 				<Text alignText="start" type={TextTypes.h2} fontWeight={600}>
 					We give you
 				</Text>
