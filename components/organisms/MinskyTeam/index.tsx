@@ -16,25 +16,25 @@ const DEBUG = false;
 const Team = () => {
     const items: TeamProps[] = [
         {
-            img: "as",
+            img: <img src="/images/blob.svg" width="128px" height="128px"></img>,
             tags: ["Backend", "Frontend", "Catlover"],
             name: "Antonio Toche",
             socialNet: ["asdasd", "asdasda", "asdkdkk"]
         },
         {
-            img: "as",
+            img: <img src="/images/blob.svg" width="128px" height="128px"></img>,
             tags: ["UXIUResearch", "FrontEnd", "DataAnalyst"],
             name: "María Noriega",
             socialNet: ["asdasd", "asdasda", "asdkdkk"]
         },
         {
-            img: "as",
+            img: <img src="/images/blob.svg" width="128px" height="128px"></img>,
             tags: ["Inventor", "Developer", "UXIUResearch"],
             name: "Bregy Malpartida",
             socialNet: ["asdasd", "asdasda", "asdkdkk"]
         },
         {
-            img: "as",
+            img: <img src="/images/blob.svg" width="128px" height="128px"></img>,
             tags: ["Scientist", "Psychologist", "ComputationalLover"],
             name: "Carlos Almenara",
             socialNet: ["asdasd", "asdasda", "asdkdkk"]
