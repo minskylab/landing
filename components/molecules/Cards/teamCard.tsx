@@ -4,6 +4,13 @@ import { Text } from '../../atoms/Text';
 import { TextTypes } from '../../atoms/Text/constants';
 
 import {CardWrapper}from"./constants"
+import ColorTypes from '../../atoms/Colors';
+import { LinkedIn } from '../../atoms/Icon';
+import Github from '../../atoms/Icon/Github';
+import Twitter from '../../atoms/Icon/Twitter';
+import LinkedInOutline from '../../atoms/Icon/LinkedInOutline';
+import GithubOutline from '../../atoms/Icon/GithubOutline';
+import TwitterOutline from '../../atoms/Icon/TwitterOutline';
 
 interface TeamProps{
     name: string,
@@ -15,7 +22,6 @@ interface TeamProps{
 
 
 const TeamCards: FC<TeamProps> = (props: TeamProps) =>{
-
     return (
         <CardWrapper>
             <Grid rowsTemplate={{parts:5,size:"1fr"}} colsTemplate={{parts:1,size:"1fr"}} type="grid">
@@ -37,9 +43,13 @@ const TeamCards: FC<TeamProps> = (props: TeamProps) =>{
                     >
                     </Grid>
                     {
-                        props.socialNet.map((values,index)=>{
+                        props.socialNet.map((value,index)=>{
                             return <Grid rows={{from:1,how:1}} type="flex" cols={{from:index,how:1}} m={{all:"0.5em"}}>
-                                {values}
+                                <div>
+                                    {value === "Linkedin" && <LinkedInOutline height={24} width={24} color={ColorTypes.black._50} />}
+									{value === "Github" && <GithubOutline height={24} width={24} color={ColorTypes.black._50} />}
+									{value === "Twitter" && <TwitterOutline height={24} width={24} color={ColorTypes.black._50} />}
+                                </div>
                             </Grid>
                         })
                     }
