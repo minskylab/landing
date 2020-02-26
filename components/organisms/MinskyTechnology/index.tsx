@@ -10,14 +10,14 @@ const DEBUG = false;
 
 const Technologys = () => {
     const items: ContentServiceCards[] = [
-        { icon: "as", title: "Chatbots", body: "Multichannel technology." },
-        { icon: "as", title: "Payment", body: "Multi payment gateway." },
-        { icon: "as", title: "Just for fun", body: "Developing everything." }
+        { icon: "as", title: "Chatbots", body: "Multichannel technology. Excepteur incididunt amet aliquip anim non tempor laborum qui proident." },
+        { icon: "as", title: "Payment", body: "Multi payment gateway. Pariatur incididunt consectetur esse et ut tempor tempor sit occaecat ex." },
+        { icon: "as", title: "Just for fun", body: "Developing everything. Ex excepteur id enim eu est commodo sint sunt eiusmod tempor." }
     ];
     return (
-        <Grid debug={DEBUG} rowsTemplate={{ parts: 2, size:"auto" }}  colsTemplate={[{parts:1, size:"auto"},{parts:2, size:"auto"},{parts:3, size:"auto"}]} type={"grid"}>
+        <Grid debug={DEBUG} rowsTemplate={{ parts: 2, size:"auto" }}  colsTemplate={[{parts:1, size:"auto"},{parts:2, size:"1fr"},{parts:2, size:"1fr"}]} type={"grid"}>
             <Grid rows={{from:1,how:1}} cols={{from:1,how:1}} type={"block"}>
-                <Text alignText="start" type={TextTypes.h4}>
+                <Text alignText="start" type={TextTypes.title}>
                     Our Technology
                 </Text>
             </Grid>

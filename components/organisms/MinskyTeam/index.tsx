@@ -11,10 +11,10 @@ import { TextTypes } from '../../atoms/Text/constants';
 const DEBUG = false;
 const Team = () => {
     const items = [
-        { img: "as", other: "Chatbots", body: "Multichannel technology." ,name:"asdasda", socialNet: ["asdasd","asdasda","asdkdkk"]},
-        { img: "as", other: "Payment", body: "Multi payment gateway.",name:"asdasda" , socialNet: ["asdasd","asdasda","asdkdkk"]},
-        { img: "as", other: "Just for fun", body: "Developing everything.",name:"asdasda", socialNet: ["asdasd","asdasda","asdkdkk"] },
-        { img: "as", other: "Jsdasdadn", body: "Devsadsdeloping everything.",name:"asssddaddsdddasda", socialNet: ["asdasd","asdasda","asdkdkk"] },
+        { img: "as", other: "# Backend", body: "# Frontend" ,name:"Antonio Toche", socialNet: ["asdasd","asdasda","asdkdkk"]},
+        { img: "as", other: "Payment", body: "# Backend",name:"María Noriega" , socialNet: ["asdasd","asdasda","asdkdkk"]},
+        { img: "as", other: "Just for fun", body: "Developing everything.",name:"Bregy Malpartida", socialNet: ["asdasd","asdasda","asdkdkk"] },
+        { img: "as", other: "Jsdasdadn", body: "Devsadsdeloping everything.",name:"Carlos Almenara", socialNet: ["asdasd","asdasda","asdkdkk"] },
     ];
 
     return (     <Grid debug={DEBUG} rowsTemplate={[{ parts: 2 }]} type={"block"}>

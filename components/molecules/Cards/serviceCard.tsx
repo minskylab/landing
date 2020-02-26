@@ -102,7 +102,7 @@ const ServicesCard: FC<Values> = (props: Values) => {
                         { from: 3, how: 1 }
                     ]}
                 >
-                    <Body alignText="justify"> {props.body} </Body>
+                    <Body> {props.body} </Body>
                 </Grid>
             </Grid>
         </animated.div>

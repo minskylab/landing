@@ -13,15 +13,16 @@ const DEBUG_MODE = false;
 const TechCards: FC<Values> = (props: Values) => {
     return (
         <CardWrapper {...props} as="div">
-            <Grid debug={DEBUG_MODE} type={"grid"} colsTemplate={{ parts: 2,size:"auto" }} rowsTemplate={{parts:2, size:"auto"}} p={{all:"2em"}}>
-                <Grid debug={DEBUG_MODE} type="flex" cols={{from:1, how:1}} rows={{from:1, how:1}}> 
-                    <Text type={TextTypes.h4}>{props.title} </Text >
+            <Grid debug={DEBUG_MODE} type={"grid"} colsTemplate={{ parts: 2,size:"auto" }} rowsTemplate={{parts:2, size:"auto"}} p={{x:"2em",y:"1em"}}>
+                <Grid debug={DEBUG_MODE} type="flex" cols={{from:1, how:1}} rows={{from:1, how:1}} alignContent="flex-end"> 
+                    <Text type={TextTypes.h3}>{props.title} </Text >
                 </Grid>
-                <Grid debug={DEBUG_MODE} type="flex" cols={{from:1, how:1}} rows={{from:2, how:1}}> 
+                <Grid debug={DEBUG_MODE} type="block" cols={{from:1, how:1}} rows={{from:2, how:1}} alignItems="start"> 
                     <Body> {props.body} </Body>
                 </Grid>
-                <Grid debug={DEBUG_MODE} type="flex" cols={{from:2, how:1}} rows={{from:1, how:1}} justifyContent="flex-end"  alignSelf="end" > 
-                    {props.icon} 
+                <Grid debug={DEBUG_MODE} type="flex" cols={{from:2, how:1}} rows={{from:1, how:2}}  justifyContent="flex-end" alignItems="center" m={{left:"3rem"}}> 
+                        {props.icon} 
+
                 </Grid>     
             </Grid>
         </CardWrapper>

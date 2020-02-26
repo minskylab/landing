@@ -36,7 +36,7 @@ const Services = () => {
     return (
         <Grid debug={DEBUG} rowsTemplate={[{ parts: 2 }]} type={"block"}>
             <Grid rows={{ from: 1, how: 1 }} cols={{ from: 1, how: 1 }} type={"block"}>
-                <Text alignText="start" type={TextTypes.h4}>
+                <Text alignText="start" type={TextTypes.title}>
                     Our services
                 </Text>
             </Grid>
