@@ -9,7 +9,6 @@ import { LinkedIn } from "../../../components/atoms/Icon";
 import ColorTypes from "../../../components/atoms/Colors";
 import Github from "../../../components/atoms/Icon/Github";
 import Twitter from "../../../components/atoms/Icon/Twitter";
-import { url } from 'inspector';
 
 export const Footer = () => {
     return (
