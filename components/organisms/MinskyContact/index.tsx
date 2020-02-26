@@ -18,11 +18,12 @@ export const ContactUs = () => {
     const Caption: string = "Stay Tuned";
     return (
         <CardWrapper>
-            <Grid type="grid" rowsTemplate={{parts:5,size:"1fr"}} colsTemplate={{parts:2,size:"auto"}} p={{all:"2em"}} justifyContent="start">
-                <Grid type="flex" rows={{from:1,how:1}} cols={{from:1,how:1}} alignItems="center">
+            <Grid type="grid" rowsTemplate={{parts:5,size:"1fr"}} colsTemplate={{parts:3,size:"auto"}} p={{all:"2em"}}>
+                
+                <Grid type="flex" rows={{from:1,how:1}} cols={{from:1,how:2}} alignItems="center">
                     <Text type={TextTypes.h2}> {Title} </Text>
                 </Grid>
-                <Grid type="flex" rows={{from:2,how:1}} cols={{from:1,how:1}}>
+                <Grid type="flex" rows={{from:2,how:1}} cols={{from:1,how:2}}>
                     <Text type={TextTypes.h2}> {Subtitle} </Text>
                 </Grid>
                 <Grid type="block" rows={{from:3,how:1}} cols={{from:1,how:1}}>
@@ -30,17 +31,17 @@ export const ContactUs = () => {
                     <div><Text type={TextTypes.simple}> {Par2} </Text> </div>
                     <div><Text type={TextTypes.simple}> {Country} </Text> </div>
                 </Grid>
-                <Grid type="block" rows={{from:3,how:1}} cols={{from:1,how:1}} justifySelf="center">
+                <Grid type="block" rows={{from:3,how:1}} cols={{from:2,how:1}} justifySelf="center">
                     <Text type={TextTypes.simple}> {Mail} </Text>
                     <div><Text type={TextTypes.simple}> {Telf} </Text> </div>
                 </Grid>
-                <Grid type="block" rows={{from:4,how:1}} cols={{from:1,how:1}} alignSelf="end">
+                <Grid type="block" rows={{from:4,how:1}} cols={{from:1,how:2}} alignSelf="end">
                     <Text type={TextTypes.simple}> {Caption} </Text>
                 </Grid>
-                <Grid type="flex" rows={{from:5,how:1}} cols={{from:1,how:1}}>
+                <Grid type="flex" rows={{from:5,how:1}} cols={{from:1,how:2}}>
                     <Input big></Input>
                 </Grid>
-                <Grid type="block" rows={{from:1,how:5}} cols={{from:2,how:1}} justifySelf="start">
+                <Grid type="block" rows={{from:1,how:5}} cols={{from:3,how:1}} justifySelf="start">
                     <img src="/images/uplightbulb.png" width="210px" height="420px" alt="Contact us!"/>
                 </Grid>
             </Grid>

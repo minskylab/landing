@@ -144,7 +144,7 @@ const IndexPage: FunctionComponent = () => {
 			 <Grid type="block" debug={DEBUG_MODE} p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "15vh", y: "4rem" }]}>
                 <GiveYou></GiveYou>
             </Grid>
-			<Grid type="block" debug={DEBUG_MODE} justifySelf="center">
+			<Grid type="block" debug={DEBUG_MODE}  p={[{ x: "1rem", y: "4rem" },{ x: "3rem", y: "4rem" },{ x: "50vh", y: "4rem" }]}>
                 <ContactUs></ContactUs>
             </Grid>
 
