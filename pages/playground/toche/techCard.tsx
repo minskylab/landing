@@ -3,7 +3,7 @@ import React from "react";
 import { styled } from "linaria/react";
 
 import { Image } from "../../../components/atoms/Images/img";
-import { TechCards } from "../../../components/molecules/Cards/technologyCard";
+import { TechCard } from "../../../components/molecules/Cards/TechCard";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -26,7 +26,11 @@ const Playground = (props: React.AllHTMLAttributes<any>) => {
     ];
     //USE MOBILE ? "BLOCK" : "FLEX" LINE 49 ON "TYPE"
     return (
-        <TechCards icon= "as" title= "Payment" body="Multi payment gateway. Consequat reprehenderit incididunt incididunt officia tempor aliqua ad aliquip ipsum aute in in dolor velit."></TechCards>
+        <TechCard
+            icon="as"
+            title="Payment"
+            body="Multi payment gateway. Consequat reprehenderit incididunt incididunt officia tempor aliqua ad aliquip ipsum aute in in dolor velit."
+        ></TechCard>
     );
 };
 

@@ -4,15 +4,15 @@ import Text, { MinskyFonts } from "./Text";
 import { Presets } from "./presets";
 import { AvailableElementTypes } from "./base";
 
-const Title: FC<TextProps> = (props: TextProps) => {
+const SubtitlePT: FC<TextProps> = (props: TextProps) => {
     return (
         <Text
-            as={Presets.Title.as as AvailableElementTypes}
-            size={Presets.Title.size}
-            fontFamily={Presets.Title.fontFamily as MinskyFonts}
+            as={Presets.SubtitlePT.as as AvailableElementTypes}
+            size={Presets.SubtitlePT.size}
+            fontFamily={Presets.SubtitlePT.fontFamily as MinskyFonts}
             {...props}
         />
     );
 };
 
-export default Title;
+export default SubtitlePT;
