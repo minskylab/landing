@@ -135,6 +135,38 @@ const IndexPage: FunctionComponent = () => {
 					</Grid>
 				</Grid>
 			</Grid>
+			<div
+				style={{
+					backgroundImage: `url("/images/background.png")`,
+					backgroundOrigin: "center",
+					backgroundSize: "contain",
+					backgroundRepeat: "no-repeat",
+					backgroundPosition: "center",
+					height: "90vh",
+					width: "auto",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center"
+				}}
+			>
+				<div
+					style={{
+						backgroundImage: `url("/images/backgroundblob.svg")`,
+						backgroundOrigin: "center",
+						backgroundSize: "contain",
+						backgroundRepeat: "no-repeat",
+						backgroundPosition: "center",
+						height: "60vh",
+						width: "60vh",
+						transform: "translateY(-10px)",
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center"
+					}}
+				>
+					<div>We design and build digital products</div>
+				</div>
+			</div>
 			<Grid
 				type="block"
 				debug={DEBUG_MODE}
