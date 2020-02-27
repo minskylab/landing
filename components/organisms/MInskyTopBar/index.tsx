@@ -109,7 +109,7 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                             </Grid>
                         </Grid>
                         <animated.div style={propsVerticalMenu}>
-                            <Grid type={["flex", "none", "none"]} justifyContent={"flex-end"}>
+                            <Grid type={["flex", "none", "none"]} justifyContent={"flex-end"} m={{ right: "1rem" }}>
                                 <VerticalMenu
                                     selectedItem={"home"}
                                     items={[{ key: "home", name: "Home" }]}

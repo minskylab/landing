@@ -15,7 +15,7 @@ const CustomInput = (props: TextProps) => styled(props.type.as)`
 export interface TextProps {
     type: TextType;
     color?: string;
-    alignText?: "start" | "end" | "center" | "stretch; (default)" | "default";
+    alignText?: "start" | "end" | "center" | "stretch" | "default";
     lineHeight?: string;
     margin?: string;
     fontWeight?: any;
