@@ -24,9 +24,10 @@ const Team: FC = () => {
                 rowGap="3.2rem"
                 p={{ y: "2.4rem" }}
             >
-                {defaultItems.map(value => {
+                {defaultItems.map((value, i) => {
                     return (
                         <PersonCard
+                            key={i}
                             name={value.name}
                             img={value.img}
                             tags={value.tags}

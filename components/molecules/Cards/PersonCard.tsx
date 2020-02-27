@@ -1,17 +1,24 @@
 import React, { FC } from "react";
 import { Grid } from "../../atoms/Grid/v2/index";
-import { Text } from "../../atoms/Text";
-import { TextTypes } from "../../atoms/Text/constants";
 
-import { CardWrapper } from "./constants";
 import ColorTypes from "../../atoms/Colors";
-import { LinkedIn } from "../../atoms/Icon";
-import Github from "../../atoms/Icon/Github";
-import Twitter from "../../atoms/Icon/Twitter";
+
 import LinkedInOutline from "../../atoms/Icon/LinkedInOutline";
 import GithubOutline from "../../atoms/Icon/GithubOutline";
 import TwitterOutline from "../../atoms/Icon/TwitterOutline";
 import { Subtitle, Simple } from "../../atoms/Text/v2";
+import { styled } from "linaria/react";
+
+const Wrapper = styled.div`
+    border-radius: 0.6em;
+    transition: 0.2s ease-in-out;
+    &:hover {
+        transform: translateY(-5px);
+        -webkit-box-shadow: 0.895385px 3.58154px 13.4308px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0.895385px 3.58154px 13.4308px rgba(0, 0, 0, 0.1);
+        box-shadow: 0.895385px 3.58154px 13.4308px rgba(0, 0, 0, 0.1);
+    }
+`;
 
 interface SocialNetwork {
     type: "github" | "linkedin" | "twitter" | "personal" | "researchgate";
@@ -28,7 +35,7 @@ export interface PersonCardProps {
 
 const PersonCard: FC<PersonCardProps> = (props: PersonCardProps) => {
     return (
-        <CardWrapper>
+        <Wrapper>
             <Grid
                 rowsTemplate={{ parts: 5, size: "auto" }}
                 colsTemplate={{ parts: 1, size: "1fr" }}
@@ -76,9 +83,9 @@ const PersonCard: FC<PersonCardProps> = (props: PersonCardProps) => {
                     alignItems={"center"}
                     justifyContent={"center"}
                 >
-                    {props.tags.map(value => {
+                    {props.tags.map((value, i) => {
                         return (
-                            <Simple textAlign={"center"} lineHeight={"2.3em"}>
+                            <Simple key={i} textAlign={"center"} lineHeight={"2.3em"}>
                                 {"#" + value}
                             </Simple>
                         );
@@ -91,12 +98,13 @@ const PersonCard: FC<PersonCardProps> = (props: PersonCardProps) => {
                     justifySelf="center"
                     columnGap="2em"
                 >
-                    {props.socialNet.map((value, index) => {
+                    {props.socialNet.map((value, i) => {
                         return (
                             <Grid
+                                key={i}
                                 rows={{ from: 1, how: 1 }}
                                 type="flex"
-                                cols={{ from: index, how: 1 }}
+                                cols={{ from: i, how: 1 }}
                                 m={{ all: "0.5em" }}
                             >
                                 <div>
@@ -115,7 +123,7 @@ const PersonCard: FC<PersonCardProps> = (props: PersonCardProps) => {
                     })}
                 </Grid>
             </Grid>
-        </CardWrapper>
+        </Wrapper>
     );
 };
 

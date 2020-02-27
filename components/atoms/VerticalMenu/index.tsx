@@ -58,7 +58,7 @@ const VerticalMenu: FC<VerticalMenuProps> = (props: VerticalMenuProps) => {
         const items = props.items.filter(item => item.key === props.selectedItem);
         return (
             <Wrapper>
-                <Item selected>
+                <Item key={"1"} selected>
                     {items.length < 1 ? props.items[0].name : items[0].name}
                     <Line />
                 </Item>
@@ -70,13 +70,13 @@ const VerticalMenu: FC<VerticalMenuProps> = (props: VerticalMenuProps) => {
             {props.items.map((item, i) => {
                 const sel: boolean = item.key === props.selectedItem;
                 return (
-                    <>
-                        <Item key={i} selected={sel} onClick={() => props.onSelected && props.onSelected(item)}>
+                    <React.Fragment key={i}>
+                        <Item selected={sel} onClick={() => props.onSelected && props.onSelected(item)}>
                             {item.name}
                             {sel && <Line />}
                         </Item>
-                        {i < props.items.length - 1 && <Spacer />}
-                    </>
+                        {i < props.items.length - 1 && <Spacer key={`sp${i}`} />}
+                    </React.Fragment>
                 );
             })}
         </Wrapper>

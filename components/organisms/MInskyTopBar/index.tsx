@@ -1,10 +1,10 @@
 import React, { FC, useState, useEffect } from "react";
 import { styled } from "linaria/react";
 import { Grid } from "../../atoms/Grid/v2";
-import { MenuIcon, MinskyLogoIcon } from "../../atoms/Icon/icons";
+import { MinskyLogoIcon } from "../../atoms/Icon/icons";
 import { Button } from "../../atoms/Button";
 import VerticalMenu from "../../atoms/VerticalMenu";
-import ButtonIcon from "../../atoms/Button/ButtonIcon";
+
 import MinskyMenu from "../../molecules/MinskyMenu";
 import { useSpring, animated } from "react-spring";
 import { css } from "linaria";
@@ -16,20 +16,20 @@ const menuContainer = css`
     z-index: 10;
     top: 0;
 `;
-interface MinskyTopBarContainerProps {
-    showing?: boolean;
-}
+// interface MinskyTopBarContainerProps {
+//     showing?: boolean;
+// }
 
-const MinskyTopBarContainer = styled.div<MinskyTopBarContainerProps>`
-    z-index: 10;
-    position: ${props => (props.showing ? "fixed" : "fixed")};
-    top: ${props => (props.showing ? "0em" : "-4em")};
-    opacity: ${props => (props.showing ? "100%" : "0")};
-    left: 0;
-    width: 100%;
-    background-color: #fffcf0;
-    transition: 0.1s;
-`;
+// const MinskyTopBarContainer = styled.div<MinskyTopBarContainerProps>`
+//     z-index: 10;
+//     position: ${props => (props.showing ? "fixed" : "fixed")};
+//     top: ${props => (props.showing ? "0em" : "-4em")};
+//     opacity: ${props => (props.showing ? "100%" : "0")};
+//     left: 0;
+//     width: 100%;
+//     background-color: #fffcf0;
+//     transition: 0.1s;
+// `;
 
 const topBarContainer = css`
     z-index: 11;
@@ -38,7 +38,8 @@ const topBarContainer = css`
     opacity: 100%;
     left: 0;
     width: 100%;
-    background-color: #fffcf0;
+    background-color: white;
+    /* #fffcf0; */
     /* height: 4rem; */
 `;
 
@@ -51,7 +52,7 @@ interface MinskyTopBarProps {
 const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const [propsMenu, setPropsMenu] = useSpring(() => ({ transform: "translateY(-30rem)" }));
-    const [propsBar, setPropsBar] = useSpring(() => ({ backgroundColor: "#fffcf0" }));
+    const [propsBar, setPropsBar] = useSpring(() => ({ backgroundColor: "white" }));
     const [propsVerticalMenu, setPropsVerticalMenu] = useSpring(() => ({
         opacity: 1,
         config: {
@@ -61,7 +62,7 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
 
     useEffect(() => {
         setPropsMenu({ transform: openMenu ? "translateY(0)" : "translateY(-30rem)" });
-        setPropsBar({ backgroundColor: openMenu ? "#ffdf53" : "#fffcf0" });
+        setPropsBar({ backgroundColor: openMenu ? "#ffdf53" : "white" });
         setPropsVerticalMenu({ opacity: openMenu ? 0 : 1 });
     }, [openMenu]);
 
