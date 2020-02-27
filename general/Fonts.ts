@@ -1,6 +1,6 @@
 import FontFaceObserver from "fontfaceobserver";
 
-const minskyGoogleFonts = "https://fonts.googleapis.com/css?family=Karla:400,700|Rubik:400,700&display=swap";
+const minskyGoogleFonts = "https://fonts.googleapis.com/css?family=Karla:400,700|Rubik:400,700|PT+Mono&display=swap";
 
 const Fonts = () => {
     const link = document.createElement("link");
@@ -12,7 +12,7 @@ const Fonts = () => {
     const karla = new FontFaceObserver("Karla");
 
     karla.load().then(() => {
-        document.documentElement.classList.add("karla");
+        document.documentElement.classList.add("minsky");
     });
 };
 

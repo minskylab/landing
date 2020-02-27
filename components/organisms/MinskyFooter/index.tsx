@@ -205,7 +205,9 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "3.8rem" }, {}]}
                 >
-                    <Simple textDecoration="line-through">{"Video tutorials"}</Simple>
+                    <Simple textDecoration="line-through" textAlign={"end"}>
+                        {"Video tutorials"}
+                    </Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -310,7 +312,7 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "3.8rem" }, {}]}
                 >
-                    <Body>{"Minsky 2020"} </Body>
+                    <Body size={"0.875rem"}>{"Minsky 2020"} </Body>
                 </Grid>
                 <Grid
                     rows={[
