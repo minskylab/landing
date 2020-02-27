@@ -22,8 +22,10 @@ const Text: FC<FullTextProps> = (props: FullTextProps) => {
         lineHeight: props.lineHeight,
         m: envelopeToPlain(props.m),
         p: envelopeToPlain(props.p),
-        textAlign: props.textAlign
+        textAlign: props.textAlign,
+        textDecoration: props.textDecoration
     };
+
     const E = CustomText(newProps);
 
     return <E {...newProps}>{props.children}</E>;

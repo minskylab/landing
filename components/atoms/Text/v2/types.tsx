@@ -14,6 +14,22 @@ export interface Envelope {
 
 export type AlignText = "start" | "end" | "center" | "stretch" | "default";
 
+export type TextDecoration =
+    | "auto"
+    | "blink"
+    | "dashed"
+    | "dotted"
+    | "double"
+    | "from-font"
+    | "grammar-error"
+    | "line-through"
+    | "none"
+    | "overline"
+    | "solid"
+    | "spelling-error"
+    | "underline"
+    | "wavy";
+
 export interface TextProps {
     size?: string;
     color?: string;
@@ -22,6 +38,7 @@ export interface TextProps {
     p?: Envelope;
     m?: Envelope;
     textAlign?: AlignText;
+    textDecoration?: TextDecoration;
     lineHeight?: string;
     bold?: boolean;
 }

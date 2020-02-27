@@ -11,13 +11,19 @@ import Twitter from "../../atoms/Icon/Twitter";
 import LinkedInOutline from "../../atoms/Icon/LinkedInOutline";
 import GithubOutline from "../../atoms/Icon/GithubOutline";
 import TwitterOutline from "../../atoms/Icon/TwitterOutline";
+import { Subtitle, Simple } from "../../atoms/Text/v2";
+
+interface SocialNetwork {
+    type: "github" | "linkedin" | "twitter" | "personal" | "researchgate";
+    link?: string;
+}
 
 export interface PersonCardProps {
     name: string;
     img: any;
     email?: string;
     tags?: string[];
-    socialNet: any[];
+    socialNet: SocialNetwork[];
 }
 
 const PersonCard: FC<PersonCardProps> = (props: PersonCardProps) => {
@@ -47,9 +53,9 @@ const PersonCard: FC<PersonCardProps> = (props: PersonCardProps) => {
                     justifyContent="center"
                     alignItems="center"
                 >
-                    <Text type={TextTypes.h2} alignText={"center"} fontWeight={600} fontSize={"1.1em"}>
+                    <Subtitle textAlign={"center"} bold>
                         {props.name}
-                    </Text>
+                    </Subtitle>
                 </Grid>
                 {/* <Grid
 					rows={{ from: 3, how: 1 }}
@@ -72,9 +78,9 @@ const PersonCard: FC<PersonCardProps> = (props: PersonCardProps) => {
                 >
                     {props.tags.map(value => {
                         return (
-                            <Text type={TextTypes.tags} alignText={"center"} lineHeight={"2.3em"}>
+                            <Simple textAlign={"center"} lineHeight={"2.3em"}>
                                 {"#" + value}
-                            </Text>
+                            </Simple>
                         );
                     })}
                 </Grid>
@@ -94,13 +100,13 @@ const PersonCard: FC<PersonCardProps> = (props: PersonCardProps) => {
                                 m={{ all: "0.5em" }}
                             >
                                 <div>
-                                    {value === "Linkedin" && (
+                                    {value.type === "linkedin" && (
                                         <LinkedInOutline height={24} width={24} color={ColorTypes.black._50} />
                                     )}
-                                    {value === "Github" && (
+                                    {value.type === "github" && (
                                         <GithubOutline height={24} width={24} color={ColorTypes.black._50} />
                                     )}
-                                    {value === "Twitter" && (
+                                    {value.type === "twitter" && (
                                         <TwitterOutline height={24} width={24} color={ColorTypes.black._50} />
                                     )}
                                 </div>

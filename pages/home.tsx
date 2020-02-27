@@ -17,7 +17,7 @@ import { Specials } from "../components/organisms/MinskySpecials";
 import { GiveYou } from "../components/organisms/MinskyGive";
 
 import { Footer } from "../components/organisms/MinskyFooter/index";
-import { Title, Text, Simple } from "../components/atoms/Text/v2";
+import { Text, Simple } from "../components/atoms/Text/v2";
 
 const Background = styled.div`
     z-index: -1;
@@ -195,7 +195,7 @@ const IndexPage: FunctionComponent = () => {
                     { x: "15vh", y: "4rem" }
                 ]}
             >
-                <Team />
+                <Team /> {/* OK */}
             </Grid>
             {/* Deprecated <Grid
 				type="block"

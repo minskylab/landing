@@ -2,12 +2,10 @@ import React, { FC } from "react";
 
 import { Grid } from "../../atoms/Grid/v2";
 
-import Section from "../../atoms/Text/Section";
 import { defaultItems } from "./default";
-import { PersonCard } from "../../molecules/Cards/personCard";
+import { PersonCard } from "../../molecules/Cards/PersonCard";
 import { Title } from "../../atoms/Text/v2";
 
-const DEBUG = false;
 const Team: FC = () => {
     return (
         <Grid>
@@ -22,10 +20,9 @@ const Team: FC = () => {
                     { parts: 4, size: "1fr" } //  lg
                 ]}
                 rowsTemplate={{ parts: 1, size: "auto" }}
-                gridAutoFlow={"row"}
-                columnGap="1.2em"
-                p={{ x: "5%", y: "2em" }}
-                debug={DEBUG}
+                columnGap="3.6rem"
+                rowGap="3.2rem"
+                p={{ y: "2.4rem" }}
             >
                 {defaultItems.map(value => {
                     return (

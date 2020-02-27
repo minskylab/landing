@@ -1,5 +1,5 @@
 import React from "react";
-import { PersonCard } from "../../../components/molecules/Cards/personCard";
+import { PersonCard } from "../../../components/molecules/Cards/PersonCard";
 
 const Playground = () => {
     return (
@@ -7,7 +7,7 @@ const Playground = () => {
             img={"sada"}
             name="string"
             tags={["string[]", "[]ssdasda", "[]asdasdasd"]}
-            socialNet={["any,", "any,", "any,"]}
+            socialNet={[{ type: "github" }]}
         ></PersonCard>
     );
 };

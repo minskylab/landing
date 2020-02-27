@@ -1,4 +1,4 @@
-import { PersonCardProps } from "../../molecules/Cards/personCard";
+import { PersonCardProps } from "../../molecules/Cards/PersonCard";
 
 export const defaultItems: PersonCardProps[] = [
     {
@@ -10,7 +10,7 @@ export const defaultItems: PersonCardProps[] = [
         ),
         tags: ["Backend", "Frontend", "CatLover"],
         name: "Antonio Toche",
-        socialNet: ["Github", "Linkedin"]
+        socialNet: [{ type: "github" }, { type: "linkedin" }]
     },
     {
         img: (
@@ -21,7 +21,7 @@ export const defaultItems: PersonCardProps[] = [
         ),
         tags: ["UXIUResearch", "FrontEnd", "DataAnalyst"],
         name: "María Noriega",
-        socialNet: ["Github", "Linkedin"]
+        socialNet: [{ type: "github" }, { type: "linkedin" }]
     },
     {
         img: (
@@ -32,7 +32,7 @@ export const defaultItems: PersonCardProps[] = [
         ),
         tags: ["Inventor", "Developer", "UXIUResearch"],
         name: "Bregy Malpartida",
-        socialNet: ["Github", "Linkedin"]
+        socialNet: [{ type: "github" }, { type: "linkedin" }]
     },
     {
         img: (
@@ -43,6 +43,6 @@ export const defaultItems: PersonCardProps[] = [
         ),
         tags: ["Scientist", "Psychologist", "ComputationalLover"],
         name: "Carlos Almenara",
-        socialNet: ["Github", "Linkedin", "Twitter"]
+        socialNet: [{ type: "github" }, { type: "linkedin" }, { type: "twitter" }]
     }
 ];
