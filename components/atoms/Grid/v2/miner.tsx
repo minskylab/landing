@@ -1,5 +1,5 @@
-import { GridType, GridTemplate, GridPosition, Size, Envelope } from "./grid-types";
-import { JustifyItems, JustifyContent, JustifySelf, AlignSelf } from "../base";
+import { GridType, GridTemplate, GridPosition, Size, Envelope } from "./gridprops";
+import { JustifyItems, JustifyContent, JustifySelf, AlignSelf, GridAutoFlow } from "../base";
 import { AlignItems, AlignContent } from "./types";
 
 // // type
@@ -205,3 +205,16 @@ export const getPlainEnvelopeFromProps = (p: Envelope | Envelope[]): Array<strin
 // // breakboints
 // breakpoints?: GridBreakpoints;
 // children: any;
+
+export const getAutoFlowFromProps = (prop: GridAutoFlow | GridAutoFlow[]): Array<string> => {
+    if (typeof prop === "undefined") {
+        return Array<string>(4).fill("");
+    }
+
+    if (prop instanceof Array) {
+        const suffix = Array<string>(4 - prop.length).fill(prop[prop.length - 1]);
+        return [...prop, ...suffix];
+    }
+
+    return Array<string>(4).fill(prop);
+};

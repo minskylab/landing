@@ -6,6 +6,7 @@ import { styled } from "linaria/react";
 import Subtitle from "../../../components/atoms/Text/Subtitle";
 import Body from "../../../components/atoms/Text/Body";
 import { Simple } from "../../../components/atoms/Text/Simple";
+import Important from "../../../components/atoms/Text/Important";
 
 const BulbImage = styled.div`
     background-image: url("/images/uplightbulb.png");
@@ -29,7 +30,7 @@ const ContactPlaygroundPage = () => {
                         type={"grid"}
                         rowsTemplate={{ parts: 3, size: "auto" }}
                         colsTemplate={{ parts: 2, size: "auto" }}
-                        p={{ all: "2rem" }}
+                        p={{ y: "2rem", x: "4rem" }}
                     >
                         <Grid rows={{ from: 1, how: 1 }} cols={{ from: 1, how: 1 }}>
                             <Title>Contact Us</Title>
@@ -37,10 +38,10 @@ const ContactPlaygroundPage = () => {
                         </Grid>
                         <Grid rows={{ from: 2, how: 1 }} cols={{ from: 1, how: 1 }}>
                             <Subtitle>Email</Subtitle>
-                            <Simple>hello@minsky.cc</Simple>
+                            <Important color={"#424242"}>hello@minsky.cc</Important>
                             <div style={{ width: "100%", height: "1rem" }} /> {/* spacer */}
                             <Subtitle>Phone | Telegram | WhatsApp</Subtitle>
-                            <Simple>+51 961 818 237</Simple>
+                            <Important color={"#424242"}>+51 961 818 237</Important>
                         </Grid>
                         <Grid rows={{ from: 3, how: 1 }} cols={{ from: 1, how: 1 }}></Grid>
                         <Grid rows={{ from: 1, how: 3 }} cols={{ from: 2, how: 1 }}>

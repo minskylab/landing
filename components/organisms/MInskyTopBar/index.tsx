@@ -87,7 +87,7 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                         />
                         {/* <ButtonIcon icon={MenuIcon} onClick={() => setOpenMenu(!openMenu)} /> */}
                         <animated.div style={propsVerticalMenu}>
-                            <Grid m={{ left: "2em" }}>
+                            <Grid type={["none", "none", "block"]} m={{ left: "2em" }}>
                                 <VerticalMenu
                                     selectedItem={"home"}
                                     items={[{ key: "home", name: "Home" }]}
@@ -108,6 +108,15 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                                 <Button primary>Contact Us</Button>
                             </Grid>
                         </Grid>
+                        <animated.div style={propsVerticalMenu}>
+                            <Grid type={["flex", "none", "none"]} justifyContent={"flex-end"} m={{ right: "1rem" }}>
+                                <VerticalMenu
+                                    selectedItem={"home"}
+                                    items={[{ key: "home", name: "Home" }]}
+                                    compact
+                                ></VerticalMenu>
+                            </Grid>
+                        </animated.div>
                     </animated.div>
                 </Grid>
             </animated.div>
