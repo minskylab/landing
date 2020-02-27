@@ -1,14 +1,8 @@
 import React from "react";
-import { ServicesCard } from "../../../components/molecules/Cards/serviceCard";
+import { ServiceCard } from "../../../components/molecules/Cards/ServiceCard";
 
 const Playground = () => {
-    return (
-        <ServicesCard
-            body="asdsdas"
-            icon="asdas"
-            title="asdadsas"
-        ></ServicesCard>
-    );
+    return <ServiceCard body="asdsdas" icon="asdas" title="asdadsas"></ServiceCard>;
 };
 
 export default Playground;
