@@ -60,12 +60,14 @@ const ServiceCard: FC<ServiceCardProps> = (props: ServiceCardProps) => {
                     { parts: 2, size: "auto" },
                     { parts: 3, size: "auto" }
                 ]}
+                columnGap={["1.4rem", ""]}
+                rowGap={["0.4rem", ""]}
                 p={[{ all: "0.4rem" }, { x: "1.2rem", y: "2.8rem" }]}
             >
                 <Grid
                     type={"flex"}
                     // alignItems={"end"}
-                    m={[{ top: "0.9rem" }, { top: "0" }]}
+                    m={[{ top: "0.4rem" }, { top: "0" }]}
                     cols={[
                         { from: 1, how: 1 },
                         { from: 1, how: 1 }

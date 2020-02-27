@@ -40,8 +40,8 @@ const GiveYou = () => {
                 type={"grid"}
                 rowsTemplate={{ parts: defaultItems.length, size: "1fr" }}
                 colsTemplate={{ parts: 1, size: "auto" }}
-                rowGap={"2.2rem"}
-                m={{ bottom: "2rem" }}
+                rowGap={"1rem"}
+                m={{ bottom: "2.4rem" }}
             >
                 {defaultItems.map((value, key) => {
                     return <Value key={key} body={value.body} icon={value.icon} title={value.title} />;

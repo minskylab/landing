@@ -20,7 +20,7 @@ const Services: FC = () => {
                 ]}
                 rowsTemplate={{ parts: 1, size: "auto" }}
                 columnGap="3.6rem"
-                rowGap="1rem"
+                rowGap="3.2rem"
                 p={{ y: "2.4rem" }}
             >
                 {defaultItems.map((value, key) => {
