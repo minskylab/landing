@@ -4,9 +4,9 @@ import { Envelope, AlignText } from "./types";
 import { envelopeToPlain } from "./parser";
 import { TextProps } from "./types";
 
-type MinskyFonts = "Karla" | "Rubik" | "PT Mono";
+export type MinskyFonts = "Karla" | "Rubik" | "PT Mono";
 
-interface FullTextProps extends TextProps {
+export interface FullTextProps extends TextProps {
     as?: AvailableElementTypes;
     fontFamily?: MinskyFonts;
 }

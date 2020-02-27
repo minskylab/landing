@@ -1,14 +1,14 @@
-
-
 import React from "react";
-import { SpecialtiesCards } from "../../../components/molecules/Cards/specialtiesCard";
+import { SpecialCard } from "../../../components/molecules/Cards/SpecialCard";
 
 const Playground = () => {
-
-
-
     return (
-        <SpecialtiesCards image ={"sada"} title = "string" topics = {["string[]","[]ssdasda","[]asdasdasd"]} iconTopic = "any,"></SpecialtiesCards>
+        <SpecialCard
+            image={"sada"}
+            title="string"
+            topics={["string[]", "[]ssdasda", "[]asdasdasd"]}
+            iconTopic="any,"
+        ></SpecialCard>
     );
 };
 

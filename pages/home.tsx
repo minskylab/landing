@@ -1,16 +1,12 @@
 import React, { FunctionComponent, useState, useEffect, useRef, useLayoutEffect } from "react";
 import { styled } from "linaria/react";
 import Head from "next/head";
-import Title from "../components/atoms/Text/Title";
 import { Grid } from "../components/atoms/Grid/v2";
-import { MinskyLogoIcon, MenuIcon } from "../components/atoms/Icon/icons";
 import { Button } from "../components/atoms/Button";
-import VerticalMenu from "../components/atoms/VerticalMenu";
-import { Simple } from "../components/atoms/Text/Simple";
-import Body from "../components/atoms/Text/Body";
+
 import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
 import MinskyTopBar from "../components/organisms/MInskyTopBar";
-import { Services } from "../components/organisms/MinskyServices";
+import { Services } from "../components/organisms/MinskyServices/index";
 import { Technologies } from "../components/organisms/MinskyTechnology";
 import { Team } from "../components/organisms/MinskyTeam/index";
 import { LinkedIn } from "../components/atoms/Icon";
@@ -19,10 +15,9 @@ import Github from "../components/atoms/Icon/Github";
 import Twitter from "../components/atoms/Icon/Twitter";
 import { Specials } from "../components/organisms/MinskySpecials";
 import { GiveYou } from "../components/organisms/MinskyGive";
-import { ContactUs } from "../components/organisms/MinskyContact/index";
+
 import { Footer } from "../components/organisms/MinskyFooter/index";
-import { Text } from "../components/atoms/Text";
-import { TextTypes } from "../components/atoms/Text/constants";
+import { Title, Text, Simple } from "../components/atoms/Text/v2";
 
 const Background = styled.div`
     z-index: -1;
@@ -75,9 +70,11 @@ const IndexPage: FunctionComponent = () => {
                         debug={DEBUG_MODE}
                         m={[{ all: "25vh 0.5em 0 0.5em" }, { all: "34vh 4.2em 0 4.2em" }, { all: "34vh 2em 0 2em" }]}
                     >
-                        <Title alignText={"center"}> MINSKY </Title>
+                        <Text as={"h1"} size={"2.5rem"} bold textAlign={"center"} fontFamily={"Rubik"}>
+                            MINSKY
+                        </Text>
                         <div style={{ height: "1em" }} />
-                        <Text alignText={"center"} type={TextTypes.subtitlePT} fontSize={"0.8em"} lineHeight={"1.5em"}>
+                        <Text textAlign={"center"} size={"0.8rem"} lineHeight={"1.5em"} fontFamily={"PT Mono"}>
                             A new technological perspective for your ideas.
                         </Text>
                         <Grid
@@ -153,7 +150,7 @@ const IndexPage: FunctionComponent = () => {
                     { x: "15vh", y: "4rem" }
                 ]}
             >
-                <Services />
+                <Services /> {/* OK */}
             </Grid>
             <Grid
                 type="block"
@@ -164,7 +161,7 @@ const IndexPage: FunctionComponent = () => {
                     { x: "15vh", y: "4rem" }
                 ]}
             >
-                <Specials />
+                <Specials /> {/* OK */}
             </Grid>
             <Grid
                 type="block"
@@ -175,7 +172,7 @@ const IndexPage: FunctionComponent = () => {
                     { x: "15vh", y: "4rem" }
                 ]}
             >
-                <Technologies />
+                <Technologies /> {/* OK */}
             </Grid>
 
             <Grid

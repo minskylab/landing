@@ -18,7 +18,7 @@ export interface TextProps {
     size?: string;
     color?: string;
     weight?: string;
-    children?: ReactElement | string;
+    children?: any;
     p?: Envelope;
     m?: Envelope;
     textAlign?: AlignText;

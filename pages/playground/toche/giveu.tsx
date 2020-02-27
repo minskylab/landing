@@ -1,16 +1,8 @@
-
-
 import React from "react";
-import { GiveYouCards } from "../../../components/molecules/Cards/giveYouCard";
+import { Value } from "../../../components/molecules/Cards/Value";
 
 const Playground = () => {
-    return (
-        <GiveYouCards
-            body="asdsdas"
-            icon="asdas"
-            title="asdadsas"
-        ></GiveYouCards>
-    );
+    return <Value body="asdsdas" icon="asdas" title="asdadsas"></Value>;
 };
 
 export default Playground;
