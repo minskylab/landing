@@ -3,11 +3,11 @@ import { styled } from "linaria/react";
 import Head from "next/head";
 import Title from "../components/atoms/Text/Title";
 import { Grid } from "../components/atoms/Grid/v2";
-import { MinskyLogoIcon, MenuIcon } from "../components/atoms/Icon/icons";
+
 import { Button } from "../components/atoms/Button";
-import VerticalMenu from "../components/atoms/VerticalMenu";
+
 import { Simple } from "../components/atoms/Text/Simple";
-import Body from "../components/atoms/Text/Body";
+
 import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
 import MinskyTopBar from "../components/organisms/MInskyTopBar";
 
@@ -19,7 +19,6 @@ import Github from "../components/atoms/Icon/Github";
 import Twitter from "../components/atoms/Icon/Twitter";
 import { Specials } from "../components/organisms/MinskySpecials";
 
-import { ContactUs } from "../components/organisms/MinskyContact/index";
 import { Footer } from "../components/organisms/MinskyFooter/index";
 import { Text } from "../components/atoms/Text";
 import { TextTypes } from "../components/atoms/Text/constants";
