@@ -17,6 +17,7 @@ const wrapperServiceCard = css`
         box-shadow: 0px 0px 16px -6px rgba(0, 0, 0, 0.51);
     }
     will-change: transform;
+    /* z-index: 2000; */
 `;
 
 interface ServiceCardProps {
@@ -33,8 +34,12 @@ const ServiceCard: FC<ServiceCardProps> = (props: ServiceCardProps) => {
     ];
 
     // @ts-ignore
-    const trans: InterpolationConfig<number[], string> = (x: number, y: number, s: number): string =>
+    const transNormal: InterpolationConfig<number[], string> = (x: number, y: number, s: number): string =>
         `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
+
+    //  @ts-ignore
+    const transWebKit: InterpolationConfig<number[], string> = (x: number, y: number, s: number): string =>
+        `-webkit-perspective(600px) -webkit-rotateX(${x}deg) -webkit-rotateY(${y}deg) -webkit-scale(${s})`;
 
     const [transAnimation, set] = useSpring(() => ({
         xys: [0, 0, 1],
@@ -46,7 +51,12 @@ const ServiceCard: FC<ServiceCardProps> = (props: ServiceCardProps) => {
             className={wrapperServiceCard}
             onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
             onMouseLeave={() => set({ xys: [0, 0, 1] })}
-            style={{ transform: transAnimation.xys.interpolate(trans) }} // "translate(10, 10)" }} //
+            style={{
+                transform: transAnimation.xys.interpolate(transNormal),
+                WebkitTransform: transAnimation.xys.interpolate(transWebKit)
+                // MozTransform: transAnimation.xys.interpolate(trans),
+                // msTransform: transAnimation.xys.interpolate(trans)
+            }} // "translate(10, 10)" }} //
         >
             <Grid
                 type={"grid"}
