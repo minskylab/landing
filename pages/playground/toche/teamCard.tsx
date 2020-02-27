@@ -1,14 +1,14 @@
-
-
 import React from "react";
-import { TeamCards } from "../../../components/molecules/Cards/teamCard";
+import { PersonCard } from "../../../components/molecules/Cards/personCard";
 
 const Playground = () => {
-
-
-
     return (
-        <TeamCards img ={"sada"} name = "string" tags = {["string[]","[]ssdasda","[]asdasdasd"]} socialNet ={ ["any,","any,","any,"]}></TeamCards>
+        <PersonCard
+            img={"sada"}
+            name="string"
+            tags={["string[]", "[]ssdasda", "[]asdasdasd"]}
+            socialNet={["any,", "any,", "any,"]}
+        ></PersonCard>
     );
 };
 

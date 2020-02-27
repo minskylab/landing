@@ -8,7 +8,7 @@ import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
 import MinskyTopBar from "../components/organisms/MInskyTopBar";
 import { Services } from "../components/organisms/MinskyServices/index";
 import { Technologies } from "../components/organisms/MinskyTechnology";
-import { Team } from "../components/organisms/MinskyTeam/index";
+import { Team } from "../components/organisms/MinskyMainTeam/index";
 import { LinkedIn } from "../components/atoms/Icon";
 import ColorTypes from "../components/atoms/Colors";
 import Github from "../components/atoms/Icon/Github";
@@ -184,7 +184,7 @@ const IndexPage: FunctionComponent = () => {
                     { x: "15vh", y: "4rem" }
                 ]}
             >
-                <GiveYou />
+                <GiveYou /> {/* OK */}
             </Grid>
             <Grid
                 type="block"
