@@ -12,7 +12,7 @@ import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
 import MinskyTopBar from "../components/organisms/MInskyTopBar";
 
 import { Technologies } from "../components/organisms/MinskyTechnology";
-import { Team } from "../components/organisms/MinskyTeam/index";
+import { Team } from "../components/organisms/MinskyMainTeam/index";
 import { LinkedIn } from "../components/atoms/Icon";
 import ColorTypes from "../components/atoms/Colors";
 import Github from "../components/atoms/Icon/Github";

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import Grid from "../../atoms/Grid/v2";
 
 import { Value } from "../../molecules/Cards/Value";
@@ -8,7 +8,7 @@ import { defaultItems } from "../MinskyGive/default";
 import { Title } from "../../atoms/Text/v2";
 const DEBUG = false;
 
-const GiveYou = () => {
+const GiveYou: FC = () => {
     return (
         <Grid
             debug={DEBUG}

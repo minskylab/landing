@@ -8,7 +8,7 @@ import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
 import MinskyTopBar from "../components/organisms/MInskyTopBar";
 import { Services } from "../components/organisms/MinskyServices/index";
 import { Technologies } from "../components/organisms/MinskyTechnology";
-import { Team } from "../components/organisms/MinskyTeam/index";
+import { Team } from "../components/organisms/MinskyMainTeam/index";
 import { LinkedIn } from "../components/atoms/Icon";
 import ColorTypes from "../components/atoms/Colors";
 import Github from "../components/atoms/Icon/Github";
@@ -17,7 +17,7 @@ import { Specials } from "../components/organisms/MinskySpecials";
 import { GiveYou } from "../components/organisms/MinskyGive";
 
 import { Footer } from "../components/organisms/MinskyFooter/index";
-import { Title, Text, Simple } from "../components/atoms/Text/v2";
+import { Text, Simple } from "../components/atoms/Text/v2";
 
 const Background = styled.div`
     z-index: -1;
@@ -184,7 +184,7 @@ const IndexPage: FunctionComponent = () => {
                     { x: "15vh", y: "4rem" }
                 ]}
             >
-                <GiveYou />
+                <GiveYou /> {/* OK */}
             </Grid>
             <Grid
                 type="block"
@@ -195,7 +195,7 @@ const IndexPage: FunctionComponent = () => {
                     { x: "15vh", y: "4rem" }
                 ]}
             >
-                <Team />
+                <Team /> {/* OK */}
             </Grid>
             {/* Deprecated <Grid
 				type="block"
@@ -204,15 +204,7 @@ const IndexPage: FunctionComponent = () => {
 			>
 				<ContactUs />
 			</Grid> */}
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "1rem", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            <Grid type="block" debug={DEBUG_MODE}>
                 <Footer />
             </Grid>
         </div>

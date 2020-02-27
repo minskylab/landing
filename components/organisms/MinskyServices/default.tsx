@@ -1,4 +1,8 @@
-import { ContentServiceCard } from "../../molecules/Cards/constants";
+type ContentServiceCard = {
+    icon: any;
+    title: string;
+    body: string;
+};
 
 export const defaultItems: ContentServiceCard[] = [
     {

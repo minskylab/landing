@@ -1,8 +1,6 @@
 import React, { FC } from "react";
 
 import { Grid } from "../../atoms/Grid/v2/index";
-import { Text } from "../../atoms/Text/index";
-import { TextTypes } from "../../atoms/Text/constants";
 
 import { useSpring, animated, InterpolationConfig } from "react-spring";
 

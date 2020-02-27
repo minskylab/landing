@@ -13,6 +13,7 @@ export interface CustomTextModifiers {
     p?: string;
     m?: string;
     textAlign?: string;
+    textDecoration?: string;
     lineHeight?: string;
     bold?: boolean;
 }
@@ -25,5 +26,6 @@ export const CustomText = (mods: CustomTextModifiers) => styled(mods.as)`
     padding: ${(mods: CustomTextModifiers) => mods.p || "0"};
     margin: ${(mods: CustomTextModifiers) => mods.m || "0"};
     text-align: ${(mods: CustomTextModifiers) => mods.textAlign || ""};
+    text-decoration: ${(mods: CustomTextModifiers) => mods.textDecoration || ""};
     line-height: ${(mods: CustomTextModifiers) => mods.lineHeight || ""};
 `;
