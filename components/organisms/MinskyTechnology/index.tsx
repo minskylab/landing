@@ -26,7 +26,7 @@ const Technologies: FC = () => {
                 cols={{ from: 1, how: 1 }}
                 rowsTemplate={{ parts: defaultItems.length, size: "1fr" }}
                 colsTemplate={{ parts: 1, size: "auto" }}
-                rowGap="1.8rem"
+                rowGap={"1.8rem"}
             >
                 {defaultItems.map((value, index) => {
                     return <TechCard key={index} title={value.title} description={value.description} />;

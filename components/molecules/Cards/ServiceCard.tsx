@@ -60,11 +60,12 @@ const ServiceCard: FC<ServiceCardProps> = (props: ServiceCardProps) => {
                     { parts: 2, size: "auto" },
                     { parts: 3, size: "auto" }
                 ]}
-                p={[{ all: "1.2em" }, { x: "1.2rem", y: "2.8rem" }]}
+                p={[{ all: "0.4rem" }, { x: "1.2rem", y: "2.8rem" }]}
             >
                 <Grid
                     type={"flex"}
-                    alignItems={"end"}
+                    // alignItems={"end"}
+                    m={[{ top: "0.9rem" }, { top: "0" }]}
                     cols={[
                         { from: 1, how: 1 },
                         { from: 1, how: 1 }
@@ -87,10 +88,9 @@ const ServiceCard: FC<ServiceCardProps> = (props: ServiceCardProps) => {
                         { from: 2, how: 1 }
                     ]}
                     m={{ right: props.title.split(" ").length < 3 ? "7.4rem" : "4rem" }}
+                    p={[{}, { top: "0.5em", bottom: "1em" }]}
                 >
-                    <Subtitle bold m={{ top: "0.5em", bottom: "1em" }}>
-                        {props.title}
-                    </Subtitle>
+                    <Subtitle bold>{props.title}</Subtitle>
                 </Grid>
                 <Grid
                     type={"flex"}

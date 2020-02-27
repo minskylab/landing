@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Grid from "../../atoms/Grid/v2";
 import { Text } from "../../atoms/Text";
 import { TextTypes } from "../../atoms/Text/constants";
+import { Subtitle, Body } from "../../atoms/Text/v2";
 
 export interface ValueProp {
     title: string;
@@ -15,35 +16,33 @@ const Value: FC<ValueProp> = (props: ValueProp) => {
             type="grid"
             colsTemplate={{ parts: 2, size: "auto" }}
             rowsTemplate={{ parts: 2, size: "auto" }}
-            m={{ all: "2em" }}
-            rowGap={"0em"}
+            m={[{ x: "0.8rem" }, { left: "0.8rem", right: "2.4rem" }]}
         >
             <Grid
                 rows={{ from: 1, how: 1 }}
                 cols={{ from: 1, how: 1 }}
                 justifySelf="start"
                 alignSelf="start"
-                m={{ right: "1em" }}
+                m={[
+                    { right: "1rem", top: "1rem" },
+                    { right: "1em", top: "0.5rem" }
+                ]}
             >
-                <div style={{ transform: "translateY(-3px)" }}>{props.icon}</div>
+                {props.icon}
             </Grid>
             <Grid
                 type={"grid"}
-                rowGap={"1em"}
+                rowGap={"0.8rem"}
                 rows={{ from: 1, how: 1 }}
                 cols={{ from: 2, how: 1 }}
                 justifySelf="end"
                 alignSelf="center"
             >
                 <Grid rows={{ from: 1, how: 1 }} cols={{ from: 2, how: 1 }} type="block">
-                    <Text type={TextTypes.h2} fontSize={"0.9em"} fontWeight={600}>
-                        {props.title}
-                    </Text>
+                    <Subtitle bold>{props.title}</Subtitle>
                 </Grid>
                 <Grid rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }} type="block">
-                    <Text type={TextTypes.text} lineHeight={"1.5em"}>
-                        {props.body}
-                    </Text>
+                    <Body lineHeight={"1.5em"}>{props.body}</Body>
                 </Grid>
             </Grid>
         </Grid>

@@ -5,6 +5,7 @@ import { Value } from "../../molecules/Cards/Value";
 
 import Section from "../../atoms/Text/Section";
 import { defaultItems } from "../MinskyGive/default";
+import { Title } from "../../atoms/Text/v2";
 const DEBUG = false;
 
 const GiveYou = () => {
@@ -17,9 +18,10 @@ const GiveYou = () => {
             ]}
             colsTemplate={[
                 { parts: 1, size: "1fr" },
-                { parts: 2, size: "auto" }
+                { parts: 2, size: "1fr" }
             ]}
             type={"grid"}
+            alignItems={"start"}
         >
             <Grid
                 rows={[
@@ -30,24 +32,19 @@ const GiveYou = () => {
                     { from: 1, how: 1 },
                     { from: 1, how: 1 }
                 ]}
-                p={{ y: "2em" }}
-                type={"block"}
+                p={{ y: "1.5rem" }}
             >
-                <Section>We give you</Section>
+                <Title bold>We give you</Title>
             </Grid>
             <Grid
-                rows={[
-                    { from: 2, how: 1 },
-                    { from: 2, how: 1 }
-                ]}
-                cols={[
-                    { from: 1, how: 1 },
-                    { from: 1, how: 1 }
-                ]}
-                type={"block"}
+                type={"grid"}
+                rowsTemplate={{ parts: defaultItems.length, size: "1fr" }}
+                colsTemplate={{ parts: 1, size: "auto" }}
+                rowGap={"2.2rem"}
+                m={{ bottom: "2rem" }}
             >
-                {defaultItems.map(value => {
-                    return <Value body={value.body} icon={value.icon} title={value.title} />;
+                {defaultItems.map((value, key) => {
+                    return <Value key={key} body={value.body} icon={value.icon} title={value.title} />;
                 })}
             </Grid>
             <Grid
@@ -60,9 +57,10 @@ const GiveYou = () => {
                     { from: 2, how: 1 }
                 ]}
                 type="flex"
-                justifyContent="center"
+                justifyContent="start"
+                m={[{}, { top: "4rem", bottom: "4rem", right: "4rem" }]}
             >
-                <img src="/images/wegiveyou.png" alt={"We give you"} style={{ height: "auto", width: "45vh" }} />
+                <img src="/images/wegiveyou.png" alt={"We give you"} style={{ height: "auto", width: "100%" }} />
             </Grid>
         </Grid>
     );
