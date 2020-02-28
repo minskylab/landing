@@ -53,7 +53,7 @@ const IndexPage: FunctionComponent = () => {
     }, []);
 
     return (
-        <Html lang="en">
+        <div>
             <Head>
                 <title>Minsky | Home</title>
                 <meta name="theme-color" content="#ffdf53" />
@@ -219,7 +219,7 @@ const IndexPage: FunctionComponent = () => {
             >
                 <Footer />
             </Grid>
-        </Html>
+        </div>
     );
 };
 
