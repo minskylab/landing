@@ -28,7 +28,7 @@ const LightBulbs = () => {
             engine: engine,
             options: {
                 width: w,
-                height: h,
+                height: h * 1.2,
                 wireframes: false,
                 background: "white"
             }
@@ -39,9 +39,9 @@ const LightBulbs = () => {
         ]);
 
         [
-            [(w * 2) / 12, -400],
-            [(w * 3) / 12, -200],
-            [(w * 9) / 12, -100]
+            [(w * 2) / 12, -480],
+            [(w * 3) / 12, -280],
+            [(w * 9) / 12, -180]
         ].map(([posX, posY], i) => {
             var rope = Composites.stack(posX, posY, 1, 32, 1, 1, function(x, y) {
                 return Bodies.rectangle(x, y, 20, 1, {

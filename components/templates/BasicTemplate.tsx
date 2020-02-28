@@ -5,12 +5,19 @@ const BasicTemplate = (props: any) => {
         <>
             <style jsx global>{`
                 * {
-                    font-size: 14px;
+                    font-size: 16px;
                 }
+
+                @media only screen and (max-width: 1180px) {
+                    * {
+                        font-size: 14px;
+                    }
+                }
+
                 body {
                     margin: 0;
                     padding: 0;
-                    font-size: 16px;
+                    // font-size: 16px;
                     font-weight: 400;
                     line-height: 1.8;
                     color: #333;
