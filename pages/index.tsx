@@ -201,7 +201,7 @@ const IndexPage: FunctionComponent = () => {
             >
                 <Team />
             </Grid>
-            {/* Deprecated <Grid
+            {/* ! Deprecated <Grid
 				type="block"
 				debug={DEBUG_MODE}
 				p={[ { x: "1rem", y: "4rem" }, { x: "3rem", y: "4rem" }, { x: "50vh", y: "4rem" } ]}

@@ -28,6 +28,7 @@ const Playground = (props: React.AllHTMLAttributes<any>) => {
     return (
         <TechCard
             icon="as"
+            alt =" Payment"
             title="Payment"
             body="Multi payment gateway. Consequat reprehenderit incididunt incididunt officia tempor aliqua ad aliquip ipsum aute in in dolor velit."
         ></TechCard>
