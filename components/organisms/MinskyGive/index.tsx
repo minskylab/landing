@@ -60,7 +60,7 @@ const GiveYou: FC = () => {
                 justifyContent="start"
                 m={[{}, { top: "4rem", bottom: "4rem", right: "4rem" }]}
             >
-                <img src="/images/wegiveyou.png" alt={"We give you"} style={{ height: "auto", width: "100%" }} />
+                <img src="/images/wegiveyou.png" alt={"We give you"} style={{ height: "auto", maxHeight: "100vh", width: "100%" }} />
             </Grid>
         </Grid>
     );
