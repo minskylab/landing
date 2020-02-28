@@ -24,7 +24,7 @@ export const ContactUs: FC = () => {
     const Par2: string = "Miraflores, FL 32806";
     const Country: string = "Lima";
     const Mail: string = "hello@minsky.cc";
-    const Telf: string = "+51 961 818 237";
+    const Telf: string = "+51 924 122 969";
     const Caption: string = "Stay Tuned";
     return (
         <Wrapper>

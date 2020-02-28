@@ -66,7 +66,8 @@ const BlobBackground: FC<BlobBackgroundProps> = (props: BlobBackgroundProps) => 
                 position: "relative",
                 height: `${props.height || 400}px`,
                 width: `fit-content`,
-                display: "flex"
+                display: "flex",
+                transform: `translateX(-${props.height / 2}px)`
             }}
         >
             <div className={blob1}>
