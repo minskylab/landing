@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Grid } from "../../atoms/Grid/v2";
-import { Subtitle, Simple } from "../../atoms/Text/v2";
+import { Subtitle, Text } from "../../atoms/Text/v2";
 import { styled } from "linaria/react";
 
 const Wrapper = styled.div`
@@ -52,7 +52,7 @@ const SpecialCard: FC<SpecialProps> = (props: SpecialProps) => {
                                 <div style={{ paddingRight: "0.6rem", transform: "translateY(-2.5px)" }}>
                                     {props.iconTopic}
                                 </div>
-                                <Simple>{values}</Simple>
+                                <Text as="h3" size="0.8em"> {values}</Text>
                             </div>
                         );
                     })}

@@ -1,6 +1,6 @@
-import React, { FunctionComponent, useState, useEffect, useRef, useLayoutEffect } from "react";
+import React, { FunctionComponent, useState, useEffect} from "react";
 import { styled } from "linaria/react";
-import Head from "next/head";
+import {Head, Html} from "next/document";
 import Title from "../components/atoms/Text/Title";
 import { Grid } from "../components/atoms/Grid/v2";
 
@@ -53,7 +53,7 @@ const IndexPage: FunctionComponent = () => {
     }, []);
 
     return (
-        <div>
+        <Html lang="en">
             <Head>
                 <title>Minsky | Home</title>
                 <meta name="theme-color" content="#ffdf53" />
@@ -219,7 +219,7 @@ const IndexPage: FunctionComponent = () => {
             >
                 <Footer />
             </Grid>
-        </div>
+        </Html>
     );
 };
 

@@ -5,6 +5,7 @@ export const defaultItems: PersonCardProps[] = [
         img: (
             <img
                 src="/images/blob.svg"
+                alt= "Antonio Toche"
                 style={{ height: "50%", width: "50%", maxHeight: "180px", maxWidth: "180px" }}
             />
         ),
@@ -16,6 +17,7 @@ export const defaultItems: PersonCardProps[] = [
         img: (
             <img
                 src="/images/blob.svg"
+                alt = "María Noriega"
                 style={{ height: "50%", width: "50%", maxHeight: "180px", maxWidth: "180px" }}
             />
         ),
@@ -27,6 +29,7 @@ export const defaultItems: PersonCardProps[] = [
         img: (
             <img
                 src="/images/blob.svg"
+                alt= "Bregy Malpartida"
                 style={{ height: "50%", width: "50%", maxHeight: "180px", maxWidth: "180px" }}
             />
         ),
@@ -38,6 +41,7 @@ export const defaultItems: PersonCardProps[] = [
         img: (
             <img
                 src="/images/blob.svg"
+                alt = "Carlos Almenara"
                 style={{ height: "50%", width: "50%", maxHeight: "180px", maxWidth: "180px" }}
             />
         ),
