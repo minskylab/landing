@@ -4,6 +4,9 @@ const BasicTemplate = (props: any) => {
     return (
         <>
             <style jsx global>{`
+                * {
+                    font-size: 14px;
+                }
                 body {
                     margin: 0;
                     padding: 0;
