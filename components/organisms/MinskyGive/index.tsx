@@ -34,7 +34,7 @@ const GiveYou: FC = () => {
                 ]}
                 p={{ y: "1.5rem" }}
             >
-                <Title bold>We give you</Title>
+                <Title bold>Our Values</Title>
             </Grid>
             <Grid
                 type={"grid"}

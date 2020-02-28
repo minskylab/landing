@@ -46,7 +46,7 @@ const SpecialCard: FC<SpecialProps> = (props: SpecialProps) => {
                                     display: "flex",
                                     alignItems: "start",
                                     alignContent: "center",
-                                    marginBottom: "1rem"
+                                    marginBottom: "0.4rem"
                                 }}
                             >
                                 <div style={{ paddingRight: "0.6rem", transform: "translateY(-2.5px)" }}>
