@@ -122,7 +122,7 @@ const GridBase = styled.div<GridBaseProps>`
 
     border: ${props => (props.debug ? "solid #ff6445 0.5px" : "none")};
 
-    transition: 0.3s;
+    /* transition: 0.3s; */
 `;
 
 export { GridBase };

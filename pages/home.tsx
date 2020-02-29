@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect, useRef, useLayoutEffect } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect, FC, Children } from "react";
 import { styled } from "linaria/react";
 import Head from "next/head";
 import { Grid } from "../components/atoms/Grid/v2";
@@ -37,7 +37,27 @@ const items = [
 
 const DEBUG_MODE = false;
 
-const IndexPage: FunctionComponent = () => {
+interface HomeSectionContainerProps {
+    children: any;
+}
+
+const HomeSectionContainer: FC<HomeSectionContainerProps> = (props: HomeSectionContainerProps) => {
+    return (
+        <Grid
+            type="block"
+            debug={DEBUG_MODE}
+            p={[
+                { x: "2rem", y: "4rem" },
+                { x: "3rem", y: "4rem" },
+                { x: "15vh", y: "4rem" }
+            ]}
+        >
+            {props.children}
+        </Grid>
+    );
+};
+
+const IndexPage: FC = () => {
     const [currentPage, setCurrentPage] = useState<string>("home");
     const [renderPhysics, setRenderPhysics] = useState<boolean>(false);
     const [topBarShow, setTopBarShow] = useState<boolean>(false);
@@ -49,7 +69,7 @@ const IndexPage: FunctionComponent = () => {
     }, []);
 
     return (
-        <div>
+        <div style={{ overflow: "hidden" }}>
             <Head>
                 <title>Minsky | Home</title>
                 <meta name="theme-color" content="#ffdf53" />
@@ -65,7 +85,7 @@ const IndexPage: FunctionComponent = () => {
                 type={["block", "block", "grid"]}
                 colsTemplate={{ raw: "repeat(3, 1fr)" }}
                 rowsTemplate={{ raw: "repeat(6, auto)" }}
-                m={{ x: "2em", y: "2em" }}
+                m={{ x: "2rem", y: "2rem" }}
             >
                 <Grid debug={DEBUG_MODE} rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
                     <Grid
@@ -143,87 +163,28 @@ const IndexPage: FunctionComponent = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "1rem", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            <HomeSectionContainer>
                 <MinskyBuild />
-            </Grid>
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "1rem", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            </HomeSectionContainer>
+            <HomeSectionContainer>
                 <Services /> {/* OK */}
-            </Grid>
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "1rem", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            </HomeSectionContainer>
+            <HomeSectionContainer>
                 <Specials /> {/* OK */}
-            </Grid>
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "1rem", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            </HomeSectionContainer>
+            <HomeSectionContainer>
                 <Technologies /> {/* OK */}
-            </Grid>
-
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "1rem", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            </HomeSectionContainer>
+            <HomeSectionContainer>
                 <GiveYou /> {/* OK */}
-            </Grid>
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "5vh", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            </HomeSectionContainer>
+            <HomeSectionContainer>
                 <Team /> {/* OK */}
-            </Grid>
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "1rem", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            </HomeSectionContainer>
+            <HomeSectionContainer>
                 <MinskyContact /> {/* ~OK */}
-            </Grid>
-            <Grid type="block" debug={DEBUG_MODE}>
-                <Footer />
-            </Grid>
+            </HomeSectionContainer>
+            <Footer />
         </div>
     );
 };

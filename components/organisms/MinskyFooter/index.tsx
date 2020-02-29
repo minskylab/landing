@@ -158,7 +158,7 @@ export const Footer: FC = () => {
                     ]}
                     type="flex"
                     justifyContent={["flex-end", "default"]}
-                    p={[{ right: "3.8rem" }, {}]}
+                    p={[{ right: "2rem" }, {}]}
                 >
                     <Body bold>{"Resourses"}</Body>
                 </Grid>
@@ -173,7 +173,7 @@ export const Footer: FC = () => {
                     ]}
                     type="flex"
                     justifyContent={["flex-end", "default"]}
-                    p={[{ right: "3.8rem" }, {}]}
+                    p={[{ right: "2rem" }, {}]}
                 >
                     <Simple textDecoration="line-through">{"Faq"}</Simple>
                 </Grid>
@@ -188,7 +188,7 @@ export const Footer: FC = () => {
                     ]}
                     type="flex"
                     justifyContent={["flex-end", "default"]}
-                    p={[{ right: "3.8rem" }, {}]}
+                    p={[{ right: "2rem" }, {}]}
                 >
                     <Simple textDecoration="line-through">{"Blog"}</Simple>
                 </Grid>
@@ -203,7 +203,7 @@ export const Footer: FC = () => {
                     ]}
                     type="flex"
                     justifyContent={["flex-end", "default"]}
-                    p={[{ right: "3.8rem" }, {}]}
+                    p={[{ right: "2rem" }, {}]}
                 >
                     <Simple textDecoration="line-through" textAlign={"end"}>
                         {"Video tutorials"}
@@ -220,7 +220,7 @@ export const Footer: FC = () => {
                     ]}
                     type="flex"
                     justifyContent={["flex-end", "default"]}
-                    p={[{ right: "3.8rem" }, {}]}
+                    p={[{ right: "2rem" }, {}]}
                 >
                     <Simple>{"Developers"}</Simple>
                 </Grid>
@@ -235,7 +235,7 @@ export const Footer: FC = () => {
                     ]}
                     type="flex"
                     justifyContent={["flex-end", "default"]}
-                    p={[{ right: "3.8rem" }, {}]}
+                    p={[{ right: "2rem" }, {}]}
                 >
                     <Body bold>{"Useful information"}</Body>
                 </Grid>
@@ -250,7 +250,7 @@ export const Footer: FC = () => {
                     ]}
                     type="flex"
                     justifyContent={["flex-end", "default"]}
-                    p={[{ right: "3.8rem" }, {}]}
+                    p={[{ right: "2rem" }, {}]}
                 >
                     <Simple textDecoration="line-through">{"Terms and conditions"}</Simple>
                 </Grid>
@@ -265,7 +265,7 @@ export const Footer: FC = () => {
                     ]}
                     type="flex"
                     justifyContent={["flex-end", "default"]}
-                    p={[{ right: "3.8rem" }, {}]}
+                    p={[{ right: "2rem" }, {}]}
                 >
                     <Simple textDecoration="line-through">{"Privacy policy"}</Simple>
                 </Grid>
@@ -280,7 +280,7 @@ export const Footer: FC = () => {
                     ]}
                     type="flex"
                     justifyContent={["flex-end", "default"]}
-                    p={[{ right: "3.8rem" }, {}]}
+                    p={[{ right: "2rem" }, {}]}
                 >
                     <Simple textDecoration="line-through">{"Get in Touch"}</Simple>
                 </Grid>
@@ -295,7 +295,7 @@ export const Footer: FC = () => {
                     ]}
                     type="flex"
                     justifyContent={["flex-end", "default"]}
-                    p={[{ right: "3.8rem" }, {}]}
+                    p={[{ right: "2rem" }, {}]}
                 >
                     <Simple textDecoration="line-through">{"Help"}</Simple>
                 </Grid>
@@ -310,7 +310,7 @@ export const Footer: FC = () => {
                     ]}
                     type="flex"
                     justifyContent={["flex-end", "default"]}
-                    p={[{ right: "3.8rem" }, {}]}
+                    p={[{ right: "2rem" }, {}]}
                 >
                     <Body size={"0.875rem"}>{"Minsky 2020"} </Body>
                 </Grid>
@@ -325,7 +325,7 @@ export const Footer: FC = () => {
                     ]}
                     type="flex"
                     justifyContent={["flex-end", "default"]}
-                    p={[{ right: "3.8rem" }, {}]}
+                    p={[{ right: "2rem" }, {}]}
                 >
                     <Simple> {"Made in 🇵🇪 with ❤️"} </Simple>
                 </Grid>
@@ -342,7 +342,7 @@ export const Footer: FC = () => {
                     type="flex"
                     justifyContent={["flex-end", "default"]}
                     m={[{ top: "2rem" }, {}]}
-                    p={[{ right: "3.8rem" }, {}]}
+                    p={[{ right: "2rem" }, {}]}
                     justifySelf="center"
                 >
                     {["Linkedin", "Github", "Twitter"].map((socialNet, i) => (

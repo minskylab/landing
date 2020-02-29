@@ -16,14 +16,14 @@ const InputsShowcasePage: FC = () => {
                     <Input
                         type={"text"}
                         value={email}
-                        onChange={(value: string) => setEmail(value)}
+                        onChange={e => setEmail(e.target.nodeValue)}
                         label={"Email"}
                         placeholder={"example@example.com"}
                     />
                     <Input
                         type={"text"}
                         value={email}
-                        onChange={(value: string) => setEmail(value)}
+                        onChange={e => setEmail(e.target.nodeValue)}
                         label={"Email"}
                         placeholder={"example@example.com"}
                         helperText={"Here put your email"}
@@ -32,7 +32,7 @@ const InputsShowcasePage: FC = () => {
                         type={"text"}
                         prefix={"USD"}
                         value={email}
-                        onChange={(value: string) => setEmail(value)}
+                        onChange={e => setEmail(e.target.nodeValue)}
                         label={"Email"}
                         placeholder={"example@example.com"}
                         helperText={"Here put your email"}
