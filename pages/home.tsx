@@ -90,7 +90,7 @@ const IndexPage: FC = () => {
                 <Grid debug={DEBUG_MODE} rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
                     <Grid
                         debug={DEBUG_MODE}
-                        m={[{ all: "25vh 0.5em 0 0.5em" }, { all: "34vh 4.2em 0 4.2em" }, { all: "34vh 2em 0 2em" }]}
+                        m={[{ all: "28vh 2rem 0 2rem" }, { all: "34vh 4.2em 0 4.2em" }, { all: "34vh 2em 0 2em" }]}
                     >
                         <Text as={"h1"} size={"2.5rem"} bold textAlign={"center"} fontFamily={"Rubik"}>
                             MINSKY

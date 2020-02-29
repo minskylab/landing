@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, FC } from "react";
+import React, { useEffect, useRef, ReactElement, createRef } from "react";
 import { useField } from "@unform/core";
 import Input, { InputProps } from "../../../atoms/Input";
 
-const EnhancedInput: FC<InputProps> = (props: InputProps) => {
-    const inputRef = useRef(null);
+function EnhancedInput(props: InputProps): ReactElement {
+    const inputRef = createRef();
+
     const { fieldName, defaultValue = "", registerField, error } = useField(props.name);
 
     useEffect(() => {
@@ -14,7 +15,7 @@ const EnhancedInput: FC<InputProps> = (props: InputProps) => {
         });
     }, [fieldName, registerField]);
 
-    return <Input ref={inputRef} defaultValue={defaultValue} errorMessage={error} {...props} />;
-};
+    return <Input {...props} forwardedRef={inputRef} defaultValue={defaultValue} errorMessage={error} />;
+}
 
 export default EnhancedInput;

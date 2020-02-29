@@ -47,6 +47,7 @@ const DEBUG_MODE = false;
 interface MinskyTopBarProps {
     active: boolean;
     children?: any;
+    logoColor?: string;
 }
 
 const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
@@ -98,7 +99,7 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                         </animated.div>
                     </Grid>
                     <Grid debug={DEBUG_MODE} alignItems={"center"} type={"flex"} justifyContent={"center"}>
-                        <MinskyLogoIcon />
+                        <MinskyLogoIcon color={props.logoColor} />
                     </Grid>
                     <animated.div style={propsVerticalMenu}>
                         <Grid debug={DEBUG_MODE} type={["none", "none", "flex"]} justifyContent={"flex-end"}>

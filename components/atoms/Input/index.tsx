@@ -1,8 +1,41 @@
-import React, { FunctionComponent, useState, useEffect, MutableRefObject } from "react";
+import React, { useState, useEffect, ReactElement } from "react";
 import { styled } from "linaria/react";
+import { css } from "linaria";
 import { InputMode } from "./types";
 import { InputType } from "zlib";
-import { StyledInput } from "./styledInput";
+
+const inputStyle = css`
+    background-color: #fff9df;
+    font-size: 1rem;
+    border: 0.5px solid #fff9df;
+    border-radius: 8px;
+    padding: 0.75rem 0.9rem;
+    font-family: "Karla", sans-serif;
+    color: #1b1b1b;
+    transition: 0.3s;
+
+    ::placeholder {
+        color: #a3a3a3;
+    }
+
+    :focus {
+        outline: none;
+        background-color: #ffe87a;
+        ::placeholder {
+            color: #8a8a8a;
+        }
+    }
+
+    ::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    ::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+`;
 
 interface LabelProps {
     focus?: boolean;
@@ -38,20 +71,6 @@ const HelpMessage = styled.div`
     margin-bottom: 0.1rem;
 `;
 
-const InputCompleteScaffold = styled.div`
-    /* display: inline; */
-    /* width: 100%; */
-`;
-
-const TrailingIcon = styled.div`
-    position: relative;
-    top: 0;
-    right: 0;
-    width: 1rem;
-    height: 1rem;
-    background-color: #1b1b1b;
-`;
-
 export interface InputProps {
     value?: string | number | string[];
     onChange?: React.ChangeEventHandler;
@@ -67,11 +86,11 @@ export interface InputProps {
     prefix?: string;
     suffix?: string;
 
-    ref?: any;
+    forwardedRef?: any;
     defaultValue?: string | number | string[];
 }
 
-const Input: FunctionComponent<InputProps> = props => {
+function Input(props: InputProps): ReactElement {
     const [focus, setFocus] = useState<boolean>(false);
 
     useEffect(() => {
@@ -81,8 +100,9 @@ const Input: FunctionComponent<InputProps> = props => {
     return (
         <InputWrapper>
             {props.label ? <Label focus={focus}> {props.label} </Label> : null}
-            <StyledInput
-                ref={props.ref}
+            <input
+                ref={props.forwardedRef}
+                className={inputStyle}
                 defaultValue={props.defaultValue}
                 type={props.type as string}
                 name={props.name}
@@ -93,11 +113,10 @@ const Input: FunctionComponent<InputProps> = props => {
                 onFocus={() => setFocus(true)}
                 onBlur={() => setFocus(false)}
             />
-            {/* <TrailingIcon /> */}
             {props.errorMessage && <ErrorMessage>{props.errorMessage}</ErrorMessage>}
             {!props.errorMessage && props.helperText && <HelpMessage>{props.helperText}</HelpMessage>}
         </InputWrapper>
     );
-};
+}
 
 export default Input;

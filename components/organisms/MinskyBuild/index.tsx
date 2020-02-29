@@ -6,7 +6,7 @@ import BlobBackground from "../../atoms/BlobBackground";
 import { Subtitle } from "../../atoms/Text/v2";
 
 const wrapper = css`
-    z-index:0;
+    z-index: 0;
 `;
 
 const background = css`
@@ -20,7 +20,7 @@ const MinskyBuild = () => {
     const [blobSize, setBlobSize] = useState<Array<number>>([400, 400]);
 
     useEffect(() => {
-        if (window.innerWidth < 1000) {
+        if (window.innerWidth < 1400) {
             setBlobSize([320, 320]);
         } else if (window.innerWidth < 800) {
             setBlobSize([240, 240]);
@@ -34,7 +34,7 @@ const MinskyBuild = () => {
             type={"grid"}
             className={wrapper}
             p={{ y: "1rem" }}
-            m={[{top: "-7.5em"},{top: "-8em"},{top: "-10em"}]}
+            m={[{ top: "-7.5em" }, { top: "-8em" }, { top: "-10em" }]}
             alignItems={"center"}
             colsTemplate={{ parts: 3, size: "auto" }}
             rowsTemplate={{ parts: 3, size: "auto" }}
@@ -50,8 +50,8 @@ const MinskyBuild = () => {
                 <BlobBackground width={blobSize[0]} height={blobSize[1]} />
             </Grid>
             <Grid cols={{ from: 2, how: 1 }} rows={{ from: 2, how: 1 }} className={message} p={{ x: "2.2rem" }}>
-                <Subtitle textAlign={"center"} >
-                    We <b style={{ fontFamily: "Karla", fontSize: "1.2rem" }}>design</b> and{" "}<br></br>
+                <Subtitle textAlign={"center"}>
+                    We <b style={{ fontFamily: "Karla", fontSize: "1.2rem" }}>design</b> and <br></br>
                     <b style={{ fontFamily: "Karla", fontSize: "1.2rem" }}>build</b> digital products
                 </Subtitle>
             </Grid>

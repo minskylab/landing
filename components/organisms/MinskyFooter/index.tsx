@@ -10,8 +10,11 @@ import Github from "../../../components/atoms/Icon/Github";
 import Twitter from "../../../components/atoms/Icon/Twitter";
 import { css } from "linaria";
 
+const TEXT_COLOR = "#fffcf0";
+const BACKGROUND_COLOR = "#1b1b1b"; /*#0f0d16;*/
+
 const footerContainer = css`
-    background-color: #ffdf53;
+    background-color: ${BACKGROUND_COLOR};
     padding: 2.8rem 0;
     /* 10vw 2.8rem 0; */
     /* clip-path: polygon(16% 0, 100% 0, 100% 100%, 0% 100%); */
@@ -39,7 +42,7 @@ export const Footer: FC = () => {
             >
                 <path
                     d="M0 170.465C0 145.064 18.7432 123.735 43.9789 120.841C248.728 97.3581 1101.08 0 1158.64 0C1224.1 0 1240 80.0344 1240 125.892C1240 171.749 1240 460 1240 460H0V170.465Z"
-                    fill="#FFDF53"
+                    fill=TEXT_COLOR
                 />
             </svg> */}
             <Grid
@@ -72,8 +75,8 @@ export const Footer: FC = () => {
                     alignItems={"center"}
                     p={[{ right: "1.8rem" }, {}]}
                 >
-                    <MinskyLogoIcon />
-                    <Title textAlign={"center"} bold m={{ left: "0.4rem" }}>
+                    <MinskyLogoIcon color={TEXT_COLOR} />
+                    <Title color={TEXT_COLOR} textAlign={"center"} bold m={{ left: "0.4rem" }}>
                         MINSKY
                     </Title>
                 </Grid>
@@ -89,7 +92,9 @@ export const Footer: FC = () => {
                     type="flex"
                     justifyContent={["flex-end", "default"]}
                 >
-                    <Body bold>{"About us"}</Body>
+                    <Body color={TEXT_COLOR} bold>
+                        {"About us"}
+                    </Body>
                 </Grid>
                 <Grid
                     rows={[
@@ -103,7 +108,7 @@ export const Footer: FC = () => {
                     type="flex"
                     justifyContent={["flex-end", "default"]}
                 >
-                    <Simple> {"Home"} </Simple>
+                    <Simple color={TEXT_COLOR}> {"Home"} </Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -117,7 +122,7 @@ export const Footer: FC = () => {
                     type="flex"
                     justifyContent={["flex-end", "default"]}
                 >
-                    <Simple textDecoration="line-through">{"Our History"}</Simple>
+                    <Simple color={TEXT_COLOR}>{"Our History"}</Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -131,7 +136,9 @@ export const Footer: FC = () => {
                     type="flex"
                     justifyContent={["flex-end", "default"]}
                 >
-                    <Simple textDecoration="line-through">{"Our products"}</Simple>
+                    <Simple color={TEXT_COLOR} textDecoration="line-through">
+                        {"Our products"}
+                    </Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -145,7 +152,7 @@ export const Footer: FC = () => {
                     type="flex"
                     justifyContent={["flex-end", "default"]}
                 >
-                    <Simple> {"Jobs"} </Simple>
+                    <Simple color={TEXT_COLOR}> {"Jobs"} </Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -160,7 +167,9 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "2rem" }, {}]}
                 >
-                    <Body bold>{"Resourses"}</Body>
+                    <Body color={TEXT_COLOR} bold>
+                        {"Resourses"}
+                    </Body>
                 </Grid>
                 <Grid
                     rows={[
@@ -175,7 +184,9 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "2rem" }, {}]}
                 >
-                    <Simple textDecoration="line-through">{"Faq"}</Simple>
+                    <Simple color={TEXT_COLOR} textDecoration="line-through">
+                        {"Faq"}
+                    </Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -190,7 +201,9 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "2rem" }, {}]}
                 >
-                    <Simple textDecoration="line-through">{"Blog"}</Simple>
+                    <Simple color={TEXT_COLOR} textDecoration="line-through">
+                        {"Blog"}
+                    </Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -205,7 +218,7 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "2rem" }, {}]}
                 >
-                    <Simple textDecoration="line-through" textAlign={"end"}>
+                    <Simple color={TEXT_COLOR} textDecoration="line-through" textAlign={"end"}>
                         {"Video tutorials"}
                     </Simple>
                 </Grid>
@@ -222,7 +235,7 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "2rem" }, {}]}
                 >
-                    <Simple>{"Developers"}</Simple>
+                    <Simple color={TEXT_COLOR}>{"Developers"}</Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -237,7 +250,9 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "2rem" }, {}]}
                 >
-                    <Body bold>{"Useful information"}</Body>
+                    <Body color={TEXT_COLOR} bold>
+                        {"Useful information"}
+                    </Body>
                 </Grid>
                 <Grid
                     rows={[
@@ -252,7 +267,9 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "2rem" }, {}]}
                 >
-                    <Simple textDecoration="line-through">{"Terms and conditions"}</Simple>
+                    <Simple color={TEXT_COLOR} textDecoration="line-through">
+                        {"Terms and conditions"}
+                    </Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -267,7 +284,9 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "2rem" }, {}]}
                 >
-                    <Simple textDecoration="line-through">{"Privacy policy"}</Simple>
+                    <Simple color={TEXT_COLOR} textDecoration="line-through">
+                        {"Privacy policy"}
+                    </Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -282,7 +301,9 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "2rem" }, {}]}
                 >
-                    <Simple textDecoration="line-through">{"Get in Touch"}</Simple>
+                    <Simple color={TEXT_COLOR} textDecoration="line-through">
+                        {"Get in Touch"}
+                    </Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -297,7 +318,9 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "2rem" }, {}]}
                 >
-                    <Simple textDecoration="line-through">{"Help"}</Simple>
+                    <Simple color={TEXT_COLOR} textDecoration="line-through">
+                        {"Help"}
+                    </Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -312,7 +335,9 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "2rem" }, {}]}
                 >
-                    <Body size={"0.875rem"}>{"Minsky 2020"} </Body>
+                    <Body color={TEXT_COLOR} size={"0.875rem"}>
+                        {"Minsky 2020"}{" "}
+                    </Body>
                 </Grid>
                 <Grid
                     rows={[
@@ -327,7 +352,7 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "2rem" }, {}]}
                 >
-                    <Simple> {"Made in 🇵🇪 with ❤️"} </Simple>
+                    <Simple color={TEXT_COLOR}> {"Made in 🇵🇪 with ❤️"} </Simple>
                 </Grid>
 
                 <Grid
@@ -367,7 +392,7 @@ export const Footer: FC = () => {
                                     <Twitter height={32} width={32} color={ColorTypes.black._50} />
                                 )}
                             </div>
-                            {/* <Simple alignText={"center"}>{socialNet}</Simple> */}
+                            {/* <Simple color={TEXT_COLOR} alignText={"center"}>{socialNet}</Simple> */}
                         </div>
                     ))}
                 </Grid>

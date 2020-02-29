@@ -1,11 +1,19 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useRef } from "react";
 import Grid from "../../../atoms/Grid/v2";
 import { Title, Subtitle, Important, Body, Subtitle2, Simple } from "../../../atoms/Text/v2";
 import { styled } from "linaria/react";
-import Input from "../../../atoms/Input";
+import * as yup from "yup";
 import { Button } from "../../../atoms/Button";
 import EnhancedInput from "./input";
 import { Form } from "@unform/web";
+import axios from "axios";
+
+const suscriber = yup.object().shape({
+    email: yup
+        .string()
+        .email()
+        .required()
+});
 
 const BulbImage = styled.div`
     background-image: url("/images/uplightbulb.png");
@@ -16,9 +24,53 @@ const BulbImage = styled.div`
     background-size: contain;
 `;
 
-const MinskyContact: FC = () => {
-    const handleSubmit = data => {
-        console.log(data);
+interface MinskyContentProps {
+    onLoading?: (state: boolean) => void;
+}
+
+const MinskyContact: FC<MinskyContentProps> = (props: MinskyContentProps) => {
+    const formRef = useRef();
+
+    const registerNewPartner = async (email: string) => {
+        console.log("registering", email);
+        props.onLoading && props.onLoading(true);
+        const res = await axios.post("https://content.minsky.cc/potential-users", {
+            email: email
+        });
+        if (res.status != 200) {
+            throw "user already registered";
+        }
+        props.onLoading && props.onLoading(false);
+    };
+
+    const handleSubmit = async (data: any, { reset }) => {
+        suscriber
+            .isValid(data)
+            .then(async (isValid: boolean) => {
+                if (isValid) {
+                    try {
+                        //@ts-ignore
+                        formRef.current.setErrors({});
+                        await registerNewPartner(data.email);
+                        reset();
+                    } catch (e) {
+                        console.log(e);
+                        reset();
+                    }
+                } else {
+                    try {
+                        //@ts-ignore
+                        formRef.current.setErrors({
+                            email: "invalid email, please introduce another"
+                        });
+                    } catch (e) {
+                        console.log(e);
+                    }
+                }
+            })
+            .catch(e => {
+                console.log(e);
+            });
     };
 
     return (
@@ -44,7 +96,7 @@ const MinskyContact: FC = () => {
                 <Important color={"#424242"}>+51 961 818 237</Important>
             </Grid>
             <Grid rows={{ from: 3, how: 1 }} cols={{ from: 1, how: 1 }} p={[{}, { right: "12rem" }]}>
-                <Form onSubmit={handleSubmit}>
+                <Form ref={formRef} onSubmit={handleSubmit}>
                     <EnhancedInput
                         name={"email"}
                         type={"email"}
@@ -63,7 +115,7 @@ const MinskyContact: FC = () => {
                 type={["none", "flex"]}
                 rows={{ from: 1, how: 3 }}
                 cols={{ from: 2, how: 1 }}
-                justifyContent={"center"}
+                justifyContent={"flex-end"}
             >
                 <BulbImage />
             </Grid>

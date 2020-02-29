@@ -7,8 +7,14 @@ const BasicTemplate = (props: any) => {
             <style jsx global>{`
                 * {
                     font-size: 16px;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
                 }
-
+                @media only screen and (max-width: 1180px) {
+                    * {
+                        font-size: 14px;
+                    }
+                }
                 body {
                     margin: 0;
                     padding: 0;
