@@ -126,16 +126,17 @@ const IndexPage: FunctionComponent = () => {
                     cols={{ from: 2, how: 1 }}
                     m={[{ top: "15vh" }, { top: "25vh" }]}
                 >
-                    <Grid debug={DEBUG_MODE} type={"flex"} justifyContent={"center"}>
-                        <Grid debug={DEBUG_MODE}>
+                    <Grid debug={DEBUG_MODE} type={"flex"} justifyContent={"center"} p={[{top:"8em"},{top:"3em"},{top:"0em"}]}>
+                        <Grid debug={DEBUG_MODE}  >
                             <Simple>Learn more</Simple>
                             <div
                                 style={{
-                                    height: "12em",
+                                    height: "16em",
                                     width: "0.1em",
                                     maxWidth: "0.1em",
                                     backgroundColor: "#1a1d25",
                                     margin: "auto"
+                                    
                                 }}
                             />
                         </Grid>
@@ -152,6 +153,8 @@ const IndexPage: FunctionComponent = () => {
                 ]}
             >
                 <MinskyBuild />
+
+
             </Grid>
             <Grid
                 type="block"
