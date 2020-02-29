@@ -19,6 +19,7 @@ import { GiveYou } from "../components/organisms/MinskyGive";
 import { Footer } from "../components/organisms/MinskyFooter/index";
 import { Text, Simple } from "../components/atoms/Text/v2";
 import MinskyBuild from "../components/organisms/MinskyBuild";
+import MinskyContact from "../components/organisms/MinskyContact/v2";
 
 const Background = styled.div`
     z-index: -1;
@@ -209,13 +210,17 @@ const IndexPage: FunctionComponent = () => {
             >
                 <Team /> {/* OK */}
             </Grid>
-            {/* Deprecated <Grid
-				type="block"
-				debug={DEBUG_MODE}
-				p={[ { x: "1rem", y: "4rem" }, { x: "3rem", y: "4rem" }, { x: "50vh", y: "4rem" } ]}
-			>
-				<ContactUs />
-			</Grid> */}
+            <Grid
+                type="block"
+                debug={DEBUG_MODE}
+                p={[
+                    { x: "1rem", y: "4rem" },
+                    { x: "3rem", y: "4rem" },
+                    { x: "15vh", y: "4rem" }
+                ]}
+            >
+                <MinskyContact /> {/* ~OK */}
+            </Grid>
             <Grid type="block" debug={DEBUG_MODE}>
                 <Footer />
             </Grid>

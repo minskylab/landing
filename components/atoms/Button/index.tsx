@@ -7,14 +7,14 @@ const CustomButtom = styled.button<ButtonProps & React.StyleHTMLAttributes<any>>
     width: ${props => (props.size.width ? props.size.width : props.style.width)};
     height: ${props => (props.size.height ? props.size.height : props.style.height)};
     font-size: 16px;
-    padding: 0 0.8rem;
+    padding: 0 0.75rem 0 0.8rem;
     background: ${props =>
         props.isDisable ? "#D7D7D7" : props.isSelect ? props.kind.onHover : props.kind.backgroundColor};
     color: ${props => (props.isSelect ? props.kind.onHoverText : props.kind.fontColor)};
     border-radius: 0.3em;
     border: 0.08rem solid #1b1b1b;
     cursor: ${props => (props.isDisable ? "not-allowed" : "pointer")};
-    transition: 0.3s;
+    transition: 0.2s;
     font-family: "Karla";
     &:hover {
         background: ${props => (props.isDisable ? "#D7D7D7" : props.kind.onHover)};

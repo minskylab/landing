@@ -1,5 +1,3 @@
-
-
 export interface ButtonSizing {
     width: string;
     height: string;
@@ -33,7 +31,7 @@ export const ButtonTypes: ButtonType = {
 
 export const ButtonSizes: ButtonSize = {
     // normal: { width: "100px", height: "35px" },
-    normal: { width: "fit-content", height: "2.4rem" },
+    normal: { width: "fit-content", height: "2.6rem" },
     // big: { width: "115px", height: "40px" },
     big: { width: "fit-content", height: "3rem" },
     // compact: { width: "110px", height: "25px" }

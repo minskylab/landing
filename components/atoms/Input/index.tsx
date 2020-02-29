@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect } from "react";
+import React, { FunctionComponent, useState, useEffect, MutableRefObject } from "react";
 import { styled } from "linaria/react";
 import { InputMode } from "./types";
 import { InputType } from "zlib";
@@ -52,9 +52,9 @@ const TrailingIcon = styled.div`
     background-color: #1b1b1b;
 `;
 
-interface InputProps {
-    value: any;
-    onChange: (value: string) => void;
+export interface InputProps {
+    value?: string | number | string[];
+    onChange?: React.ChangeEventHandler;
     onFocusChange?: (focus: boolean) => void;
     type?: InputType;
     name?: string;
@@ -66,6 +66,9 @@ interface InputProps {
 
     prefix?: string;
     suffix?: string;
+
+    ref?: any;
+    defaultValue?: string | number | string[];
 }
 
 const Input: FunctionComponent<InputProps> = props => {
@@ -79,12 +82,14 @@ const Input: FunctionComponent<InputProps> = props => {
         <InputWrapper>
             {props.label ? <Label focus={focus}> {props.label} </Label> : null}
             <StyledInput
+                ref={props.ref}
+                defaultValue={props.defaultValue}
                 type={props.type as string}
                 name={props.name}
                 inputMode={props.inputMode}
                 placeholder={props.placeholder}
                 value={props.value}
-                onChange={e => props.onChange(e.target.value)}
+                onChange={props.onChange}
                 onFocus={() => setFocus(true)}
                 onBlur={() => setFocus(false)}
             />
