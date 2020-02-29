@@ -1,16 +1,12 @@
-import React, { FunctionComponent, useState, useEffect} from "react";
+import React, { FunctionComponent, useState, useEffect, useRef, useLayoutEffect } from "react";
 import { styled } from "linaria/react";
-import {Head, Html} from "next/document";
-import Title from "../components/atoms/Text/Title";
+import Head from "next/head";
 import { Grid } from "../components/atoms/Grid/v2";
-
 import { Button } from "../components/atoms/Button";
-
-import { Simple } from "../components/atoms/Text/Simple";
 
 import { LightBulbs } from "../components/atoms/Scene/LightBulbs";
 import MinskyTopBar from "../components/organisms/MInskyTopBar";
-
+import { Services } from "../components/organisms/MinskyServices/index";
 import { Technologies } from "../components/organisms/MinskyTechnology";
 import { Team } from "../components/organisms/MinskyMainTeam/index";
 import { LinkedIn } from "../components/atoms/Icon";
@@ -18,12 +14,11 @@ import ColorTypes from "../components/atoms/Colors";
 import Github from "../components/atoms/Icon/Github";
 import Twitter from "../components/atoms/Icon/Twitter";
 import { Specials } from "../components/organisms/MinskySpecials";
+import { GiveYou } from "../components/organisms/MinskyGive";
 
 import { Footer } from "../components/organisms/MinskyFooter/index";
-import { Text } from "../components/atoms/Text";
-import { TextTypes } from "../components/atoms/Text/constants";
-import { Services } from "../components/organisms/MinskyServices";
-import { GiveYou } from "../components/organisms/MinskyGive";
+import { Text, Simple } from "../components/atoms/Text/v2";
+import MinskyBuild from "../components/organisms/MinskyBuild";
 
 const Background = styled.div`
     z-index: -1;
@@ -76,9 +71,11 @@ const IndexPage: FunctionComponent = () => {
                         debug={DEBUG_MODE}
                         m={[{ all: "25vh 0.5em 0 0.5em" }, { all: "34vh 4.2em 0 4.2em" }, { all: "34vh 2em 0 2em" }]}
                     >
-                        <Title alignText={"center"}> MINSKY </Title>
+                        <Text as={"h1"} size={"2.5rem"} bold textAlign={"center"} fontFamily={"Rubik"}>
+                            MINSKY
+                        </Text>
                         <div style={{ height: "1em" }} />
-                        <Text alignText={"center"} type={TextTypes.subtitlePT} fontSize={"0.8em"} lineHeight={"1.5em"}>
+                        <Text textAlign={"center"} size={"0.8rem"} lineHeight={"1.5em"} fontFamily={"PT Mono"}>
                             A new technological perspective for your ideas.
                         </Text>
                         <Grid
@@ -129,16 +126,17 @@ const IndexPage: FunctionComponent = () => {
                     cols={{ from: 2, how: 1 }}
                     m={[{ top: "15vh" }, { top: "25vh" }]}
                 >
-                    <Grid debug={DEBUG_MODE} type={"flex"} justifyContent={"center"}>
-                        <Grid debug={DEBUG_MODE}>
+                    <Grid debug={DEBUG_MODE} type={"flex"} justifyContent={"center"} p={[{top:"8em"},{top:"3em"},{top:"0em"}]}>
+                        <Grid debug={DEBUG_MODE}  >
                             <Simple>Learn more</Simple>
                             <div
                                 style={{
-                                    height: "12em",
+                                    height: "16em",
                                     width: "0.1em",
                                     maxWidth: "0.1em",
                                     backgroundColor: "#1a1d25",
                                     margin: "auto"
+                                    
                                 }}
                             />
                         </Grid>
@@ -149,57 +147,70 @@ const IndexPage: FunctionComponent = () => {
                 type="block"
                 debug={DEBUG_MODE}
                 p={[
-                    { x: "1rem", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
+                    { x: "5vh", y: "4rem" },
+                    { x: "10vh", y: "4rem" },
                     { x: "15vh", y: "4rem" }
                 ]}
             >
-                <Services />
-            </Grid>
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "1rem", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
-                <Specials />
-            </Grid>
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "1rem", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
-                <Technologies />
-            </Grid>
+                <MinskyBuild />
 
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "1rem", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
-                <GiveYou />
+
             </Grid>
             <Grid
                 type="block"
                 debug={DEBUG_MODE}
                 p={[
                     { x: "5vh", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
+                    { x: "10vh", y: "4rem" },
                     { x: "15vh", y: "4rem" }
                 ]}
             >
-                <Team />
+                <Services /> {/* OK */}
+            </Grid>
+            <Grid
+                type="block"
+                debug={DEBUG_MODE}
+                p={[
+                    { x: "5vh", y: "4rem" },
+                    { x: "10vh", y: "4rem" },
+                    { x: "15vh", y: "4rem" }
+                ]}
+            >
+                <Specials /> {/* OK */}
+            </Grid>
+            <Grid
+                type="block"
+                debug={DEBUG_MODE}
+                p={[
+                    { x: "5vh", y: "4rem" },
+                    { x: "10vh", y: "4rem" },
+                    { x: "15vh", y: "4rem" }
+                ]}
+            >
+                <Technologies /> {/* OK */}
+            </Grid>
+
+            <Grid
+                type="block"
+                debug={DEBUG_MODE}
+                p={[
+                    { x: "5vh", y: "4rem" },
+                    { x: "10vh", y: "4rem" },
+                    { x: "15vh", y: "4rem" }
+                ]}
+            >
+                <GiveYou /> {/* OK */}
+            </Grid>
+            <Grid
+                type="block"
+                debug={DEBUG_MODE}
+                p={[
+                    { x: "5vh", y: "4rem" },
+                    { x: "10vh", y: "4rem" },
+                    { x: "15vh", y: "4rem" }
+                ]}
+            >
+                <Team /> {/* OK */}
             </Grid>
             {/* Deprecated <Grid
 				type="block"
@@ -208,15 +219,7 @@ const IndexPage: FunctionComponent = () => {
 			>
 				<ContactUs />
 			</Grid> */}
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "1rem", y: "4rem" },
-                    { x: "3rem", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            <Grid type="block" debug={DEBUG_MODE}>
                 <Footer />
             </Grid>
         </div>
