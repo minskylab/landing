@@ -3,6 +3,8 @@ import { AppProps } from "next/app";
 import Fonts from "../general/Fonts";
 import BasicTemplate from "../components/templates/BasicTemplate";
 import Head from "next/head";
+import { DefaultSeo } from "next-seo";
+import DefaultSEOConfig from "../components/templates/seo";
 
 const MinskyApp = ({ Component, pageProps }: AppProps) => {
     useEffect(() => {
@@ -11,6 +13,7 @@ const MinskyApp = ({ Component, pageProps }: AppProps) => {
 
     return (
         <BasicTemplate>
+            <DefaultSeo {...DefaultSEOConfig} />
             <Component {...pageProps} />
         </BasicTemplate>
     );
