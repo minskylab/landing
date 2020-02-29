@@ -20,6 +20,7 @@ import { Footer } from "../components/organisms/MinskyFooter/index";
 import { Text, Simple } from "../components/atoms/Text/v2";
 import MinskyBuild from "../components/organisms/MinskyBuild";
 import MinskyContact from "../components/organisms/MinskyContact/v2";
+import ButtonIcon from "../components/atoms/Button/ButtonIcon";
 
 const Background = styled.div`
     z-index: -1;
@@ -106,8 +107,9 @@ const IndexPage: FC = () => {
                             colsTemplate={{ raw: "repeat(3, 1fr)" }}
                             gridAutoFlow={"row"}
                             m={[
-                                { x: "0.4em", y: "1.8em" },
-                                { x: "1.8em", y: "1.8em" }
+                                { x: "1rem", y: "1.8em" },
+                                { x: "2rem", y: "1.8em" },
+                                { x: "2.6rem", y: "1.8em" }
                             ]}
                         >
                             {["Linkedin", "Github", "Twitter"].map((socialNet, i) => (
@@ -122,9 +124,7 @@ const IndexPage: FC = () => {
                                             alignItems: "center"
                                         }}
                                     >
-                                        {socialNet === "Linkedin" && (
-                                            <LinkedIn height={32} width={32} color={ColorTypes.black._50} />
-                                        )}
+                                        {socialNet === "Linkedin" && <ButtonIcon icon={LinkedIn}></ButtonIcon>}
                                         {socialNet === "Github" && (
                                             <Github height={32} width={32} color={ColorTypes.black._50} />
                                         )}
@@ -132,7 +132,9 @@ const IndexPage: FC = () => {
                                             <Twitter height={32} width={32} color={ColorTypes.black._50} />
                                         )}
                                     </div>
-                                    {/* <Simple alignText={"center"}>{socialNet}</Simple> */}
+                                    <Simple size={"0.6rem"} textAlign={"center"}>
+                                        {socialNet}
+                                    </Simple>
                                 </div>
                             ))}
                         </Grid>

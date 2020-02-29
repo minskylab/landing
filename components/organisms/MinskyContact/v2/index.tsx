@@ -93,7 +93,7 @@ const MinskyContact: FC<MinskyContentProps> = (props: MinskyContentProps) => {
                 <Important color={"#424242"}>hello@minsky.cc</Important>
                 <div style={{ width: "100%", height: "1rem" }} /> {/* spacer */}
                 <Simple bold>Phone | Telegram | WhatsApp</Simple>
-                <Important color={"#424242"}>+51 961 818 237</Important>
+                <Important color={"#424242"}>+51 924 122 969</Important>
             </Grid>
             <Grid rows={{ from: 3, how: 1 }} cols={{ from: 1, how: 1 }} p={[{}, { right: "12rem" }]}>
                 <Form ref={formRef} onSubmit={handleSubmit}>
