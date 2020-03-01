@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect, useRef, useLayoutEffect } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect, FC, Children } from "react";
 import { styled } from "linaria/react";
 import Head from "next/head";
 import { Grid } from "../components/atoms/Grid/v2";
@@ -19,6 +19,8 @@ import { GiveYou } from "../components/organisms/MinskyGive";
 import { Footer } from "../components/organisms/MinskyFooter/index";
 import { Text, Simple } from "../components/atoms/Text/v2";
 import MinskyBuild from "../components/organisms/MinskyBuild";
+import MinskyContact from "../components/organisms/MinskyContact/v2";
+import ButtonIcon from "../components/atoms/Button/ButtonIcon";
 
 const Background = styled.div`
     z-index: -1;
@@ -36,7 +38,27 @@ const items = [
 
 const DEBUG_MODE = false;
 
-const IndexPage: FunctionComponent = () => {
+interface HomeSectionContainerProps {
+    children: any;
+}
+
+const HomeSectionContainer: FC<HomeSectionContainerProps> = (props: HomeSectionContainerProps) => {
+    return (
+        <Grid
+            type="block"
+            debug={DEBUG_MODE}
+            p={[
+                { x: "2rem", y: "4rem" },
+                { x: "3rem", y: "4rem" },
+                { x: "15vh", y: "4rem" }
+            ]}
+        >
+            {props.children}
+        </Grid>
+    );
+};
+
+const IndexPage: FC = () => {
     const [currentPage, setCurrentPage] = useState<string>("home");
     const [renderPhysics, setRenderPhysics] = useState<boolean>(false);
     const [topBarShow, setTopBarShow] = useState<boolean>(false);
@@ -48,7 +70,7 @@ const IndexPage: FunctionComponent = () => {
     }, []);
 
     return (
-        <div>
+        <div style={{ overflow: "hidden" }}>
             <Head>
                 <title>Minsky | Home</title>
                 <meta name="theme-color" content="#ffdf53" />
@@ -64,12 +86,12 @@ const IndexPage: FunctionComponent = () => {
                 type={["block", "block", "grid"]}
                 colsTemplate={{ raw: "repeat(3, 1fr)" }}
                 rowsTemplate={{ raw: "repeat(6, auto)" }}
-                m={{ x: "2em", y: "2em" }}
+                m={{ x: "2rem", y: "2rem" }}
             >
                 <Grid debug={DEBUG_MODE} rows={{ from: 2, how: 1 }} cols={{ from: 2, how: 1 }}>
                     <Grid
                         debug={DEBUG_MODE}
-                        m={[{ all: "25vh 0.5em 0 0.5em" }, { all: "34vh 4.2em 0 4.2em" }, { all: "34vh 2em 0 2em" }]}
+                        m={[{ all: "28vh 2rem 0 2rem" }, { all: "34vh 4.2em 0 4.2em" }, { all: "34vh 2em 0 2em" }]}
                     >
                         <Text as={"h1"} size={"2.5rem"} bold textAlign={"center"} fontFamily={"Rubik"}>
                             MINSKY
@@ -85,8 +107,9 @@ const IndexPage: FunctionComponent = () => {
                             colsTemplate={{ raw: "repeat(3, 1fr)" }}
                             gridAutoFlow={"row"}
                             m={[
-                                { x: "0.4em", y: "1.8em" },
-                                { x: "1.8em", y: "1.8em" }
+                                { x: "1rem", y: "1.8em" },
+                                { x: "2rem", y: "1.8em" },
+                                { x: "2.6rem", y: "1.8em" }
                             ]}
                         >
                             {["Linkedin", "Github", "Twitter"].map((socialNet, i) => (
@@ -101,9 +124,7 @@ const IndexPage: FunctionComponent = () => {
                                             alignItems: "center"
                                         }}
                                     >
-                                        {socialNet === "Linkedin" && (
-                                            <LinkedIn height={32} width={32} color={ColorTypes.black._50} />
-                                        )}
+                                        {socialNet === "Linkedin" && <ButtonIcon icon={LinkedIn}></ButtonIcon>}
                                         {socialNet === "Github" && (
                                             <Github height={32} width={32} color={ColorTypes.black._50} />
                                         )}
@@ -111,7 +132,9 @@ const IndexPage: FunctionComponent = () => {
                                             <Twitter height={32} width={32} color={ColorTypes.black._50} />
                                         )}
                                     </div>
-                                    {/* <Simple alignText={"center"}>{socialNet}</Simple> */}
+                                    <Simple size={"0.6rem"} textAlign={"center"}>
+                                        {socialNet}
+                                    </Simple>
                                 </div>
                             ))}
                         </Grid>
@@ -126,102 +149,44 @@ const IndexPage: FunctionComponent = () => {
                     cols={{ from: 2, how: 1 }}
                     m={[{ top: "15vh" }, { top: "25vh" }]}
                 >
-                    <Grid debug={DEBUG_MODE} type={"flex"} justifyContent={"center"} p={[{top:"8em"},{top:"3em"},{top:"0em"}]}>
-                        <Grid debug={DEBUG_MODE}  >
+                    <Grid debug={DEBUG_MODE} type={"flex"} justifyContent={"center"}>
+                        <Grid debug={DEBUG_MODE}>
                             <Simple>Learn more</Simple>
                             <div
                                 style={{
-                                    height: "16em",
+                                    height: "12em",
                                     width: "0.1em",
                                     maxWidth: "0.1em",
                                     backgroundColor: "#1a1d25",
                                     margin: "auto"
-                                    
                                 }}
                             />
                         </Grid>
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "5vh", y: "4rem" },
-                    { x: "10vh", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            <HomeSectionContainer>
                 <MinskyBuild />
-
-
-            </Grid>
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "5vh", y: "4rem" },
-                    { x: "10vh", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            </HomeSectionContainer>
+            <HomeSectionContainer>
                 <Services /> {/* OK */}
-            </Grid>
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "5vh", y: "4rem" },
-                    { x: "10vh", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            </HomeSectionContainer>
+            <HomeSectionContainer>
                 <Specials /> {/* OK */}
-            </Grid>
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "5vh", y: "4rem" },
-                    { x: "10vh", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            </HomeSectionContainer>
+            <HomeSectionContainer>
                 <Technologies /> {/* OK */}
-            </Grid>
-
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "5vh", y: "4rem" },
-                    { x: "10vh", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            </HomeSectionContainer>
+            <HomeSectionContainer>
                 <GiveYou /> {/* OK */}
-            </Grid>
-            <Grid
-                type="block"
-                debug={DEBUG_MODE}
-                p={[
-                    { x: "5vh", y: "4rem" },
-                    { x: "10vh", y: "4rem" },
-                    { x: "15vh", y: "4rem" }
-                ]}
-            >
+            </HomeSectionContainer>
+            <HomeSectionContainer>
                 <Team /> {/* OK */}
-            </Grid>
-            {/* Deprecated <Grid
-				type="block"
-				debug={DEBUG_MODE}
-				p={[ { x: "1rem", y: "4rem" }, { x: "3rem", y: "4rem" }, { x: "50vh", y: "4rem" } ]}
-			>
-				<ContactUs />
-			</Grid> */}
-            <Grid type="block" debug={DEBUG_MODE}>
-                <Footer />
-            </Grid>
+            </HomeSectionContainer>
+            <HomeSectionContainer>
+                <MinskyContact /> {/* ~OK */}
+            </HomeSectionContainer>
+            <Footer />
         </div>
     );
 };
