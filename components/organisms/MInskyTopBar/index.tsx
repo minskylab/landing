@@ -67,6 +67,11 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
         setPropsVerticalMenu({ opacity: openMenu ? 0 : 1 });
     }, [openMenu]);
 
+
+    const selected = (e) => {
+        console.log(e)
+
+    }
     return (
         <>
             <animated.div className={menuContainer} style={propsMenu}>
@@ -92,7 +97,8 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                             <Grid type={["none", "none", "block"]} m={{ left: "2em" }}>
                                 <VerticalMenu
                                     selectedItem={"home"}
-                                    items={[{ key: "home", name: "Home" }]}
+                                    items={[{ key: "home", name: "Home" },{key:"services", name:"Our Services"},{key:"team", name:"Our Team"},{key:"technology", name:"Our Technologies"}]}
+                                    onSelected={(e)=>selected(e)}
                                     compact
                                 ></VerticalMenu>
                             </Grid>

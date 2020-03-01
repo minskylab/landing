@@ -25,6 +25,7 @@
         "poly-decomp": "^0.3.0",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
+        "react-scroll": "^1.7.16",
         "react-spring": "^8.0.27",
         "yup": "^0.28.1"
     }

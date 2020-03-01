@@ -56,6 +56,7 @@ const Spacer = styled.div`
 const VerticalMenu: FC<VerticalMenuProps> = (props: VerticalMenuProps) => {
     if (props.compact) {
         const items = props.items.filter(item => item.key === props.selectedItem);
+        console.log(items)
         return (
             <Wrapper>
                 <Item key={"1"} selected>

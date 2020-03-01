@@ -21,6 +21,8 @@ import { Text, Simple } from "../components/atoms/Text/v2";
 import MinskyBuild from "../components/organisms/MinskyBuild";
 import MinskyContact from "../components/organisms/MinskyContact/v2";
 import ButtonIcon from "../components/atoms/Button/ButtonIcon";
+import { Link, animateScroll as scroll } from "react-scroll";
+
 
 const Background = styled.div`
     z-index: -1;
@@ -28,6 +30,7 @@ const Background = styled.div`
     top: 0;
     left: 0;
 `;
+
 
 const items = [
     { key: "home", name: "Home" },
@@ -63,11 +66,23 @@ const IndexPage: FC = () => {
     const [renderPhysics, setRenderPhysics] = useState<boolean>(false);
     const [topBarShow, setTopBarShow] = useState<boolean>(false);
 
+    
     useEffect(() => {
         if (window.innerWidth > 970) {
             setRenderPhysics(true);
         }
     }, []);
+    
+    
+    const goTo = (refer: string) => {
+        if(refer === "Linkedin"){
+            open("https://www.linkedin.com/company/minskylab")
+        }else if(refer === "Twitter"){
+            open("https://twitter.com/MinskyLab")
+        }else if (refer === "Github"){
+            open("https://github.com/minskylab")
+        }
+    }
 
     return (
         <div style={{ overflow: "hidden" }}>
@@ -124,12 +139,12 @@ const IndexPage: FC = () => {
                                             alignItems: "center"
                                         }}
                                     >
-                                        {socialNet === "Linkedin" && <ButtonIcon icon={LinkedIn}></ButtonIcon>}
+                                        {socialNet === "Linkedin" && <ButtonIcon icon={LinkedIn} onClick={() => goTo("Linkedin")}></ButtonIcon>}
                                         {socialNet === "Github" && (
-                                            <Github height={32} width={32} color={ColorTypes.black._50} />
+                                            <Github height={32} width={32} color={ColorTypes.black._50} onClick={() => goTo("Github")}/>
                                         )}
                                         {socialNet === "Twitter" && (
-                                            <Twitter height={32} width={32} color={ColorTypes.black._50} />
+                                            <Twitter height={32} width={32} color={ColorTypes.black._50} onClick={() => goTo("Twitter")} />
                                         )}
                                     </div>
                                     <Simple size={"0.6rem"} textAlign={"center"}>
