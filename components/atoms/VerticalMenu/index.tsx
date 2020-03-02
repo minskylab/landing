@@ -45,7 +45,7 @@ export interface VerticalMenuProps {
     items: VerticalMenuItem[];
     compact?: boolean;
     selectedItem?: string;
-    onSelected?(item: VerticalMenuItem): void;
+    onSelected?: (item: VerticalMenuItem) => void;
 }
 
 const Spacer = styled.div`

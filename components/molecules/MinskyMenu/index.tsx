@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { styled } from "linaria/react";
 import { Grid } from "../../atoms/Grid/v2";
 import { MinskyLogoIcon, MenuIcon, UpArrowIcon } from "../../atoms/Icon/icons";
-import VerticalMenu from "../../atoms/VerticalMenu";
+import VerticalMenu, { VerticalMenuItem } from "../../atoms/VerticalMenu";
 import { Button } from "../../atoms/Button";
 import ButtonIcon from "../../atoms/Button/ButtonIcon";
 // import { useSpring } from "react-spring";
@@ -29,6 +29,8 @@ const items = [
 interface MinskyMenuProps {
     cleanMode?: boolean;
     onClose?: () => void;
+    compact?: boolean;
+    onSelected?: (item: VerticalMenuItem) => void;
 }
 
 const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
@@ -61,7 +63,12 @@ const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
                     </Grid>
                 </Grid>
                 <Grid type={"flex"} cols={{ from: 1, to: 2 }} rows={{ from: 2, how: 1 }} alignItems={"end"}>
-                    <VerticalMenu items={items} selectedItem={"home"} />
+                    <VerticalMenu
+                        items={items}
+                        selectedItem={"home"}
+                        onSelected={props.onSelected}
+                        compact={props.compact}
+                    />
                 </Grid>
                 <Grid
                     type={"grid"}
