@@ -3,7 +3,7 @@ import { styled } from "linaria/react";
 import { Grid } from "../../atoms/Grid/v2";
 import { MinskyLogoIcon } from "../../atoms/Icon/icons";
 import { Button } from "../../atoms/Button";
-import VerticalMenu from "../../atoms/VerticalMenu";
+import VerticalMenu, { VerticalMenuItem } from "../../atoms/VerticalMenu";
 
 import MinskyMenu from "../../molecules/MinskyMenu";
 import { useSpring, animated } from "react-spring";
@@ -16,20 +16,6 @@ const menuContainer = css`
     z-index: 10;
     top: 0;
 `;
-// interface MinskyTopBarContainerProps {
-//     showing?: boolean;
-// }
-
-// const MinskyTopBarContainer = styled.div<MinskyTopBarContainerProps>`
-//     z-index: 10;
-//     position: ${props => (props.showing ? "fixed" : "fixed")};
-//     top: ${props => (props.showing ? "0em" : "-4em")};
-//     opacity: ${props => (props.showing ? "100%" : "0")};
-//     left: 0;
-//     width: 100%;
-//     background-color: #fffcf0;
-//     transition: 0.1s;
-// `;
 
 const topBarContainer = css`
     z-index: 11;
@@ -48,11 +34,13 @@ interface MinskyTopBarProps {
     active: boolean;
     children?: any;
     logoColor?: string;
-    Selected?(arg: any): void;
+    items?: VerticalMenuItem[];
+    onSelected?(item: VerticalMenuItem): void;
+    unfolded?: boolean;
 }
 
 const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
-    const [openMenu, setOpenMenu] = useState<boolean>(false);
+    const [openMenu, setOpenMenu] = useState<boolean>(props.unfolded || false);
     const [propsMenu, setPropsMenu] = useSpring(() => ({ transform: "translateY(-30rem)" }));
     const [propsBar, setPropsBar] = useSpring(() => ({ backgroundColor: "white" }));
     const [propsVerticalMenu, setPropsVerticalMenu] = useSpring(() => ({
@@ -68,11 +56,20 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
         setPropsVerticalMenu({ opacity: openMenu ? 0 : 1 });
     }, [openMenu]);
 
+    useEffect(() => {
+        setOpenMenu(props.unfolded);
+    }, [props]);
 
     return (
         <>
             <animated.div className={menuContainer} style={propsMenu}>
-                <MinskyMenu cleanMode={false} onClose={() => setOpenMenu(false)}  onSelected={(item) => props.Selected(item)} />
+                <MinskyMenu
+                    cleanMode={false}
+                    onClose={() => setOpenMenu(false)}
+                    onSelected={(item: VerticalMenuItem) => props.onSelected(item)}
+                    items={props.items}
+                    selectedItem={"home"}
+                />
             </animated.div>
 
             <animated.div className={topBarContainer} style={propsBar}>

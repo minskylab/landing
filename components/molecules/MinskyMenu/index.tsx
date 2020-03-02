@@ -1,4 +1,4 @@
-import React, { FC,useState, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { styled } from "linaria/react";
 import { Grid } from "../../atoms/Grid/v2";
 import { MinskyLogoIcon, MenuIcon, UpArrowIcon } from "../../atoms/Icon/icons";
@@ -19,26 +19,16 @@ const Wrapper = styled.div`
     user-select: none;
 `;
 
-const items = [
-    { key: "home", name: "Home" },
-    { key: "services", name: "Our Services" },
-    { key: "team", name: "Our Team" },
-    { key: "technologies", name: "Our Technologies" },
-    { key: "values", name: "Our Values" },
-    { key: "specialties", name: "Our Specials" },
-    { key: "contact", name: "Contact Us" },
-];
-
 interface MinskyMenuProps {
     cleanMode?: boolean;
     onClose?: () => void;
     compact?: boolean;
     onSelected?: (item: VerticalMenuItem) => void;
+    selectedItem?: string;
+    items?: VerticalMenuItem[];
 }
 
 const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
-
-
     return (
         <Wrapper>
             <Grid
@@ -69,9 +59,9 @@ const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
                 </Grid>
                 <Grid type={"flex"} cols={{ from: 1, to: 2 }} rows={{ from: 2, how: 1 }} alignItems={"end"}>
                     <VerticalMenu
-                        items={items}
-                        selectedItem={"home"}
-                        onSelected={(e)=>console.log(e.name)}
+                        items={props.items}
+                        selectedItem={props.selectedItem}
+                        onSelected={props.onSelected}
                         compact={props.compact}
                     />
                 </Grid>
