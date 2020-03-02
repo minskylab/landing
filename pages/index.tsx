@@ -21,6 +21,9 @@ import { Text, Simple } from "../components/atoms/Text/v2";
 import MinskyBuild from "../components/organisms/MinskyBuild";
 import MinskyContact from "../components/organisms/MinskyContact/v2";
 import ButtonIcon from "../components/atoms/Button/ButtonIcon";
+import LinkedInOutline from "../components/atoms/Icon/LinkedInOutline";
+import GithubOutline from "../components/atoms/Icon/GithubOutline";
+import TwitterOutline from "../components/atoms/Icon/TwitterOutline";
 
 const Background = styled.div`
     z-index: -1;
@@ -112,7 +115,7 @@ const IndexPage: FC = () => {
                                 { x: "2.6rem", y: "1.8em" }
                             ]}
                         >
-                            {["Linkedin", "Github", "Twitter"].map((socialNet, i) => (
+                            {["linkedin", "github", "twitter"].map((socialNet, i) => (
                                 <div key={i}>
                                     <div
                                         style={{
@@ -124,12 +127,14 @@ const IndexPage: FC = () => {
                                             alignItems: "center"
                                         }}
                                     >
-                                        {socialNet === "Linkedin" && <ButtonIcon icon={LinkedIn}></ButtonIcon>}
-                                        {socialNet === "Github" && (
-                                            <Github height={32} width={32} color={ColorTypes.black._50} />
+                                        {socialNet === "linkedin" && (
+                                            <LinkedInOutline height={32} width={32} color={"#1b1b1b"} />
                                         )}
-                                        {socialNet === "Twitter" && (
-                                            <Twitter height={32} width={32} color={ColorTypes.black._50} />
+                                        {socialNet === "github" && (
+                                            <GithubOutline height={32} width={32} color={"#1b1b1b"} />
+                                        )}
+                                        {socialNet === "twitter" && (
+                                            <TwitterOutline height={32} width={32} color={"#1b1b1b"} />
                                         )}
                                     </div>
                                     <Simple size={"0.6rem"} textAlign={"center"}>
