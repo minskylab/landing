@@ -70,17 +70,24 @@ const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
                     cols={{ from: 3, how: 1 }}
                     rows={{ from: 2, how: 1 }}
                     alignItems={"end"}
-                    rowsTemplate={{ parts: 2, size: "1fr" }}
+                    rowsTemplate={{ parts: 2, size: "auto" }}
+                    justifyContent={"end"}
+                    alignContent={"flex-end"}
                     p={{ bottom: "0em", top: "2.4em" }}
                     m={{ bottom: "0.5em" }}
                 >
                     {!props.cleanMode && (
                         <>
-                            <Grid type={"flex"} rows={{ from: 2, how: 1 }} justifyContent={"flex-end"}>
-                                <Button primary>Contact Us</Button>
-                            </Grid>
                             <Grid type={"flex"} rows={{ from: 1, how: 1 }} justifyContent={"flex-end"}>
                                 <Button minsky>Developers Here</Button>
+                            </Grid>
+                            <Grid
+                                type={"flex"}
+                                rows={{ from: 2, how: 1 }}
+                                justifyContent={"flex-end"}
+                                m={{ top: "1rem" }}
+                            >
+                                <Button primary>Contact Us</Button>
                             </Grid>
                         </>
                     )}
