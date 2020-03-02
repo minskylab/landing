@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import Head from "next/head";
-import MinskyMenu from "../components/molecules/MinskyMenu";
+import { Title, Subtitle } from "../components/atoms/Text/v2";
 
 const IndexPage: FunctionComponent = () => {
     return (
@@ -10,7 +10,8 @@ const IndexPage: FunctionComponent = () => {
                 <meta name="theme-color" content="#ffdf53" />
             </Head>
             <div>
-                <MinskyMenu></MinskyMenu>
+                <Title>Open Source</Title>
+                <Subtitle>The future of the humanity</Subtitle>
             </div>
         </div>
     );
