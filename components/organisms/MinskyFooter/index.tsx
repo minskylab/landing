@@ -168,7 +168,7 @@ export const Footer: FC = () => {
                     p={[{ right: "2rem" }, {}]}
                 >
                     <Body color={TEXT_COLOR} bold>
-                        {"Resourses"}
+                        {"Resources"}
                     </Body>
                 </Grid>
                 <Grid

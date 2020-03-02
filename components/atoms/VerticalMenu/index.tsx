@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { styled } from "linaria/react";
 // import {useTransition, animated} from 'react-spring';
+import { Link, animateScroll as scroll } from 'react-scroll'
 
 const Wrapper = styled.div`
     /* margin: 1em 1em; */
@@ -54,6 +55,7 @@ const Spacer = styled.div`
 `;
 
 const VerticalMenu: FC<VerticalMenuProps> = (props: VerticalMenuProps) => {
+
     if (props.compact) {
         const items = props.items.filter(item => item.key === props.selectedItem);
         return (
@@ -71,10 +73,12 @@ const VerticalMenu: FC<VerticalMenuProps> = (props: VerticalMenuProps) => {
                 const sel: boolean = item.key === props.selectedItem;
                 return (
                     <React.Fragment key={i}>
-                        <Item selected={sel} onClick={() => props.onSelected && props.onSelected(item)}>
-                            {item.name}
-                            {sel && <Line />}
-                        </Item>
+                        <Link activeClass="active" className={item.key} to={item.key} spy={true} smooth={true} duration={500}>
+                            <Item selected={sel} onClick={() => props.onSelected && props.onSelected(item)}>
+                                {item.name}
+                                {sel && <Line />}
+                            </Item>
+                        </Link>
                         {i < props.items.length - 1 && <Spacer key={`sp${i}`} />}
                     </React.Fragment>
                 );

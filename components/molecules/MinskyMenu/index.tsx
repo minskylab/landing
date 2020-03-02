@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC,useState, useEffect } from "react";
 import { styled } from "linaria/react";
 import { Grid } from "../../atoms/Grid/v2";
 import { MinskyLogoIcon, MenuIcon, UpArrowIcon } from "../../atoms/Icon/icons";
@@ -23,7 +23,10 @@ const items = [
     { key: "home", name: "Home" },
     { key: "services", name: "Our Services" },
     { key: "team", name: "Our Team" },
-    { key: "technologies", name: "Our Technologies" }
+    { key: "technologies", name: "Our Technologies" },
+    { key: "values", name: "Our Values" },
+    { key: "specialties", name: "Our Specials" },
+    { key: "contact", name: "Contact Us" },
 ];
 
 interface MinskyMenuProps {
@@ -34,6 +37,8 @@ interface MinskyMenuProps {
 }
 
 const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
+
+
     return (
         <Wrapper>
             <Grid
@@ -66,7 +71,7 @@ const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
                     <VerticalMenu
                         items={items}
                         selectedItem={"home"}
-                        onSelected={props.onSelected}
+                        onSelected={(e)=>console.log(e.name)}
                         compact={props.compact}
                     />
                 </Grid>

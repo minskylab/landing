@@ -48,6 +48,7 @@ interface MinskyTopBarProps {
     active: boolean;
     children?: any;
     logoColor?: string;
+    Selected?(arg: any): void;
 }
 
 const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
@@ -67,10 +68,11 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
         setPropsVerticalMenu({ opacity: openMenu ? 0 : 1 });
     }, [openMenu]);
 
+
     return (
         <>
             <animated.div className={menuContainer} style={propsMenu}>
-                <MinskyMenu cleanMode={false} onClose={() => setOpenMenu(false)} />
+                <MinskyMenu cleanMode={false} onClose={() => setOpenMenu(false)}  onSelected={(item) => props.Selected(item)} />
             </animated.div>
 
             <animated.div className={topBarContainer} style={propsBar}>

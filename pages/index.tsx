@@ -24,6 +24,8 @@ import ButtonIcon from "../components/atoms/Button/ButtonIcon";
 import LinkedInOutline from "../components/atoms/Icon/LinkedInOutline";
 import GithubOutline from "../components/atoms/Icon/GithubOutline";
 import TwitterOutline from "../components/atoms/Icon/TwitterOutline";
+import { Element, animateScroll as scroll} from "react-scroll";
+
 
 const Background = styled.div`
     z-index: -1;
@@ -31,6 +33,7 @@ const Background = styled.div`
     top: 0;
     left: 0;
 `;
+
 
 const items = [
     { key: "home", name: "Home" },
@@ -65,12 +68,26 @@ const IndexPage: FC = () => {
     const [currentPage, setCurrentPage] = useState<string>("home");
     const [renderPhysics, setRenderPhysics] = useState<boolean>(false);
     const [topBarShow, setTopBarShow] = useState<boolean>(false);
+    const [selected, setSelected] = useState<string>("home");
 
     useEffect(() => {
         if (window.innerWidth > 970) {
             setRenderPhysics(true);
         }
     }, []);
+    
+
+
+    
+    const goTo = (refer: string) => {
+        if(refer === "Linkedin"){
+            open("https://www.linkedin.com/company/minskylab")
+        }else if(refer === "Twitter"){
+            open("https://twitter.com/MinskyLab")
+        }else if (refer === "Github"){
+            open("https://github.com/minskylab")
+        }
+    }
 
     return (
         <div style={{ overflow: "hidden" }}>
@@ -83,7 +100,7 @@ const IndexPage: FC = () => {
                     <LightBulbs />
                 </Background>
             )}
-            <MinskyTopBar active={true} />
+            <MinskyTopBar active={true} Selected={(item)=>setSelected(item.key)} />
             <Grid
                 debug={DEBUG_MODE}
                 type={["block", "block", "grid"]}
@@ -127,14 +144,12 @@ const IndexPage: FC = () => {
                                             alignItems: "center"
                                         }}
                                     >
-                                        {socialNet === "linkedin" && (
-                                            <LinkedInOutline height={32} width={32} color={"#1b1b1b"} />
+                                        {socialNet === "Linkedin" && <ButtonIcon icon={LinkedIn} onClick={() => goTo("Linkedin")}></ButtonIcon>}
+                                        {socialNet === "Github" && (
+                                            <Github height={32} width={32} color={ColorTypes.black._50} onClick={() => goTo("Github")}/>
                                         )}
-                                        {socialNet === "github" && (
-                                            <GithubOutline height={32} width={32} color={"#1b1b1b"} />
-                                        )}
-                                        {socialNet === "twitter" && (
-                                            <TwitterOutline height={32} width={32} color={"#1b1b1b"} />
+                                        {socialNet === "Twitter" && (
+                                            <Twitter height={32} width={32} color={ColorTypes.black._50} onClick={() => goTo("Twitter")} />
                                         )}
                                     </div>
                                     <Simple size={"0.6rem"} textAlign={"center"}>
@@ -173,24 +188,36 @@ const IndexPage: FC = () => {
             <HomeSectionContainer>
                 <MinskyBuild />
             </HomeSectionContainer>
-            <HomeSectionContainer>
-                <Services /> {/* OK */}
-            </HomeSectionContainer>
-            <HomeSectionContainer>
-                <Specials /> {/* OK */}
-            </HomeSectionContainer>
-            <HomeSectionContainer>
-                <Technologies /> {/* OK */}
-            </HomeSectionContainer>
-            <HomeSectionContainer>
-                <GiveYou /> {/* OK */}
-            </HomeSectionContainer>
-            <HomeSectionContainer>
-                <Team /> {/* OK */}
-            </HomeSectionContainer>
-            <HomeSectionContainer>
-                <MinskyContact /> {/* ~OK */}
-            </HomeSectionContainer>
+            <Element name="services"> 
+                <HomeSectionContainer>
+                    <Services /> {/* OK */}
+                </HomeSectionContainer>
+            </Element>
+            <Element name="specialties"> 
+                <HomeSectionContainer>
+                    <Specials /> {/* OK */}
+                </HomeSectionContainer>
+            </Element>
+            <Element name="technologies"> 
+                <HomeSectionContainer>
+                    <Technologies /> {/* OK */}
+                </HomeSectionContainer>
+            </Element>
+            <Element name="values"> 
+                <HomeSectionContainer>
+                    <GiveYou /> {/* OK */}
+                </HomeSectionContainer>
+            </Element>
+            <Element name="team"> 
+                <HomeSectionContainer>
+                    <Team /> {/* OK */}
+                </HomeSectionContainer>
+            </Element>
+            <Element name="contact"> 
+                <HomeSectionContainer>
+                    <MinskyContact /> {/* ~OK */}
+                </HomeSectionContainer>
+            </Element>
             <Footer />
         </div>
     );
