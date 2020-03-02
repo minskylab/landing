@@ -37,7 +37,7 @@ interface MinskyMenuProps {
 }
 
 const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
-    const [item, setItem] = useState("home");
+
 
     return (
         <Wrapper>
@@ -70,8 +70,8 @@ const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
                 <Grid type={"flex"} cols={{ from: 1, to: 2 }} rows={{ from: 2, how: 1 }} alignItems={"end"}>
                     <VerticalMenu
                         items={items}
-                        selectedItem={item}
-                        onSelected={(e)=>setItem(e.name)}
+                        selectedItem={"home"}
+                        onSelected={(e)=>console.log(e.name)}
                         compact={props.compact}
                     />
                 </Grid>
