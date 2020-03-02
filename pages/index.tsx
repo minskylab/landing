@@ -21,7 +21,7 @@ import { Text, Simple } from "../components/atoms/Text/v2";
 import MinskyBuild from "../components/organisms/MinskyBuild";
 import MinskyContact from "../components/organisms/MinskyContact/v2";
 import ButtonIcon from "../components/atoms/Button/ButtonIcon";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Element, animateScroll as scroll} from "react-scroll";
 
 
 const Background = styled.div`
@@ -65,14 +65,16 @@ const IndexPage: FC = () => {
     const [currentPage, setCurrentPage] = useState<string>("home");
     const [renderPhysics, setRenderPhysics] = useState<boolean>(false);
     const [topBarShow, setTopBarShow] = useState<boolean>(false);
+    const [selected, setSelected] = useState<string>("home");
 
-    
     useEffect(() => {
         if (window.innerWidth > 970) {
             setRenderPhysics(true);
         }
     }, []);
     
+
+
     
     const goTo = (refer: string) => {
         if(refer === "Linkedin"){
@@ -95,7 +97,7 @@ const IndexPage: FC = () => {
                     <LightBulbs />
                 </Background>
             )}
-            <MinskyTopBar active={true} />
+            <MinskyTopBar active={true} Selected={(item)=>setSelected(item.key)} />
             <Grid
                 debug={DEBUG_MODE}
                 type={["block", "block", "grid"]}
@@ -183,24 +185,36 @@ const IndexPage: FC = () => {
             <HomeSectionContainer>
                 <MinskyBuild />
             </HomeSectionContainer>
-            <HomeSectionContainer>
-                <Services /> {/* OK */}
-            </HomeSectionContainer>
-            <HomeSectionContainer>
-                <Specials /> {/* OK */}
-            </HomeSectionContainer>
-            <HomeSectionContainer>
-                <Technologies /> {/* OK */}
-            </HomeSectionContainer>
-            <HomeSectionContainer>
-                <GiveYou /> {/* OK */}
-            </HomeSectionContainer>
-            <HomeSectionContainer>
-                <Team /> {/* OK */}
-            </HomeSectionContainer>
-            <HomeSectionContainer>
-                <MinskyContact /> {/* ~OK */}
-            </HomeSectionContainer>
+            <Element name="services"> 
+                <HomeSectionContainer>
+                    <Services /> {/* OK */}
+                </HomeSectionContainer>
+            </Element>
+            <Element name="specialties"> 
+                <HomeSectionContainer>
+                    <Specials /> {/* OK */}
+                </HomeSectionContainer>
+            </Element>
+            <Element name="technologies"> 
+                <HomeSectionContainer>
+                    <Technologies /> {/* OK */}
+                </HomeSectionContainer>
+            </Element>
+            <Element name="values"> 
+                <HomeSectionContainer>
+                    <GiveYou /> {/* OK */}
+                </HomeSectionContainer>
+            </Element>
+            <Element name="team"> 
+                <HomeSectionContainer>
+                    <Team /> {/* OK */}
+                </HomeSectionContainer>
+            </Element>
+            <Element name="contact"> 
+                <HomeSectionContainer>
+                    <MinskyContact /> {/* ~OK */}
+                </HomeSectionContainer>
+            </Element>
             <Footer />
         </div>
     );

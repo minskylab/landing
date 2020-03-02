@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import React, { FC,useState, useEffect } from "react";
 import { styled } from "linaria/react";
 import { Grid } from "../../atoms/Grid/v2";
 import { MinskyLogoIcon, MenuIcon, UpArrowIcon } from "../../atoms/Icon/icons";
-import VerticalMenu from "../../atoms/VerticalMenu";
+import VerticalMenu, { VerticalMenuItem } from "../../atoms/VerticalMenu";
 import { Button } from "../../atoms/Button";
 import ButtonIcon from "../../atoms/Button/ButtonIcon";
 // import { useSpring } from "react-spring";
@@ -23,15 +23,22 @@ const items = [
     { key: "home", name: "Home" },
     { key: "services", name: "Our Services" },
     { key: "team", name: "Our Team" },
-    { key: "technologies", name: "Our Technologies" }
+    { key: "technologies", name: "Our Technologies" },
+    { key: "values", name: "Our Values" },
+    { key: "specialties", name: "Our Specials" },
+    { key: "contact", name: "Contact Us" },
 ];
 
 interface MinskyMenuProps {
     cleanMode?: boolean;
     onClose?: () => void;
+    compact?: boolean;
+    onSelected?: (item: VerticalMenuItem) => void;
 }
 
 const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
+    const [item, setItem] = useState("home");
+
     return (
         <Wrapper>
             <Grid
@@ -61,7 +68,12 @@ const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
                     </Grid>
                 </Grid>
                 <Grid type={"flex"} cols={{ from: 1, to: 2 }} rows={{ from: 2, how: 1 }} alignItems={"end"}>
-                    <VerticalMenu items={items} selectedItem={"home"} />
+                    <VerticalMenu
+                        items={items}
+                        selectedItem={item}
+                        onSelected={(e)=>setItem(e.name)}
+                        compact={props.compact}
+                    />
                 </Grid>
                 <Grid
                     type={"grid"}

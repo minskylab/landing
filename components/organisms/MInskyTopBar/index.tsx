@@ -48,13 +48,13 @@ interface MinskyTopBarProps {
     active: boolean;
     children?: any;
     logoColor?: string;
+    Selected?(arg: any): void;
 }
 
 const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const [propsMenu, setPropsMenu] = useSpring(() => ({ transform: "translateY(-30rem)" }));
     const [propsBar, setPropsBar] = useSpring(() => ({ backgroundColor: "white" }));
-    const [itemSelected,setItemSelected] = useState<string>("home")
     const [propsVerticalMenu, setPropsVerticalMenu] = useSpring(() => ({
         opacity: 1,
         config: {
@@ -69,15 +69,10 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
     }, [openMenu]);
 
 
-    const selected = (e) => {
-        console.log(e)
-        setItemSelected(e)
-
-    }
     return (
         <>
             <animated.div className={menuContainer} style={propsMenu}>
-                <MinskyMenu cleanMode={false} onClose={() => setOpenMenu(false)} />
+                <MinskyMenu cleanMode={false} onClose={() => setOpenMenu(false)}  onSelected={(item) => props.Selected(item)} />
             </animated.div>
 
             <animated.div className={topBarContainer} style={propsBar}>
@@ -98,9 +93,8 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                         <animated.div style={propsVerticalMenu}>
                             <Grid type={["none", "none", "block"]} m={{ left: "2em" }}>
                                 <VerticalMenu
-                                    selectedItem={itemSelected}
-                                    items={[{ key: "home", name: "Home" },{key:"services", name:"Our Services"},{key:"team", name:"Our Team"},{key:"technology", name:"Our Technologies"}]}
-                                    onSelected={(item) => console.log(item)}
+                                    selectedItem={"home"}
+                                    items={[{ key: "home", name: "Home" }]}
                                     compact
                                 ></VerticalMenu>
                             </Grid>
@@ -121,9 +115,8 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                         <animated.div style={propsVerticalMenu}>
                             <Grid type={["flex", "none", "none"]} justifyContent={"flex-end"} m={{ right: "1rem" }}>
                                 <VerticalMenu
-                                    selectedItem={itemSelected}
-                                    items={[{ key: "home", name: "Home" },{key:"services", name:"Our Services"},{key:"team", name:"Our Team"},{key:"technology", name:"Our Technologies"}]}
-                                    onSelected={ item => console.log(item)}
+                                    selectedItem={"home"}
+                                    items={[{ key: "home", name: "Home" }]}
                                     compact
                                 ></VerticalMenu>
                             </Grid>
