@@ -52,7 +52,12 @@ const MinskyBuild = () => {
             >
                 <BlobBackground width={blobSize[0]} height={blobSize[1]} />
             </Grid>
-            <Grid cols={{ from: 2, how: 1 }} rows={{ from: 2, how: 1 }} className={message} p={{ x: "2.2rem" }}>
+            <Grid
+                cols={{ from: 2, how: 1 }}
+                rows={{ from: 2, how: 1 }}
+                className={message}
+                p={[{ x: "2.2rem" }, { x: "4rem" }]}
+            >
                 <Subtitle textAlign={"center"}>{t("minsky_mision")}</Subtitle>
             </Grid>
         </Grid>
