@@ -1,19 +1,19 @@
 {
-    "about_us_title": "About Us",
-    "about_us_home": "Home",
-    "about_us_history": "Our History",
-    "about_us_products": "Our Products",
-    "about_us_jobs": "Jobs",
+    "about_us_title": "Acerca de nosotros",
+    "about_us_home": "Principal",
+    "about_us_history": "Nuestra historia",
+    "about_us_products": "Nuestros productos",
+    "about_us_jobs": "Trabajos",
 
-    "resources_title": "Resources",
-    "resources_faq": "FAQ",
+    "resources_title": "Recursos",
+    "resources_faq": "Preguntas y respuestas",
     "resources_blog": "Blog",
-    "resources_tutorials": "Video Tutorials",
-    "resources_developers": "Developers",
+    "resources_tutorials": "Video Tutoriales",
+    "resources_developers": "Desarrolladores",
 
-    "useful_title": "Resources",
-    "useful_terms_and_conditions": "Terms And Conditions",
-    "useful_privacy_police": "Privacy Police",
-    "useful_get_in_touch": "Get In Touch",
-    "useful_help": "Help and tickets"
+    "useful_title": "Recursos",
+    "useful_terms_and_conditions": "Términos y condiciones",
+    "useful_privacy_police": "Políticas de privacidad",
+    "useful_get_in_touch": "Manténgase en contacto",
+    "useful_help": "Ayuda y tickets"
 }
