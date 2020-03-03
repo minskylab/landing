@@ -2,9 +2,11 @@ import { useEffect } from "react";
 import { AppProps } from "next/app";
 import Fonts from "../general/Fonts";
 import BasicTemplate from "../components/templates/BasicTemplate";
-import Head from "next/head";
+
 import { DefaultSeo } from "next-seo";
 import DefaultSEOConfig from "../components/templates/seo";
+
+import NextI18Next from "../general/i18n";
 
 const MinskyApp = ({ Component, pageProps }: AppProps) => {
     useEffect(() => {
@@ -19,4 +21,4 @@ const MinskyApp = ({ Component, pageProps }: AppProps) => {
     );
 };
 
-export default MinskyApp;
+export default NextI18Next.appWithTranslation(MinskyApp);

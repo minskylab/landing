@@ -20,6 +20,7 @@ import { Element, scroller } from "react-scroll";
 import { VerticalMenuItem } from "../components/atoms/VerticalMenu";
 import MinskySplash from "../components/organisms/MinskySplash";
 import { SocialNetwork } from "../components/organisms/MinskySplash/LittleNetwork";
+import NextI18NextInstance from "../general/i18n";
 
 const Background = styled.div`
     z-index: -1;
@@ -72,6 +73,8 @@ const IndexPage: FC = () => {
     const [selected, setSelected] = useState<string>("home");
     const [unfoldedMenu, setUnfoldedMenu] = useState<boolean>(false);
 
+    const [t, i18n] = NextI18NextInstance.useTranslation();
+
     useEffect(() => {
         if (window.innerWidth > 970) {
             setRenderPhysics(true);
@@ -104,6 +107,10 @@ const IndexPage: FC = () => {
                 unfolded={unfoldedMenu}
             />
             <MinskySplash socialNetworks={minskySocialNetworks} />
+            <div>
+                <p>{t("first_message")}</p>
+                <button onClick={() => i18n.changeLanguage("es")}>Click Me too change </button>
+            </div>
             <HomeSectionContainer>
                 <MinskyBuild />
             </HomeSectionContainer>
