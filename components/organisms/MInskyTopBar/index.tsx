@@ -9,6 +9,7 @@ import MinskyMenu from "../../molecules/MinskyMenu";
 import { useSpring, animated } from "react-spring";
 import { css } from "linaria";
 import OpenMenuIcon from "../../molecules/OpenMenuIcon";
+import NextI18NextInstance from "../../../general/i18n";
 
 const menuContainer = css`
     width: 100%;
@@ -34,7 +35,6 @@ interface MinskyTopBarProps {
     active: boolean;
     children?: any;
     logoColor?: string;
-    items?: VerticalMenuItem[];
     onSelected?(item: VerticalMenuItem): void;
     unfolded?: boolean;
 }
@@ -49,6 +49,18 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
             tension: 300
         }
     }));
+
+    const [t, i18n] = NextI18NextInstance.useTranslation("topbar");
+
+    const routes: string[] = t("routes").split(",");
+    let menuItems: VerticalMenuItem[] = [];
+    t("options")
+        .split(",")
+        .map((opt, i) => {
+            opt = opt.trim();
+            const r = routes[i].trim();
+            menuItems.push({ name: opt, key: r });
+        });
 
     useEffect(() => {
         setPropsMenu({ transform: openMenu ? "translateY(0)" : "translateY(-30rem)" });
@@ -67,7 +79,7 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                     cleanMode={false}
                     onClose={() => setOpenMenu(false)}
                     onSelected={(item: VerticalMenuItem) => props.onSelected(item)}
-                    items={props.items}
+                    items={menuItems}
                     selectedItem={"home"}
                 />
             </animated.div>

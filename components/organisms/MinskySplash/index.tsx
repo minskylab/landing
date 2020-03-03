@@ -6,12 +6,19 @@ import GithubOutline from "../../atoms/Icon/GithubOutline";
 import TwitterOutline from "../../atoms/Icon/TwitterOutline";
 import { Button } from "../../atoms/Button";
 import LittleNetwork, { SocialNetwork } from "./LittleNetwork";
+import NextI18NextInstance from "../../../general/i18n";
 
-interface MinskySplashProps {
-    socialNetworks: SocialNetwork[];
-}
+const minskySocialNetworks: SocialNetwork[] = [
+    { kind: "linkedin", link: "https://www.linkedin.com/company/minskylab" },
+    { kind: "github", link: "https://github.com/minskylab" },
+    { kind: "twitter", link: "https://twitter.com/MinskyLab" }
+];
+
+interface MinskySplashProps {}
 
 const MinskySplash: FC<MinskySplashProps> = (props: MinskySplashProps) => {
+    const [t, i18n] = NextI18NextInstance.useTranslation();
+
     return (
         <Grid
             type={["block", "block", "grid"]}
@@ -26,7 +33,7 @@ const MinskySplash: FC<MinskySplashProps> = (props: MinskySplashProps) => {
                     </Text>
                     <div style={{ height: "1em" }} />
                     <Text textAlign={"center"} size={"0.8rem"} lineHeight={"1.5em"} fontFamily={"PT Mono"}>
-                        A new technological perspective for your ideas.
+                        {t("first_message")}
                     </Text>
                     <Grid
                         type={"grid"}
@@ -39,19 +46,19 @@ const MinskySplash: FC<MinskySplashProps> = (props: MinskySplashProps) => {
                             { x: "2.6rem", y: "1.8em" }
                         ]}
                     >
-                        {props.socialNetworks.map((socialNet, i) => (
+                        {minskySocialNetworks.map((socialNet, i) => (
                             <LittleNetwork key={i} value={socialNet} />
                         ))}
                     </Grid>
                     <Grid type={["flex", "none"]} justifyContent={"center"}>
-                        <Button primary>Contact Us</Button>
+                        <Button primary>{t("contact_us")}</Button>
                     </Grid>
                 </Grid>
             </Grid>
             <Grid rows={{ from: 3, how: 1 }} cols={{ from: 2, how: 1 }} m={[{ top: "15vh" }, { top: "25vh" }]}>
                 <Grid type={"flex"} justifyContent={"center"}>
                     <Grid>
-                        <Simple>Learn more</Simple>
+                        <Simple>{t("learn_more")}</Simple>
                         <div
                             style={{
                                 height: "12em",

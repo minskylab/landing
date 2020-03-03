@@ -11,12 +11,6 @@ const BasicTemplate = (props: any) => {
                     -moz-osx-font-smoothing: grayscale;
                 }
 
-                @media only screen and (max-width: 1180px) {
-                    * {
-                        font-size: 14px;
-                    }
-                }
-
                 body {
                     margin: 0;
                     padding: 0;

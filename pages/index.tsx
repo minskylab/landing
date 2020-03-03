@@ -51,29 +51,23 @@ const HomeSectionContainer: FC<HomeSectionContainerProps> = (props: HomeSectionC
     );
 };
 
-const minskySocialNetworks: SocialNetwork[] = [
-    { kind: "linkedin", link: "https://www.linkedin.com/company/minskylab" },
-    { kind: "github", link: "https://github.com/minskylab" },
-    { kind: "twitter", link: "https://twitter.com/MinskyLab" }
-];
-
-const menuItems: VerticalMenuItem[] = [
-    { key: "home", name: "Home" },
-    { key: "services", name: "Our Services" },
-    { key: "team", name: "Our Team" },
-    { key: "technologies", name: "Our Technologies" },
-    { key: "values", name: "Our Values" },
-    { key: "specialties", name: "Our Specials" },
-    { key: "contact", name: "Contact Us" }
-];
-
 const IndexPage: FC = () => {
     const [renderPhysics, setRenderPhysics] = useState<boolean>(false);
     // const [topBarShow, setTopBarShow] = useState<boolean>(false);
     const [selected, setSelected] = useState<string>("home");
     const [unfoldedMenu, setUnfoldedMenu] = useState<boolean>(false);
 
-    const [t, i18n] = NextI18NextInstance.useTranslation();
+    const [t, i18n] = NextI18NextInstance.useTranslation("topbar");
+
+    const routes: string[] = t("routes").split(",");
+    let menuItems: VerticalMenuItem[] = [];
+    t("options")
+        .split(",")
+        .map((opt, i) => {
+            opt = opt.trim();
+            const r = routes[i].trim();
+            menuItems.push({ name: opt, key: r });
+        });
 
     useEffect(() => {
         if (window.innerWidth > 970) {
@@ -103,14 +97,9 @@ const IndexPage: FC = () => {
             <MinskyTopBar
                 active={true}
                 onSelected={(item: VerticalMenuItem) => setSelected(item.key)}
-                items={menuItems}
                 unfolded={unfoldedMenu}
             />
-            <MinskySplash socialNetworks={minskySocialNetworks} />
-            <div>
-                <p>{t("first_message")}</p>
-                <button onClick={() => i18n.changeLanguage("es")}>Click Me too change </button>
-            </div>
+            <MinskySplash />
             <HomeSectionContainer>
                 <MinskyBuild />
             </HomeSectionContainer>

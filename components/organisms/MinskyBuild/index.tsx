@@ -4,6 +4,7 @@ import Grid from "../../atoms/Grid/v2";
 import { css } from "linaria";
 import BlobBackground from "../../atoms/BlobBackground";
 import { Subtitle } from "../../atoms/Text/v2";
+import NextI18NextInstance from "../../../general/i18n";
 
 const wrapper = css`
     z-index: 0;
@@ -18,6 +19,8 @@ const message = css`
 `;
 const MinskyBuild = () => {
     const [blobSize, setBlobSize] = useState<Array<number>>([400, 400]);
+
+    const [t, i18n] = NextI18NextInstance.useTranslation();
 
     useEffect(() => {
         if (window.innerWidth < 1400) {
@@ -50,10 +53,7 @@ const MinskyBuild = () => {
                 <BlobBackground width={blobSize[0]} height={blobSize[1]} />
             </Grid>
             <Grid cols={{ from: 2, how: 1 }} rows={{ from: 2, how: 1 }} className={message} p={{ x: "2.2rem" }}>
-                <Subtitle textAlign={"center"}>
-                    We <b style={{ fontFamily: "Karla", fontSize: "1.2rem" }}>design</b> and <br></br>
-                    <b style={{ fontFamily: "Karla", fontSize: "1.2rem" }}>build</b> digital products
-                </Subtitle>
+                <Subtitle textAlign={"center"}>{t("minsky_mision")}</Subtitle>
             </Grid>
         </Grid>
     );

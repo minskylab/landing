@@ -4,8 +4,11 @@ import { Grid } from "../../../components/atoms/Grid/v2";
 
 import { defaultItems } from "../MinskyTechnology/default";
 import { Title, Simple } from "../../atoms/Text/v2";
+import NextI18NextInstance from "../../../general/i18n";
 
 const Technologies: FC = () => {
+    const [t, i18n] = NextI18NextInstance.useTranslation();
+
     return (
         <Grid
             rowsTemplate={{ parts: 2, size: "auto" }}
@@ -17,7 +20,7 @@ const Technologies: FC = () => {
             type={"grid"}
         >
             <Grid rows={{ from: 1, how: 1 }} cols={{ from: 1, how: 1 }} p={{ y: "1.5rem" }}>
-                <Title bold>Our Technology</Title>
+                <Title bold>{t("technology_title")}</Title>
             </Grid>
             <Grid
                 type={"grid"}

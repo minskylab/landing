@@ -1,8 +1,4 @@
-type ContentServiceCard = {
-    icon: any;
-    title: string;
-    body: string;
-};
+import { ContentServiceCard } from "./index";
 
 export const defaultItems: ContentServiceCard[] = [
     {

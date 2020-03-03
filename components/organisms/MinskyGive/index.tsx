@@ -6,12 +6,36 @@ import { Value } from "../../molecules/Cards/Value";
 import Section from "../../atoms/Text/Section";
 import { defaultItems } from "../MinskyGive/default";
 import { Title } from "../../atoms/Text/v2";
-const DEBUG = false;
+import { ValueProp } from "../../molecules/Cards/Value";
+import PrizeOutline from "../../atoms/Icon/PrizeOutline";
+import BranchOutline from "../../atoms/Icon/BranchOutline";
+import LoveOutline from "../../atoms/Icon/LoveOutline";
+import ColorTypes from "../../atoms/Colors";
+import NextI18NextInstance from "../../../general/i18n";
 
 const GiveYou: FC = () => {
+    const [t, i18n] = NextI18NextInstance.useTranslation();
+
+    const defaultItems: ValueProp[] = [
+        {
+            title: t("high_level_title"),
+            body: t("high_level_description"),
+            icon: <PrizeOutline color={ColorTypes.black._50} />
+        },
+        {
+            title: t("maintenance_title"),
+            body: t("maintenance_description"),
+            icon: <BranchOutline color={ColorTypes.black._50} />
+        },
+        {
+            title: t("open_community_title"),
+            body: t("open_community_description"),
+            icon: <LoveOutline color={ColorTypes.black._50} />
+        }
+    ];
+
     return (
         <Grid
-            debug={DEBUG}
             rowsTemplate={[
                 { parts: 3, size: "auto" },
                 { parts: 2, size: "auto" }
@@ -34,7 +58,7 @@ const GiveYou: FC = () => {
                 ]}
                 p={{ y: "1.5rem" }}
             >
-                <Title bold>Our Values</Title>
+                <Title bold>{t("values_title")}</Title>
             </Grid>
             <Grid
                 type={"grid"}
@@ -60,7 +84,11 @@ const GiveYou: FC = () => {
                 justifyContent="start"
                 m={[{}, { top: "4rem", bottom: "4rem", right: "4rem" }]}
             >
-                <img src="/images/wegiveyou.png" alt={"We give you"} style={{ height: "auto", maxHeight: "100vh", width: "100%" }} />
+                <img
+                    src="/images/wegiveyou.png"
+                    alt={"We give you"}
+                    style={{ height: "auto", maxHeight: "100vh", width: "100%" }}
+                />
             </Grid>
         </Grid>
     );
