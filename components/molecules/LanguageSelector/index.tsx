@@ -93,8 +93,8 @@ const LanguageSelector: FC<LanguageSelectorProps> = (props: LanguageSelectorProp
     );
     const [inOurOut, setInOrOut] = useState<number>(0);
 
-    // const selectorRef = useRef(null);
-
+    const selectorRef = useRef(null);
+    // useOutsideAlerter(selectorRef);
     const onToggleSelector = () => {
         if (openSelector) {
             // to close... (outing)
@@ -102,25 +102,17 @@ const LanguageSelector: FC<LanguageSelectorProps> = (props: LanguageSelectorProp
             setTimeout(() => {
                 setOpenSelector(!openSelector);
                 setOutingSelector(false);
-            }, 300); // 3ms 0.3s
+            }, 400); // 300ms 0.3s + 100ms
         } else {
             setInOrOut(0);
             setOpenSelector(!openSelector);
         }
     };
 
-    // useEffect(() => {
-    //     console.log(selectorRef);
-    //     document.addEventListener("click", function(event) {
-    //         var isClickInside = selectorRef.current.contains(event.target);
-    //         if (!isClickInside) {
-    //             onToggleSelector();
-    //         }
-    //     });
-    // }, []);
+    console.log(openSelector);
 
     return (
-        <Wrapper>
+        <Wrapper ref={selectorRef} onMouseDown={() => console.log("down")}>
             <div style={{ paddingLeft: "5.4rem" }}>
                 <Box onClick={() => onToggleSelector()}>
                     <Text bold fontFamily={"Rubik"} size={"1rem"}>

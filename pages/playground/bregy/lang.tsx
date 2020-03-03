@@ -17,6 +17,7 @@ const IndexPage: FunctionComponent = () => {
                             { little: "en", full: "EN - English" },
                             { little: "es", full: "ES - Spanish" }
                         ]}
+                        initialSelected={"en"}
                         onLanguageSelected={lng => {
                             console.log(lng);
                         }}
