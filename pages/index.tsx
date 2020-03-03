@@ -136,7 +136,7 @@ const IndexPage: FC = () => {
                     <MinskyContact /> {/* ~OK */}
                 </HomeSectionContainer>
             </Element>
-            <Footer />
+                <Footer />
         </div>
     );
 };

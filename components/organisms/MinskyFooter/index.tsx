@@ -9,6 +9,8 @@ import ColorTypes from "../../../components/atoms/Colors";
 import Github from "../../../components/atoms/Icon/Github";
 import Twitter from "../../../components/atoms/Icon/Twitter";
 import { css } from "linaria";
+import NextI18NextInstance from "../../../general/i18n";
+
 
 const TEXT_COLOR = "#fffcf0";
 const BACKGROUND_COLOR = "#1b1b1b"; /*#0f0d16;*/
@@ -30,6 +32,7 @@ const footerContainer = css`
 // `;
 
 export const Footer: FC = () => {
+    const [t, i18n] = NextI18NextInstance.useTranslation("footer");
     return (
         <>
             {/* <svg
@@ -93,7 +96,7 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                 >
                     <Body color={TEXT_COLOR} bold>
-                        {"About us"}
+                        {t("about_us_title")}
                     </Body>
                 </Grid>
                 <Grid
@@ -108,7 +111,7 @@ export const Footer: FC = () => {
                     type="flex"
                     justifyContent={["flex-end", "default"]}
                 >
-                    <Simple color={TEXT_COLOR}> {"Home"} </Simple>
+                    <Simple color={TEXT_COLOR}> {t("about_us_home")} </Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -122,7 +125,7 @@ export const Footer: FC = () => {
                     type="flex"
                     justifyContent={["flex-end", "default"]}
                 >
-                    <Simple color={TEXT_COLOR}>{"Our History"}</Simple>
+                    <Simple color={TEXT_COLOR}>{t("about_us_history")}</Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -137,7 +140,7 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                 >
                     <Simple color={TEXT_COLOR} textDecoration="line-through">
-                        {"Our products"}
+                        {t("about_us_products")}
                     </Simple>
                 </Grid>
                 <Grid
@@ -152,7 +155,7 @@ export const Footer: FC = () => {
                     type="flex"
                     justifyContent={["flex-end", "default"]}
                 >
-                    <Simple color={TEXT_COLOR}> {"Jobs"} </Simple>
+                    <Simple color={TEXT_COLOR}> {t("about_us_jobs")} </Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -168,7 +171,7 @@ export const Footer: FC = () => {
                     p={[{ right: "2rem" }, {}]}
                 >
                     <Body color={TEXT_COLOR} bold>
-                        {"Resources"}
+                        {t("resources_title")}
                     </Body>
                 </Grid>
                 <Grid
@@ -185,7 +188,7 @@ export const Footer: FC = () => {
                     p={[{ right: "2rem" }, {}]}
                 >
                     <Simple color={TEXT_COLOR} textDecoration="line-through">
-                        {"Faq"}
+                        {t("resources_faq")}
                     </Simple>
                 </Grid>
                 <Grid
@@ -202,7 +205,7 @@ export const Footer: FC = () => {
                     p={[{ right: "2rem" }, {}]}
                 >
                     <Simple color={TEXT_COLOR} textDecoration="line-through">
-                        {"Blog"}
+                        {t("resources_blog")}
                     </Simple>
                 </Grid>
                 <Grid
@@ -219,7 +222,7 @@ export const Footer: FC = () => {
                     p={[{ right: "2rem" }, {}]}
                 >
                     <Simple color={TEXT_COLOR} textDecoration="line-through" textAlign={"end"}>
-                        {"Video tutorials"}
+                        {t("resources_tutorials")}
                     </Simple>
                 </Grid>
                 <Grid
@@ -235,7 +238,7 @@ export const Footer: FC = () => {
                     justifyContent={["flex-end", "default"]}
                     p={[{ right: "2rem" }, {}]}
                 >
-                    <Simple color={TEXT_COLOR}>{"Developers"}</Simple>
+                    <Simple color={TEXT_COLOR}>{t("resources_developers")}</Simple>
                 </Grid>
                 <Grid
                     rows={[
@@ -251,7 +254,7 @@ export const Footer: FC = () => {
                     p={[{ right: "2rem" }, {}]}
                 >
                     <Body color={TEXT_COLOR} bold>
-                        {"Useful information"}
+                        {t("useful_title")}
                     </Body>
                 </Grid>
                 <Grid
@@ -268,7 +271,7 @@ export const Footer: FC = () => {
                     p={[{ right: "2rem" }, {}]}
                 >
                     <Simple color={TEXT_COLOR} textDecoration="line-through">
-                        {"Terms and conditions"}
+                        {t("useful_terms_and_conditions")}
                     </Simple>
                 </Grid>
                 <Grid
@@ -285,7 +288,7 @@ export const Footer: FC = () => {
                     p={[{ right: "2rem" }, {}]}
                 >
                     <Simple color={TEXT_COLOR} textDecoration="line-through">
-                        {"Privacy policy"}
+                        {t("useful_privacy_police")}
                     </Simple>
                 </Grid>
                 <Grid
@@ -302,7 +305,7 @@ export const Footer: FC = () => {
                     p={[{ right: "2rem" }, {}]}
                 >
                     <Simple color={TEXT_COLOR} textDecoration="line-through">
-                        {"Get in Touch"}
+                        {t("useful_get_in_touch")}
                     </Simple>
                 </Grid>
                 <Grid
@@ -319,7 +322,7 @@ export const Footer: FC = () => {
                     p={[{ right: "2rem" }, {}]}
                 >
                     <Simple color={TEXT_COLOR} textDecoration="line-through">
-                        {"Help"}
+                        {t("useful_help")}
                     </Simple>
                 </Grid>
                 <Grid
