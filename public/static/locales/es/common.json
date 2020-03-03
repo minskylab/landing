@@ -1,57 +1,57 @@
 {
-    "first_message": "Hello World",
-    "contact_us": "Contact Us",
-    "learn_more": "Learn more",
-    "minsky_mision": "We design and build digital products",
+    "first_message": "Hola mundo",
+    "contact_us": "Contáctanos",
+    "learn_more": "Ver más",
+    "minsky_mision": "Diseñamos y construimos productos digitales",
 
-    "services_title": "Our Services",
+    "services_title": "Nuestros servicios",
 
-    "ideation_title": "Ideation and Strategy",
-    "ideation_definition": "We offer experience in building a new product",
+    "ideation_title": "Estrategia e ideación",
+    "ideation_definition": "Ofrecemos nuestra experiencia construyendo nuevos productos desde cero.",
 
-    "product_design_title": "Product Design",
-    "product_design_definition": "We will create a beufiful and working design for your idea",
+    "product_design_title": "Diseño de productos",
+    "product_design_definition": "Creamos un diseño hermoso y funcional para tu idea.",
 
-    "web_mobile_dev_title": "Web and Mobile Development",
-    "web_mobile_dev_definition": "We specialise in delivering end-to-end services",
+    "web_mobile_dev_title": "Desarrollo Web y Mobile",
+    "web_mobile_dev_definition": "Nos especializamos en servicios end-to-end.",
 
     "devops_cloud_title": "DevOps and Cloud",
-    "devops_cloud_definition": "We use modern microservices approach for your software",
+    "devops_cloud_definition": "Usamos modernos paradigmas de microservicios para tu software.",
 
-    "specials_title": "Our Specials",
+    "specials_title": "Nuestras especialidades",
 
-    "software_development_title": "Software Development",
-    "software_development_items": "IT Consulting,DevOps Services,Mobile and Web Apps,Maintenance and Support,IA and Machine Learing Development",
+    "software_development_title": "Desarrollo de Software",
+    "software_development_items": "Consultoría IT,Servicios DevOps,Aplicaciones Móviles y Webs,Mantenimiento y soporte,Desarrollo de IA y Machine Learing",
 
-    "blockchain_title": "Blockchain Solutions",
-    "blockchain_items": "Business Consulting, Cross-Border payments, Blockchain for Business, Product Development",
+    "blockchain_title": "Solucione de Blockchain",
+    "blockchain_items": "Consultoría para empresas, Cross-Border payments, Blockchain para Empresas, Desarrollo de productos",
 
-    "iot_embedded_title": "Iot and Embedded Systems",
-    "iot_embedded_items": "Hardware Development, Prototyping, System Design, Consulting",
+    "iot_embedded_title": "Sistemas embebidos y IoT",
+    "iot_embedded_items": "Desarrollo de Hardware, Prototyping, Diseño de sistemas, Consultoría",
 
-    "technology_title": "Our Technology",
+    "technology_title": "Nuestra tecnología",
 
-    "values_title": "Our Values",
+    "values_title": "Nuestros valores",
 
-    "high_level_title": "High level of service",
-    "high_level_description": "We respond to the needs and desires of customers, with the lowest possible cost and the highest level of quality and details",
+    "high_level_title": "Alto nivel de servicio",
+    "high_level_description": "Respondemos a las necesidades y deseos de los clientes, con el menor costo posible y el más alto nivel de calidad y detalles.",
 
-    "maintenance_title": "Constant maintenance",
-    "maintenance_description": "We keep abreast of the latest technologies, test them and verify their effectiveness in the development of projects",
+    "maintenance_title": "Mantenimiento constante",
+    "maintenance_description": "Nos mantenemos al tanto de las últimas tecnologías, las probamos y verificamos su efectividad en el desarrollo de proyectos.",
 
-    "open_community_title": "Open development for the community",
-    "open_community_description": "Every time we take projects, micro technology and engines occur to us, which we make available to the community in order to improve the development of technology in the country",
+    "open_community_title": "Desarrollo Open Source para la comunidad",
+    "open_community_description": "Cada vez que tomamos proyectos, se nos presentan micro tecnología y motores, que ponemos a disposición de la comunidad para mejorar el desarrollo de la tecnología en el país.",
 
-    "main_team_title": "Main Team",
-    "contact_us_title": "Contact Us",
-    "contact_us_offer": "We can meet to drink coffee and talk in comfy place",
+    "main_team_title": "Equipo principal",
+    "contact_us_title": "Contáctanos",
+    "contact_us_offer": "Podemos reunirnos para tomar un café y hablar en un lugar cómodo",
 
-    "email_contact": "Email",
-    "phone_contact": "Phone",
+    "email_contact": "Correo electrónico",
+    "phone_contact": "Teléfono",
     "telegram_contact": "Telegram",
     "whatsapp_contact": "WhatsApp",
 
-    "email_input_help_text": "Introduce your email where we'll write to you",
+    "email_input_help_text": "Escribe tu correo electrónico donde te escribiremos",
 
-    "stay_tuned_action_call": "Stay Tuned"
+    "stay_tuned_action_call": "Mantente al tanto"
 }
