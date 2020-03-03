@@ -59,7 +59,9 @@ const IndexPage: FC = () => {
 
     const [t, i18n] = NextI18NextInstance.useTranslation("topbar");
 
-    const routes: string[] = t("routes").split(",");
+    const routes: string[] = t("routes")
+        .split(",")
+        .map(r => r.trim());
     let menuItems: VerticalMenuItem[] = [];
     t("options")
         .split(",")
@@ -76,6 +78,7 @@ const IndexPage: FC = () => {
     }, []);
 
     useEffect(() => {
+        console.log(selected);
         setUnfoldedMenu(false);
         scroller.scrollTo(selected, {
             duration: 500,
@@ -103,32 +106,32 @@ const IndexPage: FC = () => {
             <HomeSectionContainer>
                 <MinskyBuild />
             </HomeSectionContainer>
-            <Element name="services">
+            <Element name={routes[1] || "services"}>
                 <HomeSectionContainer>
                     <Services /> {/* OK */}
                 </HomeSectionContainer>
             </Element>
-            <Element name="specialties">
+            <Element name={routes[2] || "specialties"}>
                 <HomeSectionContainer>
                     <Specials /> {/* OK */}
                 </HomeSectionContainer>
             </Element>
-            <Element name="technologies">
+            <Element name={routes[3] || "technologies"}>
                 <HomeSectionContainer>
                     <Technologies /> {/* OK */}
                 </HomeSectionContainer>
             </Element>
-            <Element name="values">
+            <Element name={routes[4] || "values"}>
                 <HomeSectionContainer>
                     <GiveYou /> {/* OK */}
                 </HomeSectionContainer>
             </Element>
-            <Element name="team">
+            <Element name={routes[5] || "team"}>
                 <HomeSectionContainer>
                     <Team /> {/* OK */}
                 </HomeSectionContainer>
             </Element>
-            <Element name="contact">
+            <Element name={routes[6] || "contact"}>
                 <HomeSectionContainer>
                     <MinskyContact /> {/* ~OK */}
                 </HomeSectionContainer>

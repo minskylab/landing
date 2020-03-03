@@ -10,6 +10,7 @@ import { useSpring, animated } from "react-spring";
 import { css } from "linaria";
 import OpenMenuIcon from "../../molecules/OpenMenuIcon";
 import NextI18NextInstance from "../../../general/i18n";
+import LanguageSelector from "../../molecules/LanguageSelector";
 
 const menuContainer = css`
     width: 100%;
@@ -99,21 +100,25 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                             onClick={() => setOpenMenu(!openMenu)}
                         />
                         {/* <ButtonIcon icon={MenuIcon} onClick={() => setOpenMenu(!openMenu)} /> */}
-                        <animated.div style={propsVerticalMenu}>
-                            <Grid type={["none", "none", "block"]} m={{ left: "2em" }}>
-                                <VerticalMenu
-                                    selectedItem={"home"}
-                                    items={[{ key: "home", name: "Home" }]}
-                                    compact
-                                ></VerticalMenu>
-                            </Grid>
-                        </animated.div>
                     </Grid>
                     <Grid debug={DEBUG_MODE} alignItems={"center"} type={"flex"} justifyContent={"center"}>
                         <MinskyLogoIcon color={props.logoColor} />
                     </Grid>
+
                     <animated.div style={propsVerticalMenu}>
                         <Grid debug={DEBUG_MODE} type={["none", "none", "flex"]} justifyContent={"flex-end"}>
+                            <Grid type={["none", "none", "block"]} m={{ right: "9rem", top: "0.3rem" }}>
+                                <LanguageSelector
+                                    languages={[
+                                        { little: "en", full: "EN - English" },
+                                        { little: "es", full: "ES - Spanish" }
+                                    ]}
+                                    initialSelected={i18n.language}
+                                    onLanguageSelected={lng => {
+                                        i18n.changeLanguage(lng.little);
+                                    }}
+                                />
+                            </Grid>
                             <Grid debug={DEBUG_MODE} m={{ right: "1.2rem" }}>
                                 <Button minsky>Developers Here</Button>
                             </Grid>
@@ -122,12 +127,21 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                             </Grid>
                         </Grid>
                         <animated.div style={propsVerticalMenu}>
-                            <Grid type={["flex", "none", "none"]} justifyContent={"flex-end"} m={{ right: "1rem" }}>
-                                <VerticalMenu
-                                    selectedItem={"home"}
-                                    items={[{ key: "home", name: "Home" }]}
-                                    compact
-                                ></VerticalMenu>
+                            <Grid
+                                type={["flex", "none", "none"]}
+                                justifyContent={"flex-end"}
+                                m={{ right: "1rem", top: "-1rem" }}
+                            >
+                                <LanguageSelector
+                                    languages={[
+                                        { little: "en", full: "EN - English" },
+                                        { little: "es", full: "ES - Spanish" }
+                                    ]}
+                                    initialSelected={i18n.language}
+                                    onLanguageSelected={lng => {
+                                        i18n.changeLanguage(lng.little);
+                                    }}
+                                />
                             </Grid>
                         </animated.div>
                     </animated.div>

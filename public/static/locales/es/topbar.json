@@ -1,6 +1,6 @@
 {
-    "options": "Principal, Nuestros servicios, Nuestro equipo, Nuestras tecnologías, Nuestros valores, Nuestras especialidades",
-    "routes": "principal, servicios, equipo, tecnologías, valores, especialidades",
+    "options": "Principal, Nuestros servicios, Nuestras especialidades, Nuestras tecnologías, Nuestros valores, Nuestro equipo",
+    "routes": "principal, servicios, especialidades, tecnologías, valores, equipo",
     "developers_hub_call_action": "Desarrolladores aquí",
     "contact_us_call_action": "Contáctanos"
 }
