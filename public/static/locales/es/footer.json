@@ -1,1 +1,19 @@
-{}
+{
+    "about_us_title": "About Us",
+    "about_us_home": "Home",
+    "about_us_history": "Our History",
+    "about_us_products": "Our Products",
+    "about_us_jobs": "Jobs",
+
+    "resources_title": "Resources",
+    "resources_faq": "FAQ",
+    "resources_blog": "Blog",
+    "resources_tutorials": "Video Tutorials",
+    "resources_developers": "Developers",
+
+    "useful_title": "Resources",
+    "useful_terms_and_conditions": "Terms And Conditions",
+    "useful_privacy_police": "Privacy Police",
+    "useful_get_in_touch": "Get In Touch",
+    "useful_help": "Help and tickets"
+}
