@@ -11,6 +11,7 @@ const GithubOutline: FC<SVGIconProps & React.HTMLAttributes<any>> = (
                 stroke={props.color}
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                fill={"transparent"}
             />
         </SVGIcon>
     );

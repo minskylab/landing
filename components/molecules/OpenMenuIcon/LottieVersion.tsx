@@ -16,7 +16,7 @@ const OpenMenuIcon = () => {
     };
 
     useEffect(() => {
-        console.log(stopped, paused);
+        // console.log(stopped, paused);
     }, [stopped, paused]);
 
     return (

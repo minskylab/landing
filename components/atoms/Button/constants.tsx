@@ -24,9 +24,9 @@ export interface ButtonSize {
 
 export const ButtonTypes: ButtonType = {
     inverse: { backgroundColor: "#1b1b1b", fontColor: "white", onHover: "white", onHoverText: "#1b1b1b" },
-    minsky: { backgroundColor: "#FDE1A7", fontColor: "#1b1b1b", onHover: "#F4C45F", onHoverText: "#1b1b1b" },
-    primary: { backgroundColor: "white", fontColor: "#1b1b1b", onHover: "#FDE1A7", onHoverText: "#1b1b1b" },
-    secondary: { backgroundColor: "#FDE1A7", fontColor: "#1b1b1b", onHover: "white", onHoverText: "#1b1b1b" }
+    minsky: { backgroundColor: "#ffeda1", fontColor: "#1b1b1b", onHover: "#E0D08E", onHoverText: "#1b1b1b" },
+    primary: { backgroundColor: "white", fontColor: "#1b1b1b", onHover: "#ffeda1", onHoverText: "#1b1b1b" },
+    secondary: { backgroundColor: "#ffeda1", fontColor: "#1b1b1b", onHover: "white", onHoverText: "#1b1b1b" }
 };
 
 export const ButtonSizes: ButtonSize = {

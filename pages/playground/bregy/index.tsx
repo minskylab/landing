@@ -7,6 +7,7 @@ import Subtitle from "../../../components/atoms/Text/Subtitle";
 import Body from "../../../components/atoms/Text/Body";
 import { Simple } from "../../../components/atoms/Text/Simple";
 import { Grid } from "../../../components/atoms/Grid/v2";
+import GithubCard from "../../../components/molecules/GithubCard";
 
 const Playground = () => {
     return (
@@ -49,6 +50,9 @@ const Playground = () => {
                         <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5381" }}>8</div>
                         <div style={{ height: "200px", width: "100%", backgroundColor: "#ffdf5381" }}>8</div>
                     </Grid>
+                </div>
+                <div>
+                    <GithubCard repo={"minskylab/neocortex"} />
                 </div>
             </Grid>
         </div>

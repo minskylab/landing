@@ -19,7 +19,6 @@ import { Element, scroller } from "react-scroll";
 
 import { VerticalMenuItem } from "../components/atoms/VerticalMenu";
 import MinskySplash from "../components/organisms/MinskySplash";
-import { SocialNetwork } from "../components/organisms/MinskySplash/LittleNetwork";
 import NextI18NextInstance from "../general/i18n";
 
 const Background = styled.div`
@@ -136,7 +135,7 @@ const IndexPage: FC = () => {
                     <MinskyContact /> {/* ~OK */}
                 </HomeSectionContainer>
             </Element>
-                <Footer />
+            <Footer />
         </div>
     );
 };

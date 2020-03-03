@@ -109,10 +109,8 @@ const LanguageSelector: FC<LanguageSelectorProps> = (props: LanguageSelectorProp
         }
     };
 
-    console.log(openSelector);
-
     return (
-        <Wrapper ref={selectorRef} onMouseDown={() => console.log("down")}>
+        <Wrapper ref={selectorRef}>
             <div style={{ paddingLeft: "5.4rem" }}>
                 <Box onClick={() => onToggleSelector()}>
                     <Text bold fontFamily={"Rubik"} size={"1rem"}>
