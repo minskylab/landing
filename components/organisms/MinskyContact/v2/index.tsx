@@ -8,6 +8,8 @@ import EnhancedInput from "./input";
 import { Form } from "@unform/web";
 import axios from "axios";
 import NextI18NextInstance from "../../../../general/i18n";
+import Modal from "../../../atoms/Modal";
+import ModalCard from "../../../atoms/Modal/Card";
 
 const suscriber = yup.object().shape({
     email: yup
@@ -32,17 +34,25 @@ interface MinskyContentProps {
 const MinskyContact: FC<MinskyContentProps> = (props: MinskyContentProps) => {
     const formRef = useRef();
     const [t, i18n] = NextI18NextInstance.useTranslation();
+    const [modal, setModal] = useState<boolean>(false);
+    const [loadingRegister, setLoadingRegister] = useState<boolean>(false);
 
     const registerNewPartner = async (email: string) => {
         console.log("registering", email);
+        setLoadingRegister(true);
         props.onLoading && props.onLoading(true);
-        const res = await axios.post("https://content.minsky.cc/potential-users", {
-            email: email
-        });
-        if (res.status != 200) {
-            throw "user already registered";
+        try {
+            const res = await axios.post("https://content.minsky.cc/potential-users", {
+                email: email
+            });
+            if (res.status != 200) {
+                throw "user already registered";
+            }
+        } catch (e) {
+        } finally {
+            props.onLoading && props.onLoading(false);
+            setLoadingRegister(false);
         }
-        props.onLoading && props.onLoading(false);
     };
 
     const handleSubmit = async (data: any, { reset }) => {
@@ -76,54 +86,81 @@ const MinskyContact: FC<MinskyContentProps> = (props: MinskyContentProps) => {
     };
 
     return (
-        <Grid
-            type={"grid"}
-            rowsTemplate={[
-                { parts: 3, size: "auto" },
-                { parts: 3, size: "auto" }
-            ]}
-            colsTemplate={[{}, { parts: 2, size: "auto" }]}
-            p={[{ y: "2rem" }, { x: "4rem", y: "3.8rem" }]}
-            rowGap={["2rem", ""]}
-        >
-            <Grid rows={{ from: 1, how: 1 }} cols={{ from: 1, how: 1 }}>
-                <Subtitle bold>{t("contact_us_title")}</Subtitle>
-                <Body>{t("contact_us_offer")}</Body>
-            </Grid>
-            <Grid rows={{ from: 2, how: 1 }} cols={{ from: 1, how: 1 }}>
-                <Simple bold>{t("email_contact")}</Simple>
-                <Important color={"#424242"}>hello@minsky.cc</Important>
-                <div style={{ width: "100%", height: "1rem" }} /> {/* spacer */}
-                <Simple bold>
-                    {t("phone_contact")} | {t("telegram_contact")} | {t("whatsapp_contact")}
-                </Simple>
-                <Important color={"#424242"}>+51 924 122 969</Important>
-            </Grid>
-            <Grid rows={{ from: 3, how: 1 }} cols={{ from: 1, how: 1 }} p={[{}, { right: "12rem" }]}>
-                <Form ref={formRef} onSubmit={handleSubmit}>
-                    <EnhancedInput
-                        name={"email"}
-                        type={"email"}
-                        label={"Email"}
-                        placeholder={"youremail@example.com"}
-                        helperText={t("email_input_help_text")}
-                    />
-                    <div style={{ marginTop: "1rem" }}>
-                        <Button primary type={"submit"}>
-                            {t("stay_tuned_action_call")}
-                        </Button>
-                    </div>
-                </Form>
-            </Grid>
+        <>
+            <Modal active={modal}>
+                <ModalCard
+                    title={"Hello there"}
+                    closable
+                    onAction={act => {
+                        console.log(act);
+                        if (act === "close") {
+                            setModal(false);
+                        }
+                    }}
+                    customActions={
+                        <Grid>
+                            <Button primary onClick={() => console.log("OK")}>
+                                Ok
+                            </Button>
+                        </Grid>
+                    }
+                >
+                    <div>Hello World</div>
+                </ModalCard>
+            </Modal>
             <Grid
-                type={["none", "flex"]}
-                rows={{ from: 1, how: 3 }}
-                cols={{ from: 2, how: 1 }}
-                justifyContent={"flex-end"}
+                type={"grid"}
+                rowsTemplate={[
+                    { parts: 3, size: "auto" },
+                    { parts: 3, size: "auto" }
+                ]}
+                colsTemplate={[{}, { parts: 2, size: "auto" }]}
+                p={[{ y: "2rem" }, { x: "4rem", y: "3.8rem" }]}
+                rowGap={["2rem", ""]}
             >
-                <BulbImage />
+                <Grid rows={{ from: 1, how: 1 }} cols={{ from: 1, how: 1 }}>
+                    <Subtitle bold>{t("contact_us_title")}</Subtitle>
+                    <Body>{t("contact_us_offer")}</Body>
+                </Grid>
+                <Grid rows={{ from: 2, how: 1 }} cols={{ from: 1, how: 1 }}>
+                    <Simple bold>{t("email_contact")}</Simple>
+                    <a href={"mailto:hello@minsky.cc"} style={{ color: "#ffdf53" }}>
+                        <Important color={"#424242"}>hello@minsky.cc</Important>
+                    </a>
+                    <div style={{ width: "100%", height: "1rem" }} /> {/* spacer */}
+                    <Simple bold>
+                        {t("phone_contact")} | {t("telegram_contact")} | {t("whatsapp_contact")}
+                    </Simple>
+                    <a href={"tel:+51924122969"} style={{ color: "#ffdf53" }}>
+                        <Important color={"#424242"}>+51 924 122 969</Important>
+                    </a>
+                </Grid>
+                <Grid rows={{ from: 3, how: 1 }} cols={{ from: 1, how: 1 }} p={[{}, { right: "12rem" }]}>
+                    <Form ref={formRef} onSubmit={handleSubmit}>
+                        <EnhancedInput
+                            name={"email"}
+                            type={"email"}
+                            label={"Email"}
+                            placeholder={"youremail@example.com"}
+                            helperText={t("email_input_help_text")}
+                        />
+                        <div style={{ marginTop: "1rem" }}>
+                            <Button primary type={"submit"} isDisable={loadingRegister}>
+                                {t("stay_tuned_action_call")}
+                            </Button>
+                        </div>
+                    </Form>
+                </Grid>
+                <Grid
+                    type={["none", "flex"]}
+                    rows={{ from: 1, how: 3 }}
+                    cols={{ from: 2, how: 1 }}
+                    justifyContent={"flex-end"}
+                >
+                    <BulbImage />
+                </Grid>
             </Grid>
-        </Grid>
+        </>
     );
 };
 

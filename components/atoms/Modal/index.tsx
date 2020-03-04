@@ -5,13 +5,16 @@ import { css } from "linaria";
 import { useSpring, animated } from "react-spring";
 
 const background = css`
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     background-color: #1b1b1baa;
     justify-content: center;
+    /* z-index: 200; */
 `;
 
 interface ModalProps {
@@ -24,7 +27,7 @@ interface ModalProps {
 const Modal: FC<ModalProps> = (props: ModalProps) => {
     const backProps = useSpring({
         opacity: props.active ? 1 : 0,
-        zIndex: props.active ? 1 : -10,
+        zIndex: props.active ? 20 : -10,
         from: { opacity: 0 }
     });
 

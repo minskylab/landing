@@ -35,6 +35,8 @@ const Selector = styled.div<SelectorProps>`
     width: fit-content;
     background-color: #ffffff;
     border: solid 1px #1b1b1b;
+    border-radius: 0.4rem;
+    overflow: hidden;
 
     transition: 0.3s;
     animation: in 0.3s linear;
