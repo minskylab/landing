@@ -30,6 +30,10 @@
     "iot_embedded_items": "Hardware Development, Prototyping, System Design, Consulting",
 
     "technology_title": "Our Technology",
+    "technology_titles": "Chatbots, Payments, Just for fun",
+    "technology_descriptions": "Multichannel technology, Multi payment gateway, Developing everything",
+    "technology_repositories": "minskylab/neocortex, minskylab/plutus, minskylab/pe2020ru",
+    "technology_see_more": "See more projects at our Github",
 
     "values_title": "Our Values",
 
