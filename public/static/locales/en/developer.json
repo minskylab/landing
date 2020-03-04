@@ -1,5 +1,7 @@
 {
     "greetings": "Hi Developers!",
     "body": "At Minsky, we heavily think that we need to work with the community and promote open knowledge for its. We think that way have a powerful tool to change and route our nation to a technology-based future. We want to know more developers (and not) interested in use and enhance this model based on open source and community driven following the only goal to change the technology reality of Peru.",
-    "interested": " If you’re interested in work side by side with us, please fill the following form, we are very excited to meet you."
-}   
+    "interested": " If you’re interested in work side by side with us, please fill the following form, we are very excited to meet you.",
+    "done_message": "Done",
+    "partner_register_done": "We have your information"
+}

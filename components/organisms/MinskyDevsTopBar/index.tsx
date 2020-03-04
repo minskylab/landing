@@ -53,15 +53,7 @@ const MinskyDevTopBar: FC<MinskyDevTopBarProps> = (props: MinskyDevTopBarProps) 
 
     const [t, i18n] = NextI18NextInstance.useTranslation("topbar");
 
-    const routes: string[] = t("routes").split(",");
-    let menuItems: VerticalMenuItem[] = [];
-    t("options")
-        .split(",")
-        .map((opt, i) => {
-            opt = opt.trim();
-            const r = routes[i].trim();
-            menuItems.push({ name: opt, key: r });
-        });
+    let menuItems: VerticalMenuItem[] = [{ key: "home", name: "To Home" }]; // TODO: To translate
 
     useEffect(() => {
         setPropsMenu({ transform: openMenu ? "translateY(0)" : "translateY(-30rem)" });
@@ -79,24 +71,9 @@ const MinskyDevTopBar: FC<MinskyDevTopBarProps> = (props: MinskyDevTopBarProps) 
                 <MinskyMenu
                     cleanMode={false}
                     onClose={() => setOpenMenu(false)}
-                    onSelected={(item: VerticalMenuItem) => props.onSelected(item)}
+                    onSelected={(item: VerticalMenuItem) => props.onSelected && props.onSelected(item)}
                     items={menuItems}
                     selectedItem={"home"}
-                    right={
-                        <>
-                            <Grid type={"flex"} rows={{ from: 1, how: 1 }} justifyContent={"flex-end"}>
-                                <Button minsky onClick={props.onClick}>{t("developers_hub_call_action")}</Button>
-                            </Grid>
-                            <Grid
-                                type={"flex"}
-                                rows={{ from: 2, how: 1 }}
-                                justifyContent={"flex-end"}
-                                m={{ top: "1rem" }}
-                            >
-                                <Button primary onClick={props.onClick}>{t("contact_us_call_action")}</Button>
-                            </Grid>
-                        </>
-                    }
                 />
             </animated.div>
 
@@ -113,7 +90,6 @@ const MinskyDevTopBar: FC<MinskyDevTopBarProps> = (props: MinskyDevTopBarProps) 
                             state={openMenu ? "arrow" : "menu"}
                             onClick={() => setOpenMenu(!openMenu)}
                         />
-                        {/* <ButtonIcon icon={MenuIcon} onClick={() => setOpenMenu(!openMenu)} /> */}
                     </Grid>
                     <Grid alignItems={"center"} type={"flex"} justifyContent={"center"}>
                         <MinskyLogoIcon color={props.logoColor} />

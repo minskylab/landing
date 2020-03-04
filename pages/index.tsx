@@ -77,7 +77,7 @@ const IndexPage: FC = () => {
     }, []);
 
     useEffect(() => {
-        console.log(selected);
+        // console.log(selected);
         setUnfoldedMenu(false);
         scroller.scrollTo(selected, {
             duration: 500,

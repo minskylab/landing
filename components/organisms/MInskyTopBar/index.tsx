@@ -4,7 +4,7 @@ import { Grid } from "../../atoms/Grid/v2";
 import { MinskyLogoIcon } from "../../atoms/Icon/icons";
 import { Button } from "../../atoms/Button";
 import VerticalMenu, { VerticalMenuItem } from "../../atoms/VerticalMenu";
-import Router from 'next/router';
+import Router from "next/router";
 import MinskyMenu from "../../molecules/MinskyMenu";
 import { useSpring, animated } from "react-spring";
 import { css } from "linaria";
@@ -41,7 +41,6 @@ interface MinskyTopBarProps {
     logoColor?: string;
     onSelected?(item: VerticalMenuItem): void;
     unfolded?: boolean;
-
 }
 
 const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
@@ -55,7 +54,6 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
         }
     }));
     const [t, i18n] = NextI18NextInstance.useTranslation("topbar");
-
 
     const routes: string[] = t("routes").split(",");
     let menuItems: VerticalMenuItem[] = [];
@@ -73,13 +71,9 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
         setPropsVerticalMenu({ opacity: openMenu ? 0 : 1 });
     }, [openMenu]);
 
-
     useEffect(() => {
         setOpenMenu(props.unfolded);
     }, [props]);
-
-
-
 
     return (
         <>
@@ -87,13 +81,15 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                 <MinskyMenu
                     cleanMode={false}
                     onClose={() => setOpenMenu(false)}
-                    onSelected={(item: VerticalMenuItem) => props.onSelected(item)}
+                    onSelected={(item: VerticalMenuItem) => props.onSelected && props.onSelected(item)}
                     items={menuItems}
                     selectedItem={"home"}
                     right={
                         <>
                             <Grid type={"flex"} rows={{ from: 1, how: 1 }} justifyContent={"flex-end"}>
-                                <Button minsky onClick={() => Router.push('/developers')}>{t("developers_hub_call_action")}</Button>
+                                <Button minsky onClick={() => Router.push("/developers")}>
+                                    {t("developers_hub_call_action")}
+                                </Button>
                             </Grid>
                             <Grid
                                 type={"flex"}
@@ -143,7 +139,9 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                                 />
                             </Grid>
                             <Grid debug={DEBUG_MODE} m={{ right: "1.2rem" }}>
-                                <Button minsky onClick={() => Router.push('/developers')}>{t("developers_hub_call_action")}</Button>
+                                <Button minsky onClick={() => Router.push("/developers")}>
+                                    {t("developers_hub_call_action")}
+                                </Button>
                             </Grid>
                             <Grid debug={DEBUG_MODE}>
                                 <Button primary>{t("contact_us_call_action")}</Button>

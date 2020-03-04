@@ -11,13 +11,18 @@ import Modal from "../components/atoms/Modal";
 import ModalCard from "../components/atoms/Modal/Card";
 import NextI18NextInstance from "../general/i18n";
 import { Button } from "../components/atoms/Button";
+import { VerticalMenuItem } from "../components/atoms/VerticalMenu";
+import { useRouter } from "next/router";
 
 const client = new KintoClient("http://167.99.15.24:8888/v1");
 
 const DevelopersPage: NextPage = () => {
     const [modal, setModal] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
+    const [unfoldedMenu, setUnfoldedMenu] = useState<boolean>(false);
     const [t, i18n] = NextI18NextInstance.useTranslation("developer");
+
+    const router = useRouter();
 
     const submitNewPartner = async (newPartner: Partner) => {
         setLoading(true);
@@ -25,7 +30,7 @@ const DevelopersPage: NextPage = () => {
             .bucket("partners")
             .collection("Partner")
             .createRecord(newPartner);
-        console.log(result);
+        // console.log(result);
         setLoading(false);
         setModal(true);
     };
@@ -36,7 +41,17 @@ const DevelopersPage: NextPage = () => {
                 <title> Minsky | Developers</title>
                 <meta name="theme-color" content="#1b1b1b" />
             </Head>
-            <MinskyDevsTopBar />
+            <MinskyDevsTopBar
+                unfolded={unfoldedMenu}
+                onSelected={(selected: VerticalMenuItem) => {
+                    // console.log(selected);
+                    if (selected.key === "home") {
+                        // to home
+                        setUnfoldedMenu(false);
+                        router.push("/");
+                    }
+                }}
+            />
             <Grid p={[{ x: "2rem" }, { x: "15vw" }]} m={{ top: "6rem" }}>
                 <div>
                     <Title size={"3rem"} bold>
@@ -55,10 +70,9 @@ const DevelopersPage: NextPage = () => {
             </Grid>
             <Modal active={modal}>
                 <ModalCard
-                    title={t("done")}
+                    title={t("done_message")}
                     closable
                     onAction={act => {
-                        // console.log(act);
                         if (act === "close") {
                             setModal(false);
                         }
@@ -73,7 +87,7 @@ const DevelopersPage: NextPage = () => {
                 >
                     <Grid>
                         <Grid>
-                            <Body> {t("email_register_done")}</Body>
+                            <Body> {t("partner_register_done")}</Body>
                         </Grid>
                     </Grid>
                 </ModalCard>
