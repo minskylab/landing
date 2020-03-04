@@ -40,23 +40,14 @@ const DevelopersPage: NextPage = () => {
             <Grid p={[{ x: "2rem" }, { x: "15vw" }]} m={{ top: "6rem" }}>
                 <div>
                     <Title size={"3rem"} bold>
-                        Hi Developers
+                        {t("greetings")}
                     </Title>
                 </div>
                 <div style={{ marginTop: "1.5rem" }}>
-                    <Body size={"1.3rem"}>
-                        At Minsky, we heavily think that we need to work with the community and promote open knowledge
-                        for its. We think that way have a powerful tool to change and route our nation to a
-                        technology-based future. We want to know more developers (and not) interested in use and enhance
-                        this model {"-"}based on open source and community driven{"-"} following the only goal to change
-                        the technology reality of Peru.
-                    </Body>
+                    <Body size={"1.3rem"}>{t("body")}</Body>
                 </div>
                 <div style={{ marginTop: "1.5rem" }}>
-                    <Simple size={"1rem"}>
-                        If you’re interested in work side by side with us, please fill the following form, we are very
-                        excited to meet you.
-                    </Simple>
+                    <Simple size={"1rem"}>{t("interested")}</Simple>
                 </div>
                 <div style={{ marginTop: "1.5rem" }}>
                     <DevRegisterForm onSubmit={submitNewPartner} disable={loading} />
