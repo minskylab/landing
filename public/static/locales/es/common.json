@@ -53,5 +53,9 @@
 
     "email_input_help_text": "Escribe el correo electrónico al cual quieres que te escribamos",
 
-    "stay_tuned_action_call": "Mantente al tanto"
+    "stay_tuned_action_call": "Mantente al tanto",
+
+    "done": "Listo",
+    "email_register_done": "Acabamos de registrar tu email, nos pondremos en contacto contigo pronto!."
+
 }
