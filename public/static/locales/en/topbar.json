@@ -1,6 +1,6 @@
 {
     "options": "Home, Our Services, Our Specials, Our Technologies, Our Values, Our Team",
     "routes": "home, services, specials, technologies, values, team",
-    "developers_hub_call_action": "Developers Here",
+    "developers_hub_call_action": "Devs & Scins Here",
     "contact_us_call_action": "Contact Us"
 }

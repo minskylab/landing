@@ -82,6 +82,21 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                     onSelected={(item: VerticalMenuItem) => props.onSelected(item)}
                     items={menuItems}
                     selectedItem={"home"}
+                    right={
+                        <>
+                            <Grid type={"flex"} rows={{ from: 1, how: 1 }} justifyContent={"flex-end"}>
+                                <Button minsky>{t("developers_hub_call_action")}</Button>
+                            </Grid>
+                            <Grid
+                                type={"flex"}
+                                rows={{ from: 2, how: 1 }}
+                                justifyContent={"flex-end"}
+                                m={{ top: "1rem" }}
+                            >
+                                <Button primary>{t("contact_us_call_action")}</Button>
+                            </Grid>
+                        </>
+                    }
                 />
             </animated.div>
 
@@ -120,10 +135,10 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                                 />
                             </Grid>
                             <Grid debug={DEBUG_MODE} m={{ right: "1.2rem" }}>
-                                <Button minsky>Developers Here</Button>
+                                <Button minsky>{t("developers_hub_call_action")}</Button>
                             </Grid>
                             <Grid debug={DEBUG_MODE}>
-                                <Button primary>Contact Us</Button>
+                                <Button primary>{t("contact_us_call_action")}</Button>
                             </Grid>
                         </Grid>
                         <animated.div style={propsVerticalMenu}>
