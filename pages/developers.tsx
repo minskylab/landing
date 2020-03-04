@@ -17,7 +17,7 @@ const client = new KintoClient("http://167.99.15.24:8888/v1");
 const DevelopersPage: NextPage = () => {
     const [modal, setModal] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
-    const [t, i18n] = NextI18NextInstance.useTranslation();
+    const [t, i18n] = NextI18NextInstance.useTranslation("developer");
 
     const submitNewPartner = async (newPartner: Partner) => {
         setLoading(true);
