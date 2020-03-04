@@ -1,5 +1,5 @@
 {
-    "first_message": "A new technological perspective for your ideas",
+    "first_message": "A new technological perspective for your ideas.",
     "contact_us": "Contact Us",
     "learn_more": "What are you doing?",
     "minsky_mision": "We design and build digital products",
@@ -7,16 +7,16 @@
     "services_title": "Our Services",
 
     "ideation_title": "Ideation and Strategy",
-    "ideation_definition": "We offer experience in building a new products",
+    "ideation_definition": "We offer experience in building a new products.",
 
     "product_design_title": "Product Design",
-    "product_design_definition": "We will create a beautiful and working design for your ideas",
+    "product_design_definition": "We will create a beautiful and working design for your ideas.",
 
     "web_mobile_dev_title": "Web and Mobile Development",
-    "web_mobile_dev_definition": "We specialize in delivering end-to-end services",
+    "web_mobile_dev_definition": "We specialize in delivering end-to-end services.",
 
     "devops_cloud_title": "DevOps and Cloud",
-    "devops_cloud_definition": "We use modern microservices approach for your platform",
+    "devops_cloud_definition": "We use modern microservices approach for your platform.",
 
     "specials_title": "Our Specials",
 
@@ -33,29 +33,29 @@
     "technology_titles": "Chatbots, Payments, Just for fun",
     "technology_descriptions": "Multichannel technology, Multi payment gateway, Developing everything",
     "technology_repositories": "minskylab/neocortex, minskylab/plutus, minskylab/pe2020ru",
-    "technology_see_more": "See more projects at our Github",
+    "technology_see_more": "See more projects at our Github.",
 
     "values_title": "Our Values",
 
     "high_level_title": "High level of service",
-    "high_level_description": "We respond to the needs and desires of customers, with the lowest possible cost and the highest level of quality and details",
+    "high_level_description": "We respond to the needs and desires of customers, with the lowest possible cost and the highest level of quality and details.",
 
     "maintenance_title": "Constant maintenance",
-    "maintenance_description": "We keep abreast of the latest technologies, test them and verify their effectiveness in the development of projects",
+    "maintenance_description": "We keep abreast of the latest technologies, test them and verify their effectiveness in the development of projects.",
 
     "open_community_title": "Open development for the community",
-    "open_community_description": "Every time we take projects, micro technology and engines occur to us, which we make available to the community in order to improve the development of technology in the country",
+    "open_community_description": "Every time we take projects, micro technology and engines occur to us, which we make available to the community in order to improve the development of technology in the country.",
 
     "main_team_title": "Main Team",
     "contact_us_title": "Contact Us",
-    "contact_us_offer": "We can meet to drink coffee and talk in comfy place",
+    "contact_us_offer": "We can meet to drink coffee and talk in comfy place.",
 
     "email_contact": "Email",
     "phone_contact": "Phone",
     "telegram_contact": "Telegram",
     "whatsapp_contact": "WhatsApp",
 
-    "email_input_help_text": "Introduce your email where we'll write to you",
+    "email_input_help_text": "Introduce your email where we'll write to you.",
 
     "stay_tuned_action_call": "Stay Tuned",
 
