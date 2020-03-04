@@ -13,6 +13,7 @@ const Card = styled.div`
     padding: 1rem;
     min-width: 16rem;
     max-width: 90vw;
+    z-index: 13;
 `;
 
 type Action = "open" | "close" | "ok" | "cancel";
@@ -44,7 +45,7 @@ const ModalCard: FC<ModalCardProps> = (props: ModalCardProps) => {
                             </>
                         )}
                     </Grid>
-                    <Grid m={{ y: "1rem" }}>
+                    <Grid m={{ y: "1rem", x: "1rem" }}>
                         {/* BODY */}
                         {props.children}
                     </Grid>

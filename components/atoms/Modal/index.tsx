@@ -14,6 +14,7 @@ const background = css`
     align-items: center;
     background-color: #1b1b1baa;
     justify-content: center;
+
     /* z-index: 200; */
 `;
 
@@ -27,15 +28,12 @@ interface ModalProps {
 const Modal: FC<ModalProps> = (props: ModalProps) => {
     const backProps = useSpring({
         opacity: props.active ? 1 : 0,
-        zIndex: props.active ? 20 : -10,
+        // zIndex: props.active ? 12 : -1,
         from: { opacity: 0 }
     });
 
-    // const corpusProps = useSpring({
-    //     transform: props.active ? "translateY(0)" : "translateY(100vh)"
-    // });
     return (
-        <animated.div className={background} style={backProps}>
+        <animated.div className={background} style={{ ...backProps, zIndex: props.active ? 12 : -1 }}>
             {props.active ? props.content || props.children : null}
         </animated.div>
     );

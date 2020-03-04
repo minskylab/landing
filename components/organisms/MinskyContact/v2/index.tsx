@@ -40,6 +40,7 @@ const MinskyContact: FC<MinskyContentProps> = (props: MinskyContentProps) => {
     const registerNewPartner = async (email: string) => {
         console.log("registering", email);
         setLoadingRegister(true);
+
         props.onLoading && props.onLoading(true);
         try {
             const res = await axios.post("https://content.minsky.cc/potential-users", {
@@ -52,6 +53,7 @@ const MinskyContact: FC<MinskyContentProps> = (props: MinskyContentProps) => {
         } finally {
             props.onLoading && props.onLoading(false);
             setLoadingRegister(false);
+            setModal(true);
         }
     };
 
@@ -89,23 +91,27 @@ const MinskyContact: FC<MinskyContentProps> = (props: MinskyContentProps) => {
         <>
             <Modal active={modal}>
                 <ModalCard
-                    title={"Hello there"}
+                    title={"Done"}
                     closable
                     onAction={act => {
-                        console.log(act);
+                        // console.log(act);
                         if (act === "close") {
                             setModal(false);
                         }
                     }}
                     customActions={
                         <Grid>
-                            <Button primary onClick={() => console.log("OK")}>
+                            <Button primary onClick={() => setModal(false)}>
                                 Ok
                             </Button>
                         </Grid>
                     }
                 >
-                    <div>Hello World</div>
+                    <Grid>
+                        <Grid>
+                            <Body> We just registered your email, we'll be in touch very soon</Body>
+                        </Grid>
+                    </Grid>
                 </ModalCard>
             </Modal>
             <Grid
@@ -144,7 +150,7 @@ const MinskyContact: FC<MinskyContentProps> = (props: MinskyContentProps) => {
                             placeholder={"youremail@example.com"}
                             helperText={t("email_input_help_text")}
                         />
-                        <div style={{ marginTop: "1rem" }}>
+                        <div style={{ marginTop: "2rem" }}>
                             <Button primary type={"submit"} isDisable={loadingRegister}>
                                 {t("stay_tuned_action_call")}
                             </Button>

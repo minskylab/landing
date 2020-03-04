@@ -26,7 +26,7 @@ const inputStyle = css`
         }
     }
 
-    ::-webkit-inner-spin-button {
+    /* ::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
@@ -34,7 +34,7 @@ const inputStyle = css`
     ::-webkit-outer-spin-button {
         -webkit-appearance: none;
         margin: 0;
-    }
+    } */
 `;
 
 interface LabelProps {
