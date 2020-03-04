@@ -60,13 +60,6 @@
     "stay_tuned_action_call": "Manténganme al tanto",
 
     "done": "Listo!",
-    "email_register_done": "Acabamos de registrar tu email, nos pondremos en contacto contigo pronto." <<
-        <<
-        << < HEAD
-} ===
-===
-=
+    "email_register_done": "Acabamos de registrar tu email, nos pondremos en contacto contigo pronto."
 
-} >>>
->>>
-> 6220e97 d6a046d5ddc67697699d83a70f1d58669
+}
