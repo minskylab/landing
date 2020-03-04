@@ -1,13 +1,8 @@
 {
     "first_message": "Una nueva perspectiva tecnológica para tus ideas.",
     "contact_us": "Contáctanos",
-<<<<<<< HEAD
-    "learn_more": "¿Que hacen?",
-    "minsky_mision": "Diseñamos y construimos productos digitales",
-=======
     "learn_more": "Ver más",
     "minsky_mision": "Diseñamos y construimos productos digitales.",
->>>>>>> 6220e97d6a046d5ddc67697699d83a70f1d58669
 
     "services_title": "Nuestros servicios",
 
@@ -65,10 +60,13 @@
     "stay_tuned_action_call": "Manténganme al tanto",
 
     "done": "Listo!",
-    "email_register_done": "Acabamos de registrar tu email, nos pondremos en contacto contigo pronto."
-<<<<<<< HEAD
-}
-=======
+    "email_register_done": "Acabamos de registrar tu email, nos pondremos en contacto contigo pronto." <<
+        <<
+        << < HEAD
+} ===
+===
+=
 
-}
->>>>>>> 6220e97d6a046d5ddc67697699d83a70f1d58669
+} >>>
+>>>
+> 6220e97 d6a046d5ddc67697699d83a70f1d58669
