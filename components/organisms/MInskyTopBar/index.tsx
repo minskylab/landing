@@ -11,6 +11,7 @@ import { css } from "linaria";
 import OpenMenuIcon from "../../molecules/OpenMenuIcon";
 import NextI18NextInstance from "../../../general/i18n";
 import LanguageSelector from "../../molecules/LanguageSelector";
+import { createPublicKey } from "crypto";
 
 const menuContainer = css`
     width: 100%;
@@ -32,12 +33,17 @@ const topBarContainer = css`
 `;
 
 const DEBUG_MODE = false;
+interface Click{
+    title: string;
+    onClick?(): void;
+}
 interface MinskyTopBarProps {
     active: boolean;
     children?: any;
     logoColor?: string;
     onSelected?(item: VerticalMenuItem): void;
     unfolded?: boolean;
+
 }
 
 const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
@@ -50,7 +56,6 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
             tension: 300
         }
     }));
-
     const [t, i18n] = NextI18NextInstance.useTranslation("topbar");
 
     const routes: string[] = t("routes").split(",");
@@ -68,6 +73,8 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
         setPropsBar({ backgroundColor: openMenu ? "#ffdf53" : "white" });
         setPropsVerticalMenu({ opacity: openMenu ? 0 : 1 });
     }, [openMenu]);
+
+    
 
     useEffect(() => {
         setOpenMenu(props.unfolded);

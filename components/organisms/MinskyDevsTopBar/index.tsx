@@ -37,6 +37,7 @@ interface MinskyDevTopBarProps {
     color?: string;
     onSelected?(item: VerticalMenuItem): void;
     unfolded?: boolean;
+    onClick?(): void;
 }
 
 const MinskyDevTopBar: FC<MinskyDevTopBarProps> = (props: MinskyDevTopBarProps) => {
@@ -84,7 +85,7 @@ const MinskyDevTopBar: FC<MinskyDevTopBarProps> = (props: MinskyDevTopBarProps) 
                     right={
                         <>
                             <Grid type={"flex"} rows={{ from: 1, how: 1 }} justifyContent={"flex-end"}>
-                                <Button minsky>{t("developers_hub_call_action")}</Button>
+                                <Button minsky onClick={props.onClick}>{t("developers_hub_call_action")}</Button>
                             </Grid>
                             <Grid
                                 type={"flex"}
@@ -92,7 +93,7 @@ const MinskyDevTopBar: FC<MinskyDevTopBarProps> = (props: MinskyDevTopBarProps) 
                                 justifyContent={"flex-end"}
                                 m={{ top: "1rem" }}
                             >
-                                <Button primary>{t("contact_us_call_action")}</Button>
+                                <Button primary onClick={props.onClick}>{t("contact_us_call_action")}</Button>
                             </Grid>
                         </>
                     }

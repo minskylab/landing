@@ -21,7 +21,7 @@ export const defaultItems: PersonCardProps[] = [
                 style={{ height: "50%", width: "50%", maxHeight: "180px", maxWidth: "180px" }}
             />
         ),
-        tags: ["UXIUResearch", "FrontEnd", "DataAnalyst"],
+        tags: ["UX/UIResearch", "FrontEnd", "DataAnalyst"],
         name: "María Noriega",
         socialNet: [{ type: "github" }, { type: "linkedin" }]
     },
@@ -33,7 +33,7 @@ export const defaultItems: PersonCardProps[] = [
                 style={{ height: "50%", width: "50%", maxHeight: "180px", maxWidth: "180px" }}
             />
         ),
-        tags: ["Inventor", "Developer", "UXIUResearch"],
+        tags: ["Inventor", "Developer", "UX/UIResearch"],
         name: "Bregy Malpartida",
         socialNet: [{ type: "github" }, { type: "linkedin" }]
     },
