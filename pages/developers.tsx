@@ -14,7 +14,7 @@ import { Button } from "../components/atoms/Button";
 import { VerticalMenuItem } from "../components/atoms/VerticalMenu";
 import { useRouter } from "next/router";
 
-const client = new KintoClient("http://167.99.15.24:8888/v1");
+const client = new KintoClient("https://kinto.minsky.cc/v1");
 
 const DevelopersPage: NextPage = () => {
     const [modal, setModal] = useState<boolean>(false);
@@ -27,8 +27,8 @@ const DevelopersPage: NextPage = () => {
     const submitNewPartner = async (newPartner: Partner) => {
         setLoading(true);
         const result = await client
-            .bucket("partners")
-            .collection("Partner")
+            .bucket("Minsky")
+            .collection("partners")
             .createRecord(newPartner);
         // console.log(result);
         setLoading(false);
