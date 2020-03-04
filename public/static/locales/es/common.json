@@ -23,7 +23,7 @@
     "software_development_title": "Desarrollo de Software",
     "software_development_items": "Consultoría IT,Servicios DevOps,Aplicaciones Móviles y Webs,Mantenimiento y soporte,Desarrollo de IA y Machine Learing",
 
-    "blockchain_title": "Solucione de Blockchain",
+    "blockchain_title": "Soluciones de Blockchain",
     "blockchain_items": "Consultoría para empresas, Cross-Border payments, Blockchain para Empresas, Desarrollo de productos",
 
     "iot_embedded_title": "Sistemas embebidos y IoT",
@@ -55,7 +55,7 @@
 
     "stay_tuned_action_call": "Mantente al tanto",
 
-    "done": "Listo",
-    "email_register_done": "Acabamos de registrar tu email, nos pondremos en contacto contigo pronto!."
+    "done": "Listo!",
+    "email_register_done": "Acabamos de registrar tu email, nos pondremos en contacto contigo pronto."
 
 }

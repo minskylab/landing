@@ -7,21 +7,21 @@
     "services_title": "Our Services",
 
     "ideation_title": "Ideation and Strategy",
-    "ideation_definition": "We offer experience in building a new product",
+    "ideation_definition": "We offer experience in building a new products",
 
     "product_design_title": "Product Design",
-    "product_design_definition": "We will create a beufiful and working design for your idea",
+    "product_design_definition": "We will create a beautiful and working design for your ideas",
 
     "web_mobile_dev_title": "Web and Mobile Development",
-    "web_mobile_dev_definition": "We specialise in delivering end-to-end services",
+    "web_mobile_dev_definition": "We specialize in delivering end-to-end services",
 
     "devops_cloud_title": "DevOps and Cloud",
-    "devops_cloud_definition": "We use modern microservices approach for your software",
+    "devops_cloud_definition": "We use modern microservices approach for your platform",
 
     "specials_title": "Our Specials",
 
     "software_development_title": "Software Development",
-    "software_development_items": "IT Consulting,DevOps Services,Mobile and Web Apps,Maintenance and Support,IA and Machine Learing Development",
+    "software_development_items": "IT Consulting,DevOps Services,Mobile and Web Apps,Maintenance and Support,IA and Machine Learning Development",
 
     "blockchain_title": "Blockchain Solutions",
     "blockchain_items": "Business Consulting, Cross-Border payments, Blockchain for Business, Product Development",
@@ -55,7 +55,7 @@
 
     "stay_tuned_action_call": "Stay Tuned",
 
-    "done": "Done",
+    "done": "Done!",
     "email_register_done": "We just registered your email, we'll be in touch very soon."
 
 }
