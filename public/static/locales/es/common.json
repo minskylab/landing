@@ -33,7 +33,7 @@
     "technology_titles": "Chatbots, Payments, Just for fun",
     "technology_descriptions": "Multichannel technology, Multi payment gateway, Developing everything",
     "technology_repositories": "minskylab/neocortex, minskylab/plutus, minskylab/pe2020ru",
-    "technology_see_more": "Mira más de nuestros proyectos en Github",
+    "technology_see_more": "Mira más de nuestros proyectos en Github.",
 
     "values_title": "Nuestros valores",
 
@@ -48,16 +48,16 @@
 
     "main_team_title": "Equipo principal",
     "contact_us_title": "Contáctanos",
-    "contact_us_offer": "Podemos reunirnos para tomar un café y hablar en un lugar cómodo",
+    "contact_us_offer": "Podemos reunirnos para tomar un café y hablar en un lugar cómodo.",
 
     "email_contact": "Correo electrónico",
     "phone_contact": "Teléfono",
     "telegram_contact": "Telegram",
     "whatsapp_contact": "WhatsApp",
 
-    "email_input_help_text": "Escribe el correo electrónico al cual quieres que te escribamos",
+    "email_input_help_text": "Escribe el correo electrónico al cual quieres que te escribamos.",
 
-    "stay_tuned_action_call": "Mantente al tanto",
+    "stay_tuned_action_call": "Manténganme al tanto",
 
     "done": "Listo!",
     "email_register_done": "Acabamos de registrar tu email, nos pondremos en contacto contigo pronto."
