@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect, ReactElement } from "react";
 import { styled } from "linaria/react";
 import { Grid } from "../../atoms/Grid/v2";
 import { MinskyLogoIcon, MenuIcon, UpArrowIcon } from "../../atoms/Icon/icons";
@@ -26,6 +26,7 @@ interface MinskyMenuProps {
     onSelected?: (item: VerticalMenuItem) => void;
     selectedItem?: string;
     items?: VerticalMenuItem[];
+    right?: ReactElement;
 }
 
 const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
@@ -76,21 +77,7 @@ const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
                     p={{ bottom: "0em", top: "2.4em" }}
                     m={{ bottom: "0.5em" }}
                 >
-                    {!props.cleanMode && (
-                        <>
-                            <Grid type={"flex"} rows={{ from: 1, how: 1 }} justifyContent={"flex-end"}>
-                                <Button minsky>Developers Here</Button>
-                            </Grid>
-                            <Grid
-                                type={"flex"}
-                                rows={{ from: 2, how: 1 }}
-                                justifyContent={"flex-end"}
-                                m={{ top: "1rem" }}
-                            >
-                                <Button primary>Contact Us</Button>
-                            </Grid>
-                        </>
-                    )}
+                    {!props.cleanMode && props.right}
                 </Grid>
             </Grid>
         </Wrapper>

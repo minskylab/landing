@@ -33,26 +33,27 @@ export interface TecnologyCard {
 const Technologies: FC = () => {
     const [t, i18n] = NextI18NextInstance.useTranslation();
 
-    const projects: TecnologyCard[] = [
-        {
-            title: "Chatbots",
-            description: "Multichannel technology",
-            repository: "minskylab/neocortex",
-            default: NeocortexDefault
-        },
-        {
-            title: "Payment",
-            description: "Multi payment gateway",
-            repository: "minskylab/plutus",
-            default: PlutusDefault
-        },
-        {
-            title: "Just for fun",
-            description: "Developing everything",
-            repository: "minskylab/pe2020ru",
-            default: Pe2020ruDefault
-        }
-    ];
+    const titles: string[] = t("technology_titles")
+        .split(",")
+        .map(t => t.trim());
+    const descriptions: string[] = t("technology_descriptions")
+        .split(",")
+        .map(d => d.trim());
+    const repositories: string[] = t("technology_repositories")
+        .split(",")
+        .map(r => r.trim());
+    const defaults: Repository[] = [NeocortexDefault, PlutusDefault, Pe2020ruDefault];
+
+    let projects: TecnologyCard[] = [];
+
+    titles.map((title, i) => {
+        projects.push({
+            title: title,
+            description: descriptions[i],
+            repository: repositories[i],
+            default: defaults[i]
+        });
+    });
 
     return (
         <Grid type={"grid"}>
@@ -114,7 +115,7 @@ const Technologies: FC = () => {
                             >
                                 <GithubOutline width={24} height={24} color={"#1b1b1b"} />
                                 <Grid m={[{}, { left: "1rem" }]}>
-                                    <Simple textAlign={"center"}>See more projects at our Github</Simple>
+                                    <Simple textAlign={"center"}>{t("technology_see_more")}</Simple>
                                 </Grid>
                             </Grid>
                         </Grid>
