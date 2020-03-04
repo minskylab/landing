@@ -36,7 +36,6 @@ const MinskyBuild = () => {
         <Grid
             type={"grid"}
             className={wrapper}
-            p={{ y: "1rem" }}
             m={[{ top: "-7.5em" }, { top: "-8em" }, { top: "-10em" }]}
             alignItems={"center"}
             colsTemplate={{ parts: 3, size: "auto" }}
@@ -55,10 +54,13 @@ const MinskyBuild = () => {
             <Grid
                 cols={{ from: 2, how: 1 }}
                 rows={{ from: 2, how: 1 }}
+
+                p = {{x:"25vh"}}
+                m={[{ x: "3em" }, { x: "25vh" }]}
                 className={message}
-                p={[{ x: "2.2rem" }, { x: "4rem" }]}
+
             >
-                <Subtitle textAlign={"center"}>{t("minsky_mision")}</Subtitle>
+                <Subtitle textAlign={"center"} >{t("minsky_mision")}</Subtitle>
             </Grid>
         </Grid>
     );
