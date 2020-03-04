@@ -9,7 +9,8 @@ export const defaultItems: SpecialProps[] = [
             "DevOps Services",
             "Mobile and Web Apps",
             "Maintenance and Support",
-            "IA and Machine Learing Development"
+            "IA and Machine Learing Development",
+            "Omnichannel with Chatbots"
         ],
         iconTopic: (
             <img src="/images/blobpoint.svg" alt="Software Develpment" style={{ height: "0.8rem", width: "auto" }} />
