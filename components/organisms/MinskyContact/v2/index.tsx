@@ -91,7 +91,7 @@ const MinskyContact: FC<MinskyContentProps> = (props: MinskyContentProps) => {
         <>
             <Modal active={modal}>
                 <ModalCard
-                    title={"Done"}
+                    title={t("done")}
                     closable
                     onAction={act => {
                         // console.log(act);
@@ -109,7 +109,7 @@ const MinskyContact: FC<MinskyContentProps> = (props: MinskyContentProps) => {
                 >
                     <Grid>
                         <Grid>
-                            <Body> We just registered your email, we'll be in touch very soon</Body>
+                            <Body> {t("email_register_done")}</Body>
                         </Grid>
                     </Grid>
                 </ModalCard>
