@@ -101,7 +101,7 @@ const IndexPage: FC = () => {
                 onSelected={(item: VerticalMenuItem) => setSelected(item.key)}
                 unfolded={unfoldedMenu}
             />
-            <MinskySplash />
+            <MinskySplash onContact={() => setSelected("contact")} />
             <HomeSectionContainer>
                 <MinskyBuild />
             </HomeSectionContainer>
