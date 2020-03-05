@@ -40,7 +40,7 @@ export const defaultItems: PersonCardProps[] = [
                 style={{ height: "50%", width: "50%", maxHeight: "180px", maxWidth: "180px" }}
             />
         ),
-        tags: ["Inventor", "Developer", "UX/UIResearch"],
+        tags: ["Inventor", "Developer", "Learner"],
         name: "Bregy Malpartida",
         socialNet: [
             { type: "github", link: "https://github.com/bregydoc" },
