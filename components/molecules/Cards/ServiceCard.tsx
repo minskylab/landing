@@ -17,7 +17,6 @@ const wrapperServiceCard = css`
         box-shadow: 0px 0px 16px -6px rgba(0, 0, 0, 0.51);
     }
     will-change: transform;
-    /* z-index: 2000; */
 `;
 
 interface ServiceCardProps {
@@ -54,9 +53,7 @@ const ServiceCard: FC<ServiceCardProps> = (props: ServiceCardProps) => {
             style={{
                 transform: transAnimation.xys.interpolate(transNormal),
                 WebkitTransform: transAnimation.xys.interpolate(transWebKit)
-                // MozTransform: transAnimation.xys.interpolate(trans),
-                // msTransform: transAnimation.xys.interpolate(trans)
-            }} // "translate(10, 10)" }} //
+            }} 
         >
             <Grid
                 type={"grid"}
@@ -74,7 +71,6 @@ const ServiceCard: FC<ServiceCardProps> = (props: ServiceCardProps) => {
             >
                 <Grid
                     type={"flex"}
-                    // alignItems={"end"}
                     m={[{ top: "0.4rem" }, { top: "0" }]}
                     cols={[
                         { from: 1, how: 1 },

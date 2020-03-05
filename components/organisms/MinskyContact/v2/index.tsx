@@ -1,6 +1,6 @@
 import React, { FC, useState, useRef } from "react";
 import Grid from "../../../atoms/Grid/v2";
-import { Title, Subtitle, Important, Body, Subtitle2, Simple } from "../../../atoms/Text/v2";
+import { Subtitle, Important, Body, Simple } from "../../../atoms/Text/v2";
 import { styled } from "linaria/react";
 import * as yup from "yup";
 import { Button } from "../../../atoms/Button";

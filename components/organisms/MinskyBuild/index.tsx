@@ -54,8 +54,7 @@ const MinskyBuild = () => {
             <Grid
                 cols={{ from: 2, how: 1 }}
                 rows={{ from: 2, how: 1 }}
-                p={{ x: "25vh" }}
-                m={[{ x: "3em" }, { x: "25vh" }]}
+                p={[{ x: "2.2rem" }, { x: "4rem" }]}
                 className={message}
             >
                 <Subtitle textAlign={"center"}>{t("minsky_mision")}</Subtitle>

@@ -1,11 +1,9 @@
-import React, { FC, useState, useEffect, ReactElement } from "react";
+import React, { FC, ReactElement } from "react";
 import { styled } from "linaria/react";
 import { Grid } from "../../atoms/Grid/v2";
-import { MinskyLogoIcon, MenuIcon, UpArrowIcon } from "../../atoms/Icon/icons";
+import { MinskyLogoIcon, UpArrowIcon } from "../../atoms/Icon/icons";
 import VerticalMenu, { VerticalMenuItem } from "../../atoms/VerticalMenu";
-import { Button } from "../../atoms/Button";
 import ButtonIcon from "../../atoms/Button/ButtonIcon";
-// import { useSpring } from "react-spring";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -36,11 +34,6 @@ const MinskyMenu: FC<MinskyMenuProps> = (props: MinskyMenuProps) => {
                 type={"grid"}
                 colsTemplate={{ parts: 3, size: "auto" }}
                 rowsTemplate={{ parts: 3, size: "auto" }}
-                // p={[
-                //     { x: "1.0rem", y: "0.8rem" },
-                //     { x: "1.4rem", y: "1.4rem" },
-                //     { x: "1.6rem", y: "1.6rem" }
-                // ]}
                 p={{ x: "0.8em", y: "0.8em" }}
             >
                 <Grid

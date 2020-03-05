@@ -9,7 +9,6 @@ import { CloseIcon } from "../Icon/icons";
 const Card = styled.div`
     background-color: white;
     border-radius: 0.8rem;
-    /* border: solid 1px #1b1b1b; */
     padding: 1rem;
     min-width: 16rem;
     max-width: 90vw;

@@ -4,7 +4,6 @@ import { Text } from "../../atoms/Text";
 import { TextTypes } from "../../atoms/Text/constants";
 
 import { styled } from "linaria/react";
-//import { Input } from '../../atoms/Form/input';
 
 const Wrapper = styled.div`
     border-radius: 0.6em;

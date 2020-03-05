@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { TechCard } from "../../molecules/Cards/TechCard";
 import { Grid } from "../../../components/atoms/Grid/v2";
 
 import { Title, Simple, Subtitle, Body } from "../../atoms/Text/v2";
@@ -63,8 +62,6 @@ const Technologies: FC = () => {
             <Grid
                 type={"grid"}
                 p={{ y: "2.2rem" }}
-                // rows={{ from: 2, how: 1 }}
-                // cols={{ from: 1, how: 2 }}
                 colsTemplate={[
                     { parts: 1, size: "1fr" },
                     { parts: 2, size: "1fr" },

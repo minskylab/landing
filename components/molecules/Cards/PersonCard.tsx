@@ -1,13 +1,9 @@
 import React, { FC } from "react";
 import { Grid } from "../../atoms/Grid/v2/index";
-
-import ColorTypes from "../../atoms/Colors";
-
-import LinkedInOutline from "../../atoms/Icon/LinkedInOutline";
-import GithubOutline from "../../atoms/Icon/GithubOutline";
-import TwitterOutline from "../../atoms/Icon/TwitterOutline";
 import { Subtitle, Simple } from "../../atoms/Text/v2";
+import {SocialNetwork} from "./SocialNet";
 import { styled } from "linaria/react";
+
 
 const Wrapper = styled.div`
     border-radius: 0.6em;
@@ -20,7 +16,7 @@ const Wrapper = styled.div`
     }
 `;
 
-interface SocialNetwork {
+export default interface SocialNetwork {
     type: "github" | "linkedin" | "twitter" | "personal" | "researchgate";
     link?: string;
 }
@@ -109,13 +105,13 @@ const PersonCard: FC<PersonCardProps> = (props: PersonCardProps) => {
                             >
                                 <div>
                                     {value.type === "linkedin" && (
-                                        <LinkedInOutline height={24} width={24} color={ColorTypes.black._50} />
+                                        <SocialNetwork link={value.link} type={value.type} />
                                     )}
                                     {value.type === "github" && (
-                                        <GithubOutline height={24} width={24} color={ColorTypes.black._50} />
+                                        <SocialNetwork link={value.link} type={value.type} />
                                     )}
                                     {value.type === "twitter" && (
-                                        <TwitterOutline height={24} width={24} color={ColorTypes.black._50} />
+                                        <SocialNetwork link={value.link} type={value.type} />
                                     )}
                                 </div>
                             </Grid>

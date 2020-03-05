@@ -21,17 +21,17 @@
     "specials_title": "Nuestras especialidades",
 
     "software_development_title": "Desarrollo de Software",
-    "software_development_items": "Consultoría IT,Servicios DevOps,Aplicaciones Móviles y Webs,Mantenimiento y soporte,Desarrollo de IA y Machine Learing",
+    "software_development_items": "Consultoría IT,Servicios DevOps,Aplicaciones Móviles y Webs,Mantenimiento y soporte, Omnicanalidad con chatbots, Desarrollo de IA y Machine Learing",
 
     "blockchain_title": "Soluciones de Blockchain",
     "blockchain_items": "Consultoría para empresas, Cross-Border payments, Blockchain para Empresas, Desarrollo de productos",
 
     "iot_embedded_title": "Sistemas embebidos y IoT",
-    "iot_embedded_items": "Desarrollo de Hardware, Prototyping, Diseño de sistemas, Consultoría",
+    "iot_embedded_items": "Desarrollo de Hardware, Prototipado, Diseño de sistemas, Consultoría",
 
     "technology_title": "Nuestra tecnología",
-    "technology_titles": "Chatbots, Payments, Just for fun",
-    "technology_descriptions": "Multichannel technology, Multi payment gateway, Developing everything",
+    "technology_titles": "Chatbots, Pagos, Por diversión",
+    "technology_descriptions": "Tecnología multicanal, Pasarela de pago multiple, Desarrollo integral",
     "technology_repositories": "minskylab/neocortex, minskylab/plutus, minskylab/pe2020ru",
     "technology_see_more": "Mira más de nuestros proyectos en Github.",
 

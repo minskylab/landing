@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 import Head from "next/head";
-import { Grid } from "../components/atoms/Grid/v2";
 
 const IndexPage: FunctionComponent = () => {
     return (

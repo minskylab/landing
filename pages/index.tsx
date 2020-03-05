@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useLayoutEffect, FC, Children } from "react";
+import React, { useState, useEffect, FC } from "react";
 import { styled } from "linaria/react";
 import Head from "next/head";
 import { Grid } from "../components/atoms/Grid/v2";
@@ -53,7 +53,6 @@ const HomeSectionContainer: FC<HomeSectionContainerProps> = (props: HomeSectionC
 
 const IndexPage: FC = () => {
     const [renderPhysics, setRenderPhysics] = useState<boolean>(false);
-    // const [topBarShow, setTopBarShow] = useState<boolean>(false);
     const [selected, setSelected] = useState<string>("home");
     const [unfoldedMenu, setUnfoldedMenu] = useState<boolean>(false);
 
@@ -78,7 +77,6 @@ const IndexPage: FC = () => {
     }, []);
 
     useEffect(() => {
-        console.log(selected);
         setUnfoldedMenu(false);
         scroller.scrollTo(selected, {
             duration: 500,
@@ -104,7 +102,7 @@ const IndexPage: FC = () => {
                 onClickDev={() => Router.push('/developers')}
                 onClickContact={() => setSelected("contact")}
             />
-            <MinskySplash />
+            <MinskySplash onContact={() => setSelected("contact")} />
             <HomeSectionContainer>
                 <MinskyBuild />
             </HomeSectionContainer>

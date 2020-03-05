@@ -4,7 +4,6 @@ import { Grid } from "../../atoms/Grid/v2";
 import { MinskyLogoIcon } from "../../atoms/Icon/icons";
 import { Button } from "../../atoms/Button";
 import VerticalMenu, { VerticalMenuItem } from "../../atoms/VerticalMenu";
-
 import MinskyMenu from "../../molecules/MinskyMenu";
 import { useSpring, animated } from "react-spring";
 import { css } from "linaria";
@@ -29,8 +28,6 @@ const topBarContainer = css`
     left: 0;
     width: 100%;
     background-color: white;
-    /* #fffcf0; */
-    /* height: 4rem; */
 `;
 
 const DEBUG_MODE = false;
@@ -57,7 +54,6 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
     }));
     const [t, i18n] = NextI18NextInstance.useTranslation("topbar");
 
-
     const routes: string[] = t("routes").split(",");
     let menuItems: VerticalMenuItem[] = [];
     t("options")
@@ -74,13 +70,9 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
         setPropsVerticalMenu({ opacity: openMenu ? 0 : 1 });
     }, [openMenu]);
 
-
     useEffect(() => {
         setOpenMenu(props.unfolded);
     }, [props]);
-
-
-
 
     return (
         <>
@@ -88,7 +80,7 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                 <MinskyMenu
                     cleanMode={false}
                     onClose={() => setOpenMenu(false)}
-                    onSelected={(item: VerticalMenuItem) => props.onSelected(item)}
+                    onSelected={(item: VerticalMenuItem) => props.onSelected && props.onSelected(item)}
                     items={menuItems}
                     selectedItem={"home"}
                     right={

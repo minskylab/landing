@@ -15,7 +15,6 @@ const background = css`
     background-color: #1b1b1baa;
     justify-content: center;
 
-    /* z-index: 200; */
 `;
 
 interface ModalProps {
@@ -28,7 +27,6 @@ interface ModalProps {
 const Modal: FC<ModalProps> = (props: ModalProps) => {
     const backProps = useSpring({
         opacity: props.active ? 1 : 0,
-        // zIndex: props.active ? 12 : -1,
         from: { opacity: 0 }
     });
 

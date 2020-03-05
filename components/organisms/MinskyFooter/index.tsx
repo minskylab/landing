@@ -18,36 +18,14 @@ const BACKGROUND_COLOR = "#1b1b1b"; /*#0f0d16;*/
 const footerContainer = css`
     background-color: ${BACKGROUND_COLOR};
     padding: 2.8rem 0;
-    /* 10vw 2.8rem 0; */
-    /* clip-path: polygon(16% 0, 100% 0, 100% 100%, 0% 100%); */
-    /* border-radius: 10rem; */
     z-index: 2;
 `;
 
-// const svgContainer = css`
-//     z-index: -1;
-//     position: relative;
-//     bottom: 0;
-//     right: 0;
-// `;
 
 export const Footer: FC = () => {
     const [t, i18n] = NextI18NextInstance.useTranslation("footer");
     return (
         <>
-            {/* <svg
-                className={svgContainer}
-                // width="100%"
-                // height="460"
-                viewBox="0 0 1240 460"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    d="M0 170.465C0 145.064 18.7432 123.735 43.9789 120.841C248.728 97.3581 1101.08 0 1158.64 0C1224.1 0 1240 80.0344 1240 125.892C1240 171.749 1240 460 1240 460H0V170.465Z"
-                    fill=TEXT_COLOR
-                />
-            </svg> */}
             <Grid
                 type="grid"
                 className={footerContainer}
@@ -395,7 +373,6 @@ export const Footer: FC = () => {
                                     <Twitter height={32} width={32} color={ColorTypes.black._50} />
                                 )}
                             </div>
-                            {/* <Simple color={TEXT_COLOR} alignText={"center"}>{socialNet}</Simple> */}
                         </div>
                     ))}
                 </Grid>

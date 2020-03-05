@@ -1,9 +1,6 @@
 import React, { FC } from "react";
 import Grid from "../../atoms/Grid/v2";
 import { Text, Simple } from "../../atoms/Text/v2";
-import LinkedInOutline from "../../atoms/Icon/LinkedInOutline";
-import GithubOutline from "../../atoms/Icon/GithubOutline";
-import TwitterOutline from "../../atoms/Icon/TwitterOutline";
 import { Button } from "../../atoms/Button";
 import LittleNetwork, { SocialNetwork } from "./LittleNetwork";
 import NextI18NextInstance from "../../../general/i18n";
@@ -14,7 +11,9 @@ const minskySocialNetworks: SocialNetwork[] = [
     { kind: "twitter", link: "https://twitter.com/MinskyLab" }
 ];
 
-interface MinskySplashProps {}
+interface MinskySplashProps {
+    onContact?: () => void;
+}
 
 const MinskySplash: FC<MinskySplashProps> = (props: MinskySplashProps) => {
     const [t, i18n] = NextI18NextInstance.useTranslation();
@@ -51,7 +50,9 @@ const MinskySplash: FC<MinskySplashProps> = (props: MinskySplashProps) => {
                         ))}
                     </Grid>
                     <Grid type={["flex", "none"]} justifyContent={"center"}>
-                        <Button primary>{t("contact_us")}</Button>
+                        <Button primary onClick={props.onContact}>
+                            {t("contact_us")}
+                        </Button>
                     </Grid>
                 </Grid>
             </Grid>

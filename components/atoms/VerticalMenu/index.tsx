@@ -1,10 +1,8 @@
 import React, { FC } from "react";
 import { styled } from "linaria/react";
-// import {useTransition, animated} from 'react-spring';
-// import { Link, animateScroll as scroll } from 'react-scroll'
 
 const Wrapper = styled.div`
-    /* margin: 1em 1em; */
+
 `;
 
 interface ItemProps {
@@ -16,7 +14,6 @@ const Item = styled.div<ItemProps>`
     font-size: 16px;
     font-weight: ${props => (props.selected ? "600" : "400")};
     padding: 0.2em 0.4em;
-    /* margin-bottom: 0.4em; */
     width: fit-content;
     transition: 0.3s;
     cursor: default;

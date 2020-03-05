@@ -11,7 +11,7 @@ export const defaultItems: PersonCardProps[] = [
         ),
         tags: ["Backend", "Frontend", "CatLover"],
         name: "Antonio Toche",
-        socialNet: [{ type: "github" }, { type: "linkedin" }]
+        socialNet: [{ type: "github",link:"https://github.com/antoniott15" }, { type: "linkedin",link:"https://www.linkedin.com/in/antoniotoche/" }]
     },
     {
         img: (
@@ -23,7 +23,7 @@ export const defaultItems: PersonCardProps[] = [
         ),
         tags: ["UX/UIResearch", "FrontEnd", "DataAnalyst"],
         name: "María Noriega",
-        socialNet: [{ type: "github" }, { type: "linkedin" }]
+        socialNet: [{ type: "github", link:"https://github.com/mariagnoriegag" }, { type: "linkedin",link:"https://www.linkedin.com/in/guadalupenoriega/" }]
     },
     {
         img: (
@@ -35,7 +35,7 @@ export const defaultItems: PersonCardProps[] = [
         ),
         tags: ["Inventor", "Developer", "UX/UIResearch"],
         name: "Bregy Malpartida",
-        socialNet: [{ type: "github" }, { type: "linkedin" }]
+        socialNet: [{ type: "github", link:"https://github.com/bregydoc" }, { type: "linkedin",link:"https://www.linkedin.com/in/bregy/" }]
     },
     {
         img: (
@@ -47,6 +47,6 @@ export const defaultItems: PersonCardProps[] = [
         ),
         tags: ["Scientist", "Psychologist", "ComputationalLover"],
         name: "Carlos A. Almenara",
-        socialNet: [{ type: "github" }, { type: "linkedin" }, { type: "twitter" }]
+        socialNet: [{ type: "github" ,link:""}, { type: "linkedin",link:"https://www.linkedin.com/in/almenaracarlos/" }, { type: "twitter" ,link:"https://twitter.com/almenaracarlos"}]
     }
 ];

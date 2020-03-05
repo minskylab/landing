@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // import Lottie from "react-lottie";
 import * as animationData from "./menu-button.json";
 
@@ -15,9 +15,6 @@ const OpenMenuIcon = () => {
         }
     };
 
-    useEffect(() => {
-        // console.log(stopped, paused);
-    }, [stopped, paused]);
 
     return (
         <div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, ReactElement, createRef } from "react";
+import React, { useEffect, ReactElement, createRef } from "react";
 import { useField } from "@unform/core";
 import Input, { InputProps } from "../../../atoms/Input";
 

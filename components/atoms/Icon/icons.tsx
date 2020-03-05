@@ -6,7 +6,6 @@ export const MinskyLogoIcon: FC<SVGIconProps> = (props: SVGIconProps) => {
         <svg
             width={`${props.width || 41}`}
             height={`${props.height || 31}`}
-            // viewBox={`0 0 ${props.width || 41} ${props.height || 31}`}
             viewBox="0 0 41 31"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

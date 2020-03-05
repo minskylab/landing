@@ -25,16 +25,6 @@ const inputStyle = css`
             color: #8a8a8a;
         }
     }
-
-    /* ::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-
-    ::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    } */
 `;
 
 interface LabelProps {
@@ -46,7 +36,6 @@ const Label = styled.label<LabelProps>`
     transition: 0.3s;
     color: ${props => (props.focus ? "#1b1b1b" : "#454545")};
     margin-bottom: 0.1rem;
-    /* margin-left: 8px; */
 `;
 
 const InputWrapper = styled.div`
