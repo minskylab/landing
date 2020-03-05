@@ -1,9 +1,8 @@
 import React, { FC } from "react";
 import { Grid } from "../../atoms/Grid/v2/index";
 import { Subtitle, Simple } from "../../atoms/Text/v2";
-import {SocialNetwork} from "./SocialNet";
+import SocialNetwork, { SocialNetworkProps } from "../../atoms/Social";
 import { styled } from "linaria/react";
-
 
 const Wrapper = styled.div`
     border-radius: 0.6em;
@@ -16,17 +15,12 @@ const Wrapper = styled.div`
     }
 `;
 
-export default interface SocialNetwork {
-    type: "github" | "linkedin" | "twitter" | "personal" | "researchgate";
-    link?: string;
-}
-
 export interface PersonCardProps {
     name: string;
     img: any;
     email?: string;
     tags?: string[];
-    socialNet: SocialNetwork[];
+    socialNet: SocialNetworkProps[];
 }
 
 const PersonCard: FC<PersonCardProps> = (props: PersonCardProps) => {
@@ -103,17 +97,7 @@ const PersonCard: FC<PersonCardProps> = (props: PersonCardProps) => {
                                 cols={{ from: i, how: 1 }}
                                 m={{ all: "0.5em" }}
                             >
-                                <div>
-                                    {value.type === "linkedin" && (
-                                        <SocialNetwork link={value.link} type={value.type} />
-                                    )}
-                                    {value.type === "github" && (
-                                        <SocialNetwork link={value.link} type={value.type} />
-                                    )}
-                                    {value.type === "twitter" && (
-                                        <SocialNetwork link={value.link} type={value.type} />
-                                    )}
-                                </div>
+                                <SocialNetwork link={value.link} type={value.type} />
                             </Grid>
                         );
                     })}

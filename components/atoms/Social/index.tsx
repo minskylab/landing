@@ -1,9 +1,15 @@
 import React, { FC, useState } from "react";
-import LinkedInOutline from "../../atoms/Icon/LinkedInOutline";
-import GithubOutline from "../../atoms/Icon/GithubOutline";
-import TwitterOutline from "../../atoms/Icon/TwitterOutline";
+import LinkedInOutline from "../Icon/LinkedInOutline";
+import GithubOutline from "../Icon/GithubOutline";
+import TwitterOutline from "../Icon/TwitterOutline";
 
-import SocialNetworkProps from "./PersonCard";
+import TinderOutline from "../Icon/TinderOutline";
+import HomeOutline from "../Icon/HomeOutline";
+
+export interface SocialNetworkProps {
+    type: "github" | "linkedin" | "twitter" | "personal" | "researchgate" | "homepage" | "tinder";
+    link?: string;
+}
 
 const SocialNetwork: FC<SocialNetworkProps> = (props: SocialNetworkProps) => {
     const [focus, setFocus] = useState<boolean>(false);
@@ -29,9 +35,11 @@ const SocialNetwork: FC<SocialNetworkProps> = (props: SocialNetworkProps) => {
                 {props.type === "linkedin" && <LinkedInOutline height={24} width={24} color={"#1b1b1b"} />}
                 {props.type === "github" && <GithubOutline height={24} width={24} color={"#1b1b1b"} />}
                 {props.type === "twitter" && <TwitterOutline height={24} width={24} color={"#1b1b1b"} />}
+                {props.type === "tinder" && <TinderOutline height={24} width={24} color={"#1b1b1b"} />}
+                {props.type === "homepage" && <HomeOutline height={24} width={24} color={"#1b1b1b"} />}
             </div>
         </div>
     );
 };
 
-export {SocialNetwork};
+export default SocialNetwork;
