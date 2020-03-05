@@ -4,7 +4,7 @@ import { Grid } from "../../atoms/Grid/v2";
 import { MinskyLogoIcon } from "../../atoms/Icon/icons";
 import { Button } from "../../atoms/Button";
 import VerticalMenu, { VerticalMenuItem } from "../../atoms/VerticalMenu";
-import Router from 'next/router';
+
 import MinskyMenu from "../../molecules/MinskyMenu";
 import { useSpring, animated } from "react-spring";
 import { css } from "linaria";
@@ -41,7 +41,8 @@ interface MinskyTopBarProps {
     logoColor?: string;
     onSelected?(item: VerticalMenuItem): void;
     unfolded?: boolean;
-
+    onClickDev?(): void;
+    onClickContact?(): void;
 }
 
 const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
@@ -93,7 +94,7 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                     right={
                         <>
                             <Grid type={"flex"} rows={{ from: 1, how: 1 }} justifyContent={"flex-end"}>
-                                <Button minsky onClick={() => Router.push('/developers')}>{t("developers_hub_call_action")}</Button>
+                                <Button minsky onClick={props.onClickDev}>{t("developers_hub_call_action")}</Button>
                             </Grid>
                             <Grid
                                 type={"flex"}
@@ -101,7 +102,7 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                                 justifyContent={"flex-end"}
                                 m={{ top: "1rem" }}
                             >
-                                <Button primary>{t("contact_us_call_action")}</Button>
+                                <Button primary onClick={props.onClickContact}>{t("contact_us_call_action")}</Button>
                             </Grid>
                         </>
                     }
@@ -143,10 +144,10 @@ const MinskyTopBar: FC<MinskyTopBarProps> = (props: MinskyTopBarProps) => {
                                 />
                             </Grid>
                             <Grid debug={DEBUG_MODE} m={{ right: "1.2rem" }}>
-                                <Button minsky onClick={() => Router.push('/developers')}>{t("developers_hub_call_action")}</Button>
+                                <Button minsky onClick={props.onClickDev}>{t("developers_hub_call_action")}</Button>
                             </Grid>
                             <Grid debug={DEBUG_MODE}>
-                                <Button primary>{t("contact_us_call_action")}</Button>
+                                <Button primary onClick={props.onClickContact}> {t("contact_us_call_action")}</Button>
                             </Grid>
                         </Grid>
                         <animated.div style={propsVerticalMenu}>

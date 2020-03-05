@@ -41,12 +41,12 @@ export const defaultItems: PersonCardProps[] = [
         img: (
             <img
                 src="/images/blob.svg"
-                alt = "Carlos Almenara"
+                alt = "Carlos A. Almenara"
                 style={{ height: "50%", width: "50%", maxHeight: "180px", maxWidth: "180px" }}
             />
         ),
         tags: ["Scientist", "Psychologist", "ComputationalLover"],
-        name: "Carlos Almenara",
+        name: "Carlos A. Almenara",
         socialNet: [{ type: "github" }, { type: "linkedin" }, { type: "twitter" }]
     }
 ];

@@ -20,6 +20,7 @@ import { Element, scroller } from "react-scroll";
 import { VerticalMenuItem } from "../components/atoms/VerticalMenu";
 import MinskySplash from "../components/organisms/MinskySplash";
 import NextI18NextInstance from "../general/i18n";
+import Router from 'next/router';
 
 const Background = styled.div`
     z-index: -1;
@@ -100,6 +101,8 @@ const IndexPage: FC = () => {
                 active={true}
                 onSelected={(item: VerticalMenuItem) => setSelected(item.key)}
                 unfolded={unfoldedMenu}
+                onClickDev={() => Router.push('/developers')}
+                onClickContact={() => setSelected("contact")}
             />
             <MinskySplash />
             <HomeSectionContainer>
