@@ -61,7 +61,7 @@ export const defaultItems: PersonCardProps[] = [
             { type: "github", link: "https://github.com/almenaraio" },
             { type: "linkedin", link: "https://www.linkedin.com/in/almenaracarlos/" },
             { type: "twitter", link: "https://twitter.com/almenaracarlos" },
-            { type: "homepage", link: "https://www.almenara.io" }
+            { type: "homepage", link: " https://almenara.io/?utm_source=minsky&utm_medium=click&utm_campaign=work" }
         ]
     }
 ];

@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import { Grid } from "../../atoms/Grid/v2";
 
-import { defaultItems } from "./default";
+import { defaultItems } from "./team";
 import { PersonCard } from "../../molecules/Cards/PersonCard";
 import { Title } from "../../atoms/Text/v2";
 import NextI18NextInstance from "../../../general/i18n";
