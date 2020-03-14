@@ -20,13 +20,14 @@ import { Element, scroller } from "react-scroll";
 import { VerticalMenuItem } from "../components/atoms/VerticalMenu";
 import MinskySplash from "../components/organisms/MinskySplash";
 import NextI18NextInstance from "../general/i18n";
-import Router from 'next/router';
+import Router from "next/router";
 
 const Background = styled.div`
     z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
+    max-width: 100%;
 `;
 
 const DEBUG_MODE = false;
@@ -99,7 +100,7 @@ const IndexPage: FC = () => {
                 active={true}
                 onSelected={(item: VerticalMenuItem) => setSelected(item.key)}
                 unfolded={unfoldedMenu}
-                onClickDev={() => Router.push('/developers')}
+                onClickDev={() => Router.push("/developers")}
                 onClickContact={() => setSelected("contact")}
             />
             <MinskySplash onContact={() => setSelected("contact")} />
