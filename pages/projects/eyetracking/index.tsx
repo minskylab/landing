@@ -5,7 +5,7 @@ import axios from "axios";
 
 import { Subtitle } from "../../../components/atoms/Text/v2";
 import Head from "next/head";
-import { useKeyPress, shuffle } from "./_utils";
+import { useKeyPress, shuffle } from "../../../general/util";
 
 const INFO_URL = "https://eyetracking.minsky.cc/api/v1/info";
 const BASE_IMAGES_URL = "https://public.minsky.cc";
