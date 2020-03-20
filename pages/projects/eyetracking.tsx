@@ -15,7 +15,7 @@ const WrapperGrid = styled.ul`
     padding: 0;
     margin: 0;
     grid-template-columns: repeat(auto-fill, minmax(200px, 0.5fr));
-    grid-template-rows: repeat(20, minmax(251px, 165px));
+    grid-template-rows: repeat(5, minmax(251px, 165px));
     grid-gap: 4px;
     background-color: black;
 `;
