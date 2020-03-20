@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { AppProps } from "next/app";
+import { AppProps, AppContext } from "next/app";
 import Fonts from "../general/Fonts";
 import BasicTemplate from "../components/templates/BasicTemplate";
 
@@ -20,5 +20,11 @@ const MinskyApp = ({ Component, pageProps }: AppProps) => {
         </BasicTemplate>
     );
 };
+
+// MinskyApp.getInitialProps = async (appContext: AppContext) => {
+//     const props = appContext.Component.getInitialProps(appContext.ctx);
+//     console.log(props);
+//     return props;
+// };
 
 export default NextI18Next.appWithTranslation(MinskyApp);
