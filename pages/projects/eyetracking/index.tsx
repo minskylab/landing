@@ -3,7 +3,8 @@ import { NextPage, NextPageContext } from "next";
 import { styled } from "linaria/react";
 import axios from "axios";
 
-import { Subtitle } from "../../components/atoms/Text/v2";
+import { Subtitle } from "../../../components/atoms/Text/v2";
+import Head from "next/head";
 
 const INFO_URL = "https://eyetracking.minsky.cc/api/v1/info";
 const BASE_IMAGES_URL = "https://public.minsky.cc";
@@ -48,29 +49,37 @@ const EyeTrakingPage: NextPage = () => {
         );
     }
 
-    const cols = 4;
     return (
-        <WrapperGrid>
-            {images.map((image, i) => {
-                return (
-                    <div
-                        key={i}
-                        style={{
-                            display: "flex",
-                            width: "100%",
-                            height: "100%",
-                            // width: size.width / 2,
-                            // height: size.height / 2,
-                            backgroundImage: `url(${image})`,
-                            backgroundRepeat: "no-repeat",
-                            backgroundSize: "cover"
+        <>
+            <Head>
+                <title>Eye Tracking Project | Minsky</title>
+                <meta
+                    name="description"
+                    content="Eye Tracking Project was created to help to make a research related to eating disorders"
+                />
+            </Head>
+            <WrapperGrid>
+                {images.map((image, i) => {
+                    return (
+                        <div
+                            key={i}
+                            style={{
+                                display: "flex",
+                                width: "100%",
+                                height: "100%",
+                                // width: size.width / 2,
+                                // height: size.height / 2,
+                                backgroundImage: `url(${image})`,
+                                backgroundRepeat: "no-repeat",
+                                backgroundSize: "cover"
 
-                            // backgroundSize: `${size.width / 2}px ${size.height / 2}px`
-                        }}
-                    />
-                );
-            })}
-        </WrapperGrid>
+                                // backgroundSize: `${size.width / 2}px ${size.height / 2}px`
+                            }}
+                        />
+                    );
+                })}
+            </WrapperGrid>
+        </>
     );
 };
 
