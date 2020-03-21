@@ -7,7 +7,11 @@ import { css } from "linaria";
 import Input from "../../../components/atoms/Input";
 
 const baseLayout = css`
-    height: 100vh;
+    /* height: 100vh; */
+    overflow: hidden;
+    ::-webkit-scrollbar {
+        display: none;
+    }
 `;
 
 const SimulatorPage: FC<NextPage> = (props: NextPage) => {
@@ -20,14 +24,20 @@ const SimulatorPage: FC<NextPage> = (props: NextPage) => {
                     content="Eye Tracking Project was created to help to make a research related to eating disorders"
                 />
             </Head>
-            <Grid className={baseLayout} type={"grid"} p={{ all: "2rem" }} colsTemplate={{ raw: "1.8fr 1fr" }}>
+            <Grid
+                className={baseLayout}
+                type={"grid"}
+                p={{ all: "2rem" }}
+                colsTemplate={{ raw: "1.8fr 1fr" }}
+                rowsTemplate={{ parts: 1, size: "1fr" }}
+            >
                 <Grid type={"flex"} cols={{ from: 1, how: 1 }}>
                     <Grid p={{ x: "2rem", y: "1rem" }}>
                         <Title bold m={{ bottom: "2rem" }}>
                             Mail Simulator
                         </Title>
-                        <Subtitle> From: {"hello@minsky.cc"} </Subtitle>
-                        <Subtitle> To: {"carlos.almenara@upc.edu.pe"} </Subtitle>
+                        <Subtitle> From: {"example@example.com"} </Subtitle>
+                        <Subtitle> To: {"jhon.doe@minsky.cc"} </Subtitle>
                         <Subtitle> Subject: {"XXXXXXXXXXX"} </Subtitle>
                         <Grid m={{ top: "2rem" }}>
                             <Body m={{ bottom: "1rem" }}>
@@ -42,7 +52,17 @@ const SimulatorPage: FC<NextPage> = (props: NextPage) => {
                     </Grid>
                 </Grid>
                 <Grid type={"flex"} cols={{ from: 2, how: 1 }} justifyContent={"center"}>
-                    <div style={{ display: "flex", width: "80%", backgroundColor: "#ffdf53" }}>Ad here</div>
+                    <div
+                        style={{
+                            display: "flex",
+                            width: "80%",
+                            backgroundColor: "#ffdf53",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}
+                    >
+                        Ad here
+                    </div>
                 </Grid>
             </Grid>
         </>
