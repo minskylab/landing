@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { AppProps, AppContext } from "next/app";
-import Fonts from "../general/Fonts";
+// import Fonts from "../general/Fonts";
 import BasicTemplate from "../components/templates/BasicTemplate";
 
 import { DefaultSeo } from "next-seo";
@@ -9,9 +9,9 @@ import DefaultSEOConfig from "../components/templates/seo";
 import NextI18Next from "../general/i18n";
 
 const MinskyApp = ({ Component, pageProps }: AppProps) => {
-    useEffect(() => {
-        Fonts();
-    });
+    // useEffect(() => {
+    //     Fonts();
+    // });
 
     return (
         <BasicTemplate>

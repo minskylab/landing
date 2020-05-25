@@ -35,7 +35,7 @@ const BasicTemplate = (props: any) => {
                 <link rel="manifest" href="/site.webmanifest" />
                 <meta
                     name="description"
-                    content="Minsky is a Peruvian located company with the mision to change the technology reality of Peru"
+                    content="Minsky is a Peruvian located company with the mision to change the technological landscape of Peru"
                 />
                 <meta
                     name="viewport"
@@ -56,7 +56,7 @@ const BasicTemplate = (props: any) => {
                           _paq.push(['setSiteId', '1']);
                           var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
                           g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-                        })();`
+                        })();`,
                     }}
                 />
 
@@ -70,8 +70,12 @@ const BasicTemplate = (props: any) => {
                             r=o.createElement('script');r.async=1;
                             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
                             a.appendChild(r);
-                        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`
+                        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
                     }}
+                />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik:wght@400;500;700&display=swap"
+                    rel="stylesheet"
                 />
             </Head>
             {props.children}
