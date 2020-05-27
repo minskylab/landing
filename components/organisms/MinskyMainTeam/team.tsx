@@ -14,8 +14,8 @@ export const defaultItems: PersonCardProps[] = [
         socialNet: [
             { type: "github", link: "https://github.com/antoniott15" },
             { type: "linkedin", link: "https://www.linkedin.com/in/antoniotoche/" },
-            { type: "tinder", link: "https://gotinder.com/@antoniotoche" }
-        ]
+            { type: "tinder", link: "https://gotinder.com/@antoniotoche" },
+        ],
     },
     {
         img: (
@@ -29,8 +29,8 @@ export const defaultItems: PersonCardProps[] = [
         name: "María Noriega",
         socialNet: [
             { type: "github", link: "https://github.com/mariagnoriegag" },
-            { type: "linkedin", link: "https://www.linkedin.com/in/guadalupenoriega/" }
-        ]
+            { type: "linkedin", link: "https://www.linkedin.com/in/guadalupenoriega/" },
+        ],
     },
     {
         img: (
@@ -44,8 +44,9 @@ export const defaultItems: PersonCardProps[] = [
         name: "Bregy Malpartida",
         socialNet: [
             { type: "github", link: "https://github.com/bregydoc" },
-            { type: "linkedin", link: "https://www.linkedin.com/in/bregy/" }
-        ]
+            { type: "linkedin", link: "https://www.linkedin.com/in/bregy/" },
+            { type: "homepage", link: " https://bregy.dev" },
+        ],
     },
     {
         img: (
@@ -61,7 +62,23 @@ export const defaultItems: PersonCardProps[] = [
             { type: "github", link: "https://github.com/almenaraio" },
             { type: "linkedin", link: "https://www.linkedin.com/in/almenaracarlos/" },
             { type: "twitter", link: "https://twitter.com/almenaracarlos" },
-            { type: "homepage", link: " https://almenara.io/?utm_source=minsky&utm_medium=click&utm_campaign=work" }
-        ]
-    }
+            { type: "homepage", link: " https://almenara.io/?utm_source=minsky&utm_medium=click&utm_campaign=work" },
+        ],
+    },
+    {
+        img: (
+            <img
+                src="/images/blob.svg"
+                alt="Carlos A. Almenara"
+                style={{ height: "50%", width: "50%", maxHeight: "180px", maxWidth: "180px" }}
+            />
+        ),
+        tags: ["ClientAcquisition", "UXResearch", "Catlover"],
+        name: "Grecia Delgado",
+        socialNet: [
+            { type: "github", link: "https://github.com/minskyla" },
+            { type: "linkedin", link: "https://www.linkedin.com/in/greciadelgado" },
+            { type: "twitter", link: "https://www.linkedin.com/in/greciadelgado" },
+        ],
+    },
 ];
