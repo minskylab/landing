@@ -6,14 +6,12 @@ steps:
     image: node:12
     commands:
       - yarn
-      - yarn lint
       - yarn build
 
   - name: test-node-14
     image: node:14
     commands:
       - yarn
-      - yarn lint
       - yarn build
 
   # - name: docker-registry
