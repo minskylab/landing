@@ -1,0 +1,63 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: landing
+  namespace: minsky
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: buypass
+spec:
+  tls:
+    - hosts:
+        - v2.minsky.cc
+      secretName: v2.minsky.cc-cert
+  rules:
+    - host: v2.minsky.cc
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: landing
+              servicePort: web
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: landing
+  namespace: minsky
+spec:
+  selector:
+    app: landing
+  type: ClusterIP
+  ports:
+    - name: web
+      port: 80
+      targetPort: 3000
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: landing
+  namespace: minsky
+  labels:
+    app: landing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: landing
+  template:
+    metadata:
+      name: landing
+      labels:
+        app: landing
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: landing
+          image: docker.minsky.cc/minsky/landing
+          imagePullPolicy: Always
+      restartPolicy: Always

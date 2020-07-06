@@ -28,6 +28,13 @@ steps:
       branch:
         - master
 
+  - name: update
+    image: vallard/drone-kube
+    template: k8s.yaml
+    when:
+      branch:
+        - master
+
   - name: telegram-notification
     image: appleboy/drone-telegram
     settings:
