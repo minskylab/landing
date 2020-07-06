@@ -14,18 +14,19 @@ steps:
       - yarn
       - yarn build
 
-  # - name: docker-registry
-  #   image: plugins/docker
-  #   settings:
-  #     repo: minskylab/webbase
-  #     tags: latest
-  #     username:
-  #       from_secret: docker_username
-  #     password:
-  #       from_secret: docker_password
-  #   when:
-  #     branch:
-  #       - master
+  - name: docker-registry
+    image: plugins/docker
+    settings:
+      repo: docker.minsky.cc/minsky/landing
+      registry: docker.minsky.cc
+      tags: latest
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+    when:
+      branch:
+        - master
 
   - name: telegram-notification
     image: appleboy/drone-telegram
