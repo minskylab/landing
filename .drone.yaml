@@ -8,11 +8,11 @@ steps:
       - yarn
       - yarn build
 
-  - name: test-node-14
-    image: node:14
-    commands:
-      - yarn
-      - yarn build
+  # - name: test-node-14
+  #   image: node:14
+  #   commands:
+  #     - yarn
+  #     - yarn build
 
   - name: docker-registry
     image: plugins/docker
@@ -28,12 +28,12 @@ steps:
       branch:
         - master
 
-  - name: update
-    image: vallard/drone-kube
-    template: k8s.yaml
-    when:
-      branch:
-        - master
+  # - name: update
+  #   image: vallard/drone-kube
+  #   template: k8s.yaml
+  #   when:
+  #     branch:
+  #       - master
 
   - name: telegram-notification
     image: appleboy/drone-telegram
