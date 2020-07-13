@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - v2.minsky.cc
-      secretName: v2.minsky.cc-cert
+        - minsky.cc
+      secretName: minsky.cc-cert
   rules:
-    - host: v2.minsky.cc
+    - host: minsky.cc
       http:
         paths:
           - path: /
