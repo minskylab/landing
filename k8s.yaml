@@ -43,6 +43,7 @@ metadata:
   namespace: minsky
   labels:
     app: landing
+    keel.sh/policy: all
 spec:
   replicas: 1
   selector:
