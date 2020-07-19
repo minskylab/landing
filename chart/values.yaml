@@ -1,0 +1,43 @@
+image:
+  repository: docker.minsky.cc/minsky/landing:latest
+  pullPolicy: Always
+  
+imagePullSecrets:
+  - name: regcred
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  annotations: 
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: buypass
+  hosts:
+    - host: minsky.cc
+      paths:
+        - "/"
+  tls:
+   - secretName: minsky.cc-cert
+     hosts:
+       - minsky.cc
+
+autoscaling:
+  enabled: false
+  # minReplicas: 1
+  # maxReplicas: 10
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

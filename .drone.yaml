@@ -2,12 +2,6 @@ kind: pipeline
 type: kubernetes
 name: minsky-landing
 steps:
-  - name: test-node-12
-    image: node:12
-    commands:
-      - yarn
-      - yarn build
-
   # - name: test-node-14
   #   image: node:14
   #   commands:
@@ -28,12 +22,21 @@ steps:
       branch:
         - master
 
-  # - name: update
-  #   image: vallard/drone-kube
-  #   template: k8s.yaml
-  #   when:
-  #     branch:
-  #       - master
+  - name: deploy
+    image: pelotech/drone-helm3
+    settings:
+      mode: upgrade
+      chart: ./chart
+      release: landing
+      namespace: minsky
+    environment:
+      KUBE_API_SERVER:
+        from_secret: kubernetes_api_server
+      KUBE_TOKEN:
+        from_secret: kubernetes_token
+    when:
+      branch:
+        - master
 
   - name: telegram-notification
     image: appleboy/drone-telegram
