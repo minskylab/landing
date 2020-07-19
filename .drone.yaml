@@ -6,6 +6,7 @@ token:
   from_secret: do-token
 
 server:
+  image: docker-18-04
   size: s-2vcpu-4gb
   region: sfo2
 
