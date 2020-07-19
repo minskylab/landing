@@ -5,6 +5,9 @@ name: minsky-landing
 token:
   from_secret: do-token
 
+server:
+  region: sfo2
+
 steps:
   # - name: test-node-14
   #   image: node:14
