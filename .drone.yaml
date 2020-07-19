@@ -10,12 +10,16 @@ server:
   size: s-2vcpu-4gb
   region: sfo2
 
+platform:
+  os: linux
+  arch: amd64
+
 steps:
-  - name: test-node-14
-    image: node:14
-    commands:
-      - yarn
-      - yarn build
+  # - name: test-node-14
+  #   image: node:14
+  #   commands:
+  #     - yarn
+  #     - yarn build
 
   - name: docker-registry
     image: plugins/docker
