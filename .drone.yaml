@@ -1,6 +1,10 @@
 kind: pipeline
 type: digitalocean
 name: minsky-landing
+
+token:
+  from_secret: do-token
+
 steps:
   # - name: test-node-14
   #   image: node:14
