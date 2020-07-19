@@ -1,5 +1,5 @@
 kind: pipeline
-type: kubernetes
+type: digitalocean
 name: minsky-landing
 steps:
   # - name: test-node-14
