@@ -6,6 +6,7 @@ token:
   from_secret: do-token
 
 server:
+  size: s-2vcpu-4gb
   region: sfo2
 
 steps:
