@@ -1,18 +1,6 @@
 kind: pipeline
-type: digitalocean
+type: kubernetes
 name: minsky-landing
-
-token:
-  from_secret: do-token
-
-server:
-  image: docker-18-04
-  size: s-2vcpu-4gb
-  region: sfo2
-
-platform:
-  os: linux
-  arch: amd64
 
 steps:
   # - name: test-node-14
@@ -50,6 +38,8 @@ steps:
     when:
       branch:
         - master
+    depends_on:
+      - docker-registry
 
   - name: telegram-notification
     image: appleboy/drone-telegram
