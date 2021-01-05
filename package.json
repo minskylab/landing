@@ -18,7 +18,7 @@
         "@unform/core": "^2.0.0",
         "@unform/web": "^2.0.0",
         "@zeit/next-css": "^1.0.1",
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "express": "^4.17.1",
         "flubber": "^0.4.2",
         "fontfaceobserver": "^2.1.0",
