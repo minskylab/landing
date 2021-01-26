@@ -23,6 +23,12 @@ ingress:
      hosts:
        - minsky.cc
 
+ingressroute:
+  enabled: true
+  host: minsky.cc
+  tls:
+    certResolver: letsencrypt
+
 autoscaling:
   enabled: false
   # minReplicas: 1

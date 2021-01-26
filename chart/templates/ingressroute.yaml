@@ -1,0 +1,28 @@
+{{- if .Values.ingressroute.enabled }}
+{{- $fullName := include "chart.fullname" . -}}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ $fullName }}
+spec:
+  entryPoints:
+    {{- if .Values.ingressroute.entryPoints }}
+    {{- range .Values.ingressroute.entryPoints }}
+    - {{ . }}
+    {{- end }}
+    {{- else }}
+    - websecure
+    {{- end }}
+  {{- if .Values.ingressroute.host }}
+  routes:
+    - match: Host(`{{- .Values.ingressroute.host  }}`) && PathPrefix(`/`)
+      kind: Rule
+      services:
+        - name: {{ $fullName }}
+          port: {{ .Values.service.port }}
+  {{- end }}
+  {{- with .Values.ingressroute.tls }}
+  tls:
+    certResolver: {{ .certResolver }}
+  {{- end }}
+{{- end }}

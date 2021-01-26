@@ -1,6 +1,6 @@
 kind: pipeline
 type: kubernetes
-name: minsky-landing
+name: minsky-landing-deployment
 
 steps:
   # - name: test-node-14
@@ -52,3 +52,5 @@ steps:
       status:
         - failure
         - success
+    depends_on:
+      - deploy
